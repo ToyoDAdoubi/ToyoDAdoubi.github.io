@@ -1,0 +1,992 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>ShadowsocksR 转为类VPN的真 · 全局代理神器 (软件/游戏走代理) — SSTAP | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1967] -->
+<meta name="description"  content="很早的时候就知道这个软件了，一开始的时候就听说这个作者要搞个专门让代理玩游戏的软件，结果等啊等就反应，直到前两个月，就突然冒出来 Beta 1.0.0，当然毕竟是第一个测试版本，BUG毕竟感人，不过经过这几个月的持续更新修复，基本上明显的BUG都被消灭了。再加上我有一段时间没写教程了，就把SSTAP拉出来杀了祭天给大家" />
+
+<meta name="keywords"  content="shadowsocks,shadowsocksr,socks5,sstap" />
+
+<link rel="canonical" href="apf3f05x.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='Chrome浏览器关闭 QUIC，避免部分地区运营商UDP QOS对速度的影响' href='zly21nh2-3.html' />
+<link rel='next' title='一个由Go语言编写的轻量化 HTTP Tunnel 代理工具 —— GoFlyway' href='fz5z7h5j.html' />
+<link rel='shortlink' href='https://doub.io/?p=2339' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fdbrj-5%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fdbrj-5%2F&amp;format=xml" />
+<style>
+.xk4eb7d{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.xk4eb7d-hide{
+    display: none;
+}
+.xk4eb7d-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.xk4eb7d-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.xk4eb7d-2 .xk4eb7d-body,.xk4eb7d-3 .xk4eb7d-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.xk4eb7d-2 .close-btn,.xk4eb7d-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.xk4eb7d-3 .xk4eb7d-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.xk4eb7d').html(kill_adBlock_message);
+            jQuery('.xk4eb7d-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.xk4eb7d-container').fadeOut('xk4eb7d-hide');
+        });
+    });
+    var kill_adBlock_status = 1;
+    var kill_adBlock_message = '逗比很伤心😥，您的<strong>广告拦截扩展</strong>屏蔽了我们的小广告，网站的发展离不开大家的支持，请先看过<a target=\"_blank\" style=\"color: #ffe500;\" href=\"3--didfb.html\">这个文章</a>后，再确定是否要将我们的域名添加到<strong>拦截白名单</strong>中，谢谢！😘👌';
+    var kill_adBlock_message_delay = 0;
+    var kill_adBlock_close_btn = 1;
+    var kill_adBlock_close_automatically = 0;
+    var kill_adBlock_close_automatically_delay = 0;
+    var kill_adBlock_message_type = 1;
+    function adBlockDetected() {
+      show_message();
+    }
+    
+    if(typeof killAdBlock === 'undefined') {
+        adBlockDetected();
+    } else {
+        killAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+    }
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="Shadowsocks, ShadowsocksR, SOCKS5, SSTAP, 逗比软件">
+<meta name="description" content="很早的时候就知道这个软件了，一开始的时候就听说这个作者要搞个专门让代理玩游戏的软件，结果等啊等就反应，直到前两个月，就突然冒出来 Beta 1.0.0，当然毕竟是第一个测试版本，BUG毕竟感人，不过经过这几个月的持续更新修复，基本上明显的BUG都被消灭了。再加上我有一段时间没写教程了，就把SSTAP拉出来杀了祭天给大家。  这个软件的作者同时也是 SSCAP 、 SocksCap64 这两个软件的作者，SocksCap64是通过钩子来达">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-2339 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li class="current-post-ancestor"><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="./softs.wtf/"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Atoyodadoubi.github.io'; return false;" action="https://toyodadoubi.github.io/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 逗比云还是逃不过被墙的命运，既然如此那以后逗比云也就一直用被墙的旧域名 <strong><a target="_blank" href="./softs.wtf/">[softs.wtf]</a></strong> 算了。
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://www.gigsgigscloud.com/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="apf3f05x.html">ShadowsocksR 转为类VPN的真 · 全局代理神器 (软件/游戏走代理) — SSTAP</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="w9qs7z5o.html"> 逗比软件</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 1年前 (2017-09-03)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 35191℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="apf3f05x.html#comments">175评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="apf3f05x.html#SSTAP简单介绍" title="SSTAP简单介绍"><span>SSTAP简单介绍</span></a></li><li class="content-index-level-1"><a href="apf3f05x.html#下载安装" title="下载安装"><span>下载安装</span></a></li><li class="content-index-level-1"><a href="apf3f05x.html#配置步骤" title="配置步骤"><span>配置步骤</span></a><ul class="children"><li class="content-index-level-2"><a href="apf3f05x.html#关于此处附加路由选项的说明：" title="关于此处附加路由选项的说明："><span>关于此处附加路由选项的说明：</span></a></li></ul></li><li class="content-index-level-1"><a href="apf3f05x.html#其他功能解释" title="其他功能解释"><span>其他功能解释</span></a><ul class="children"><li class="content-index-level-2"><a href="apf3f05x.html#设置选项解释" title="设置选项解释"><span>设置选项解释</span></a></li><li class="content-index-level-2"><a href="apf3f05x.html#附加路由管理解释" title="附加路由管理解释"><span>附加路由管理解释</span></a></li><li class="content-index-level-2"><a href="apf3f05x.html#事件管理解释" title="事件管理解释"><span>事件管理解释</span></a></li><li class="content-index-level-2"><a href="apf3f05x.html#SSR订阅管理" title="SSR订阅管理"><span>SSR订阅管理</span></a></li><li class="content-index-level-2"><a href="apf3f05x.html#流量统计功能" title="流量统计功能"><span>流量统计功能</span></a></li></ul></li><li class="content-index-level-1"><a href="apf3f05x.html#最后的最后" title="最后的最后"><span>最后的最后</span></a></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年9月20日 20:19</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>很早的时候就知道这个软件了，一开始的时候就听说这个作者要搞个专门让代理玩游戏的软件，结果等啊等就反应，直到前两个月，就突然冒出来 Beta 1.0.0，当然毕竟是第一个测试版本，BUG毕竟感人，不过经过这几个月的持续更新修复，基本上明显的BUG都被消灭了。再加上我有一段时间没写教程了，就把SSTAP拉出来杀了祭天给大家。</p>
+<p>这个软件的作者同时也是 <a href="kd691l4o-2.html" target="_blank" rel="noopener">SSCAP</a> 、<a href="3we1qxzj-5.html" target="_blank" rel="noopener"> SocksCap64</a> 这两个软件的作者，SocksCap64是通过钩子来达到让指定软件/游戏走代理的，在某些软件/游戏中可能会不可用，甚至部分游戏会有封禁风险（当成外挂之类的），所以作者就根据大家的需求，开发一个更好的 代理转全局软件给大家，那就是SSTAP。</p>
+<p><del>我擦，我又废话了半天，接下来说正事。</del></p>
+<p><strong>本文章的主要目的是：让更多人知道 SSTAP，以让更多人使用它、反馈BUG、提供建议，让SSATP变得更完美。</strong></p>
+<p>所以本文章也就是 简单的介绍一下安装、配置、使用以及各个选项的意思。</p>
+<blockquote><p>因为作者受到某些压力，已经<strong>宣布停止SSTAP的开发</strong>，但依然可用。</p></blockquote>
+<h2 id="SSTAP简单介绍">SSTAP简单介绍</h2>
+<p>SSTap全称SOCKSTap, 是一款利用虚拟网卡技术在网络层实现的代理工具。</p>
+<p>SSTap能在网络层拦截所有连接并转发给HTTP、SOCKS4/5、Shadowsocks、ShadowsocksR代理。</p>
+<p>而无需对被代理的应用程序做任何修改或设置。</p>
+<p>它能同时转发TCP、UDP数据包。<strong>它非常适合于游戏玩家使用。</strong><del>（很骚气的直接复制了官网说明）</del></p>
+<p><del><strong>SSTAP官方网站：</strong><a href="https://www.sockscap64.com/sstap/" target="_blank" rel="noopener">https://www.sockscap64.com/sstap/</a></del></p>
+<p><strong>SSTAP动态订阅：</strong><a href="https://www.sockscap64.com/newsletters-subscribe/" target="_blank" rel="noopener">https://www.sockscap64.com/newsletters-subscribe/</a></p>
+<p><strong>SSTAP Telegram群组：</strong><a href="https://t.me/tarolab" target="_blank" rel="noopener">https://t.me/tarolab</a>（SocksCap64/SStap/SScap相关问题讨论）</p>
+<p><strong>SSTAP Telegram频道：</strong><a href="https://t.me/taronews" target="_blank" rel="noopener">https://t.me/taronews</a>（SocksCap64/SStap/SScap相关问题讨论）</p>
+<hr />
+<blockquote><p>在使用这个软件代理转全局之前，请先拥有一个<strong>可用的Shadowsocks、ShadowsocksR账号</strong>并且如果你要玩游戏，那么<strong>最好支持UDP转发</strong>，否则部分游戏可能会无法链接。</p>
+<p><strong>注意：SSTAP并不需要配合Shadowsocks、ShadowsocksR客户端使用，SSTAP已经自带了SS/SSR客户端功能。</strong></p></blockquote>
+<h2 id="下载安装">下载安装</h2>
+<p>一开始自然是下载安装啦。</p>
+<p><strong>下载地址：</strong><a href="https://www.lanzous.com/b380640/" target="_blank" rel="noopener">https://www.lanzous.com/b380640/</a>，密码:<strong>5god</strong> <strong>（推荐使用 1.0.9.7 版本）</strong></p>
+<p><del><strong>SSTAP官方网站：</strong><a href="https://www.sockscap64.com/sstap/" target="_blank" rel="noopener">https://www.sockscap64.com/sstap/</a></del></p>
+<p><strong>SSTAP Telegram频道：</strong><a href="https://t.me/taronews" target="_blank" rel="noopener">https://t.me/taronews</a>（SocksCap64/SStap/SScap相关问题讨论）</p>
+<p>大家从上面的官网或者TG频道中下载 SSTAP的压缩包，如 <strong>SSTap-beta-setup-x.x.x.x.exe.7z</strong> 文件，使用压缩软件解压这个压缩包，得到一个名为 <strong>SSTap-beta-setup-x.x.x.x.exe</strong> 的文件。</p>
+<p>我们<span style="color: #ff6464;"><strong>以管理员身份运行这个文件</strong></span>，会提示你选择安装语言，默认中文，一路下一步即可（<strong>选择安装目录的步骤建议改一改，不推荐安装到C盘</strong>），然后就会进入安装进度条步骤，安装过程中会提示如下图所示信息：</p>
+<p>因为SSTAP想要拦截网络上的所有流量，就必须建立一个<strong>虚拟网卡</strong>，以此让所有网络流量都经过虚拟网卡，<strong>这样才能实现“真 · 全局代理”。</strong></p>
+<p>所以 按下图所示，勾选 <span style="color: #3366ff;"><strong>始终信任来自....的软件</strong></span>，并点击 <span style="color: #33cccc;"><strong>安装</strong></span> 按钮安装虚拟网卡 。</p>
+<p><img class=" aligncenter" src="8poq9zeh.png" alt="" width="530" height="224" /></p>
+<p>如果不出意外，很快就会安装完毕，然后会自动运行SSTAP。第一次安装SSTAP会看到如下警告说明：</p>
+<p>请认真阅读说明内容，并点击<span style="color: #33cccc;"> <strong>接受</strong></span> 按钮。</p>
+<p><img class=" aligncenter" src="ajsncaag.png" alt="" width="439" height="400" /></p>
+<h2 id="配置步骤">配置步骤</h2>
+<p>下面就是SSTAP的主界面了，很简洁，接下来我们就是添加 Shadowsocks/ShadowsocksR代理了。</p>
+<p>点击下图红框所圈中的<span style="color: #3366ff;"><strong> + 号按钮</strong></span>（+号按钮：？？？我呢？），然后可以看到三个选项：</p>
+<ol>
+<li><strong>添加SOCKS代理...</strong></li>
+<li><strong>添加SS/SSR代理...</strong></li>
+<li><strong>通过SS/SSR链接批量添加代理...</strong></li>
+</ol>
+<p>根据自己的需求选择添加方式，这里以第二个：<strong>添加SS/SSR代理...</strong> 为例。</p>
+<p>（第三个批量添加的选项，只是会弹出一个输入框，然后按照每行一个 <strong>ss://或ssr://</strong> 链接添加即可）。</p>
+<p><img class=" aligncenter" src="delksm8f.png" alt="" width="606" height="546" /></p>
+<p>选择 <strong>添加SS/SSR代理...</strong> 选项后，就会看到如下界面（当然都是空的），然后我们可以通过 <strong>ss://链接 或 ssr://链接 或 手动输入SS/SSR账号信息</strong>的方式添加。</p>
+<p>点击最顶部的，<strong>锁链 按钮（红框圈中）</strong>，就会出现一个输入框，<strong>一次只能输入一条 ss://链接 或 ssr://链接</strong> ，输入后点 <strong>确定</strong> 会自动解析并填写到该窗口各选项中。</p>
+<p>添加账号后，底部的 <strong>Country 选项</strong>会自动识别你的IP地址归属地国家，当然可能会识别有误，这种情况下你需要自己选择，不过不用担心，这里的 <strong>Country 选项</strong>只是为了给你自己区分账号地区用的，只要你自己备注写清楚，那就不碍事。</p>
+<h3 id="关于此处附加路由选项的说明：">关于此处附加路由选项的说明：</h3>
+<p><strong>此处（包括添加SOCKS代理的时候）的附加路由仅针对这种情况：</strong></p>
+<p>你使用SS/SSR客户端链接SS/SSR账号（假设IP为 <strong>1.1.1.1</strong>），然后SS/SSR客户端的本地端口为 <strong>1080（默认）</strong>，同时你在SSTAP中添加SOCKS5代理，设置<strong>IP为：127.0.0.1，端口为：1080（用户名/密码留空）</strong>，那么这时候，为了避免SSTAP启动后与SS/SSR客户端<strong>死循环</strong>，你就需要在 <strong>附加路由 选项</strong>中添加你的SS/SSR服务器的<strong>IP：1.1.1.1</strong>，以此 才能正常使用。</p>
+<p>如果你是直接添加了 SS/SSR账号，<span style="color: #ff6464;"><strong>那么附加路由选项请留空！</strong></span></p>
+<hr />
+<p>最后确定账号添加没毛病，那就<span style="color: #3366ff;"><strong>勾选</strong></span>最下面的 <span style="color: #3366ff;"><strong>添加并激活使用</strong></span> 选项，然后按 <span style="color: #33cccc;"><strong>保存</strong></span> 按钮。</p>
+<p><img class=" aligncenter" src="gypu9z5d.png" alt="" width="697" height="573" /></p>
+<p>添加SS/SSR账号后，我们就在 <strong>代理下拉框</strong> 中选择你要使用的SS/SSR代理，并点击下图红框圈中的 <span style="color: #3366ff;"><strong>闪电按钮</strong></span>，就会自动开始<strong>测试该SS/SSR账号TCP和UDP是否可用。</strong></p>
+<p><strong>请确保TCP可用再继续下面的步骤。</strong>（如果TCP不可用，那么请检查SS/SSR账号是否填写错误，如果确定无误，那就检测SS/SSR账号是否本身可用，在确定不是SS/SSR账号的问题后，请携带截图和具体复现步骤说明，<strong><a href="https://t.me/tarolab" target="_blank" rel="noopener">前往TG群联系作者</a></strong>解决。）</p>
+<p>至于UDP，则取决于你要代理的软件/游戏是否需要使用UDP，如果不需要那就不说了，如果需要UDP转发，那么你的SS/SSR账号也需要支持UDP转发（ShadowsocksR服务端默认开启UDP转发，只要端口开放了，就能用）。在UDP转发不可用的情况下，如果你清楚你要代理的软件/游戏的UDP数据不需要走代理，那么你可以看下面的<strong><a href="apf3f05x.html#设置选项解释">设置解释步骤</a>，来设置不转发UDP。</strong></p>
+<p><img class=" aligncenter" src="jthrca1c-2.png" alt="" width="767" height="545" /></p>
+<p>在确定添加的SS/SSR代理TCP、UDP都没毛病后，我们就该看代理模式了。</p>
+<p>目前版本，暂时有以下五个代理模式：</p>
+<ul>
+<li><strong>全局：</strong>顾名思义，整个电脑网络所有流量全部都走代理，<span style="color: #33cccc;"><strong>在不清楚如何选择的时候，选这个就行。</strong></span></li>
+<li><strong>仅网页浏览器（全局）：</strong>仅仅让浏览器走代理，不过浏览器访问的所有网页都会走代理。</li>
+<li><strong>仅网页浏览器（跳过中国站点）：</strong>仅仅让浏览器走代理，但是浏览器访问海外的网页才会走代理，<strong>也就是国内网站直连。</strong></li>
+<li><strong>仅代理中国IP：</strong>在全局的基础上 仅代理中国IP，也就是只有访问国内IP的网络流量才会走代理，<strong>一般都是海外用户想要返回国内用的（如玩国服游戏）。</strong></li>
+<li><strong>不代理中国IP：</strong>与上面相反，这个是在全局的基础上 代理所有访问海外IP的网络流量，而国内IP的都直连，<span style="color: #33cccc;"><strong>如果你是专玩外服游戏，那么选这个就行。</strong></span></li>
+</ul>
+<p><img class=" aligncenter" src="nnlosnyb.png" alt="" width="417" height="151" /></p>
+<p>好了，前面的内容基本介绍的七七八八了，再介绍剩下的一些选项解释，就完了。</p>
+<h2 id="其他功能解释">其他功能解释</h2>
+<p>在SSTAP的右下角可以看到一个 <span style="color: #3366ff;"><strong>齿轮图标按钮</strong></span>（齿轮：？？？我呢？），点击后会显示一个菜单（如下图所示）。</p>
+<p><img class=" aligncenter" src="q7dx9zul-2.png" alt="" width="415" height="256" /></p>
+<p>其中<strong>显示日志...、重置流量统计...、支持...、关于...、退出</strong> 这些就不需要我解释了吧，我主要解释另外几个。</p>
+<h3 id="设置选项解释">设置选项解释</h3>
+<p>首先第一个 <strong>设置</strong> 选项。</p>
+<p>打开后会看到如下图界面，各选项解释：</p>
+<p><strong>不转发UDP：</strong>指的是SSTAP会让UDP数据直连，而不是走代理。</p>
+<p><strong>本地连接：</strong>就是你目前电脑正在使用的 网卡本地链接，<strong>默认即可，不懂请不要改动！</strong></p>
+<p><strong>TAP接口：</strong>就是SSTAP一开始安装的时候，创建的虚拟网卡，<strong>默认即可，不懂请不要改动！</strong></p>
+<p><strong>预选DNS：</strong>这里记录了大量目前互联网上公共免费的DNS，<strong>默认即可，不懂请不要改动！</strong></p>
+<p><strong>首选DNS：</strong>同上，默认即可。</p>
+<p><strong>备选DNS：</strong>同上，默认即可。</p>
+<p><strong>代理DNS服务器：</strong>指的是你电脑发出的域名解析DNS请求全部走代理（无视代理模式规则）。</p>
+<p><strong>开机自启动：</strong>勾选后开机后，会自动启动SSTAP。</p>
+<p><strong>运行后自动连接：</strong>运行SSTAP后，会自动连接上一次关闭SSTAP时所用的SS/SSR代理。</p>
+<p><strong> - 延迟链接：</strong>针对上面选项的扩展选项，<strong>如设置 10秒</strong>，那就是运行SSTAP后。<strong>等待10秒</strong>再自动连接SS/SSR代理。</p>
+<p><strong>连接后自动隐藏窗体：</strong>SSTAP连接SS/SSR账号成功后，自动隐藏窗口。</p>
+<p><img class=" aligncenter" src="xwassbnj-4.png" alt="" width="366" height="550" /></p>
+<h3 id="附加路由管理解释">附加路由管理解释</h3>
+<p>这个在上面添加SS/SSR/SOCKS代理时，解释过部分情况，不过那只是特殊情况。</p>
+<p>平时你如果想要<strong>某些IP走 代理 或者 直连</strong> ，并不需要纠结于代理模式，而是直接在 <strong>附加路由管理中 添加相关动作</strong>即可。</p>
+<p><strong>例如：</strong>我玩的外服游戏的服务器<strong>IP是 2.2.2.2</strong> ，而因为未知原因导致某个代理模式下，<strong>IP 2.2.2.2 不走代理</strong>，但是我想让他走代理加速。那我就可以填写 <strong>IP：2.2.2.2，动作：代理</strong>，并点击 <span style="color: #33cccc;"><strong>添加</strong></span> 按钮即可。</p>
+<pre><strong>注意：</strong>此功能在 <strong>连接</strong> SSTAP后是无法操作的。</pre>
+<p><img class=" aligncenter" src="t2hvb0rk.png" alt="" width="400" height="361" /></p>
+<h3 id="事件管理解释">事件管理解释</h3>
+<p>此功能，可能大家一开始看到都是懵逼的，不知道是干什么的，我问了问作者，作者说这个其实就是根据事件管理进程的（至少目前是）。</p>
+<p><strong>简单的来说就是：</strong></p>
+<p>大家都知道，<strong>本地下载BT不能走SS/SSR代理，否则可能会因为P2P或BT或版权投诉导致VPS被封</strong>，那么在用SSTAP的时候，怎么确保你不会忘记关闭迅雷或者习惯性的运行迅雷下载BT（忘了SSTAP的存着），<strong>从而导致VPS被封的悲惨事件发生？</strong></p>
+<p>所以这个功能就诞生了，遇到上面说的情况，只需要如下图所示设置。</p>
+<ul>
+<li><strong>事件类型：连接之前</strong></li>
+<li><strong>动作类型：结束进程</strong></li>
+<li><strong>动作参数：Thunder.exe</strong>（<strong>进程名</strong>，我电脑上有个迅雷极速版貌似，不清楚其他迅雷版本的进程名是不是一样，你们自己看，我这个仅仅是示例）</li>
+</ul>
+<p>然后点击 <span style="color: #33cccc;"><strong>添加</strong></span> 按钮来添加到事件管理列表中。</p>
+<p>接着我们打开迅雷测试效果，然后点击SSTAP主窗口中间的 <span style="color: #33cccc;"><strong>连接</strong></span> 按钮开始链接SSTAP，你就会发现，<strong>迅雷的进程被强制结束了（无须担心忘记关闭迅雷了）。</strong></p>
+<p><img class="alignnone aligncenter" src="gypu9z5d-2.png" alt="" width="463" height="327" /></p>
+<p>当然，部分人可能觉得 直接结束进程太过于暴力，不够naive，所以可以把 <strong>动作类型 改为 提示结束进程</strong>，这种情况下，如果你 连接 SSTAP，会发现并不会直接结束进程，而是会提醒你关闭这个进程，<strong>你可以选择暂停SSTAP连接操作 先去处理迅雷的情况。</strong></p>
+<p><img class="alignnone aligncenter" src="jthrca1c-3.png" alt="" width="207" height="144" /></p>
+<h3 id="SSR订阅管理">SSR订阅管理</h3>
+<p>这个功能应该很多人都清楚吧，如果你有<strong>SSR的订阅链接</strong>，那么可以在这里添加，而 <strong>Frequency</strong> 选项指的是<strong>更新频率</strong>，<strong>默认一天</strong>就行了。</p>
+<p><img class=" aligncenter" src="0dqb5ivi.html" alt="" width="550" height="382" /></p>
+<h3 id="流量统计功能">流量统计功能</h3>
+<p>SSTAP会在你使用的时候，记录<strong>总流量使用、实时速度和连接数</strong>，可以有效直观的查看消耗了多少流量。</p>
+<p>设置菜单中的 <strong>重置流量统计...</strong> 可以重置这里的统计信息。</p>
+<p><img class=" aligncenter" src="ajsncaag-2.png" alt="" width="421" height="69" /></p>
+<h2 id="最后的最后">最后的最后</h2>
+<p>最后前面全都配置完毕并且确定无误，那么就可以点击 SSTAP 主窗口的 <span style="color: #33cccc;"><strong>连接</strong></span> 按钮链接SS/SSR代理了！</p>
+<p>然后我们访问 <strong><a href="http://www.ipip.net/" target="_blank" rel="noopener">ipip.net</a></strong> 查看IP是否是你的 SS/SSR账号的服务器IP，如果不是请检查你设置的代理模式 或 你的SS/SSR账号。</p>
+<p><img class=" aligncenter" src="8poq9zeh-2.png" alt="" width="389" height="121" /></p>
+<p>好了，写了半天，终于写完了，随后可能还会补充其他的信息。</p>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="apf3f05x.html">ShadowsocksR 转为类VPN的真 · 全局代理神器 (软件/游戏走代理) — SSTAP</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="2339" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">185</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="oyjpgxqd.html" rel="tag">Shadowsocks</a><a href="g6hfu0lq.html" rel="tag">ShadowsocksR</a><a href="phs2wo5j.html" rel="tag">SOCKS5</a><a href="uuefohks.html" rel="tag">SSTAP</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="zly21nh2-3.html" rel="prev">Chrome浏览器关闭 QUIC，避免部分地区运营商UDP QOS对速度的影响</a></span>
+			<span class="article-nav-next"><a href="fz5z7h5j.html" rel="next">一个由Go语言编写的轻量化 HTTP Tunnel 代理工具 —— GoFlyway</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="kd691l4o.html" title="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" target="_blank">
+<img src="sp6xrfo1.png?src=https://doub.io/wp-content/uploads/shadowsocks3.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" />	<br><span class="r_title">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="hi10k-7p-3.html" title="给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)" target="_blank">
+<img src="iceink9-.png?src=https://doub.io/wp-content/uploads/shadowsocksR-1.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)" />	<br><span class="r_title">给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="a6551xds.html" title="『视频』ShadowsocksR 服务端一键脚本安装 新手小白视频教程" target="_blank">
+<img src="-b0b-ldi.png?src=https://doub.io/wp-content/uploads/qita-03.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『视频』ShadowsocksR 服务端一键脚本安装 新手小白视频教程" />	<br><span class="r_title">『视频』ShadowsocksR 服务端一键脚本安装 新手小白视频教程</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="yv4cp61c.html" title="『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本" target="_blank">
+<img src="kk4ik0cm.png?src=https://doub.io/wp-content/uploads/brook1.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本" />	<br><span class="r_title">『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="kd691l4o.html">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</a></li><li><i class="fa fa-minus"></i><a href="hi10k-7p-3.html">给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)</a></li><li><i class="fa fa-minus"></i><a href="a6551xds.html">『视频』ShadowsocksR 服务端一键脚本安装 新手小白视频教程</a></li><li><i class="fa fa-minus"></i><a href="yv4cp61c.html">『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本</a></li><li><i class="fa fa-minus"></i><a href="9n7kdq_k-2.html">『原创』Shadowsocks tinyPortMapper 中继(中转/端口转发) 便捷管理脚本</a></li><li><i class="fa fa-minus"></i><a href="6r9z6_wi-3.html">Shadowsocks利用 tinyPortMapper 实现中继(中转/端口转发)加速</a></li><li><i class="fa fa-minus"></i><a href="6jfbj938-2.html">『原创』应逗比要求 单独写了个 libsodium 一键安装脚本 (Chacha20 / Chacha20-ietf 等)</a></li><li><i class="fa fa-minus"></i><a href="3we1qxzj-7.html">ShadowsocksR PC客户端中的 [代理规则 &#8211; 用户自定义] 功能使用教程</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='2339' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (175)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-44047"><div class="c-avatar"><div class="c-main" id="div-comment-44047">大神，为啥360杀毒频繁报毒啊，什么木马啊之类的<div class="c-meta"><span class="c-author">少帅</span>2018-10-06 20:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=44047#respond' onclick='return addComment.moveForm( "div-comment-44047", "44047", "respond", "2339" )' aria-label='回复给少帅'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-43290"><div class="c-avatar"><div class="c-main" id="div-comment-43290">大神，使用软件后UDP转发连接不稳定（时断时续），该怎么解决呢？是ss的问题吗？谢谢了<div class="c-meta"><span class="c-author">sharksss</span>2018-09-17 10:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=43290#respond' onclick='return addComment.moveForm( "div-comment-43290", "43290", "respond", "2339" )' aria-label='回复给sharksss'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-43293"><div class="c-avatar"><div class="c-main" id="div-comment-43293">实际上，绝大部分地区的运营商，都会对海外服务器的UDP链接QOS限速（限速+丢包）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-09-17 11:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=43293#respond' onclick='return addComment.moveForm( "div-comment-43293", "43293", "respond", "2339" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-43303"><div class="c-avatar"><div class="c-main" id="div-comment-43303">那有什么解决办法呢？<div class="c-meta"><span class="c-author">sharksss</span>2018-09-17 14:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=43303#respond' onclick='return addComment.moveForm( "div-comment-43303", "43303", "respond", "2339" )' aria-label='回复给sharksss'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-43308"><div class="c-avatar"><div class="c-main" id="div-comment-43308">将UDP流量伪装为TCP流量， <a href="https://github.com/wangyu-/udp2raw-tunnel" target="_blank" rel="nofollow">https://github.com/wangyu-/udp2raw-tunnel</a> 。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-09-17 15:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=43308#respond' onclick='return addComment.moveForm( "div-comment-43308", "43308", "respond", "2339" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-43098"><div class="c-avatar"><div class="c-main" id="div-comment-43098">https://github.com/Srar/node-tap
+貌似有人接力了<div class="c-meta"><span class="c-author">方舟</span>2018-09-12 14:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=43098#respond' onclick='return addComment.moveForm( "div-comment-43098", "43098", "respond", "2339" )' aria-label='回复给方舟'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-42681"><div class="c-avatar"><div class="c-main" id="div-comment-42681">为什么这个软件占用内存和CPU都很高？<div class="c-meta"><span class="c-author">littleKK</span>2018-09-04 10:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=42681#respond' onclick='return addComment.moveForm( "div-comment-42681", "42681", "respond", "2339" )' aria-label='回复给littleKK'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-42384"><div class="c-avatar"><div class="c-main" id="div-comment-42384">sstaP我用了默认规则的全局模式，tcp和udp测试转发都没问题，但是就是进不了goole和油管等网页，但是如果用浏览器代理全剧模式就可以进，这是什么什么问题，怎么解决？<div class="c-meta"><span class="c-author"><a href='https://ke.qq.com/webcourse/index.html#cid=177385&#038;term_id=100341361&#038;taid=2103705046529257&#038;vid=r1412rqoq67' rel='external nofollow' class='url'>zhxiji</a></span>2018-08-29 11:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=42384#respond' onclick='return addComment.moveForm( "div-comment-42384", "42384", "respond", "2339" )' aria-label='回复给zhxiji'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-41919"><div class="c-avatar"><div class="c-main" id="div-comment-41919">烂爆了。使用后会占用大量CPU 导致死机<div class="c-meta"><span class="c-author">1</span>2018-08-19 17:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=41919#respond' onclick='return addComment.moveForm( "div-comment-41919", "41919", "respond", "2339" )' aria-label='回复给1'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-42094"><div class="c-avatar"><div class="c-main" id="div-comment-42094">占用cpu是因为windows认为你网络异常了，所以会疯狂搞事，你在任务管理器里把网络异常相关的那个进程结束了其实就好了<div class="c-meta"><span class="c-author"><a href='http://el/' rel='external nofollow' class='url'>el</a></span>2018-08-23 15:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=42094#respond' onclick='return addComment.moveForm( "div-comment-42094", "42094", "respond", "2339" )' aria-label='回复给el'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-41740"><div class="c-avatar"><div class="c-main" id="div-comment-41740">有没Mac版客户端？希望开发<div class="c-meta"><span class="c-author">denel</span>2018-08-15 21:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=41740#respond' onclick='return addComment.moveForm( "div-comment-41740", "41740", "respond", "2339" )' aria-label='回复给denel'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-41741"><div class="c-avatar"><div class="c-main" id="div-comment-41741">SSTAP 半年前就停止更新了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-08-15 21:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=41741#respond' onclick='return addComment.moveForm( "div-comment-41741", "41741", "respond", "2339" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-41753"><div class="c-avatar"><div class="c-main" id="div-comment-41753">有其他么<div class="c-meta"><span class="c-author">denel</span>2018-08-16 07:43 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=41753#respond' onclick='return addComment.moveForm( "div-comment-41753", "41753", "respond", "2339" )' aria-label='回复给denel'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-41755"><div class="c-avatar"><div class="c-main" id="div-comment-41755">没有。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-08-16 10:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=41755#respond' onclick='return addComment.moveForm( "div-comment-41755", "41755", "respond", "2339" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-41562"><div class="c-avatar"><div class="c-main" id="div-comment-41562">大佬请问一下sstap可以根据gfwlist来添加代理规则吗（像pac）？
+自带的 仅网页浏览器（跳过中国站点） 貌似采用的是，记录在规则里的国内网站就不走代理，其他的网站不管是国内国外只要不记录在规则里就走代理。这跟酸酸乳的pac模式恰恰相反记录在内的网站就走代理其他全部不走。不知道说的对不对，如果对得好还是比较喜欢后者毕竟能更省流量 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_lol.gif" alt=":lol:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">haha</span>2018-08-12 21:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=41562#respond' onclick='return addComment.moveForm( "div-comment-41562", "41562", "respond", "2339" )' aria-label='回复给haha'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-41291"><div class="c-avatar"><div class="c-main" id="div-comment-41291">有什么替代的软件呢? sstap作者说是硬盘挂了,数据丢失,软件永久停更... <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_cry.gif" alt=":cry:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">chaos</span>2018-08-09 11:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=41291#respond' onclick='return addComment.moveForm( "div-comment-41291", "41291", "respond", "2339" )' aria-label='回复给chaos'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-41282"><div class="c-avatar"><div class="c-main" id="div-comment-41282">遗憾作者停更了，现在除了Proxifier还有哪些类似的全局代理工具呢？<div class="c-meta"><span class="c-author"><a href='https://www.guludaduizhang.com/' rel='external nofollow' class='url'>GuLuDaDuiZhang</a></span>2018-08-09 09:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=41282#respond' onclick='return addComment.moveForm( "div-comment-41282", "41282", "respond", "2339" )' aria-label='回复给GuLuDaDuiZhang'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-41233"><div class="c-avatar"><div class="c-main" id="div-comment-41233">很需要这个仅代理中国IP了（人在国外），可惜sstap已停更，还有什么好办法吗？<div class="c-meta"><span class="c-author">Lighterman</span>2018-08-08 11:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=41233#respond' onclick='return addComment.moveForm( "div-comment-41233", "41233", "respond", "2339" )' aria-label='回复给Lighterman'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-39263"><div class="c-avatar"><div class="c-main" id="div-comment-39263">想问一下这个软件运行一段时间了会自动断连，而且后台任务管理器也没办法关掉它，请问有什么办法解决<div class="c-meta"><span class="c-author">Meowmeow</span>2018-06-20 18:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=39263#respond' onclick='return addComment.moveForm( "div-comment-39263", "39263", "respond", "2339" )' aria-label='回复给Meowmeow'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-39308"><div class="c-avatar"><div class="c-main" id="div-comment-39308">作者已经停更好几个月了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-06-21 18:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=39308#respond' onclick='return addComment.moveForm( "div-comment-39308", "39308", "respond", "2339" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-41197"><div class="c-avatar"><div class="c-main" id="div-comment-41197">我就是BF4网络不好，又不想买加速器。试过ssr+proxifier，但是不知道是没设置好还是找的服务器不好，用了和直连没多大区别。<div class="c-meta"><span class="c-author">kanteson</span>2018-08-07 17:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=41197#respond' onclick='return addComment.moveForm( "div-comment-41197", "41197", "respond", "2339" )' aria-label='回复给kanteson'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-41224"><div class="c-avatar"><div class="c-main" id="div-comment-41224">和设置关系不大，主要还是服务器问题。<br />
+想要做游戏加速，需要考虑：<br />
+1.你本地与代理服务器之间的延迟和丢包(去程)、2.代理服务器与游戏服务器之间的延迟和丢包(去程)、3.游戏服务器返回代理服务器之间的延迟和丢包(回程)、4.代理服务器返回你本地的延迟和丢包(回程)。<br />
+去程和回程的线路可能不同，这意味着延迟和丢包也不同，你必须让 1+2 和 3+4 的延迟低于你的直连游戏服务器时的延迟，而且还不能丢包，稳定性也要好，否则要么没用要么减速。。。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-08-08 01:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=41224#respond' onclick='return addComment.moveForm( "div-comment-41224", "41224", "respond", "2339" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-4" id="comment-41290"><div class="c-avatar"><div class="c-main" id="div-comment-41290">好像proxifier不转发udp, 对游戏不大友好<div class="c-meta"><span class="c-author">chaos</span>2018-08-09 11:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=41290#respond' onclick='return addComment.moveForm( "div-comment-41290", "41290", "respond", "2339" )' aria-label='回复给chaos'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-5" id="comment-41803"><div class="c-avatar"><div class="c-main" id="div-comment-41803">我用过proxifier+ssr玩战地4，然而没有什么用的样子。该设置的东西基本都是设好了的，不知道可不可以解释一下<div class="c-meta"><span class="c-author">kanteson</span>2018-08-16 22:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=41803#respond' onclick='return addComment.moveForm( "div-comment-41803", "41803", "respond", "2339" )' aria-label='回复给kanteson'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-39240"><div class="c-avatar"><div class="c-main" id="div-comment-39240">这个软件运行时间越长，占用内存越高，不知道有什么解决办法<div class="c-meta"><span class="c-author">tamasii</span>2018-06-20 06:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=39240#respond' onclick='return addComment.moveForm( "div-comment-39240", "39240", "respond", "2339" )' aria-label='回复给tamasii'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-42246"><div class="c-avatar"><div class="c-main" id="div-comment-42246">同问<div class="c-meta"><span class="c-author">=v=</span>2018-08-26 10:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=42246#respond' onclick='return addComment.moveForm( "div-comment-42246", "42246", "respond", "2339" )' aria-label='回复给=v='>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-43776"><div class="c-avatar"><div class="c-main" id="div-comment-43776">广告引起的内存泄漏，用无广告版就好了<div class="c-meta"><span class="c-author">东风快递</span>2018-09-29 21:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=43776#respond' onclick='return addComment.moveForm( "div-comment-43776", "43776", "respond", "2339" )' aria-label='回复给东风快递'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-39207"><div class="c-avatar"><div class="c-main" id="div-comment-39207">请问博主，UDP转发失败要怎么解决？可以用来翻，但是用不了游戏加速<div class="c-meta"><span class="c-author">jeremylin</span>2018-06-18 22:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=39207#respond' onclick='return addComment.moveForm( "div-comment-39207", "39207", "respond", "2339" )' aria-label='回复给jeremylin'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-42093"><div class="c-avatar"><div class="c-main" id="div-comment-42093">得要求你服务端部署的ss 支持udp ,如果是ssr 貌似默认就支持udp，另外 支持后 你还需要开放 udp 端口<div class="c-meta"><span class="c-author">Saf</span>2018-08-23 14:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=42093#respond' onclick='return addComment.moveForm( "div-comment-42093", "42093", "respond", "2339" )' aria-label='回复给Saf'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-42203"><div class="c-avatar"><div class="c-main" id="div-comment-42203">UDP哪来的端口？<div class="c-meta"><span class="c-author">NoDocCat</span>2018-08-25 10:41 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=42203#respond' onclick='return addComment.moveForm( "div-comment-42203", "42203", "respond", "2339" )' aria-label='回复给NoDocCat'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-39135"><div class="c-avatar"><div class="c-main" id="div-comment-39135">这个软件是不是停更了？<div class="c-meta"><span class="c-author">大大</span>2018-06-15 12:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=39135#respond' onclick='return addComment.moveForm( "div-comment-39135", "39135", "respond", "2339" )' aria-label='回复给大大'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-39157"><div class="c-avatar"><div class="c-main" id="div-comment-39157">被迫停更一段时间了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-06-16 10:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=39157#respond' onclick='return addComment.moveForm( "div-comment-39157", "39157", "respond", "2339" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-38863"><div class="c-avatar"><div class="c-main" id="div-comment-38863">SSTAP在测试是tcp通过udp基本通过几分钟后在测试就会消失无法链接，基本游戏无法代理。<div class="c-meta"><span class="c-author">Nicehr</span>2018-06-07 15:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=38863#respond' onclick='return addComment.moveForm( "div-comment-38863", "38863", "respond", "2339" )' aria-label='回复给Nicehr'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-38718"><div class="c-avatar"><div class="c-main" id="div-comment-38718">“不转发UDP”选项好像是直接Drop所有UDP流量，并不是直连<div class="c-meta"><span class="c-author">Doddy</span>2018-06-03 18:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=38718#respond' onclick='return addComment.moveForm( "div-comment-38718", "38718", "respond", "2339" )' aria-label='回复给Doddy'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-37871"><div class="c-avatar"><div class="c-main" id="div-comment-37871">在linux下也有全局工具。badvpn,有一个组件叫做，badvpn-sockstotun,顾名思义可以通过虚拟tun来实现全局代理<div class="c-meta"><span class="c-author">复古37</span>2018-05-17 01:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=37871#respond' onclick='return addComment.moveForm( "div-comment-37871", "37871", "respond", "2339" )' aria-label='回复给复古37'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-37478"><div class="c-avatar"><div class="c-main" id="div-comment-37478">chrome下载报毒<div class="c-meta"><span class="c-author">Vin</span>2018-05-08 21:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=37478#respond' onclick='return addComment.moveForm( "div-comment-37478", "37478", "respond", "2339" )' aria-label='回复给Vin'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-37317"><div class="c-avatar"><div class="c-main" id="div-comment-37317">sstap官网复活了<div class="c-meta"><span class="c-author">王小坏</span>2018-05-04 18:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=37317#respond' onclick='return addComment.moveForm( "div-comment-37317", "37317", "respond", "2339" )' aria-label='回复给王小坏'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-35889"><div class="c-avatar"><div class="c-main" id="div-comment-35889">不好用，希望开发简单的能配合SSR的游戏用插件<div class="c-meta"><span class="c-author">啊娃娃</span>2018-04-07 17:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=35889#respond' onclick='return addComment.moveForm( "div-comment-35889", "35889", "respond", "2339" )' aria-label='回复给啊娃娃'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-35610"><div class="c-avatar"><div class="c-main" id="div-comment-35610">找了好久都没有一个简单好用的Linux下利用ssr全局翻墙的方法。希望您有空能出个这方面的教程！十分期待！<div class="c-meta"><span class="c-author">gtsx</span>2018-04-03 20:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=35610#respond' onclick='return addComment.moveForm( "div-comment-35610", "35610", "respond", "2339" )' aria-label='回复给gtsx'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-32370"><div class="c-avatar"><div class="c-main" id="div-comment-32370">brook无法用sstap呀……tcp和udp转发都通不过<div class="c-meta"><span class="c-author">mmmzq</span>2018-03-01 11:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=32370#respond' onclick='return addComment.moveForm( "div-comment-32370", "32370", "respond", "2339" )' aria-label='回复给mmmzq'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-31826"><div class="c-avatar"><div class="c-main" id="div-comment-31826">我裸连NAT FullCone 挂上sstap NAT Symmetric 这是为啥 是我哪里设置出问题了么 和vps运营商有关系么 还是因为啥
+有哪位大佬知道么 感谢感谢  <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_lol.gif" alt=":lol:" class="wp-smiley" style="height: 1em; max-height: 1em;" /> 作为小白搞了一晚上已经绝望了<div class="c-meta"><span class="c-author">sun</span>2018-02-21 02:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=31826#respond' onclick='return addComment.moveForm( "div-comment-31826", "31826", "respond", "2339" )' aria-label='回复给sun'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-31825"><div class="c-avatar"><div class="c-main" id="div-comment-31825">想问问为什么用了sstap之后nat类型就变成4了 裸连是1  这个和vps服务商有关么 还是我哪里设置出了问题 感谢大佬<div class="c-meta"><span class="c-author">sun</span>2018-02-21 01:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=31825#respond' onclick='return addComment.moveForm( "div-comment-31825", "31825", "respond", "2339" )' aria-label='回复给sun'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-31914"><div class="c-avatar"><div class="c-main" id="div-comment-31914">作者推特上讲过会解决NAT 问题。结果停更了。<div class="c-meta"><span class="c-author">richx66</span>2018-02-22 18:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=31914#respond' onclick='return addComment.moveForm( "div-comment-31914", "31914", "respond", "2339" )' aria-label='回复给richx66'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-31363"><div class="c-avatar"><div class="c-main" id="div-comment-31363">全局-内置规则不能访问Google等网站是正常现象吗？ 使用仅网页浏览器-全局就可以访问Google，是哪里的配置出了问题吗？<div class="c-meta"><span class="c-author">Bluemond</span>2018-02-12 12:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=31363#respond' onclick='return addComment.moveForm( "div-comment-31363", "31363", "respond", "2339" )' aria-label='回复给Bluemond'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-31291"><div class="c-avatar"><div class="c-main" id="div-comment-31291">我觉得还是proxycap好用，但是有点小贵，没找到可用的破解版<div class="c-meta"><span class="c-author">fiend</span>2018-02-10 14:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=31291#respond' onclick='return addComment.moveForm( "div-comment-31291", "31291", "respond", "2339" )' aria-label='回复给fiend'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-30597"><div class="c-avatar"><div class="c-main" id="div-comment-30597">TCP连接检测失败，怎么处理<div class="c-meta"><span class="c-author">GGGG</span>2018-01-29 17:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=30597#respond' onclick='return addComment.moveForm( "div-comment-30597", "30597", "respond", "2339" )' aria-label='回复给GGGG'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-29964"><div class="c-avatar"><div class="c-main" id="div-comment-29964">逗比，逗比，在這下載的sstap 安裝後使用，直接發消息給騰訊雲數據中心.... 怎麼回事<div class="c-meta"><span class="c-author">gyy</span>2018-01-22 23:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=29964#respond' onclick='return addComment.moveForm( "div-comment-29964", "29964", "respond", "2339" )' aria-label='回复给gyy'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29975"><div class="c-avatar"><div class="c-main" id="div-comment-29975">不清楚，这里的SSTAP都是作者停止维护前我备份的。另外，这个软件当时作者也是有植入广告的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-23 11:43 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=29975#respond' onclick='return addComment.moveForm( "div-comment-29975", "29975", "respond", "2339" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-29727"><div class="c-avatar"><div class="c-main" id="div-comment-29727">逗比 这款sstap在dns泄漏上很严重<div class="c-meta"><span class="c-author">我大</span>2018-01-18 15:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=29727#respond' onclick='return addComment.moveForm( "div-comment-29727", "29727", "respond", "2339" )' aria-label='回复给我大'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29746"><div class="c-avatar"><div class="c-main" id="div-comment-29746">总归作者受到某些人的压力后，停止了更新。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-18 20:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=29746#respond' onclick='return addComment.moveForm( "div-comment-29746", "29746", "respond", "2339" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-29669"><div class="c-avatar"><div class="c-main" id="div-comment-29669">请问为什么用了sstap游戏反而慢了，自己搭的ssr，用的参数是加密:rc4-md5  协议:auth_aes128_md5  混淆:tls1.2_ticket_auth，会是混淆的问题吗？<div class="c-meta"><span class="c-author">boss_panda</span>2018-01-16 23:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=29669#respond' onclick='return addComment.moveForm( "div-comment-29669", "29669", "respond", "2339" )' aria-label='回复给boss_panda'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29416"><div class="c-avatar"><div class="c-main" id="div-comment-29416">UDP转发时好时坏<div class="c-meta"><span class="c-author">20789647</span>2018-01-11 15:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=29416#respond' onclick='return addComment.moveForm( "div-comment-29416", "29416", "respond", "2339" )' aria-label='回复给20789647'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-25103"><div class="c-avatar"><div class="c-main" id="div-comment-25103">新版本没有全局，想代理堡垒之夜也没有这个选项，咋办呀……<div class="c-meta"><span class="c-author">nihao</span>2017-12-15 17:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=25103#respond' onclick='return addComment.moveForm( "div-comment-25103", "25103", "respond", "2339" )' aria-label='回复给nihao'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-25733"><div class="c-avatar"><div class="c-main" id="div-comment-25733">我的 逗比云 中有旧版本，自行下载安装（先卸载新版本SSTAP）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-16 13:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=25733#respond' onclick='return addComment.moveForm( "div-comment-25733", "25733", "respond", "2339" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-24036"><div class="c-avatar"><div class="c-main" id="div-comment-24036">估计作者被喝茶了，这个软件，360报毒<div class="c-meta"><span class="c-author"><a href='http://meiyou.com/' rel='external nofollow' class='url'>sowhat</a></span>2017-12-08 21:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=24036#respond' onclick='return addComment.moveForm( "div-comment-24036", "24036", "respond", "2339" )' aria-label='回复给sowhat'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-24048"><div class="c-avatar"><div class="c-main" id="div-comment-24048">翻墙还用360。。。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-09 12:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=24048#respond' onclick='return addComment.moveForm( "div-comment-24048", "24048", "respond", "2339" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-23471"><div class="c-avatar"><div class="c-main" id="div-comment-23471">用腾讯云搭建的SSR，先提示4个连接已被服务器放弃，然后TCP和UDP测试全是失败。求解<div class="c-meta"><span class="c-author">枫叶枫叶枫</span>2017-11-27 17:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=23471#respond' onclick='return addComment.moveForm( "div-comment-23471", "23471", "respond", "2339" )' aria-label='回复给枫叶枫叶枫'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-23503"><div class="c-avatar"><div class="c-main" id="div-comment-23503">腾讯云有外部防火墙，注意去后台控制面板开放端口。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-28 09:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=23503#respond' onclick='return addComment.moveForm( "div-comment-23503", "23503", "respond", "2339" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-23406"><div class="c-avatar"><div class="c-main" id="div-comment-23406">作者停止开发了，逗比能研究下代理模式管理，添加新规则是怎么用的吗，之前增加了这个功能，在官网上也找不到教程。。。不会用哇<div class="c-meta"><span class="c-author">shadow</span>2017-11-26 21:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=23406#respond' onclick='return addComment.moveForm( "div-comment-23406", "23406", "respond", "2339" )' aria-label='回复给shadow'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-23307"><div class="c-avatar"><div class="c-main" id="div-comment-23307">作者停止开发，硬盘坏了。数据丢失。<div class="c-meta"><span class="c-author">统治者·吴·有点悔</span>2017-11-25 09:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=23307#respond' onclick='return addComment.moveForm( "div-comment-23307", "23307", "respond", "2339" )' aria-label='回复给统治者·吴·有点悔'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-23080"><div class="c-avatar"><div class="c-main" id="div-comment-23080">作者停止开发了，又一款软件凉了<div class="c-meta"><span class="c-author">六星</span>2017-11-20 22:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=23080#respond' onclick='return addComment.moveForm( "div-comment-23080", "23080", "respond", "2339" )' aria-label='回复给六星'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-23013"><div class="c-avatar"><div class="c-main" id="div-comment-23013">哎，作者停止开发了。。硬盘坏掉了。。。<div class="c-meta"><span class="c-author">mfzjz</span>2017-11-19 10:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=23013#respond' onclick='return addComment.moveForm( "div-comment-23013", "23013", "respond", "2339" )' aria-label='回复给mfzjz'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-23089"><div class="c-avatar"><div class="c-main" id="div-comment-23089">大家众凑把他硬盘数据恢复吧<div class="c-meta"><span class="c-author">xxss</span>2017-11-21 09:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=23089#respond' onclick='return addComment.moveForm( "div-comment-23089", "23089", "respond", "2339" )' aria-label='回复给xxss'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-22710"><div class="c-avatar"><div class="c-main" id="div-comment-22710">新版本（1.1.0.1）只能加速游戏了，删了全局<div class="c-meta"><span class="c-author">thee</span>2017-11-14 10:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=22710#respond' onclick='return addComment.moveForm( "div-comment-22710", "22710", "respond", "2339" )' aria-label='回复给thee'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-22713"><div class="c-avatar"><div class="c-main" id="div-comment-22713">原因前面的评论我解释过了。以后SSTAP只针对游戏代理加速方面。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-14 10:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=22713#respond' onclick='return addComment.moveForm( "div-comment-22713", "22713", "respond", "2339" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-22666"><div class="c-avatar"><div class="c-main" id="div-comment-22666">同楼上那位，更新到最新版之后似乎更新了规则，默认规则不能代理网页了，要换一个旧版本才行。另外想问一下，测试代理服务器时先显示连接已被服务器放弃，然后马上完成tcp传递和udp转发，实际代理也可以正常使用，请问可能是什么问题呢？<div class="c-meta"><span class="c-author">nitorisa</span>2017-11-13 19:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=22666#respond' onclick='return addComment.moveForm( "div-comment-22666", "22666", "respond", "2339" )' aria-label='回复给nitorisa'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-22683"><div class="c-avatar"><div class="c-main" id="div-comment-22683">作者说因为技术和定位问题，无法同时兼顾网页代理和游戏代理，所以以后只针对游戏代理加速方面。<br />
+至于第二个问题，去TG询问作者。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-13 21:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=22683#respond' onclick='return addComment.moveForm( "div-comment-22683", "22683", "respond", "2339" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-22341"><div class="c-avatar"><div class="c-main" id="div-comment-22341">sstap最新版好像有全面改为游戏加速器的样子，把全局，网页代理等规则删了。我想自己添加全局，网页全局等规则，但又不知道怎么设置，逗逼能不能教教<div class="c-meta"><span class="c-author">无</span>2017-11-11 01:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=22341#respond' onclick='return addComment.moveForm( "div-comment-22341", "22341", "respond", "2339" )' aria-label='回复给无'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-21219"><div class="c-avatar"><div class="c-main" id="div-comment-21219">proxifier 很好用啊。。设置起来没有这么复杂。。<div class="c-meta"><span class="c-author">pear28</span>2017-10-26 14:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=21219#respond' onclick='return addComment.moveForm( "div-comment-21219", "21219", "respond", "2339" )' aria-label='回复给pear28'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-23404"><div class="c-avatar"><div class="c-main" id="div-comment-23404">proxifier不支持udp<div class="c-meta"><span class="c-author">shadow</span>2017-11-26 21:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=23404#respond' onclick='return addComment.moveForm( "div-comment-23404", "23404", "respond", "2339" )' aria-label='回复给shadow'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-21188"><div class="c-avatar"><div class="c-main" id="div-comment-21188">这个软件自带了这么多的代理规则，那么这个时候SSR应该放置在哪个设置呢？直连？PAC还是全局？才会两个不冲突呢<div class="c-meta"><span class="c-author">ilovekkk</span>2017-10-26 09:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=21188#respond' onclick='return addComment.moveForm( "div-comment-21188", "21188", "respond", "2339" )' aria-label='回复给ilovekkk'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-23405"><div class="c-avatar"><div class="c-main" id="div-comment-23405">哪怕设置直连模式，也会按照sstap的来<div class="c-meta"><span class="c-author">shadow</span>2017-11-26 21:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=23405#respond' onclick='return addComment.moveForm( "div-comment-23405", "23405", "respond", "2339" )' aria-label='回复给shadow'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-21088"><div class="c-avatar"><div class="c-main" id="div-comment-21088">这个似乎会限制节点网速，SSR可以用3M，sstap只能跑2M不到，同个节点，同个视频<div class="c-meta"><span class="c-author">夏默</span>2017-10-25 08:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=21088#respond' onclick='return addComment.moveForm( "div-comment-21088", "21088", "respond", "2339" )' aria-label='回复给夏默'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-20943"><div class="c-avatar"><div class="c-main" id="div-comment-20943">本来想了个方案想用搬瓦工加速吃鸡，就是SS+SSTAP+KCPTUN,结果最后发现KCPTUN不支持UDP转发！<div class="c-meta"><span class="c-author">taskforce404</span>2017-10-23 01:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=20943#respond' onclick='return addComment.moveForm( "div-comment-20943", "20943", "respond", "2339" )' aria-label='回复给taskforce404'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-20864"><div class="c-avatar"><div class="c-main" id="div-comment-20864">解压不了啊<div class="c-meta"><span class="c-author">千岚</span>2017-10-21 20:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=20864#respond' onclick='return addComment.moveForm( "div-comment-20864", "20864", "respond", "2339" )' aria-label='回复给千岚'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-20810"><div class="c-avatar"><div class="c-main" id="div-comment-20810">安卓下的Drony就是类似的一个App。。。<div class="c-meta"><span class="c-author"><a href='http://qc3.qc.to/' rel='external nofollow' class='url'>mytomatoes</a></span>2017-10-21 03:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=20810#respond' onclick='return addComment.moveForm( "div-comment-20810", "20810", "respond", "2339" )' aria-label='回复给mytomatoes'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-20369"><div class="c-avatar"><div class="c-main" id="div-comment-20369">进入网站没有任何内容，空白一片。<div class="c-meta"><span class="c-author">aa</span>2017-10-15 19:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=20369#respond' onclick='return addComment.moveForm( "div-comment-20369", "20369", "respond", "2339" )' aria-label='回复给aa'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-20790"><div class="c-avatar"><div class="c-main" id="div-comment-20790">在链接最后加一个“/”。 https://www.sockscap64.com/sstap/<div class="c-meta"><span class="c-author">Thee</span>2017-10-20 23:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=20790#respond' onclick='return addComment.moveForm( "div-comment-20790", "20790", "respond", "2339" )' aria-label='回复给Thee'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-20303"><div class="c-avatar"><div class="c-main" id="div-comment-20303">大神，我用这个sstap tcp传递和udp转发都通过了，然后电脑就没网络了，这是怎么回事呢<div class="c-meta"><span class="c-author">vmware</span>2017-10-14 18:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/dbrj-5/?replytocom=20303#respond' onclick='return addComment.moveForm( "div-comment-20303", "20303", "respond", "2339" )' aria-label='回复给vmware'>回复</a></div></div></div></li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+		<a class="prev page-numbers" href="n7127eyp.html#comments">«</a>
+<a class='page-numbers' href='n7127eyp.html#comments'>1</a>
+<span class='page-numbers current'>2</span>
+<a class='page-numbers' href='ukyx2srm-2.html#comments'>3</a>
+<a class="next page-numbers" href="ukyx2srm-2.html#comments">»</a>	</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://kanfanba.com/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script type="text/javascript">
+var image_url=new Array()
+image_url=["https://www.vultr.com/","vh8576m0.html","https://virmach.com/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="xk4eb7d-container xk4eb7d-1 xk4eb7d-hide">
+    <div class="xk4eb7d-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="xk4eb7d"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

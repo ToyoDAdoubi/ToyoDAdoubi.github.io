@@ -1,0 +1,896 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>Linux SSH链接工具 Putty 新手详细使用教程 | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1946] -->
+<meta name="description"  content="很多没用过linux系统的新手小白，在使用linux的时候就栽在了第一步，链接SSH。很多人都不会使用Putty，总是有人问我。干脆写个详细的教程给你们看吧！ 注意：Putty有很多修改版汉化版，但是都被曝出过后门和漏洞，可能会上传你的 IP 端口和 root密码" />
+
+<meta name="keywords"  content="linux,putty,教程" />
+
+<link rel="canonical" href="vd6t3-k6.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='Shadowsocks利用 HaProxy 实现中继(中转/端口转发)加速' href='e0926y-q.html' />
+<link rel='next' title='SS-Panel 前后端详细演示安装 视频教程' href='ptm0lkbp.html' />
+<link rel='shortlink' href='https://doub.io/?p=1247' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Flinux-jc2%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Flinux-jc2%2F&amp;format=xml" />
+<style>
+.cked7de{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.cked7de-hide{
+    display: none;
+}
+.cked7de-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.cked7de-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.cked7de-2 .cked7de-body,.cked7de-3 .cked7de-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.cked7de-2 .close-btn,.cked7de-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.cked7de-3 .cked7de-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.cked7de').html(kill_adBlock_message);
+            jQuery('.cked7de-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.cked7de-container').fadeOut('cked7de-hide');
+        });
+    });
+    var kill_adBlock_status = 1;
+    var kill_adBlock_message = '逗比很伤心😥，您的<strong>广告拦截扩展</strong>屏蔽了我们的小广告，网站的发展离不开大家的支持，请先看过<a target=\"_blank\" style=\"color: #ffe500;\" href=\"3--didfb.html\">这个文章</a>后，再确定是否要将我们的域名添加到<strong>拦截白名单</strong>中，谢谢！😘👌';
+    var kill_adBlock_message_delay = 0;
+    var kill_adBlock_close_btn = 1;
+    var kill_adBlock_close_automatically = 0;
+    var kill_adBlock_close_automatically_delay = 0;
+    var kill_adBlock_message_type = 1;
+    function adBlockDetected() {
+      show_message();
+    }
+    
+    if(typeof killAdBlock === 'undefined') {
+        adBlockDetected();
+    } else {
+        killAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+    }
+</script>
+    <meta name="keywords" content="Linux, putty, 教程, Linux教程">
+<meta name="description" content="很多没用过linux系统的新手小白，在使用linux的时候就栽在了第一步，链接SSH。很多人都不会使用Putty，总是有人问我。干脆写个详细的教程给你们看吧！     注意：Putty有很多修改版汉化版，但是都被曝出过后门和漏洞，可能会上传你的 IP 端口和 root密码 ，或者在你的VPS中植入肉鸡木马来控制你的VPS为DDOS的肉鸡，所以请下载英文原版的使用！ 下载Putty： 逗比云  然后打开 Putty.exe 文件，出现下图">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-1247 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="./softs.wtf/"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Atoyodadoubi.github.io'; return false;" action="https://toyodadoubi.github.io/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 逗比云还是逃不过被墙的命运，既然如此那以后逗比云也就一直用被墙的旧域名 <strong><a target="_blank" href="./softs.wtf/">[softs.wtf]</a></strong> 算了。
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://www.gigsgigscloud.com/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="vd6t3-k6.html">Linux SSH链接工具 Putty 新手详细使用教程</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="3tpr86rp.html"> Linux教程</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 3年前 (2016-04-25)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 13195℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="vd6t3-k6.html#comments">54评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div class="old-message">本文最后更新于 <a><strong>2018年9月27日 13:33</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>很多没用过linux系统的新手小白，在使用linux的时候就栽在了第一步，链接SSH。很多人都不会使用Putty，总是有人问我。干脆写个详细的教程给你们看吧！</p>
+<hr />
+<p><span id="more-1247"></span></p>
+<pre>注意：Putty有很多修改版汉化版，但是都被曝出过后门和漏洞，<span style="color: #ff6464;"><strong>可能会上传你的 IP 端口和 root密码 ，或者在你的VPS中植入肉鸡木马来控制你的VPS为DDOS的肉鸡</strong></span>，所以请下载英文原版的使用！</pre>
+<p><strong>下载Putty：</strong> <a href="./softs.wtf/?dir=Software/SSH" target="_blank" rel="noopener">逗比云</a></p>
+<p>然后打开 <strong>Putty.exe</strong> 文件，出现下图。</p>
+<p><img class="aligncenter" src="8hq6lco1.png" alt="" width="456" height="438" /></p>
+<p><span style="color: #ff6464;"><strong>Host Name(or IP address)</strong> </span>是填你的VPS IP的；</p>
+<p><span style="color: #ff6464;"><strong>Port</strong></span> 是填你的SSH端口，一般都是默认的22，如果是其他的端口一般会在邮箱或者后台提示；</p>
+<blockquote><p><span style="color: #ff6464;"><strong>（非必须学习了解的）</strong></span>下面的Saved Sessions相当于保存服务器，当然只是保存VPS的IP和端口。</p>
+<p>先在上面输入IP和端口，然后在图中我输入 233vps 的输入框里输入标签（就是个VPS名称），然后点右边的Save保存；</p>
+<p>如果需要修改你要保存的标签，就按Load可以读取这个标签信息，然后就可以修改，再按Save保存。</p>
+<p>如果要使用这个标签里的服务器，直接双击标签就链接了。</p></blockquote>
+<p>输入完 <strong>IP和端口</strong> 就点 <span style="color: #ff6464;"><strong>Open</strong></span> 链接服务器！</p>
+<p>如果是这个电脑第一次链接这个VPS，就会提示你密匙问题，点 <span style="color: #ff6464;"><strong>是(Y)</strong></span> 就好了！</p>
+<p><img class="aligncenter" src="dwm1gq7z.png" alt="" width="422" height="312" /></p>
+<p>这时候就会出现下图窗口，会先提示你输入VPS的账号，一般都是用 root 账号(最高管理员)</p>
+<p>在<span style="color: #339966;"><strong> login as：</strong></span>后面输入<code> root </code>，然后回车。接着就会提示你输入你的VPS账号(root)的密码。</p>
+<p>在 <span style="color: #339966;"><strong><a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="43312c2c3703">[email&#160;protected]</a>你的VPS IP ' s password：</strong></span>后面输入你的root密码，然后回车。</p>
+<p><strong>需要注意的是，Linux在任何输入密码的时候，都是不会显示字符的，你看不到你输入的内容，有的人Root密码比较复杂或者怕输错，可以复制密码然后在这里右键粘贴，注意：Putty右键没有win一样的菜单，直接就粘贴了！</strong></p>
+<pre>你的root密码，一般你在购买VPS通过后会给你发一个含有VPS信息的邮件，同时应该有后台(VPS控制台)一样的地方，找到Root Password字样的就是获取或者修改root密码的地方了！</pre>
+<p>如果你的Root初始密码不好记，你可以输入<code> passwd </code>然后回车，会提示输入新密码，然后再回车，会让你再重复输入一次新密码，在回车就修改成功了！</p>
+<p>这时候就可以正常操作Linux了！</p>
+<p><img class="aligncenter" src="a1u42dl0.png" alt="" width="675" height="424" /></p>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="vd6t3-k6.html">Linux SSH链接工具 Putty 新手详细使用教程</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="1247" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">36</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="-hbe9vty.html" rel="tag">Linux</a><a href="71zryl4u.html" rel="tag">putty</a><a href="4y92q0ka.html" rel="tag">教程</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="e0926y-q.html" rel="prev">Shadowsocks利用 HaProxy 实现中继(中转/端口转发)加速</a></span>
+			<span class="article-nav-next"><a href="ptm0lkbp.html" rel="next">SS-Panel 前后端详细演示安装 视频教程</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="6z5d56n3.html" title="Linux 更适合新手的文本编辑器 <strong>nano</strong> 真 · 简单使用教程" target="_blank">
+<img src="_809qw-a.png?src=https://doub.io/wp-content/uploads/linux-3.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="Linux 更适合新手的文本编辑器 <strong>nano</strong> 真 · 简单使用教程" />	<br><span class="r_title">Linux 更适合新手的文本编辑器 <strong>nano</strong> 真 · 简单使用教程</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="wkcjzpyd.html" title="没教程写我要死了（滑稽），有想要让我写的教程请在这里告诉我！" target="_blank">
+<img src="xpz5exhd.jpg?src=https://doub.io/wp-content/uploads/3.jpg&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="没教程写我要死了（滑稽），有想要让我写的教程请在这里告诉我！" />	<br><span class="r_title">没教程写我要死了（滑稽），有想要让我写的教程请在这里告诉我！</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="350fptqs.html" title="Linux 无需服务器配置 使用 SFTP(FileZilla) 方便的上传/下载文件小白教程" target="_blank">
+<img src="duklxk1n.png?src=https://doub.io/wp-content/uploads/vpn2.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="Linux 无需服务器配置 使用 SFTP(FileZilla) 方便的上传/下载文件小白教程" />	<br><span class="r_title">Linux 无需服务器配置 使用 SFTP(FileZilla) 方便的上传/下载文件小白教程</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="xq4-65xu.html" title="Linux 修改默认SSH端口 22，避免被暴力破解密码" target="_blank">
+<img src="upr0f5bp.png?src=https://doub.io/wp-content/uploads/qita-05-03.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="Linux 修改默认SSH端口 22，避免被暴力破解密码" />	<br><span class="r_title">Linux 修改默认SSH端口 22，避免被暴力破解密码</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="6z5d56n3.html">Linux 更适合新手的文本编辑器 <strong>nano</strong> 真 · 简单使用教程</a></li><li><i class="fa fa-minus"></i><a href="wkcjzpyd.html">没教程写我要死了（滑稽），有想要让我写的教程请在这里告诉我！</a></li><li><i class="fa fa-minus"></i><a href="350fptqs.html">Linux 无需服务器配置 使用 SFTP(FileZilla) 方便的上传/下载文件小白教程</a></li><li><i class="fa fa-minus"></i><a href="xq4-65xu.html">Linux 修改默认SSH端口 22，避免被暴力破解密码</a></li><li><i class="fa fa-minus"></i><a href="gqnmhax9-2.html">Linux 更换密码登陆方式 为使用 Key密匙安全登陆，避免被暴力破解密码</a></li><li><i class="fa fa-minus"></i><a href="wae9j8oa.html">『原创』多服务器 云探针、云监控 —— ServerStatus 一键管理脚本</a></li><li><i class="fa fa-minus"></i><a href="tfma58rb.html">『原创』iptables 封禁 BT/PT/SPAM(垃圾邮件)和自定义端口/关键词 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="dvvp201-.html">『持续更新』Linux 常用命令简单介绍 —— 基础篇</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='1247' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (54)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-44334"><div class="c-avatar"><div class="c-main" id="div-comment-44334">大佬，第一次小白求教，刚在vultr上建的（日本，Debian 8x64,3.5$,startup scripts开始没选，后面选了Boot，都是一样），状态是运行的，没开防火墙。下载了putty，开机第一次连接，输入IP点Open提示Software caused connection abort，关掉重新输入后则提示connection timed out，再关掉再试一直提示connection timed out，好像每次重启电脑第一次提示都是Software caused connection abort，关了再开就是提示connection timed out。用连续TCPing，测试端口22和80，另外随便测试了几个端口，延迟都是显示2.5ms左右。请问这个是IP被墙了么？还是可能是什么问题？服务器有重启，电脑有重启，有用管理员身份允许都提示这个。<div class="c-meta"><span class="c-author">星辰大海</span>2018-10-13 14:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=44334#respond' onclick='return addComment.moveForm( "div-comment-44334", "44334", "respond", "1247" )' aria-label='回复给星辰大海'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-44335"><div class="c-avatar"><div class="c-main" id="div-comment-44335">2.5ms？这么魔法？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-10-13 15:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=44335#respond' onclick='return addComment.moveForm( "div-comment-44335", "44335", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-42374"><div class="c-avatar"><div class="c-main" id="div-comment-42374">用putty连接vps，每次输完密码之后，提示access denied。可以ping通，但tcping不通，是不是被墙了……还是单纯密码错误？我来来回回试了很多次，也确定没有多复制空格或多次右键。心好累……<div class="c-meta"><span class="c-author">kq</span>2018-08-29 04:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=42374#respond' onclick='return addComment.moveForm( "div-comment-42374", "42374", "respond", "1247" )' aria-label='回复给kq'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-42388"><div class="c-avatar"><div class="c-main" id="div-comment-42388">如果被墙，那么连提示你输入账号的步骤都不会有，更别说密码了，SSH 链接时会直接提示链接超时。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-08-29 12:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=42388#respond' onclick='return addComment.moveForm( "div-comment-42388", "42388", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-42248"><div class="c-avatar"><div class="c-main" id="div-comment-42248">输入ip点open后，显示错误，network error：connection timed out，请问这是怎么回事啊？<div class="c-meta"><span class="c-author">yc</span>2018-08-26 11:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=42248#respond' onclick='return addComment.moveForm( "div-comment-42248", "42248", "respond", "1247" )' aria-label='回复给yc'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-42255"><div class="c-avatar"><div class="c-main" id="div-comment-42255">可能的问题：
+<pre class="prettyprint linenums" >1. SSH信息填写错误（IP、SSH端口错误都会导致这个）
+2. 服务器IP被墙。
+3. 服务器网络问题。
+4. 服务器防火墙或IDC外部防火墙配置问题。
+</pre>
+基本上就这4项，很有可能你的IP是被墙的，以前该IP前任把IP搞被墙后，你购买服务器又分给你了。<br />
+你可以用 tcping 来测试端口：<a href="dkj0kb1w.html" target="_blank">Windows 使用 TCPing 工具来获取 TCP延迟、端口通顺情况、已禁Ping服务器的延迟</a><br />
+Ping 通，TCPing 不通，就是被墙。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-08-26 13:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=42255#respond' onclick='return addComment.moveForm( "div-comment-42255", "42255", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-38775"><div class="c-avatar"><div class="c-main" id="div-comment-38775">我的一直超时，不知道怎么办，如果是端口号不对，那么vulrt我也不知道怎么查呀。。<div class="c-meta"><span class="c-author">啊啊啊</span>2018-06-04 22:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=38775#respond' onclick='return addComment.moveForm( "div-comment-38775", "38775", "respond", "1247" )' aria-label='回复给啊啊啊'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-38784"><div class="c-avatar"><div class="c-main" id="div-comment-38784">vultr 默认SSH端口是 22，如果一直连接超时，请查看IP是否被墙，因为最近墙改变了封禁方式，所以 你可能会发现 IP 能 PING 通，但是 TCP UDP均无法连接。<br />
+墙检测到你的服务器可能是代理服务器时，就会TCP回程阻断，可能是封锁单个端口，也可能是22 80以外端口封锁，也可能是全部端口封锁。<br />
+你可以用 tcping 来测试端口：<a href="dkj0kb1w.html" target="_blank">Windows 使用 TCPing 工具来获取 TCP延迟、端口通顺情况、已禁Ping服务器的延迟</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-06-05 08:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=38784#respond' onclick='return addComment.moveForm( "div-comment-38784", "38784", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-38626"><div class="c-avatar"><div class="c-main" id="div-comment-38626">Connecting to 103.xx.xx.xx:22...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+
+Socket error Event: 32 Error: 10053.
+Connection closing...Socket close.
+
+Connection closed by foreign host.
+
+Disconnected from remote host(新建会话) at 10:10:56.
+
+Type `help' to learn how to use Xshell prompt.
+xshell链接不上，能PING通，用的荣耀云。<div class="c-meta"><span class="c-author">相惜</span>2018-06-01 11:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=38626#respond' onclick='return addComment.moveForm( "div-comment-38626", "38626", "respond", "1247" )' aria-label='回复给相惜'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-38657"><div class="c-avatar"><div class="c-main" id="div-comment-38657">最近墙似乎改变了封禁方式，改成了回程TCP封锁，也就是如果检测到确定是代理服务器，就会封锁TCP，ICMP(Ping) 还是能通的，但是任何TCP流量都会被阻挡。<br />
+墙检测到你的服务器可能是代理服务器时，就会TCP回程阻断，可能是封锁单个端口，也可能是22 80以外端口封锁，也可能是全部端口封锁。<br />
+你可以用 tcping 来测试端口：<a href="dkj0kb1w.html" target="_blank">Windows 使用 TCPing 工具来获取 TCP延迟、端口通顺情况、已禁Ping服务器的延迟</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-06-02 06:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=38657#respond' onclick='return addComment.moveForm( "div-comment-38657", "38657", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-31435"><div class="c-avatar"><div class="c-main" id="div-comment-31435">大佬我用putty工具连接vps显示Access denied怎么回事一直连不上，过两天又可以连接了。<div class="c-meta"><span class="c-author">xx</span>2018-02-14 00:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=31435#respond' onclick='return addComment.moveForm( "div-comment-31435", "31435", "respond", "1247" )' aria-label='回复给xx'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-31443"><div class="c-avatar"><div class="c-main" id="div-comment-31443">恢复正常了还问什么？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-14 10:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=31443#respond' onclick='return addComment.moveForm( "div-comment-31443", "31443", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-29778"><div class="c-avatar"><div class="c-main" id="div-comment-29778">多谢站长分享，小白路过；不过看了教程也弄好了，我遇到的Putty连不上vps的原因（network error：connection refused）：第一次是IP被q，所以ping不通，摧毁重建的；第二次可能是用了破解版的IDM，就是命令行破解那个，重启电脑后正常了，给更白的人看。。<div class="c-meta"><span class="c-author">你有张良计</span>2018-01-19 13:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=29778#respond' onclick='return addComment.moveForm( "div-comment-29778", "29778", "respond", "1247" )' aria-label='回复给你有张良计'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-26051"><div class="c-avatar"><div class="c-main" id="div-comment-26051">您好，问下输入IP保存了之后点Open出现“Network error：software caused coonnection  abort”这种情况要怎么办呢<div class="c-meta"><span class="c-author">E65</span>2017-12-16 23:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=26051#respond' onclick='return addComment.moveForm( "div-comment-26051", "26051", "respond", "1247" )' aria-label='回复给E65'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-26565"><div class="c-avatar"><div class="c-main" id="div-comment-26565">这个错误我还没遇到过，你只能尝试一下 在别的网络环境下链接你的服务器试试（或者让别人朋友试试），以及尝试更换SSH链接软件试试，例如 Xshell （去官网下载，不要去百度应用中心之类的下载）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-17 15:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=26565#respond' onclick='return addComment.moveForm( "div-comment-26565", "26565", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-21954"><div class="c-avatar"><div class="c-main" id="div-comment-21954">connection time out 连接超时，vps正常，网络连接正常，端口和校园网教育网有关系吗？仍旧是22吗?求解救。。。<div class="c-meta"><span class="c-author">大帅比</span>2017-11-05 09:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=21954#respond' onclick='return addComment.moveForm( "div-comment-21954", "21954", "respond", "1247" )' aria-label='回复给大帅比'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-21992"><div class="c-avatar"><div class="c-main" id="div-comment-21992">SSH链接服务器超时有几种原因，自行排除：
+<pre class="prettyprint linenums" >IP或SSH端口填写错误。
+VPS内部防火墙(iptables) 或 外部防火墙(只有阿里云、微软云这类才有)没有开放 SSH端口。
+IP被墙。（能 Ping通可以排除）
+这个IP的SSH端口被墙封了。
+这个IP的SSH链接被墙干扰或封锁了（可能是范围干扰）。
+你的运营商屏蔽了这个IP链接。（能 Ping通可以排除）
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-05 17:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=21992#respond' onclick='return addComment.moveForm( "div-comment-21992", "21992", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-22420"><div class="c-avatar"><div class="c-main" id="div-comment-22420">22端口被封怎么解决呢<div class="c-meta"><span class="c-author">东东</span>2017-11-11 11:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=22420#respond' onclick='return addComment.moveForm( "div-comment-22420", "22420", "respond", "1247" )' aria-label='回复给东东'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-22425"><div class="c-avatar"><div class="c-main" id="div-comment-22425">重装系统。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-11 12:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=22425#respond' onclick='return addComment.moveForm( "div-comment-22425", "22425", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt depth-3" id="comment-41463"><div class="c-avatar"><div class="c-main" id="div-comment-41463">刚买在dmit上买的ip，连接putty time out，用tcping ping statistics 100% failed<div class="c-meta"><span class="c-author">jacky</span>2018-08-11 10:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=41463#respond' onclick='return addComment.moveForm( "div-comment-41463", "41463", "respond", "1247" )' aria-label='回复给jacky'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-41466"><div class="c-avatar"><div class="c-main" id="div-comment-41466">普通 Ping 通吗？如果通，多半IP是被前任玩坏被墙的，请尽快发工单联系客服更换IP。否则客服可能会怀疑是你的行为导致IP被墙的，而不给你免费更换IP。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-08-11 11:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=41466#respond' onclick='return addComment.moveForm( "div-comment-41466", "41466", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt depth-3" id="comment-41464"><div class="c-avatar"><div class="c-main" id="div-comment-41464">电信的网<div class="c-meta"><span class="c-author">jacky</span>2018-08-11 10:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=41464#respond' onclick='return addComment.moveForm( "div-comment-41464", "41464", "respond", "1247" )' aria-label='回复给jacky'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-21575"><div class="c-avatar"><div class="c-main" id="div-comment-21575">dedicenterr的ip是邮件那个还是在控制面板里生成的那个ssh的ip？怎么我输入邮件里提供的ip连接不了啊，求助<div class="c-meta"><span class="c-author">xiaork</span>2017-10-31 00:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=21575#respond' onclick='return addComment.moveForm( "div-comment-21575", "21575", "respond", "1247" )' aria-label='回复给xiaork'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-21581"><div class="c-avatar"><div class="c-main" id="div-comment-21581">邮件里给的IP和后台控制面板里的不一样？你先确定IP是否被墙（<a href="jgjhicaj-2.html" target="_blank">https://doub.io/sxsx-10/</a>）。目前热门的IDC都存在大量被墙IP。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-31 09:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=21581#respond' onclick='return addComment.moveForm( "div-comment-21581", "21581", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-19944"><div class="c-avatar"><div class="c-main" id="div-comment-19944">Xshell和Putty链接SSH时大多数时候都不能输入命令  有时等很长一段时间才可以输 是延迟的锅吗 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_lol.gif" alt=":lol:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">doge</span>2017-10-11 13:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=19944#respond' onclick='return addComment.moveForm( "div-comment-19944", "19944", "respond", "1247" )' aria-label='回复给doge'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-19945"><div class="c-avatar"><div class="c-main" id="div-comment-19945">延迟、丢包，都会造成SSH中，你输入命令时反应很慢的情况。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-11 13:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=19945#respond' onclick='return addComment.moveForm( "div-comment-19945", "19945", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-19947"><div class="c-avatar"><div class="c-main" id="div-comment-19947">谢谢Toyo大佬 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_smile.gif" alt=":smile:" class="wp-smiley" style="height: 1em; max-height: 1em;" /> 不是其他问题就好 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_mrgreen.gif" alt=":mrgreen:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">doge</span>2017-10-11 14:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=19947#respond' onclick='return addComment.moveForm( "div-comment-19947", "19947", "respond", "1247" )' aria-label='回复给doge'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-19497"><div class="c-avatar"><div class="c-main" id="div-comment-19497">command not found   始终都是这样！ 请给我帮助，谢谢<div class="c-meta"><span class="c-author">0000</span>2017-10-06 23:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=19497#respond' onclick='return addComment.moveForm( "div-comment-19497", "19497", "respond", "1247" )' aria-label='回复给0000'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-19500"><div class="c-avatar"><div class="c-main" id="div-comment-19500">命令不存在，只给出这个信息，并不能判断出什么，请截图或者出示完整的操作步骤。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-07 00:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=19500#respond' onclick='return addComment.moveForm( "div-comment-19500", "19500", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-15149"><div class="c-avatar"><div class="c-main" id="div-comment-15149">SSH密钥怎么生成啊，完全不懂啊，申请了个VPS创建容器的时候就要填SSH密钥，然而我没有啊<div class="c-meta"><span class="c-author">krokyhui</span>2017-06-28 22:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=15149#respond' onclick='return addComment.moveForm( "div-comment-15149", "15149", "respond", "1247" )' aria-label='回复给krokyhui'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-15157"><div class="c-avatar"><div class="c-main" id="div-comment-15157"><a href="gqnmhax9-2.html" target="_blank" rel="nofollow">Linux 更换密码登陆方式 为使用 Key密匙安全登陆，避免被暴力破解密码</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-29 12:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=15157#respond' onclick='return addComment.moveForm( "div-comment-15157", "15157", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-15148"><div class="c-avatar"><div class="c-main" id="div-comment-15148">我是window系统，买了VPS想要搭建SSR账号，但我下载putty输入完IP地址在打开的时候没办法输入login as ,会弹出来提示network error:connection time out,这个有办法解决吗<div class="c-meta"><span class="c-author">ashely</span>2017-06-28 21:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=15148#respond' onclick='return addComment.moveForm( "div-comment-15148", "15148", "respond", "1247" )' aria-label='回复给ashely'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-15156"><div class="c-avatar"><div class="c-main" id="div-comment-15156">网络链接超时，代表IP或端口错误，或服务器网络有问题Ping一下看看（或者根本没开机），或者服务器的IDC或上层路由碰巧屏蔽了你的IP或IP段。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-29 12:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=15156#respond' onclick='return addComment.moveForm( "div-comment-15156", "15156", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-15193"><div class="c-avatar"><div class="c-main" id="div-comment-15193">问了客服，他们说默认不安装系统是什么意思<div class="c-meta"><span class="c-author">ashely</span>2017-06-30 19:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=15193#respond' onclick='return addComment.moveForm( "div-comment-15193", "15193", "respond", "1247" )' aria-label='回复给ashely'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-15207"><div class="c-avatar"><div class="c-main" id="div-comment-15207">就是字面意思啊，需要你手动点[重装系统]来安装系统。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-07-01 13:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=15207#respond' onclick='return addComment.moveForm( "div-comment-15207", "15207", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-13873"><div class="c-avatar"><div class="c-main" id="div-comment-13873">小白求教，买了vps但是不会搭建ssr账号，请问windows系统能搭建吗，我看教程是linux的，试了win系统下载putty，ip登陆后就显示无网络链接了。<div class="c-meta"><span class="c-author">zzddsg</span>2017-05-16 22:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=13873#respond' onclick='return addComment.moveForm( "div-comment-13873", "13873", "respond", "1247" )' aria-label='回复给zzddsg'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-13877"><div class="c-avatar"><div class="c-main" id="div-comment-13877">提示连接超时？请写出提示的完整信息。如果是连接超时，就确保IP和端口没有填写错误，然后确定IP能Ping通（一般代表正常开机）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-17 01:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=13877#respond' onclick='return addComment.moveForm( "div-comment-13877", "13877", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-13882"><div class="c-avatar"><div class="c-main" id="div-comment-13882">显示network error：connection refused，麻烦了<div class="c-meta"><span class="c-author">zzddsg</span>2017-05-17 10:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=13882#respond' onclick='return addComment.moveForm( "div-comment-13882", "13882", "respond", "1247" )' aria-label='回复给zzddsg'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-13888"><div class="c-avatar"><div class="c-main" id="div-comment-13888">你是在那个操作处提示这个的？是输入IP和SSH端口点击连接后，还是输入账号root和密码后出现的？<br />
+出现的不是连接超时，而是被拒绝，很有可能是SSH端口错误导致的，因为端口错误而被服务器拒绝。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-17 12:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=13888#respond' onclick='return addComment.moveForm( "div-comment-13888", "13888", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-5" id="comment-13891"><div class="c-avatar"><div class="c-main" id="div-comment-13891">输入ssh后出现的，服务器给的信息好像只有ip和root密码，ssh我看教程填的22，可能是这步错了？还有在win10上操作没有问题吧？<div class="c-meta"><span class="c-author">simon</span>2017-05-17 12:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=13891#respond' onclick='return addComment.moveForm( "div-comment-13891", "13891", "respond", "1247" )' aria-label='回复给simon'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-6" id="comment-13894"><div class="c-avatar"><div class="c-main" id="div-comment-13894">一般来说大部分VPS都是默认22 端口，但是不保证一定是，你要先确定端口到底是不是22.<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-17 14:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=13894#respond' onclick='return addComment.moveForm( "div-comment-13894", "13894", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12471"><div class="c-avatar"><div class="c-main" id="div-comment-12471">macOS的话推荐什么工具呢？<div class="c-meta"><span class="c-author">鱼骨头学长</span>2017-04-05 17:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=12471#respond' onclick='return addComment.moveForm( "div-comment-12471", "12471", "respond", "1247" )' aria-label='回复给鱼骨头学长'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-12473"><div class="c-avatar"><div class="c-main" id="div-comment-12473">不清楚，没有MAC设备。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-05 18:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=12473#respond' onclick='return addComment.moveForm( "div-comment-12473", "12473", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-11557"><div class="c-avatar"><div class="c-main" id="div-comment-11557">为什么我的putty连vultr一直acessdenied<div class="c-meta"><span class="c-author">kevin</span>2017-03-13 18:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=11557#respond' onclick='return addComment.moveForm( "div-comment-11557", "11557", "respond", "1247" )' aria-label='回复给kevin'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-11561"><div class="c-avatar"><div class="c-main" id="div-comment-11561">密码输入错误？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-13 19:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=11561#respond' onclick='return addComment.moveForm( "div-comment-11561", "11561", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-11181"><div class="c-avatar"><div class="c-main" id="div-comment-11181">我的private key 丢了，是不是putty再也联不上服务器了。。我本来想装shadowsocksR的，这回是不是必须买个新服务器了？<div class="c-meta"><span class="c-author">Krad</span>2017-03-03 22:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=11181#respond' onclick='return addComment.moveForm( "div-comment-11181", "11181", "respond", "1247" )' aria-label='回复给Krad'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-11185"><div class="c-avatar"><div class="c-main" id="div-comment-11185">一是，联系IDC的客服技术人员，看看能不能帮你搞一搞。<br />
+二是，重装系统。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-03 22:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=11185#respond' onclick='return addComment.moveForm( "div-comment-11185", "11185", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-10828"><div class="c-avatar"><div class="c-main" id="div-comment-10828">putty最近突然不能连接vultr的ss了,输入密码之后就提示错误Access denied<div class="c-meta"><span class="c-author">zer0</span>2017-02-21 00:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=10828#respond' onclick='return addComment.moveForm( "div-comment-10828", "10828", "respond", "1247" )' aria-label='回复给zer0'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-10830"><div class="c-avatar"><div class="c-main" id="div-comment-10830">输入密码后提示拒绝访问，说明密码输入不正确。<br />
+无论你再怎么确定密码没输错，但是提示这个依然代表密码不正确。<br />
+建议使用 Vultr控制面板 重置ROOT密码。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-02-21 01:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=10830#respond' onclick='return addComment.moveForm( "div-comment-10830", "10830", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-10150"><div class="c-avatar"><div class="c-main" id="div-comment-10150">我是在Github上下载的汉化版putty,这个会议后门吗<div class="c-meta"><span class="c-author">Littlematch</span>2017-01-26 18:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=10150#respond' onclick='return addComment.moveForm( "div-comment-10150", "10150", "respond", "1247" )' aria-label='回复给Littlematch'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-10152"><div class="c-avatar"><div class="c-main" id="div-comment-10152">不清楚，开源吗？反正Putty就那几个功能，对汉化需求很低，如果想要功能更多的就使用Xshell。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-01-26 18:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=10152#respond' onclick='return addComment.moveForm( "div-comment-10152", "10152", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-6451"><div class="c-avatar"><div class="c-main" id="div-comment-6451">既然putty的修改中文版有漏洞，为何不用Xshell，自带中文，有免费版，就是有弹窗比较烦<div class="c-meta"><span class="c-author">zero</span>2016-04-26 00:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=6451#respond' onclick='return addComment.moveForm( "div-comment-6451", "6451", "respond", "1247" )' aria-label='回复给zero'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-6457"><div class="c-avatar"><div class="c-main" id="div-comment-6457">没说不让用Xshell啊，我只是习惯了Putty，入门先用这个就好了，而且这个不汉化也没什么影响的，毕竟没多少英文需要了解<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-04-26 12:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=6457#respond' onclick='return addComment.moveForm( "div-comment-6457", "6457", "respond", "1247" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-31166"><div class="c-avatar"><div class="c-main" id="div-comment-31166">如果VPS没有X11-fowarding程序显示出disabIed of not supported by server怎么处理？<div class="c-meta"><span class="c-author">蓝冰薄荷糖</span>2018-02-07 15:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc2/?replytocom=31166#respond' onclick='return addComment.moveForm( "div-comment-31166", "31166", "respond", "1247" )' aria-label='回复给蓝冰薄荷糖'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+			</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://kanfanba.com/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script data-cfasync="false" src="hnpipwj_.js"></script><script type="text/javascript">
+var image_url=new Array()
+image_url=["https://www.vultr.com/","vh8576m0.html","https://virmach.com/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="cked7de-container cked7de-1 cked7de-hide">
+    <div class="cked7de-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="cked7de"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

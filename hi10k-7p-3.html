@@ -1,0 +1,840 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面) | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1947] -->
+<meta name="description"  content="本来 SS SSR 用的用的高高兴兴，结果从今年初开始，很多人反应 SS SSR 代理账号被封了，更换IP后又是很快GG，导致很多人纷纷逃离 SS SSR，转向 V2ray Brook 等代理软件了。 但同样，也有很多人反应一直相安无事没有被墙，我简单研究了下，大概和以下几点有关：" />
+
+<meta name="keywords"  content="shadowsocks,shadowsocksr,混淆" />
+
+<link rel="canonical" href="hi10k-7p-3.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='网页管理 Brook、SS、Socks5 代理账号 —— Brook-Web 使用教程' href='k71l4klb.html' />
+<link rel='next' title='『原创』Shadowsocks Go版 一键安装管理脚本' href='kd691l4o.html' />
+<link rel='shortlink' href='https://doub.io/?p=2938' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fss-jc66%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fss-jc66%2F&amp;format=xml" />
+<style>
+.xka4f94{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.xka4f94-hide{
+    display: none;
+}
+.xka4f94-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.xka4f94-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.xka4f94-2 .xka4f94-body,.xka4f94-3 .xka4f94-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.xka4f94-2 .close-btn,.xka4f94-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.xka4f94-3 .xka4f94-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.xka4f94').html(kill_adBlock_message);
+            jQuery('.xka4f94-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.xka4f94-container').fadeOut('xka4f94-hide');
+        });
+    });
+    var kill_adBlock_status = 1;
+    var kill_adBlock_message = '逗比很伤心😥，您的<strong>广告拦截扩展</strong>屏蔽了我们的小广告，网站的发展离不开大家的支持，请先看过<a target=\"_blank\" style=\"color: #ffe500;\" href=\"3--didfb.html\">这个文章</a>后，再确定是否要将我们的域名添加到<strong>拦截白名单</strong>中，谢谢！😘👌';
+    var kill_adBlock_message_delay = 0;
+    var kill_adBlock_close_btn = 1;
+    var kill_adBlock_close_automatically = 0;
+    var kill_adBlock_close_automatically_delay = 0;
+    var kill_adBlock_message_type = 1;
+    function adBlockDetected() {
+      show_message();
+    }
+    
+    if(typeof killAdBlock === 'undefined') {
+        adBlockDetected();
+    } else {
+        killAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+    }
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="Shadowsocks, ShadowsocksR, 混淆, Shadowsocks, 逗比科普">
+<meta name="description" content="本来 SS SSR 用的用的高高兴兴，结果从今年初开始，很多人反应 SS SSR 代理账号被封了，更换IP后又是很快GG，导致很多人纷纷逃离 SS SSR，转向 V2ray Brook 等代理软件了。  但同样，也有很多人反应一直相安无事没有被墙，我简单研究了下，大概和以下几点有关：   	代理服务器地区(日本、美国等热门地区)  	滥用、乱用、无脑用SS SSR的混淆  我一个个解释下： 其实我大半个月前就在 Telegram 发过简">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-2938 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li class="current-post-ancestor"><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="./softs.wtf/"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Atoyodadoubi.github.io'; return false;" action="https://toyodadoubi.github.io/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 逗比云还是逃不过被墙的命运，既然如此那以后逗比云也就一直用被墙的旧域名 <strong><a target="_blank" href="./softs.wtf/">[softs.wtf]</a></strong> 算了。
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://www.gigsgigscloud.com/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="hi10k-7p-3.html">给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="qha-5xcm.html"> Shadowsocks</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 2周前 (11-06)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 1416℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="hi10k-7p-3.html#comments">37评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="hi10k-7p-3.html#代理服务器地区(日本、美国等热门地区)" title="代理服务器地区(日本、美国等热门地区)"><span>代理服务器地区(日本、美国等热门地区)</span></a></li><li class="content-index-level-1"><a href="hi10k-7p-3.html#滥用、乱用、无脑用SS SSR的混淆" title="滥用、乱用、无脑用SS SSR的混淆"><span>滥用、乱用、无脑用SS SSR的混淆</span></a></li><li class="content-index-level-1"><a href="hi10k-7p-3.html#不想看前面解释的，直接看简单说明" title="不想看前面解释的，直接看简单说明"><span>不想看前面解释的，直接看简单说明</span></a></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年11月6日 18:39</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>本来 SS SSR 用的用的高高兴兴，结果从今年初开始，很多人反应 SS SSR 代理账号被封了，更换IP后又是很快GG，导致很多人纷纷逃离 SS SSR，转向 V2ray Brook 等代理软件了。</p>
+<p>但同样，也有很多人反应一直相安无事没有被墙，我简单研究了下，大概和以下几点有关：</p>
+<ol>
+<li><strong>代理服务器地区(日本、美国等热门地区)</strong></li>
+<li><strong>滥用、乱用、无脑用SS SSR的混淆</strong></li>
+</ol>
+<p>我一个个解释下：</p>
+<pre>其实我大半个月前就在 Telegram 发过简单说明，不过还是有很多人看不到，所以我就发给文章说明一下。</pre>
+<h3 id="代理服务器地区(日本、美国等热门地区)">代理服务器地区(日本、美国等热门地区)</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>经过我的观察(包括我自身情况)，大概可以得出：<strong>日本、美国热门地区的服务器被墙几率高于其他地区。</strong></p>
+<hr />
+<p>我也在 Telegram 做过一个两千人参与的<a href="https://t.me/doubi_a/353" target="_blank" rel="noopener">哪些地区被墙次数最多的投票</a>(仅供参考，不要杠)，结果<strong>香港、日本、美国加起来占了 86%，而美国就占了 48%，差不多一半。</strong></p>
+<p>或许有人会说什么基数，的确这种小规模投票不能代表所有人，但是我这个投票是选择<strong>你手里被墙次数最多的地区</strong>，这意味着如果一个人选择了美国，那么代表他的美国服务器被墙次数高于他手里的其他地区代理服务器。这不是什么大数据统计，但也能反映一些问题。至少比个人经验、看脸论强一些。</p>
+<p><strong>正因为这些热门地区搭建代理的人多，所以GFW会重点关注这些地区，导致被墙几率相比其它地区会更高。</strong></p>
+<hr />
+<p>另外说一说我自身情况。</p>
+<p>我手里有一些这几年买的自用服务器，一直以来搭建的都是 SSR，香港、日本、美国、欧洲、俄罗斯地区都有。</p>
+<p>在今年之前，也就是 GFW1.0 的时候，都是敏感时期一波一波的封，偶尔可能会封我各香港、日本、美国的服务器，但是欧洲和俄罗斯的毛事没有。但是今年之后，日本和美国的服务器是遭了殃，频繁被墙，换IP也顶不了多长时间，最后只能无奈放弃日本、美国服务器了。不过很奇怪的是，我的香港服务器今年开始就一次都没有被墙过，很迷。而欧洲和俄罗斯这些相对冷门的地区依然是毛事没有。</p>
+<p>再说说我分享的免费账号，今年之前，无论是美国还是加拿大的服务器都是一波一波的偶尔就会被墙一次，但是今年之后，美国服务器也是如上所述遭了殃，我陆续更换了很多美国地区都没什么卵用（目前都换到了欧洲），然而是加拿大的服务器今年开始一次都没有被墙过(和我自用的香港似的)，很迷。</p>
+<hr />
+<p><strong>综上所述，如果你使用某个地区的服务器频繁被墙，那么你 要么更换代理软件，要么就换其他地区试试，否则只能继续送人头了。</strong></p>
+<p></p></div>
+<h3 id="滥用、乱用、无脑用SS SSR的混淆">滥用、乱用、无脑用SS SSR的混淆</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>SS SSR都有混淆功能，不过我今天主要说 SSR，SS 用户可以参考下，而很多SSR脚本(包括我的脚本)默认的混淆参数都是 <strong>tls1.2_ticket_auth</strong>（前段时间两个脚本都改成默认 plain 了），而经过我的简单研究发现：<strong>只使用HTTP或HTTPS混淆的代理服务器被墙几率更高。</strong></p>
+<hr />
+<p>首先，无论是 SS 还是 SSR 的混淆，都属于伪混淆，即代理客户端将访问代理服务器的流量伪装成访问 HTTP HTTPS 网页的流量，但是如果你没有做真实网站(SSR 服务端的 redirect 参数)，那么这都是有可能被主动探测识破的。</p>
+<p>SSR 的HTTP HTTPS混淆一开始的目的是针对那些被限速的地区(例如学校、公司)，混淆伪装为 HTTP HTTPS 即可避开限速。后来 HTTP HTTPS混淆就更偏向于让 GFW 难以发现(服务端 redirect 参数)，不过很多人依然是<strong>只选择 HTTP HTTPS 混淆插件，混淆参数也不填，服务端 redirect 参数也不做，端口也不是 80 443。</strong></p>
+<p>这样在外界看来，你的流量就是在访问 <strong>http://ip:4567</strong> 一样，看起来就很奇怪。</p>
+<p>有的人可能还会填个混淆参数，不过填写的混淆域名也是各种逗比，有什么 bing.com 、www.icloud.com 之类的。。。我就很纳闷了，首先这种单纯混淆伪装的方式是没有真实域名解析的，<strong>即互联网中根本没有该域名解析为你的服务器IP的解析记录</strong>。其次你用个 Vultr 、搬瓦工，混淆个 微软、苹果 的域名，难道微软和苹果都已经差钱到只能买 Vultr、搬瓦工这等级的服务器维生了么？这也太假了吧，就不能站在 GFW 的角度想一想。。。</p>
+<p>但是，就算你选个没毛病的域名来混淆伪装，结果被 GFW 一波主动探测识破根本没有网站，那岂不是直接明白你在用 SS 或 SSR 了吗？</p>
+<hr />
+<p><strong>综上所述，要么你搭配服务端的 redirect 参数做个真实网站，要么就干脆用原版混淆插件（ plain ）。</strong></p>
+<p></p></div>
+<h3 id="不想看前面解释的，直接看简单说明">不想看前面解释的，直接看简单说明</h3>
+<p>首先 SSR 目前依然是可以正常使用的，不过在热门地区（日本、美国等）被墙几率会高一些。</p>
+<p>很多人都是默认只用 HTTP HTTPS 混淆插件 ，或者再写个混淆参数 ，但是这样属于伪混淆 ，仅仅是将流量伪装成 HTTP HTTPS 流量，并没有真实网站，所以可以被<strong>主动探测识破</strong>。</p>
+<p>因此，在热门地区（日本、美国等）搭建 SSR 代理的，建议要么搭配服务端的 <strong>redirect</strong> 参数做个真实网站（只能降低被墙记录，不能保证不被墙），要么就干脆用<strong>原版混淆插件（ plain ）。</strong></p>
+<p>毕竟，对于可以被主动探测的伪混淆，<strong>不做混淆反而被墙几率更低</strong>，只靠协议来降低流量特征减少被墙几率。</p>
+<hr />
+<p><strong>对于SSR 配置 redirect 请看： <a href="hi10k-7p-5.html" target="_blank" rel="noopener">ShadowsocksR服务端伪装成 正常网站流量，以更好的欺骗流量匹配</a></strong></p>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="hi10k-7p-3.html">给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="2938" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">456</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="oyjpgxqd.html" rel="tag">Shadowsocks</a><a href="g6hfu0lq.html" rel="tag">ShadowsocksR</a><a href="dllw-mj3.html" rel="tag">混淆</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="k71l4klb.html" rel="prev">网页管理 <strong>Brook、SS、Socks5</strong> 代理账号 —— Brook-Web 使用教程</a></span>
+			<span class="article-nav-next"><a href="kd691l4o.html" rel="next">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="kd691l4o.html" title="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" target="_blank">
+<img src="sp6xrfo1.png?src=https://doub.io/wp-content/uploads/shadowsocks3.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" />	<br><span class="r_title">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="a6551xds.html" title="『视频』ShadowsocksR 服务端一键脚本安装 新手小白视频教程" target="_blank">
+<img src="-b0b-ldi.png?src=https://doub.io/wp-content/uploads/qita-03.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『视频』ShadowsocksR 服务端一键脚本安装 新手小白视频教程" />	<br><span class="r_title">『视频』ShadowsocksR 服务端一键脚本安装 新手小白视频教程</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="yv4cp61c.html" title="『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本" target="_blank">
+<img src="kk4ik0cm.png?src=https://doub.io/wp-content/uploads/brook1.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本" />	<br><span class="r_title">『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="9n7kdq_k-2.html" title="『原创』Shadowsocks tinyPortMapper 中继(中转/端口转发) 便捷管理脚本" target="_blank">
+<img src="4yr4ftqy.png?src=https://doub.io/wp-content/uploads/qita-04-16.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Shadowsocks tinyPortMapper 中继(中转/端口转发) 便捷管理脚本" />	<br><span class="r_title">『原创』Shadowsocks tinyPortMapper 中继(中转/端口转发) 便捷管理脚本</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="kd691l4o.html">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</a></li><li><i class="fa fa-minus"></i><a href="a6551xds.html">『视频』ShadowsocksR 服务端一键脚本安装 新手小白视频教程</a></li><li><i class="fa fa-minus"></i><a href="yv4cp61c.html">『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本</a></li><li><i class="fa fa-minus"></i><a href="9n7kdq_k-2.html">『原创』Shadowsocks tinyPortMapper 中继(中转/端口转发) 便捷管理脚本</a></li><li><i class="fa fa-minus"></i><a href="6r9z6_wi-3.html">Shadowsocks利用 tinyPortMapper 实现中继(中转/端口转发)加速</a></li><li><i class="fa fa-minus"></i><a href="6jfbj938-2.html">『原创』应逗比要求 单独写了个 libsodium 一键安装脚本 (Chacha20 / Chacha20-ietf 等)</a></li><li><i class="fa fa-minus"></i><a href="3we1qxzj-7.html">ShadowsocksR PC客户端中的 [代理规则 &#8211; 用户自定义] 功能使用教程</a></li><li><i class="fa fa-minus"></i><a href="es5fj9se-3.html">在 主流代理软件 被针对的现在，推荐一个小众好用的代理软件 — Brook</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='2938' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (37)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-45792"><div class="c-avatar"><div class="c-main" id="div-comment-45792">但是不要混淆经常有些错误日志，抓包里有http请求和reset的包，加上tls1.2_ticket_auth就没有了，不知道为啥<div class="c-meta"><span class="c-author">aa</span>2018-11-09 10:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45792#respond' onclick='return addComment.moveForm( "div-comment-45792", "45792", "respond", "2938" )' aria-label='回复给aa'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-45780"><div class="c-avatar"><div class="c-main" id="div-comment-45780">不要想的太复杂，GFW应该是常用代理端口批量扫描，然后批量封。逗比大佬说的也没错，混淆选择、热门商家等也有关系。不是主要的。靠这个吃饭，不能说太多。<div class="c-meta"><span class="c-author">SSR</span>2018-11-09 00:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45780#respond' onclick='return addComment.moveForm( "div-comment-45780", "45780", "respond", "2938" )' aria-label='回复给SSR'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-45764"><div class="c-avatar"><div class="c-main" id="div-comment-45764">其实只是看脸或者看流量大小，我欧洲得服务器只装了Rtorrent拿来刷PT日流量过T 半个月就被TCP阻断<div class="c-meta"><span class="c-author"><a href='https://blog.iloft.xyz/' rel='external nofollow' class='url'>iloft</a></span>2018-11-08 17:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45764#respond' onclick='return addComment.moveForm( "div-comment-45764", "45764", "respond", "2938" )' aria-label='回复给iloft'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-45765"><div class="c-avatar"><div class="c-main" id="div-comment-45765">看脸论。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-11-08 17:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45765#respond' onclick='return addComment.moveForm( "div-comment-45765", "45765", "respond", "2938" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-45762"><div class="c-avatar"><div class="c-main" id="div-comment-45762">因为被墙多次，都懒得手动设置太多了，直接选择默认的了<div class="c-meta"><span class="c-author">6765765</span>2018-11-08 15:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45762#respond' onclick='return addComment.moveForm( "div-comment-45762", "45762", "respond", "2938" )' aria-label='回复给6765765'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-45738"><div class="c-avatar"><div class="c-main" id="div-comment-45738">现在转投 v2ray  用的谷歌云的  用的233的一键安装  我完全新手。。 4K 丝滑。。为啥不做个相关教程呢。。  因为啥也不懂 里面配置都没去动过  TCP  无伪装  不知如何才能更好的过墙 两天了不卡顿 第三天平板有时候会卡顿，不知是否碰到墙了~<div class="c-meta"><span class="c-author"><a href='http://xn--~-nj2b673awsftwn/' rel='external nofollow' class='url'>zeng</a></span>2018-11-08 05:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45738#respond' onclick='return addComment.moveForm( "div-comment-45738", "45738", "respond", "2938" )' aria-label='回复给zeng'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-45853"><div class="c-avatar"><div class="c-main" id="div-comment-45853">V2ray理论上最不容易被墙的配置还是比较难搞的，但是搞好了确实不容易被识别，比SSR的混淆更高级，可以看看V2ray白话文教程<div class="c-meta"><span class="c-author">pera</span>2018-11-10 11:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45853#respond' onclick='return addComment.moveForm( "div-comment-45853", "45853", "respond", "2938" )' aria-label='回复给pera'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-45675"><div class="c-avatar"><div class="c-main" id="div-comment-45675">什么协议好  混淆好，去各个大机场看看，可以借鉴的，机场一天流量那么大  如果天天被大量封，早就干不下去了，能抗过几年的，应该都没太大问题<div class="c-meta"><span class="c-author"><a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="340107020c0d0406037445451a575b59">[email&#160;protected]</a></span>2018-11-07 12:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45675#respond' onclick='return addComment.moveForm( "div-comment-45675", "45675", "respond", "2938" )' aria-label='回复给53689027@qq.com'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-45674"><div class="c-avatar"><div class="c-main" id="div-comment-45674">逗老大说的用tsl, 外加自建网站，我觉得这个思路不一定正确，如果是墙已经完全掌握了这个混淆的特征，不管你是否建立真实的网站，都会被封，特别是热门地区<div class="c-meta"><span class="c-author"><a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="d3e6e0e5ebeae3e1e493a2a2fdb0bcbe">[email&#160;protected]</a></span>2018-11-07 12:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45674#respond' onclick='return addComment.moveForm( "div-comment-45674", "45674", "respond", "2938" )' aria-label='回复给53689027@qq.com'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-45683"><div class="c-avatar"><div class="c-main" id="div-comment-45683">所以还是建议用原版混淆，还省力。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-11-07 14:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45683#respond' onclick='return addComment.moveForm( "div-comment-45683", "45683", "respond", "2938" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-45673"><div class="c-avatar"><div class="c-main" id="div-comment-45673">我也说两句使用感受，个人感觉不管你用什么协议，墙都是监控得到的，只是去国外的流量太大，墙是否会在意理你，可以说成是否在墙的监控范围，至少说流量特征是掌握了的，所以我觉得不要迷信协议，协议只是增加了更明显的特征(软件在没更新之前)，逗老大说的挑选地区是对的，低调使用<div class="c-meta"><span class="c-author"><a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="d2e7e1e4eaebe2e0e592a3a3fcb1bdbf">[email&#160;protected]</a></span>2018-11-07 12:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45673#respond' onclick='return addComment.moveForm( "div-comment-45673", "45673", "respond", "2938" )' aria-label='回复给53689027@qq.com'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-45684"><div class="c-avatar"><div class="c-main" id="div-comment-45684">协议本质上是减少流量特征，让墙无法根据某个特征而准确判断该链接为某代理软件链接。<br />
+而混淆目前还不够完善，所以使用混淆方面反而可能增加特征，比如 SS SSR的HTTP HTTPS混淆就是这样。<br />
+另外墙的工作原理是：<br />
+发现你这个链接后，分析链接特征等等因素，得出一个该链接位代理的几率，存储到数据库中，下次再发现后再次继续分析，直到几率累积到一定值时，就会先封一个端口(这时候还属于说不准，所以试探下，只有一部分人才会遇到这种)，如果你更换个端口继续做代理，那么往往很快GG。当然如果几率更高，可能就是直接封IP(全部端口)了。<br />
+另外GFW的服务器不是在出口了，而是分布在全国各地，这样性能更好，效率更高，你的代理连接一出家门，就开始被GFW所分析了。<br />
+同样也有一些人反应：在某个地方用的好好的，出差去某个地方后用了几下就被墙了。类似情况今年不少人向我反馈过。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-11-07 14:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45684#respond' onclick='return addComment.moveForm( "div-comment-45684", "45684", "respond", "2938" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-45726"><div class="c-avatar"><div class="c-main" id="div-comment-45726">同意  就是混淆问题  上面写错了。
+上海应该是重灾区<div class="c-meta"><span class="c-author"><a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="95a0a6a3adaca5a7a2d5e4e4bbf6faf8">[email&#160;protected]</a></span>2018-11-07 22:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45726#respond' onclick='return addComment.moveForm( "div-comment-45726", "45726", "respond", "2938" )' aria-label='回复给53689027@qq.com'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-3" id="comment-45895"><div class="c-avatar"><div class="c-main" id="div-comment-45895">wow，大佬分析的好有道理(ง •_•)ง<div class="c-meta"><span class="c-author">LALALA</span>2018-11-10 16:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45895#respond' onclick='return addComment.moveForm( "div-comment-45895", "45895", "respond", "2938" )' aria-label='回复给LALALA'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-45664"><div class="c-avatar"><div class="c-main" id="div-comment-45664">文章上了安卓chrome首页推荐文章列表了 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_lol.gif" alt=":lol:" class="wp-smiley" style="height: 1em; max-height: 1em;" /> 谢科普<div class="c-meta"><span class="c-author"><a href='https://blog.853lab.com/' rel='external nofollow' class='url'>Sonic853</a></span>2018-11-07 02:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45664#respond' onclick='return addComment.moveForm( "div-comment-45664", "45664", "respond", "2938" )' aria-label='回复给Sonic853'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-45686"><div class="c-avatar"><div class="c-main" id="div-comment-45686">什么鬼。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-11-07 14:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45686#respond' onclick='return addComment.moveForm( "div-comment-45686", "45686", "respond", "2938" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-45662"><div class="c-avatar"><div class="c-main" id="div-comment-45662">Google Clou platform 单用户，CADDY反代443也只是坚持了不到1周，如果不用caddy，哼，几个小时就能给你封了端口！是不是我看youtue流量走的太厉害了？ 一周不到大概跑了30G流量<div class="c-meta"><span class="c-author">ray</span>2018-11-07 01:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45662#respond' onclick='return addComment.moveForm( "div-comment-45662", "45662", "respond", "2938" )' aria-label='回复给ray'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-45660"><div class="c-avatar"><div class="c-main" id="div-comment-45660">我也买机场大佬的ssr服务在用，有好几条美日的线，快一年多了吧啥事都没有；我就搞不懂额，他的机场每条线也有两位数的人在用吧，这么多人用反而没事？<div class="c-meta"><span class="c-author">wjdk7805</span>2018-11-07 00:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45660#respond' onclick='return addComment.moveForm( "div-comment-45660", "45660", "respond", "2938" )' aria-label='回复给wjdk7805'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-45652"><div class="c-avatar"><div class="c-main" id="div-comment-45652">日本的vps混淆一直用plain一点事都没有 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_neutral.gif" alt=":neutral:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">:-)</span>2018-11-06 21:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45652#respond' onclick='return addComment.moveForm( "div-comment-45652", "45652", "respond", "2938" )' aria-label='回复给:-)'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-45640"><div class="c-avatar"><div class="c-main" id="div-comment-45640">用ss就用ss，ssr本来就有问题。。<div class="c-meta"><span class="c-author">cybort</span>2018-11-06 18:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45640#respond' onclick='return addComment.moveForm( "div-comment-45640", "45640", "respond", "2938" )' aria-label='回复给cybort'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-45639"><div class="c-avatar"><div class="c-main" id="div-comment-45639">完全没有做混淆，3年来除几个时间点卡了些，没有任何问题 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_mrgreen.gif" alt=":mrgreen:" class="wp-smiley" style="height: 1em; max-height: 1em;" /> 某搬运工美国服务器<div class="c-meta"><span class="c-author">keiol</span>2018-11-06 18:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45639#respond' onclick='return addComment.moveForm( "div-comment-45639", "45639", "respond", "2938" )' aria-label='回复给keiol'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-45637"><div class="c-avatar"><div class="c-main" id="div-comment-45637">很多人手里只有热门区域的，统计的时候自然热门被gg的多，因为我手里只有热门区域的啊，我手里只有俄罗斯的，俄罗斯的也被gg很厉害。所以你的统计有问题，不具有科学意义<div class="c-meta"><span class="c-author">枫桥夜泊</span>2018-11-06 17:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45637#respond' onclick='return addComment.moveForm( "div-comment-45637", "45637", "respond", "2938" )' aria-label='回复给枫桥夜泊'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-45641"><div class="c-avatar"><div class="c-main" id="div-comment-45641">我知道啊，又不是大数据统计，自然只有参考意义，我没说这个统计不魔法呀。<br />
+而且最重要的是最后一句话：综上所述，如果你使用某个地区的服务器频繁被墙，那么你 要么更换代理软件，要么就换其他地区试试。<br />
+无论你用什么地区，都适用。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-11-06 18:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45641#respond' onclick='return addComment.moveForm( "div-comment-45641", "45641", "respond", "2938" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-2" id="comment-45642"><div class="c-avatar"><div class="c-main" id="div-comment-45642">杠精  <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_eek.gif" alt=":shock:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">木工</span>2018-11-06 18:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45642#respond' onclick='return addComment.moveForm( "div-comment-45642", "45642", "respond", "2938" )' aria-label='回复给木工'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-45650"><div class="c-avatar"><div class="c-main" id="div-comment-45650">欧洲和俄罗斯的确很稳定，ss每周1T流量，挺过年初大劫，稳定到现在<div class="c-meta"><span class="c-author"><a href='https://www.357global.com/' rel='external nofollow' class='url'>John</a></span>2018-11-06 20:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45650#respond' onclick='return addComment.moveForm( "div-comment-45650", "45650", "respond", "2938" )' aria-label='回复给John'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-45796"><div class="c-avatar"><div class="c-main" id="div-comment-45796">俄罗斯不一定稳定的，我的一个主机就是很快全封的，邻近几个ip也是，所以我没法确认是否被波及的，过段时间后每4个ping会有1个返回，最后还是放弃那个小鸡了，还好是月付。<div class="c-meta"><span class="c-author">omg</span>2018-11-09 11:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45796#respond' onclick='return addComment.moveForm( "div-comment-45796", "45796", "respond", "2938" )' aria-label='回复给omg'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-45671"><div class="c-avatar"><div class="c-main" id="div-comment-45671">钢筋狗来跟我去工地<div class="c-meta"><span class="c-author">猴哥</span>2018-11-07 10:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45671#respond' onclick='return addComment.moveForm( "div-comment-45671", "45671", "respond", "2938" )' aria-label='回复给猴哥'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-45636"><div class="c-avatar"><div class="c-main" id="div-comment-45636">只要不太张扬，节点都还可以。<div class="c-meta"><span class="c-author">dissdents2021</span>2018-11-06 16:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45636#respond' onclick='return addComment.moveForm( "div-comment-45636", "45636", "respond", "2938" )' aria-label='回复给dissdents2021'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-45632"><div class="c-avatar"><div class="c-main" id="div-comment-45632">还是转战v2吧，我用了一年了，都没有被墙的<div class="c-meta"><span class="c-author"><a href='http://https//www.baidu.com' rel='external nofollow' class='url'>风萧萧兮易水寒</a></span>2018-11-06 15:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45632#respond' onclick='return addComment.moveForm( "div-comment-45632", "45632", "respond", "2938" )' aria-label='回复给风萧萧兮易水寒'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-45649"><div class="c-avatar"><div class="c-main" id="div-comment-45649">V2在我福建沿海这边都没法用，几下就识别，然后限速，然后gg....
+你是怎么调试v2的，用一键脚本安装后一件设置还是说？<div class="c-meta"><span class="c-author">lsh2jl</span>2018-11-06 20:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45649#respond' onclick='return addComment.moveForm( "div-comment-45649", "45649", "respond", "2938" )' aria-label='回复给lsh2jl'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-45668"><div class="c-avatar"><div class="c-main" id="div-comment-45668">巧了我也是福建的<div class="c-meta"><span class="c-author">小肥猫</span>2018-11-07 08:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45668#respond' onclick='return addComment.moveForm( "div-comment-45668", "45668", "respond", "2938" )' aria-label='回复给小肥猫'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-3" id="comment-45739"><div class="c-avatar"><div class="c-main" id="div-comment-45739">巧了 我也是福建沿海 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_eek.gif" alt=":shock:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author"><a href='http://xn--~-nj2b673awsftwn/' rel='external nofollow' class='url'>zeng</a></span>2018-11-08 05:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45739#respond' onclick='return addComment.moveForm( "div-comment-45739", "45739", "respond", "2938" )' aria-label='回复给zeng'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-3" id="comment-46021"><div class="c-avatar"><div class="c-main" id="div-comment-46021">巧了，我也是福建沿海
+V2已经稳定了1年半左右了<div class="c-meta"><span class="c-author">Mtenorm</span>2018-11-11 20:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=46021#respond' onclick='return addComment.moveForm( "div-comment-46021", "46021", "respond", "2938" )' aria-label='回复给Mtenorm'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-45629"><div class="c-avatar"><div class="c-main" id="div-comment-45629">学习一下！ <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_wink.gif" alt=":wink:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">fhbtothe</span>2018-11-06 15:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45629#respond' onclick='return addComment.moveForm( "div-comment-45629", "45629", "respond", "2938" )' aria-label='回复给fhbtothe'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-45627"><div class="c-avatar"><div class="c-main" id="div-comment-45627">统计应该看各自地区的被墙人数/各自地区的使用人数。再对比。。。不是直接总数对比，基数不同。<div class="c-meta"><span class="c-author"><a href='https://seeck.tk/' rel='external nofollow' class='url'>CK</a></span>2018-11-06 15:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45627#respond' onclick='return addComment.moveForm( "div-comment-45627", "45627", "respond", "2938" )' aria-label='回复给CK'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-45628"><div class="c-avatar"><div class="c-main" id="div-comment-45628">这是无法统计的。更何况我说了，我统计的是 [你手里哪些地区被墙次数最多] ，而不是 [你手里那些地区被墙过]。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-11-06 15:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45628#respond' onclick='return addComment.moveForm( "div-comment-45628", "45628", "respond", "2938" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-45638"><div class="c-avatar"><div class="c-main" id="div-comment-45638">我经常用的当然墙的次数多<div class="c-meta"><span class="c-author">枫桥夜泊</span>2018-11-06 18:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc66/?replytocom=45638#respond' onclick='return addComment.moveForm( "div-comment-45638", "45638", "respond", "2938" )' aria-label='回复给枫桥夜泊'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+			</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://kanfanba.com/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script data-cfasync="false" src="hnpipwj_.js"></script><script type="text/javascript">
+var image_url=new Array()
+image_url=["https://www.vultr.com/","vh8576m0.html","https://virmach.com/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="xka4f94-container xka4f94-1 xka4f94-hide">
+    <div class="xka4f94-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="xka4f94"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

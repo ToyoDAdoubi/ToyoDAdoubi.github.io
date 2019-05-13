@@ -1,0 +1,1413 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>『原创』Ocserv 搭建 Cisco AnyConnect VPN服务端 一键脚本 | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1960] -->
+<meta name="description"  content="日常，日常。 手动搭建教程：使用Ocserv 手动搭建 Cisco AnyConnect VPN服务端 客户端使用教程：Cisco AnyConnect VPN Windows/Android 平台客户端使用教程 注意：如果服务器同时安装了" />
+
+<meta name="keywords"  content="anyconnect,ocserv,shell,vpn,脚本" />
+
+<link rel="canonical" href="nr2hjmg2.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='使用Ocserv 手动搭建 Cisco AnyConnect VPN服务端' href='k9994-k3.html' />
+<link rel='next' title='ShadowsocksR 单服务器多用户 mudbjson模式使用教程 支持流量限制' href='hi10k-7p-4.html' />
+<link rel='shortlink' href='https://doub.io/?p=2228' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fvpnzy-7%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fvpnzy-7%2F&amp;format=xml" />
+<style>
+.dk85a57{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.dk85a57-hide{
+    display: none;
+}
+.dk85a57-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.dk85a57-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.dk85a57-2 .dk85a57-body,.dk85a57-3 .dk85a57-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.dk85a57-2 .close-btn,.dk85a57-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.dk85a57-3 .dk85a57-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.dk85a57').html(kill_adBlock_message);
+            jQuery('.dk85a57-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.dk85a57-container').fadeOut('dk85a57-hide');
+        });
+    });
+    var kill_adBlock_status = 1;
+    var kill_adBlock_message = '逗比很伤心😥，您的<strong>广告拦截扩展</strong>屏蔽了我们的小广告，网站的发展离不开大家的支持，请先看过<a target=\"_blank\" style=\"color: #ffe500;\" href=\"3--didfb.html\">这个文章</a>后，再确定是否要将我们的域名添加到<strong>拦截白名单</strong>中，谢谢！😘👌';
+    var kill_adBlock_message_delay = 0;
+    var kill_adBlock_close_btn = 1;
+    var kill_adBlock_close_automatically = 0;
+    var kill_adBlock_close_automatically_delay = 0;
+    var kill_adBlock_message_type = 1;
+    function adBlockDetected() {
+      show_message();
+    }
+    
+    if(typeof killAdBlock === 'undefined') {
+        adBlockDetected();
+    } else {
+        killAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+    }
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="AnyConnect, Ocserv, shell, VPN, 脚本, Shell脚本, VPN资源">
+<meta name="description" content="日常，日常。  手动搭建教程：使用Ocserv 手动搭建 Cisco AnyConnect VPN服务端  客户端使用教程：Cisco AnyConnect VPN Windows/Android 平台客户端使用教程 注意：如果服务器同时安装了 锐速(ServerSpeed/LotServer)，那么可能会导致 AnyConnect 连接上后无网络或者速度异常(慢)，这时候请关闭锐速，BBR加速无影响。 系统要求 Debian 7+ /">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-2228 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li class="current-post-ancestor"><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="./softs.wtf/"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Atoyodadoubi.github.io'; return false;" action="https://toyodadoubi.github.io/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 逗比云还是逃不过被墙的命运，既然如此那以后逗比云也就一直用被墙的旧域名 <strong><a target="_blank" href="./softs.wtf/">[softs.wtf]</a></strong> 算了。
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://www.gigsgigscloud.com/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="nr2hjmg2.html">『原创』Ocserv 搭建 Cisco AnyConnect VPN服务端 一键脚本</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="1jg9z3mv.html"> Shell脚本</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 1年前 (2017-05-29)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 39384℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="nr2hjmg2.html#comments">260评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="nr2hjmg2.html#系统要求" title="系统要求"><span>系统要求</span></a><ul class="children"><li class="content-index-level-2"><a href="nr2hjmg2.html#脚本版本" title="脚本版本"><span>脚本版本</span></a></li></ul></li><li class="content-index-level-1"><a href="nr2hjmg2.html#安装步骤" title="安装步骤"><span>安装步骤</span></a><ul class="children"><li class="content-index-level-2"><a href="nr2hjmg2.html#检查PPP/TUN环境" title="检查PPP/TUN环境"><span>检查PPP/TUN环境</span></a></li></ul></li><li class="content-index-level-1"><a href="nr2hjmg2.html#使用说明" title="使用说明"><span>使用说明</span></a><ul class="children"><li class="content-index-level-2"><a href="nr2hjmg2.html#其他操作" title="其他操作"><span>其他操作</span></a></li></ul></li><li class="content-index-level-1"><a href="nr2hjmg2.html#其他说明" title="其他说明"><span>其他说明</span></a><ul class="children"><li class="content-index-level-2"><a href="nr2hjmg2.html#运行优化说明" title="运行优化说明"><span>运行优化说明</span></a></li><li class="content-index-level-2"><a href="nr2hjmg2.html#提示wget: unknown host “raw.githubusercontent.com” 之类的错误" title="提示wget: unknown host “raw.githubusercontent.com” 之类的错误"><span>提示wget: unknown host “raw.githubusercontent.com” 之类的错误</span></a></li><li class="content-index-level-2"><a href="nr2hjmg2.html#提示 wget: command not found 的错误" title="提示 wget: command not found 的错误"><span>提示 wget: command not found 的错误</span></a></li><li class="content-index-level-2"><a href="nr2hjmg2.html#升级脚本" title="升级脚本"><span>升级脚本</span></a></li></ul></li><li class="content-index-level-1"><a href="nr2hjmg2.html#更新日志" title="更新日志"><span>更新日志</span></a><ul class="children"><li class="content-index-level-2"><a href="nr2hjmg2.html#2018年09月12日，版本 v1.0.5" title="2018年09月12日，版本 v1.0.5"><span>2018年09月12日，版本 v1.0.5</span></a></li><li class="content-index-level-2"><a href="nr2hjmg2.html#2018年07月10日，版本 v1.0.4" title="2018年07月10日，版本 v1.0.4"><span>2018年07月10日，版本 v1.0.4</span></a></li><li class="content-index-level-2"><a href="nr2hjmg2.html#2017年08月02日，版本 v1.0.3" title="2017年08月02日，版本 v1.0.3"><span>2017年08月02日，版本 v1.0.3</span></a></li><li class="content-index-level-2"><a href="nr2hjmg2.html#2017年06月04日，版本 v1.0.2" title="2017年06月04日，版本 v1.0.2"><span>2017年06月04日，版本 v1.0.2</span></a></li><li class="content-index-level-2"><a href="nr2hjmg2.html#2017年06月02日，版本 v1.0.1" title="2017年06月02日，版本 v1.0.1"><span>2017年06月02日，版本 v1.0.1</span></a></li><li class="content-index-level-2"><a href="nr2hjmg2.html#2017年05月29日，版本 v1.0.0" title="2017年05月29日，版本 v1.0.0"><span>2017年05月29日，版本 v1.0.0</span></a></li></ul></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年9月20日 19:49</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>日常，日常。</p>
+<p><strong>手动搭建教程：<a title="使用Ocserv 手动搭建 Cisco AnyConnect VPN服务端" href="k9994-k3.html" target="_blank" rel="noopener">使用Ocserv 手动搭建 Cisco AnyConnect VPN服务端</a></strong></p>
+<p><strong>客户端使用教程：<a title="Cisco AnyConnect VPN Windows/Android 平台客户端使用教程" href="hc5a0yn5.html" target="_blank" rel="noopener">Cisco AnyConnect VPN Windows/Android 平台客户端使用教程</a></strong></p>
+<blockquote><p><strong>注意：</strong>如果服务器同时安装了 <strong>锐速(ServerSpeed/LotServer)</strong>，那么可能会导致 AnyConnect 连接上后<strong>无网络或者速度异常(慢)</strong>，这时候请关闭锐速，<strong>BBR加速无影响</strong>。</p></blockquote>
+<h2 id="系统要求">系统要求</h2>
+<p>Debian 7+ / Ubuntu 14.04 +</p>
+<p>推荐 Debian 8 x64，这个是我一直使用的系统，我的脚本在这个系统上面出错率最低。</p>
+<p><strong>此脚本不支持CentOS！</strong></p>
+<h3 id="脚本版本">脚本版本</h3>
+<p><strong>Ver:</strong> 1.0.5</p>
+<h2 id="安装步骤">安装步骤</h2>
+<h3 id="检查PPP/TUN环境">检查PPP/TUN环境</h3>
+<p>首先要检查VPS的TUN是否开启(OpenVZ虚拟化的服务器很可能默认关闭)。</p>
+<pre class="prettyprint linenums">cat /dev/net/tun
+# 返回的必须是：
+cat: /dev/net/tun: File descriptor in bad state
+</pre>
+<p>如果返回内容不是指定的结果，请与VPS提供商联系开启TUN权限（一般控制面板有开关）。</p>
+<hr />
+<p>执行下面的代码下载并运行脚本。</p>
+<pre class="prettyprint linenums">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/ocserv.sh &amp;&amp; chmod +x ocserv.sh &amp;&amp; bash ocserv.sh
+</pre>
+<p>下载并运行脚本后会出现脚本操作菜单，选择并输入<code> 1 </code>就会开始安装。</p>
+<p>首先安装服务端，安装过程中会提示你<strong>添加第一个VPN账号（用户名和密码）以及TCP/UDP端口</strong>：</p>
+<pre class="prettyprint linenums">...
+[信息] 开始设置账号配置...
+请输入 要添加的VPN账号 用户名
+(默认: admin):doubi
+
+	用户名 : doubi
+
+请输入 要添加的VPN账号 密码
+(默认: doub.io):doubi233
+
+	密码 : doubi233
+
+请输入VPN服务端的TCP端口
+(默认: 443):443
+
+	TCP端口 : 443
+
+请输入VPN服务端的UDP端口
+(默认: 443):
+
+	TCP端口 : 443
+
+[信息] 开始设置 iptables防火墙...
+...
+</pre>
+<h2 id="使用说明">使用说明</h2>
+<p>进入下载脚本的目录并运行脚本：</p>
+<pre class="prettyprint linenums">./ocserv.sh
+</pre>
+<p>运行脚本后选择你要执行的选项即可。</p>
+<pre class="prettyprint linenums">ocserv 一键安装管理脚本 [vx.x.x]
+-- Toyo | doub.io/vpnzy-7 --
+
+0. 升级脚本
+————————————
+1. 安装 ocserv
+2. 卸载 ocserv
+————————————
+3. 启动 ocserv
+4. 停止 ocserv
+5. 重启 ocserv
+————————————
+6. 设置 账号配置
+7. 查看 配置信息
+8. 修改 配置文件
+9. 查看 日志信息
+————————————
+
+当前状态: 已安装 并 已启动
+
+请输入数字 [0-9]:
+</pre>
+<h3 id="其他操作">其他操作</h3>
+<pre class="prettyprint linenums">/etc/init.d/ocserv start
+# 启动 ocserv
+/etc/init.d/ocserv stop
+# 停止 ocserv
+/etc/init.d/ocserv restart
+# 重启 ocserv
+/etc/init.d/ocserv status
+# 查看 ocserv 运行状态
+/etc/init.d/ocserv log
+# 查看 ocserv 运行日志
+/etc/init.d/ocserv test
+# 测试 ocserv 配置文件是否正确
+</pre>
+<p><strong>配置文件：</strong>/etc/ocserv/ocserv.conf</p>
+<p><strong>账号配置文件：</strong>/etc/ocserv/ocpasswd</p>
+<p><strong>日志文件：</strong>/tmp/ocserv.log</p>
+<p><strong>如果你想要修改配置文件，请看参数解释：<a href="k9994-k3.html#配置参数解释" target="_blank" rel="noopener">https://doub.io/vpnzy-6/#配置参数解释</a></strong></p>
+<h2 id="其他说明">其他说明</h2>
+<blockquote><p><strong>注意：</strong>如果服务器同时安装了 <strong>锐速(ServerSpeed/LotServer)</strong>，那么可能会导致 AnyConnect 连接上后<strong>无网络或者速度异常(慢)</strong>，这时候请关闭锐速，<strong>BBR加速无影响</strong>。</p>
+<p>脚本已默认配置好国内外分流路由表了（国内流量不走VPN），无需设置。</p></blockquote>
+<h3 id="运行优化说明">运行优化说明</h3>
+<p>建议在运行 ocserv前，执行一下这个命令，作用是提高系统的文件符同时打开数量，对于TCP连接过多的时候系统默认的 1024 就会成为速度瓶颈。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums">ulimit -n 51200
+</pre>
+<p>这个命令只有临时有效，重启后失效，如果想要永久有效，请执行：</p>
+<pre class="prettyprint linenums">echo "* soft nofile 51200
+* hard nofile 51200" &gt;&gt; /etc/security/limits.conf
+</pre>
+<p>然后最后再执行一下<code> ulimit -n 51200 </code>即可。</p>
+<p></p></div>
+<h3 id="提示wget: unknown host “raw.githubusercontent.com” 之类的错误">提示wget: unknown host “raw.githubusercontent.com” 之类的错误</h3>
+<p>这是无法解析我的域名，多半是DNS的问题，请更换DNS为谷歌DNS(以下两行一起复制 一起执行)。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums">echo -e "nameserver 8.8.8.8
+nameserver 8.8.4.4" &gt; /etc/resolv.conf
+</pre>
+<p></p></div>
+<h3 id="提示 wget: command not found 的错误">提示 wget: command not found 的错误</h3>
+<p>这是你的系统精简的太干净了，wget都没有安装，所以需要安装wget。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"># CentOS系统:
+yum install -y wget
+
+# Debian/Ubuntu系统:
+apt-get install -y wget
+</pre>
+<p></p></div>
+<h3 id="升级脚本">升级脚本</h3>
+<p>升级脚本只需要运行脚本，然后选择并输入 0 回车即可，会自动检测最新版本并下载，当然重新下载脚本文件也可以，会自动覆盖原文件。</p>
+<h2 id="更新日志">更新日志</h2>
+<h3 id="2018年09月12日，版本 v1.0.5">2018年09月12日，版本 v1.0.5</h3>
+<p><strong>1. 新增</strong> 自动检测网卡名 ens3（Debian9 默认网卡名）。</p>
+<p>另外，针对 CentOS Ubuntu 最新系统版本的网卡命名我也在脚本内加了说明(enpXSX)。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<h3 id="2018年07月10日，版本 v1.0.4">2018年07月10日，版本 v1.0.4</h3>
+<p><strong>1. 新增</strong> 升级脚本时，将一起升级服务脚本（Service）。</p>
+<h3 id="2017年08月02日，版本 v1.0.3">2017年08月02日，版本 v1.0.3</h3>
+<p><strong>1. 新增</strong> 在安装出错的情况下，会自动启动卸载程序。</p>
+<h3 id="2017年06月04日，版本 v1.0.2">2017年06月04日，版本 v1.0.2</h3>
+<p><strong>1. 修复</strong> 重启服务器后，ipv4防火墙转发未打开的问题。</p>
+<h3 id="2017年06月02日，版本 v1.0.1">2017年06月02日，版本 v1.0.1</h3>
+<p><strong>1. 修复</strong> 通过脚本修改配置文件中TCP/UDP端口后，没有保存防火墙设置的问题</p>
+<h3 id="2017年05月29日，版本 v1.0.0">2017年05月29日，版本 v1.0.0</h3>
+<p><strong>1. 推出</strong> 正式版。</p>
+<p></p></div>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="nr2hjmg2.html">『原创』Ocserv 搭建 Cisco AnyConnect VPN服务端 一键脚本</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="2228" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">138</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="fr1bksm9.html" rel="tag">AnyConnect</a><a href="py2phxt7-2.html" rel="tag">Ocserv</a><a href="8jt8-s05.html" rel="tag">shell</a><a href="cxrndpz0.html" rel="tag">VPN</a><a href="meyy1poe.html" rel="tag">脚本</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="k9994-k3.html" rel="prev">使用Ocserv 手动搭建 Cisco AnyConnect VPN服务端</a></span>
+			<span class="article-nav-next"><a href="hi10k-7p-4.html" rel="next">ShadowsocksR 单服务器多用户 mudbjson模式使用教程 支持流量限制</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="0k260c3z.html" title="WireGuard —— 多用户配置教程" target="_blank">
+<img src="iki5kl1m.png?src=https://doub.io/wp-content/uploads/wireguard-02.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="WireGuard —— 多用户配置教程" />	<br><span class="r_title">WireGuard —— 多用户配置教程</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="x2_8j160.html" title="WireGuard  —— Windows 客户端<strong>国内外IP分流</strong>教程" target="_blank">
+<img src="iki5kl1m.png?src=https://doub.io/wp-content/uploads/wireguard-02.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="WireGuard  —— Windows 客户端<strong>国内外IP分流</strong>教程" />	<br><span class="r_title">WireGuard  —— Windows 客户端<strong>国内外IP分流</strong>教程</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="t86-fo_1.html" title="WireGuard —— Windows/Android 客户端简单使用教程" target="_blank">
+<img src="iki5kl1m.png?src=https://doub.io/wp-content/uploads/wireguard-02.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="WireGuard —— Windows/Android 客户端简单使用教程" />	<br><span class="r_title">WireGuard —— Windows/Android 客户端简单使用教程</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="qbc20cn3.html" title="一个高速、安全、可以<strong>复活被墙IP</strong>的VPN —— WireGuard 服务端手动教程" target="_blank">
+<img src="iki5kl1m.png?src=https://doub.io/wp-content/uploads/wireguard-02.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="一个高速、安全、可以<strong>复活被墙IP</strong>的VPN —— WireGuard 服务端手动教程" />	<br><span class="r_title">一个高速、安全、可以<strong>复活被墙IP</strong>的VPN —— WireGuard 服务端手动教程</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="0k260c3z.html">WireGuard —— 多用户配置教程</a></li><li><i class="fa fa-minus"></i><a href="x2_8j160.html">WireGuard  —— Windows 客户端<strong>国内外IP分流</strong>教程</a></li><li><i class="fa fa-minus"></i><a href="t86-fo_1.html">WireGuard —— Windows/Android 客户端简单使用教程</a></li><li><i class="fa fa-minus"></i><a href="qbc20cn3.html">一个高速、安全、可以<strong>复活被墙IP</strong>的VPN —— WireGuard 服务端手动教程</a></li><li><i class="fa fa-minus"></i><a href="kd691l4o.html">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</a></li><li><i class="fa fa-minus"></i><a href="es5fj9se.html">『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="aybh4ww5.html">『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="xcwybsz2.html">『原创』Go语言轻量化 代理工具 —— DAZE 一键安装管理脚本</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='2228' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (260)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-19551"><div class="c-avatar"><div class="c-main" id="div-comment-19551">[信息] 开始添加 iptables防火墙规则...
+[信息] 开始保存 iptables防火墙规则...
+[信息] 所有步骤 安装完毕，开始启动...
+[错误] ocserv 没有安装，请检查 !
+大佬求助！！！就是卡在这，很绝望，查看版本显示命令不存在，求助！！！<div class="c-meta"><span class="c-author">Jack0755</span>2017-10-07 16:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=19551#respond' onclick='return addComment.moveForm( "div-comment-19551", "19551", "respond", "2228" )' aria-label='回复给Jack0755'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-19379"><div class="c-avatar"><div class="c-main" id="div-comment-19379">Toyo,生成SSL证书密匙文件失败(ca-key.pem) 这个怎么办？<div class="c-meta"><span class="c-author">al1ensn0w</span>2017-10-04 16:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=19379#respond' onclick='return addComment.moveForm( "div-comment-19379", "19379", "respond", "2228" )' aria-label='回复给al1ensn0w'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-18876"><div class="c-avatar"><div class="c-main" id="div-comment-18876">Toyo,源码下载失败。。。。。怎么改？？？？？
+[信息] 开始下载/安装 配置文件...
+--2017-09-23 03:14:30--  ftp://ftp.infradead.org/pub/ocserv/ocserv-0.11.8.tar.xz
+           =&gt; `ocserv-0.11.8.tar.xz'
+Resolving ftp.infradead.org (ftp.infradead.org)... 2001:8b0:10b:1236::1
+Connecting to ftp.infradead.org (ftp.infradead.org)|2001:8b0:10b:1236::1|:21... failed: Network is unreachable.
+[错误] ocserv 源码文件下载失败 !<div class="c-meta"><span class="c-author">nick</span>2017-09-23 03:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=18876#respond' onclick='return addComment.moveForm( "div-comment-18876", "18876", "respond", "2228" )' aria-label='回复给nick'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-18890"><div class="c-avatar"><div class="c-main" id="div-comment-18890">可能是IPv6的问题，使用下面代码临时禁用VPS的IPv6试试：
+<pre class="prettyprint linenums" ># 禁用 IPv6
+echo 1 > /proc/sys/net/ipv6/conf/eth0/disable_ipv6
+# 启用 IPv6
+echo 0 > /proc/sys/net/ipv6/conf/eth0/disable_ipv6
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-23 12:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=18890#respond' onclick='return addComment.moveForm( "div-comment-18890", "18890", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-19225"><div class="c-avatar"><div class="c-main" id="div-comment-19225">我有个小鸡用这个脚本也碰到了这个问题，不是IPV6的事，总之就是wget ftp源打不开，自己用vim替换一下ocserv.sh里面的wget后面的ftp源，我随便google了一个，https://fossies.org/linux/privat/ocserv-0.11.8.tar.xz 替换完保存，然后重新运行就OK了。<div class="c-meta"><span class="c-author">Tenbagger</span>2017-10-01 00:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=19225#respond' onclick='return addComment.moveForm( "div-comment-19225", "19225", "respond", "2228" )' aria-label='回复给Tenbagger'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18418"><div class="c-avatar"><div class="c-main" id="div-comment-18418">反馈一个问题，如果下载配置文件失败，程序将无法启动，无法卸载，然后就一脸懵逼了。。。<div class="c-meta"><span class="c-author"><a href='http://adfaadf/' rel='external nofollow' class='url'>a</a></span>2017-09-15 01:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=18418#respond' onclick='return addComment.moveForm( "div-comment-18418", "18418", "respond", "2228" )' aria-label='回复给a'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-18078"><div class="c-avatar"><div class="c-main" id="div-comment-18078">[信息] 开始设置 iptables防火墙...
+net.ipv4.neigh.default.base_reachable_time_ms = 600000
+net.ipv4.neigh.default.mcast_solicit = 20
+net.ipv4.neigh.default.retrans_time_ms = 250
+net.core.default_qdisc = fq
+net.ipv4.tcp_congestion_control = bbr
+net.ipv4.ip_forward = 1
+net.ipv4.ip_forward = 1
+net.ipv4.ip_forward = 1
+ocserv.sh: line 454: ifconfig: command not found
+[错误] ifconfig 未安装 !<div class="c-meta"><span class="c-author">mercurial</span>2017-09-04 08:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=18078#respond' onclick='return addComment.moveForm( "div-comment-18078", "18078", "respond", "2228" )' aria-label='回复给mercurial'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-18088"><div class="c-avatar"><div class="c-main" id="div-comment-18088">CentOS7? ，你这是缺少 ifconfig ，如果不是Centos7，那么应该是高版本的其他系统吧，你需要自己安装这个工具。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-04 10:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=18088#respond' onclick='return addComment.moveForm( "div-comment-18088", "18088", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-18101"><div class="c-avatar"><div class="c-main" id="div-comment-18101">Ubuntu，搬瓦工。。<div class="c-meta"><span class="c-author">mercurial</span>2017-09-04 12:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=18101#respond' onclick='return addComment.moveForm( "div-comment-18101", "18101", "respond", "2228" )' aria-label='回复给mercurial'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-3" id="comment-18102"><div class="c-avatar"><div class="c-main" id="div-comment-18102">不好意思，看错了，我是搬瓦工 debian<div class="c-meta"><span class="c-author">mercurial</span>2017-09-04 12:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=18102#respond' onclick='return addComment.moveForm( "div-comment-18102", "18102", "respond", "2228" )' aria-label='回复给mercurial'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-18114"><div class="c-avatar"><div class="c-main" id="div-comment-18114">你搬瓦工VPS上面输入命令<code> /sbin/ifconfig </code>看看有什么提示，是文件不存在，还是正常显示？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-04 14:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=18114#respond' onclick='return addComment.moveForm( "div-comment-18114", "18114", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-5" id="comment-18145"><div class="c-avatar"><div class="c-main" id="div-comment-18145"><a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="d5a7babaa195b1b0b7bcb4bb">[email&#160;protected]</a>:~# /sbin/ifconfig
+-bash: /sbin/ifconfig: No such file or directory
+。。。提示这个<div class="c-meta"><span class="c-author">mercurial</span>2017-09-04 22:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=18145#respond' onclick='return addComment.moveForm( "div-comment-18145", "18145", "respond", "2228" )' aria-label='回复给mercurial'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-6" id="comment-18146"><div class="c-avatar"><div class="c-main" id="div-comment-18146">怕是没有安装，虽然这不科学，试试：
+<pre class="prettyprint linenums" >apt-get install net-tools -y
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-04 23:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=18146#respond' onclick='return addComment.moveForm( "div-comment-18146", "18146", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-17865"><div class="c-avatar"><div class="c-main" id="div-comment-17865">在Google Cloud Ubuntu 16.04出现的问题是脚本在生成证书那边失败，在Linode 新加坡机房搭建成功了，但连接上以后不久就断开，显示
+10:04:06    The secure gateway has rejected the connection attempt.  A new connection attempt to the same or another secure gateway is needed, which requires re-authentication.
+这是很尴尬的事情<div class="c-meta"><span class="c-author">1</span>2017-08-31 10:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=17865#respond' onclick='return addComment.moveForm( "div-comment-17865", "17865", "respond", "2228" )' aria-label='回复给1'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-17866"><div class="c-avatar"><div class="c-main" id="div-comment-17866">一般来说使用中 链接突然断开，怕是被墙干扰了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-31 10:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=17866#respond' onclick='return addComment.moveForm( "div-comment-17866", "17866", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-18810"><div class="c-avatar"><div class="c-main" id="div-comment-18810">找了很多關鍵字，好像沒有什麼解決方案...<div class="c-meta"><span class="c-author">kevin</span>2017-09-21 16:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=18810#respond' onclick='return addComment.moveForm( "div-comment-18810", "18810", "respond", "2228" )' aria-label='回复给kevin'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-17284"><div class="c-avatar"><div class="c-main" id="div-comment-17284">[信息] 开始设置 iptables防火墙...
+net.core.default_qdisc = fq
+net.ipv4.tcp_congestion_control = bbr
+net.ipv4.ip_forward = 1
+[信息] 开始添加 iptables防火墙规则...
+[信息] 开始保存 iptables防火墙规则...
+[信息] 所有步骤 安装完毕，开始启动...
+[错误] ocserv 没有安装，请检查 !<div class="c-meta"><span class="c-author">ccimmer</span>2017-08-18 20:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=17284#respond' onclick='return addComment.moveForm( "div-comment-17284", "17284", "respond", "2228" )' aria-label='回复给ccimmer'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-17306"><div class="c-avatar"><div class="c-main" id="div-comment-17306">ocserv -V ，运行这个有提示 ocserv版本号吗，还是提示命令不存在，什么系统？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-19 10:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=17306#respond' onclick='return addComment.moveForm( "div-comment-17306", "17306", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-16920"><div class="c-avatar"><div class="c-main" id="div-comment-16920">为啥不加ipv6配置。。<div class="c-meta"><span class="c-author"><a href='https://blog.ahokitsune.org/' rel='external nofollow' class='url'>玉狐</a></span>2017-08-12 10:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=16920#respond' onclick='return addComment.moveForm( "div-comment-16920", "16920", "respond", "2228" )' aria-label='回复给玉狐'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-16921"><div class="c-avatar"><div class="c-main" id="div-comment-16921">因为没用过ipv6，无法测试效果。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-12 11:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=16921#respond' onclick='return addComment.moveForm( "div-comment-16921", "16921", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-16685"><div class="c-avatar"><div class="c-main" id="div-comment-16685">你好，我也搭好了服务端，但是通过这个VPN访问任何SSL加密的网站都会卡在建立TLS握手这一步，未加密的网站就没有问题。<div class="c-meta"><span class="c-author">KCP</span>2017-08-09 08:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=16685#respond' onclick='return addComment.moveForm( "div-comment-16685", "16685", "respond", "2228" )' aria-label='回复给KCP'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-16502"><div class="c-avatar"><div class="c-main" id="div-comment-16502">你好，我按教程搭好了服务端（Ubuntu 16.04）后，手机(ios 10.3.3)端显示anyConnect连接成功却不能正常谷歌，客户端日志正常「已连接到ip XXX.X.X.X」, 在服务端打印的日志如下：
+
+ocserv[24520]: main[wxf729]: 116.30.223.219:51297 new user session
+ocserv[24520]: main[wxf729]: 116.30.223.219:51297 user logged in
+ocserv[28082]: worker[wxf729]: 116.30.223.219 suggesting DPD of 1800 secs
+ocserv[24522]: sec-mod: initiating session for user 'wxf729' (session: FLcRtz)
+ocserv[28082]: worker[wxf729]: 116.30.223.219 configured link MTU is 1500
+ocserv[28082]: worker[wxf729]: 116.30.223.219 peer's link MTU is 1500
+ocserv[28082]: worker[wxf729]: 116.30.223.219 sending IPv4 192.168.1.121
+ocserv[28082]: worker[wxf729]: 116.30.223.219 adding DNS 8.8.8.8
+ocserv[28082]: worker[wxf729]: 116.30.223.219 adding DNS 8.8.4.4
+ocserv[28082]: worker[wxf729]: 116.30.223.219 DTLS ciphersuite: AES128-SHA
+ocserv[28082]: worker[wxf729]: 116.30.223.219 DTLS data MTU 1406
+ocserv[28082]: worker[wxf729]: 116.30.223.219 Link MTU is 1500 bytes
+ocserv[28082]: worker[wxf729]: 116.30.223.219 setting up DTLS-0.9 connection
+ocserv[24520]: main: 116.30.223.219:51294 user disconnected (reason: unspecified, rx: 0, tx: 0)<div class="c-meta"><span class="c-author">岚风</span>2017-08-04 21:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=16502#respond' onclick='return addComment.moveForm( "div-comment-16502", "16502", "respond", "2228" )' aria-label='回复给岚风'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-16508"><div class="c-avatar"><div class="c-main" id="div-comment-16508">然而服务端日志并没有什么异常，其他平台或者设备是否正常？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-04 22:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=16508#respond' onclick='return addComment.moveForm( "div-comment-16508", "16508", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-16510"><div class="c-avatar"><div class="c-main" id="div-comment-16510">我想试的，只是逗比云的上的Mac端镜像不知道为什么下不下来，每次都是下到一半就卡住了。。刚又试了一下iOS端，先是显示连接成功，然后一下又断开，之后日志就一直是「连接正在断开，请稍后」<div class="c-meta"><span class="c-author">岚风</span>2017-08-05 01:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=16510#respond' onclick='return addComment.moveForm( "div-comment-16510", "16510", "respond", "2228" )' aria-label='回复给岚风'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-3" id="comment-16511"><div class="c-avatar"><div class="c-main" id="div-comment-16511">下载成功了，试了下Mac端也一样，连上几秒钟后就自动断开了，我怀疑这个连接上是不是也是个假象<div class="c-meta"><span class="c-author">岚风</span>2017-08-05 01:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=16511#respond' onclick='return addComment.moveForm( "div-comment-16511", "16511", "respond", "2228" )' aria-label='回复给岚风'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-16520"><div class="c-avatar"><div class="c-main" id="div-comment-16520">或许是被当地运营商或墙干扰了，毕竟部分地区依然是会封锁/干扰这个VPN协议的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-05 11:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=16520#respond' onclick='return addComment.moveForm( "div-comment-16520", "16520", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-5" id="comment-16567"><div class="c-avatar"><div class="c-main" id="div-comment-16567">好吧，谢谢。还是用SS（R）靠谱些<div class="c-meta"><span class="c-author">岚风</span>2017-08-06 01:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=16567#respond' onclick='return addComment.moveForm( "div-comment-16567", "16567", "respond", "2228" )' aria-label='回复给岚风'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-16487"><div class="c-avatar"><div class="c-main" id="div-comment-16487">请教一下分流的pac要怎么写呢<div class="c-meta"><span class="c-author">biubiubiu</span>2017-08-04 17:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=16487#respond' onclick='return addComment.moveForm( "div-comment-16487", "16487", "respond", "2228" )' aria-label='回复给biubiubiu'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-16491"><div class="c-avatar"><div class="c-main" id="div-comment-16491">不清楚，路由表我也不会写。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-04 17:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=16491#respond' onclick='return addComment.moveForm( "div-comment-16491", "16491", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-16356"><div class="c-avatar"><div class="c-main" id="div-comment-16356">我搬瓦工的vps已用你的一键shadowsocks脚本，现在是锐速+ssr。请问还能同时安装这个VPN吗？2者同时使用<div class="c-meta"><span class="c-author">壮士请留步</span>2017-08-02 17:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=16356#respond' onclick='return addComment.moveForm( "div-comment-16356", "16356", "respond", "2228" )' aria-label='回复给壮士请留步'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-16357"><div class="c-avatar"><div class="c-main" id="div-comment-16357">VPN和SSR不冲突，但是这个VPN和锐速冲突。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-02 17:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=16357#respond' onclick='return addComment.moveForm( "div-comment-16357", "16357", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-16359"><div class="c-avatar"><div class="c-main" id="div-comment-16359">我看了下介绍说是有锐速的情况下可能会连接不上。 我先试验下，如果成功了再报个好消息<div class="c-meta"><span class="c-author">壮士请留步</span>2017-08-02 17:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=16359#respond' onclick='return addComment.moveForm( "div-comment-16359", "16359", "respond", "2228" )' aria-label='回复给壮士请留步'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-16318"><div class="c-avatar"><div class="c-main" id="div-comment-16318">ocserv.sh: line 100: certtool: command not found
+[错误] 生成SSL证书密匙文件失败(ca-key.pem) !
+ocserv.sh: line 102: certtool: command not found
+[错误] 生成SSL证书文件失败(ca-cert.pem) !
+ocserv.sh: line 118: certtool: command not found
+[错误] 生成SSL证书密匙文件失败(server-key.pem) !
+ocserv.sh: line 120: certtool: command not found
+[错误] 生成SSL证书文件失败(server-cert.pem) !
+mv: cannot stat `ca-cert.pem': No such file or directory
+mv: cannot stat `ca-key.pem': No such file or directory
+mv: cannot stat `server-cert.pem': No such file or directory
+mv: cannot stat `server-key.pem': No such file or directory
+不知道这是什么情况呀 问一下怎么卸载脚本 重新安装<div class="c-meta"><span class="c-author">frank</span>2017-08-02 00:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=16318#respond' onclick='return addComment.moveForm( "div-comment-16318", "16318", "respond", "2228" )' aria-label='回复给frank'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-16328"><div class="c-avatar"><div class="c-main" id="div-comment-16328">系统缺少软件：certtool 。运行脚本，2. 卸载。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-02 11:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=16328#respond' onclick='return addComment.moveForm( "div-comment-16328", "16328", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-16331"><div class="c-avatar"><div class="c-main" id="div-comment-16331">不好意思 可以请教一下怎么安装certtool嘛<div class="c-meta"><span class="c-author">frank</span>2017-08-02 12:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=16331#respond' onclick='return addComment.moveForm( "div-comment-16331", "16331", "respond", "2228" )' aria-label='回复给frank'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-16340"><div class="c-avatar"><div class="c-main" id="div-comment-16340">脚本在一开始安装依赖的时候，就会安装 certtool (包含于gnutls-bin包中)，你可能是安装失败了。
+<pre class="prettyprint linenums" >apt-get install -y gnutls-bin
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-02 13:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=16340#respond' onclick='return addComment.moveForm( "div-comment-16340", "16340", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-15497"><div class="c-avatar"><div class="c-main" id="div-comment-15497">大佬知道是什么鬼么    
+The secure gateway has rejected the connection attempt.  A new connection attempt to the same or another secure gateway is needed, which requires re-authentication.
+连上秒断<div class="c-meta"><span class="c-author">ll</span>2017-07-15 10:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=15497#respond' onclick='return addComment.moveForm( "div-comment-15497", "15497", "respond", "2228" )' aria-label='回复给ll'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-15831"><div class="c-avatar"><div class="c-main" id="div-comment-15831">同样遇到这样的问题，目前木有解决方案？？？/<div class="c-meta"><span class="c-author">嘎嘎嘎</span>2017-07-24 13:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=15831#respond' onclick='return addComment.moveForm( "div-comment-15831", "15831", "respond", "2228" )' aria-label='回复给嘎嘎嘎'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-15415"><div class="c-avatar"><div class="c-main" id="div-comment-15415">逗比大佬我当年让你写这个教程你打死都不写来着?<div class="c-meta"><span class="c-author">心灵炼金师</span>2017-07-11 23:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=15415#respond' onclick='return addComment.moveForm( "div-comment-15415", "15415", "respond", "2228" )' aria-label='回复给心灵炼金师'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-15341"><div class="c-avatar"><div class="c-main" id="div-comment-15341">好了我自己把你脚本里的源换了。。。为什么非得在脚本里加美国源呢。。<div class="c-meta"><span class="c-author"><a href='https://dearjohn.cn/' rel='external nofollow' class='url'>John</a></span>2017-07-07 21:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=15341#respond' onclick='return addComment.moveForm( "div-comment-15341", "15341", "respond", "2228" )' aria-label='回复给John'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-15347"><div class="c-avatar"><div class="c-main" id="div-comment-15347">不，那只是为了更换为目前Debian的稳定源 jessie（仅限Debian系统，CentOS/Ubuntu不会更换） ，保证安装依赖不出错，而脚本并没有加入判断当前服务器位置的功能，只是统一更换为美国的镜像源。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-07-08 00:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=15347#respond' onclick='return addComment.moveForm( "div-comment-15347", "15347", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-15340"><div class="c-avatar"><div class="c-main" id="div-comment-15340">我切换了阿里云的源也没用，用你的脚本还是走ftp.us.debian.org这个，只有几kb的速度，腾讯云主机<div class="c-meta"><span class="c-author"><a href='https://dearjohn.cn/' rel='external nofollow' class='url'>John</a></span>2017-07-07 19:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=15340#respond' onclick='return addComment.moveForm( "div-comment-15340", "15340", "respond", "2228" )' aria-label='回复给John'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-15339"><div class="c-avatar"><div class="c-main" id="div-comment-15339">mkdir: cannot create directory '/etc/ocserv': Permission denied
+--2017-07-07 18:58:56--  https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/mas                          ter/other/ocserv.conf
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.72.13                          3
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.72.1                          33|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1659 (1.6K) [text/plain]
+/etc/ocserv: Permission denied/etc/ocserv/ocserv.conf: No such file or directory
+
+Cannot write to '/etc/ocserv/ocserv.conf' (Success).
+[错误] ocserv 配置文件下载失败 !
+这个怎么解决，ubuntu<div class="c-meta"><span class="c-author"><a href='https://dearjohn.cn/' rel='external nofollow' class='url'>John</a></span>2017-07-07 19:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=15339#respond' onclick='return addComment.moveForm( "div-comment-15339", "15339", "respond", "2228" )' aria-label='回复给John'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-15353"><div class="c-avatar"><div class="c-main" id="div-comment-15353"><pre class="prettyprint linenums" >mkdir: cannot create directory ‘/etc/ocserv': Permission denied
+新建文件夹没有权限，请检查是否有权限或者是否是ROOT用户，如果没有可以用 sudu su 来获取临时ROOT权限（运行后会提示输入[当前账号的密码]），或者更换为ROOT账号。
+Cannot write to ‘/etc/ocserv/ocserv.conf’ (Success).
+无法写入文件，可能是上面文件夹创建失败导致的，也可能是权限问题。
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-07-08 00:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=15353#respond' onclick='return addComment.moveForm( "div-comment-15353", "15353", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-15304"><div class="c-avatar"><div class="c-main" id="div-comment-15304">国外服务器也能搭建吗？<div class="c-meta"><span class="c-author">仙剑赋</span>2017-07-06 15:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=15304#respond' onclick='return addComment.moveForm( "div-comment-15304", "15304", "respond", "2228" )' aria-label='回复给仙剑赋'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-15307"><div class="c-avatar"><div class="c-main" id="div-comment-15307">都行。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-07-06 17:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=15307#respond' onclick='return addComment.moveForm( "div-comment-15307", "15307", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-15276"><div class="c-avatar"><div class="c-main" id="div-comment-15276">每次都要输入密码 很麻烦，客户端证书怎么弄？还有就是配置文件有错误的地方，但提示说不是很重要，不影响<div class="c-meta"><span class="c-author">马鑫</span>2017-07-04 17:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=15276#respond' onclick='return addComment.moveForm( "div-comment-15276", "15276", "respond", "2228" )' aria-label='回复给马鑫'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-15152"><div class="c-avatar"><div class="c-main" id="div-comment-15152">提示：
+Connection attempt has timed out. Please verify Internet connectivity.
+看日志：
+ocserv[11909]: worker:  could not disable system calls, kernel might not support seccomp
+ocserv[11882]: main: xxx.xxx.xxx.xxx:13819 user disconnected (reason: unspecified, rx: 0, tx: 0)<div class="c-meta"><span class="c-author">水鬼</span>2017-06-29 10:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=15152#respond' onclick='return addComment.moveForm( "div-comment-15152", "15152", "respond", "2228" )' aria-label='回复给水鬼'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-15160"><div class="c-avatar"><div class="c-main" id="div-comment-15160">上面是客户端提示，下面是服务端日志？“worker: could not disable system calls, kernel might not support seccomp”看起来似乎是服务端内核或系统的问题，我也不是很清楚。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-29 12:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=15160#respond' onclick='return addComment.moveForm( "div-comment-15160", "15160", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-14890"><div class="c-avatar"><div class="c-main" id="div-comment-14890">请问怎么开启支持ipv6 Google和百度上的 都试过了 都不行不知怎么配置<div class="c-meta"><span class="c-author">Crazybean</span>2017-06-17 20:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14890#respond' onclick='return addComment.moveForm( "div-comment-14890", "14890", "respond", "2228" )' aria-label='回复给Crazybean'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-14820"><div class="c-avatar"><div class="c-main" id="div-comment-14820">debain 8  连不上
+出错信息：
+The secure gateway has rejected the connection attempt.  A new connection attempt to the same or another secure gateway is needed, which requires re-authentication.<div class="c-meta"><span class="c-author">debain</span>2017-06-15 13:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14820#respond' onclick='return addComment.moveForm( "div-comment-14820", "14820", "respond", "2228" )' aria-label='回复给debain'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-14895"><div class="c-avatar"><div class="c-main" id="div-comment-14895">我也有這個問題約兩周，怎麼辦，是被運營商封鎖了嗎?
+但是在一台學術網路的win7電腦卻又可以用。<div class="c-meta"><span class="c-author">kevin</span>2017-06-17 21:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14895#respond' onclick='return addComment.moveForm( "div-comment-14895", "14895", "respond", "2228" )' aria-label='回复给kevin'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-14804"><div class="c-avatar"><div class="c-main" id="div-comment-14804">如何对OCSERV限速<div class="c-meta"><span class="c-author">qq</span>2017-06-14 15:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14804#respond' onclick='return addComment.moveForm( "div-comment-14804", "14804", "respond", "2228" )' aria-label='回复给qq'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-14814"><div class="c-avatar"><div class="c-main" id="div-comment-14814">Ocserv 没有自带的限速功能。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-14 19:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14814#respond' onclick='return addComment.moveForm( "div-comment-14814", "14814", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-14787"><div class="c-avatar"><div class="c-main" id="div-comment-14787">为什么用多几次后就上不了网了(Android端)<div class="c-meta"><span class="c-author"><a href='https://www.jiangtongxue.pw/' rel='external nofollow' class='url'>JiangTx</a></span>2017-06-13 18:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14787#respond' onclick='return addComment.moveForm( "div-comment-14787", "14787", "respond", "2228" )' aria-label='回复给JiangTx'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-14678"><div class="c-avatar"><div class="c-main" id="div-comment-14678">不知道为什么在我的GCP上没办法用....一连接就断开<div class="c-meta"><span class="c-author">江</span>2017-06-11 01:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14678#respond' onclick='return addComment.moveForm( "div-comment-14678", "14678", "respond", "2228" )' aria-label='回复给江'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-14658"><div class="c-avatar"><div class="c-main" id="div-comment-14658">为什么又不支持centos<div class="c-meta"><span class="c-author"><a href='http://cgc6.top/' rel='external nofollow' class='url'>chx818</a></span>2017-06-10 10:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14658#respond' onclick='return addComment.moveForm( "div-comment-14658", "14658", "respond", "2228" )' aria-label='回复给chx818'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-14661"><div class="c-avatar"><div class="c-main" id="div-comment-14661">我为什么要支持CentOS？就因为你们用，我也必须用？我不用这个系统，完全不熟悉，如何支持？而且我也不喜欢这个系统，原因很多懒得解释，一开始接触VPS就是用的CentOS，后来碰到Debian后，就再也不碰CentOS了。<br />
+我写的大部分教程和脚本是不会去考虑CentOS的，除非 步骤很简单的可以加上支持，否则我不熟悉这个系统也无法支持，出问题我也无法解决。所以如果要经常看我教程请使用 Debian 7 。非要用CentOS，那我也管不着，是你们的自由，CentOS问题贼多，反正我是不会用的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-10 12:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14661#respond' onclick='return addComment.moveForm( "div-comment-14661", "14661", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-14648"><div class="c-avatar"><div class="c-main" id="div-comment-14648">好好好， 试试看<div class="c-meta"><span class="c-author">go</span>2017-06-09 15:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14648#respond' onclick='return addComment.moveForm( "div-comment-14648", "14648", "respond", "2228" )' aria-label='回复给go'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-14641"><div class="c-avatar"><div class="c-main" id="div-comment-14641">搬瓦工KVM可以安装吗？<div class="c-meta"><span class="c-author">WorldLink</span>2017-06-09 12:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14641#respond' onclick='return addComment.moveForm( "div-comment-14641", "14641", "respond", "2228" )' aria-label='回复给WorldLink'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-14642"><div class="c-avatar"><div class="c-main" id="div-comment-14642">可以，不试试怎么知道呢？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-09 13:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14642#respond' onclick='return addComment.moveForm( "div-comment-14642", "14642", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-14649"><div class="c-avatar"><div class="c-main" id="div-comment-14649">O(∩_∩)O谢谢<div class="c-meta"><span class="c-author">WorldLink</span>2017-06-09 16:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14649#respond' onclick='return addComment.moveForm( "div-comment-14649", "14649", "respond", "2228" )' aria-label='回复给WorldLink'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-14603"><div class="c-avatar"><div class="c-main" id="div-comment-14603">求CentOS<div class="c-meta"><span class="c-author">Harry</span>2017-06-08 00:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14603#respond' onclick='return addComment.moveForm( "div-comment-14603", "14603", "respond", "2228" )' aria-label='回复给Harry'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-14605"><div class="c-avatar"><div class="c-main" id="div-comment-14605">别指望了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-08 01:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14605#respond' onclick='return addComment.moveForm( "div-comment-14605", "14605", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-14484"><div class="c-avatar"><div class="c-main" id="div-comment-14484">逗比 ，iptable没问题 问题还是重启后打开ipv4转发没保存 所以上不了网 编辑/etc/sysctl.conf，将net.ipv4.ip_forward=1一行前面的#号去掉 ，然后重启就好了<div class="c-meta"><span class="c-author">KKK</span>2017-06-04 08:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14484#respond' onclick='return addComment.moveForm( "div-comment-14484", "14484", "respond", "2228" )' aria-label='回复给KKK'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-14490"><div class="c-avatar"><div class="c-main" id="div-comment-14490">你是什么系统？我测试开机后是依然打开 ipv4转发的 cat /proc/sys/net/ipv4/ip_forward<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-04 11:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14490#respond' onclick='return addComment.moveForm( "div-comment-14490", "14490", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-3" id="comment-14494"><div class="c-avatar"><div class="c-main" id="div-comment-14494">算了，虽然不知道是什么原因，但是我还是改成echo -e "net.ipv4.ip_forward=1" >> /etc/sysctl.conf && sysctl -p 了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-04 12:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14494#respond' onclick='return addComment.moveForm( "div-comment-14494", "14494", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-4" id="comment-14495"><div class="c-avatar"><div class="c-main" id="div-comment-14495">你这么改OK了 逗比 ，我的是板瓦工KVM DEBIAN8  64<div class="c-meta"><span class="c-author">KKK</span>2017-06-04 12:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14495#respond' onclick='return addComment.moveForm( "div-comment-14495", "14495", "respond", "2228" )' aria-label='回复给KKK'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-5" id="comment-15069"><div class="c-avatar"><div class="c-main" id="div-comment-15069">去掉#号真的好了，感谢<div class="c-meta"><span class="c-author">benny</span>2017-06-25 10:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=15069#respond' onclick='return addComment.moveForm( "div-comment-15069", "15069", "respond", "2228" )' aria-label='回复给benny'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-14447"><div class="c-avatar"><div class="c-main" id="div-comment-14447">你这脚本有毒，自动给我安了一个控制面板，把原来的面板都覆盖了，，，，连重装系统的选项都没有，，，有毒啊<div class="c-meta"><span class="c-author">小蝌蚪</span>2017-06-03 14:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14447#respond' onclick='return addComment.moveForm( "div-comment-14447", "14447", "respond", "2228" )' aria-label='回复给小蝌蚪'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-14453"><div class="c-avatar"><div class="c-main" id="div-comment-14453">控制面板？控制面板是IDC的，你装我的脚本还能篡改IDC的控制面板？说话能不能靠谱一点？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-03 18:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14453#respond' onclick='return addComment.moveForm( "div-comment-14453", "14453", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-2" id="comment-14457"><div class="c-avatar"><div class="c-main" id="div-comment-14457">惊！某小白声称用一键脚本成功修改idc控制面板，背后的真相是...... <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_eek.gif" alt=":shock:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">kurokitomoko</span>2017-06-03 19:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14457#respond' onclick='return addComment.moveForm( "div-comment-14457", "14457", "respond", "2228" )' aria-label='回复给kurokitomoko'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-14440"><div class="c-avatar"><div class="c-main" id="div-comment-14440">Telegram群为什么不能进入了。<div class="c-meta"><span class="c-author">我</span>2017-06-03 07:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14440#respond' onclick='return addComment.moveForm( "div-comment-14440", "14440", "respond", "2228" )' aria-label='回复给我'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-14444"><div class="c-avatar"><div class="c-main" id="div-comment-14444"><a href="https://t.me/doubi" target="_blank" rel="nofollow">Telegram</a> 可以进的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-03 11:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14444#respond' onclick='return addComment.moveForm( "div-comment-14444", "14444", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-42199"><div class="c-avatar"><div class="c-main" id="div-comment-42199">telegram群是多少？<div class="c-meta"><span class="c-author">掘井山人</span>2018-08-25 03:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=42199#respond' onclick='return addComment.moveForm( "div-comment-42199", "42199", "respond", "2228" )' aria-label='回复给掘井山人'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-42207"><div class="c-avatar"><div class="c-main" id="div-comment-42207"><a href="https://t.me/doubi/" target="_blank" rel="nofollow">Telegram群组</a>(<a href="ma7f_p6p.html" target="_blank">TG使用教程</a>)。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-08-25 12:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=42207#respond' onclick='return addComment.moveForm( "div-comment-42207", "42207", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-14396"><div class="c-avatar"><div class="c-main" id="div-comment-14396">docker下的怎么安装？这么多好的教程好多集成在一个服务器才好<div class="c-meta"><span class="c-author">carry</span>2017-06-02 08:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14396#respond' onclick='return addComment.moveForm( "div-comment-14396", "14396", "respond", "2228" )' aria-label='回复给carry'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-14374"><div class="c-avatar"><div class="c-main" id="div-comment-14374">要重装才行。<div class="c-meta"><span class="c-author">刀杨</span>2017-06-01 17:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14374#respond' onclick='return addComment.moveForm( "div-comment-14374", "14374", "respond", "2228" )' aria-label='回复给刀杨'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-14391"><div class="c-avatar"><div class="c-main" id="div-comment-14391">iptable防火墙要手动设置 脚本问题<div class="c-meta"><span class="c-author">KKK</span>2017-06-02 00:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14391#respond' onclick='return addComment.moveForm( "div-comment-14391", "14391", "respond", "2228" )' aria-label='回复给KKK'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-3" id="comment-14403"><div class="c-avatar"><div class="c-main" id="div-comment-14403">我自己测试重启后服务器和VPN正常。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-02 10:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14403#respond' onclick='return addComment.moveForm( "div-comment-14403", "14403", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-4" id="comment-14468"><div class="c-avatar"><div class="c-main" id="div-comment-14468">1.0.1好了<div class="c-meta"><span class="c-author">KKK</span>2017-06-04 00:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14468#respond' onclick='return addComment.moveForm( "div-comment-14468", "14468", "respond", "2228" )' aria-label='回复给KKK'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-5" id="comment-14469"><div class="c-avatar"><div class="c-main" id="div-comment-14469">还是没好。连的上但上不了网<div class="c-meta"><span class="c-author">KKK</span>2017-06-04 00:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14469#respond' onclick='return addComment.moveForm( "div-comment-14469", "14469", "respond", "2228" )' aria-label='回复给KKK'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-6" id="comment-14472"><div class="c-avatar"><div class="c-main" id="div-comment-14472">我debian 7 安装后连上正常，重启后连上也正常，你看一看防火墙配置，依次查看下面信息并回复，我才能简单排除问题是哪里：
+
+<pre class="prettyprint linenums" >cat /proc/sys/net/ipv4/ip_forward
+# 是否开启防火墙转发，正常情况返回 1，代表开启
+
+# Debian
+cat /etc/network/if-pre-up.d/iptables
+# Ubuntu
+cat /etc/network/interfaces
+# 查看防火墙启动读取脚本是否存着并且内容不为空。
+
+iptables -L -n
+# 查看防火墙端口是否开放。
+
+# 最后这个开启nat似乎没办法验证，你可以再执行一次看一看是否有影响。
+iptables -t nat -A POSTROUTING -o 网卡名(如eth0) -j MASQUERADE
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-04 00:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14472#respond' onclick='return addComment.moveForm( "div-comment-14472", "14472", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-7" id="comment-14474"><div class="c-avatar"><div class="c-main" id="div-comment-14474">我已经解决了 只是提一下 参考你的手动版，你的脚本试试这么加 -I INPUT -p tcp --dport 443 -j ACCEPT      -I INPUT -p udp --dport 443 -j ACCEPT  加入/etc/iptables.up.rules 那个new  -m 什么的不要    2.打开ipv4 转发 编辑/etc/sysctl.conf，将net.ipv4.ip_forward=1一行前面的#号去掉(否则连接上后将无法访问外网)      
+另外我发现去掉udp端口  tcp连接很快 但不能反过来<div class="c-meta"><span class="c-author">KKK</span>2017-06-04 01:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14474#respond' onclick='return addComment.moveForm( "div-comment-14474", "14474", "respond", "2228" )' aria-label='回复给KKK'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-8" id="comment-14476"><div class="c-avatar"><div class="c-main" id="div-comment-14476">没区别的，和这个没关系，我其他所有脚本的防火墙配置代码都是一样的，复制粘贴没区别。总之我自测无你说的问题（代表脚本在我的测试VPS上无错误），而你也无法提供详细的情况以让我排查问题。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-04 02:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14476#respond' onclick='return addComment.moveForm( "div-comment-14476", "14476", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt depth-7" id="comment-14475"><div class="c-avatar"><div class="c-main" id="div-comment-14475">state state -m  这几行是ssr的防火墙  应该是起冲突了吧  但也许不是<div class="c-meta"><span class="c-author">KKK</span>2017-06-04 01:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14475#respond' onclick='return addComment.moveForm( "div-comment-14475", "14475", "respond", "2228" )' aria-label='回复给KKK'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-8" id="comment-14477"><div class="c-avatar"><div class="c-main" id="div-comment-14477">不冲突。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-04 02:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14477#respond' onclick='return addComment.moveForm( "div-comment-14477", "14477", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-14373"><div class="c-avatar"><div class="c-main" id="div-comment-14373">为什么vps重启后， 就不能上网了。<div class="c-meta"><span class="c-author">刀杨</span>2017-06-01 17:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14373#respond' onclick='return addComment.moveForm( "div-comment-14373", "14373", "respond", "2228" )' aria-label='回复给刀杨'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-14360"><div class="c-avatar"><div class="c-main" id="div-comment-14360">苹果手机使用很方便<div class="c-meta"><span class="c-author">Achillers</span>2017-06-01 11:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14360#respond' onclick='return addComment.moveForm( "div-comment-14360", "14360", "respond", "2228" )' aria-label='回复给Achillers'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-14338"><div class="c-avatar"><div class="c-main" id="div-comment-14338">有什么代理是可以像ss影梭R版那样支持http混淆的？<div class="c-meta"><span class="c-author">天一</span>2017-05-31 16:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14338#respond' onclick='return addComment.moveForm( "div-comment-14338", "14338", "respond", "2228" )' aria-label='回复给天一'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-14336"><div class="c-avatar"><div class="c-main" id="div-comment-14336">很荣幸来到这里参观！<div class="c-meta"><span class="c-author"><a href='http://www.walker307.yihuanghou.com/' rel='external nofollow' class='url'>衣皇后</a></span>2017-05-31 15:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14336#respond' onclick='return addComment.moveForm( "div-comment-14336", "14336", "respond", "2228" )' aria-label='回复给衣皇后'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-14329"><div class="c-avatar"><div class="c-main" id="div-comment-14329">搭好了。。。十秒断。。。这干扰 没谁了<div class="c-meta"><span class="c-author"><a href='http://www.zuoyou.ga/' rel='external nofollow' class='url'>左右</a></span>2017-05-30 23:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14329#respond' onclick='return addComment.moveForm( "div-comment-14329", "14329", "respond", "2228" )' aria-label='回复给左右'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-14948"><div class="c-avatar"><div class="c-main" id="div-comment-14948">我也是，连上立即断开！<div class="c-meta"><span class="c-author">alex</span>2017-06-20 07:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14948#respond' onclick='return addComment.moveForm( "div-comment-14948", "14948", "respond", "2228" )' aria-label='回复给alex'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-14322"><div class="c-avatar"><div class="c-main" id="div-comment-14322">有没有方法把这个自定义路由表呢？并不想全局代理，但是这速度……我的垃圾VPS还发了青春！<div class="c-meta"><span class="c-author">Sun</span>2017-05-30 15:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14322#respond' onclick='return addComment.moveForm( "div-comment-14322", "14322", "respond", "2228" )' aria-label='回复给Sun'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-14323"><div class="c-avatar"><div class="c-main" id="div-comment-14323">路由表我并不了解，据说只能写64条（也有人说200条）总归还是太少了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-30 16:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14323#respond' onclick='return addComment.moveForm( "div-comment-14323", "14323", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-14328"><div class="c-avatar"><div class="c-main" id="div-comment-14328">那真是太可惜啦！如果可以定义路由表就完美了！<div class="c-meta"><span class="c-author">Sun</span>2017-05-30 21:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14328#respond' onclick='return addComment.moveForm( "div-comment-14328", "14328", "respond", "2228" )' aria-label='回复给Sun'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-3" id="comment-14749"><div class="c-avatar"><div class="c-main" id="div-comment-14749">这个真的很有必要，什么时候得空搞搞吧。能大概的国内外分流也是不错的。先谢谢了。<div class="c-meta"><span class="c-author"><a href='https://twitter.com/luzhaohui' rel='external nofollow' class='url'>凌晨兩點</a></span>2017-06-12 18:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14749#respond' onclick='return addComment.moveForm( "div-comment-14749", "14749", "respond", "2228" )' aria-label='回复给凌晨兩點'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-3" id="comment-14981"><div class="c-avatar"><div class="c-main" id="div-comment-14981">0.10.6的版本以后就没有64条的限制了，不过最好不要超过两百条（安卓下发不了路由表）。把下面的白名单路由表放到<code> /etc/ocserv/ocserv.conf </code>里面，一共198条，重启服务端就行了。还有就是，如果在一些NAT层数较多的网络环境下，要把dpd、mobile-dpd调小才行，不然连不上的。最好正经签证书，别用自签的。
+<pre class="prettyprint linenums" >no-route = 1.0.0.0/255.192.0.0
+no-route = 1.64.0.0/255.224.0.0
+no-route = 1.112.0.0/255.248.0.0
+no-route = 1.176.0.0/255.240.0.0
+no-route = 1.192.0.0/255.240.0.0
+no-route = 14.0.0.0/255.224.0.0
+no-route = 14.96.0.0/255.224.0.0
+no-route = 14.128.0.0/255.224.0.0
+no-route = 14.192.0.0/255.224.0.0
+no-route = 27.0.0.0/255.192.0.0
+no-route = 27.96.0.0/255.224.0.0
+no-route = 27.128.0.0/255.224.0.0
+no-route = 27.176.0.0/255.240.0.0
+no-route = 27.192.0.0/255.224.0.0
+no-route = 27.224.0.0/255.252.0.0
+no-route = 36.0.0.0/255.192.0.0
+no-route = 36.96.0.0/255.224.0.0
+no-route = 36.128.0.0/255.192.0.0
+no-route = 36.192.0.0/255.224.0.0
+no-route = 36.240.0.0/255.240.0.0
+no-route = 39.0.0.0/255.255.0.0
+no-route = 39.64.0.0/255.224.0.0
+no-route = 39.96.0.0/255.240.0.0
+no-route = 39.128.0.0/255.192.0.0
+no-route = 40.72.0.0/255.254.0.0
+no-route = 40.124.0.0/255.252.0.0
+no-route = 42.0.0.0/255.248.0.0
+no-route = 42.48.0.0/255.240.0.0
+no-route = 42.80.0.0/255.240.0.0
+no-route = 42.96.0.0/255.224.0.0
+no-route = 42.128.0.0/255.128.0.0
+no-route = 43.224.0.0/255.224.0.0
+no-route = 45.65.16.0/255.255.240.0
+no-route = 45.112.0.0/255.240.0.0
+no-route = 45.248.0.0/255.248.0.0
+no-route = 47.92.0.0/255.252.0.0
+no-route = 47.96.0.0/255.224.0.0
+no-route = 49.0.0.0/255.128.0.0
+no-route = 49.128.0.0/255.224.0.0
+no-route = 49.192.0.0/255.192.0.0
+no-route = 52.80.0.0/255.252.0.0
+no-route = 54.222.0.0/255.254.0.0
+no-route = 58.0.0.0/255.128.0.0
+no-route = 58.128.0.0/255.224.0.0
+no-route = 58.192.0.0/255.224.0.0
+no-route = 58.240.0.0/255.240.0.0
+no-route = 59.32.0.0/255.224.0.0
+no-route = 59.64.0.0/255.224.0.0
+no-route = 59.96.0.0/255.240.0.0
+no-route = 59.144.0.0/255.240.0.0
+no-route = 59.160.0.0/255.224.0.0
+no-route = 59.192.0.0/255.192.0.0
+no-route = 60.0.0.0/255.224.0.0
+no-route = 60.48.0.0/255.240.0.0
+no-route = 60.160.0.0/255.224.0.0
+no-route = 60.192.0.0/255.192.0.0
+no-route = 61.0.0.0/255.192.0.0
+no-route = 61.80.0.0/255.248.0.0
+no-route = 61.128.0.0/255.192.0.0
+no-route = 61.224.0.0/255.224.0.0
+no-route = 91.234.36.0/255.255.255.0
+no-route = 101.0.0.0/255.128.0.0
+no-route = 101.128.0.0/255.224.0.0
+no-route = 101.192.0.0/255.240.0.0
+no-route = 101.224.0.0/255.224.0.0
+no-route = 103.0.0.0/255.0.0.0
+no-route = 106.0.0.0/255.128.0.0
+no-route = 106.224.0.0/255.240.0.0
+no-route = 110.0.0.0/255.128.0.0
+no-route = 110.144.0.0/255.240.0.0
+no-route = 110.160.0.0/255.224.0.0
+no-route = 110.192.0.0/255.192.0.0
+no-route = 111.0.0.0/255.192.0.0
+no-route = 111.64.0.0/255.224.0.0
+no-route = 111.112.0.0/255.240.0.0
+no-route = 111.128.0.0/255.192.0.0
+no-route = 111.192.0.0/255.224.0.0
+no-route = 111.224.0.0/255.240.0.0
+no-route = 112.0.0.0/255.128.0.0
+no-route = 112.128.0.0/255.240.0.0
+no-route = 112.192.0.0/255.252.0.0
+no-route = 112.224.0.0/255.224.0.0
+no-route = 113.0.0.0/255.128.0.0
+no-route = 113.128.0.0/255.240.0.0
+no-route = 113.192.0.0/255.192.0.0
+no-route = 114.16.0.0/255.240.0.0
+no-route = 114.48.0.0/255.240.0.0
+no-route = 114.64.0.0/255.192.0.0
+no-route = 114.128.0.0/255.240.0.0
+no-route = 114.192.0.0/255.192.0.0
+no-route = 115.0.0.0/255.0.0.0
+no-route = 116.0.0.0/255.0.0.0
+no-route = 117.0.0.0/255.128.0.0
+no-route = 117.128.0.0/255.192.0.0
+no-route = 118.16.0.0/255.240.0.0
+no-route = 118.64.0.0/255.192.0.0
+no-route = 118.128.0.0/255.128.0.0
+no-route = 119.0.0.0/255.128.0.0
+no-route = 119.128.0.0/255.192.0.0
+no-route = 119.224.0.0/255.224.0.0
+no-route = 120.0.0.0/255.192.0.0
+no-route = 120.64.0.0/255.224.0.0
+no-route = 120.128.0.0/255.240.0.0
+no-route = 120.192.0.0/255.192.0.0
+no-route = 121.0.0.0/255.128.0.0
+no-route = 121.192.0.0/255.192.0.0
+no-route = 122.0.0.0/254.0.0.0
+no-route = 124.0.0.0/255.0.0.0
+no-route = 125.0.0.0/255.128.0.0
+no-route = 125.160.0.0/255.224.0.0
+no-route = 125.192.0.0/255.192.0.0
+no-route = 137.59.59.0/255.255.255.0
+no-route = 137.59.88.0/255.255.252.0
+no-route = 139.0.0.0/255.224.0.0
+no-route = 139.128.0.0/255.128.0.0
+no-route = 140.64.0.0/255.240.0.0
+no-route = 140.128.0.0/255.240.0.0
+no-route = 140.192.0.0/255.192.0.0
+no-route = 144.0.0.0/255.248.0.0
+no-route = 144.12.0.0/255.255.0.0
+no-route = 144.48.0.0/255.248.0.0
+no-route = 144.123.0.0/255.255.0.0
+no-route = 144.255.0.0/255.255.0.0
+no-route = 146.196.0.0/255.255.128.0
+no-route = 150.0.0.0/255.255.0.0
+no-route = 150.96.0.0/255.224.0.0
+no-route = 150.128.0.0/255.240.0.0
+no-route = 150.192.0.0/255.192.0.0
+no-route = 152.104.128.0/255.255.128.0
+no-route = 153.0.0.0/255.192.0.0
+no-route = 153.96.0.0/255.224.0.0
+no-route = 157.0.0.0/255.255.0.0
+no-route = 157.18.0.0/255.255.0.0
+no-route = 157.61.0.0/255.255.0.0
+no-route = 157.112.0.0/255.240.0.0
+no-route = 157.144.0.0/255.240.0.0
+no-route = 157.255.0.0/255.255.0.0
+no-route = 159.226.0.0/255.255.0.0
+no-route = 160.19.0.0/255.255.0.0
+no-route = 160.20.48.0/255.255.252.0
+no-route = 160.202.0.0/255.255.0.0
+no-route = 160.238.64.0/255.255.252.0
+no-route = 161.207.0.0/255.255.0.0
+no-route = 162.105.0.0/255.255.0.0
+no-route = 163.0.0.0/255.192.0.0
+no-route = 163.96.0.0/255.224.0.0
+no-route = 163.128.0.0/255.192.0.0
+no-route = 163.192.0.0/255.224.0.0
+no-route = 164.52.0.0/255.255.128.0
+no-route = 166.111.0.0/255.255.0.0
+no-route = 167.139.0.0/255.255.0.0
+no-route = 167.189.0.0/255.255.0.0
+no-route = 167.220.244.0/255.255.252.0
+no-route = 168.160.0.0/255.255.0.0
+no-route = 170.179.0.0/255.255.0.0
+no-route = 171.0.0.0/255.128.0.0
+no-route = 171.192.0.0/255.224.0.0
+no-route = 175.0.0.0/255.128.0.0
+no-route = 175.128.0.0/255.192.0.0
+no-route = 180.64.0.0/255.192.0.0
+no-route = 180.128.0.0/255.128.0.0
+no-route = 182.0.0.0/255.0.0.0
+no-route = 183.0.0.0/255.192.0.0
+no-route = 183.64.0.0/255.224.0.0
+no-route = 183.128.0.0/255.128.0.0
+no-route = 192.124.154.0/255.255.255.0
+no-route = 192.140.128.0/255.255.128.0
+no-route = 195.78.82.0/255.255.254.0
+no-route = 202.0.0.0/255.128.0.0
+no-route = 202.128.0.0/255.192.0.0
+no-route = 202.192.0.0/255.224.0.0
+no-route = 203.0.0.0/255.0.0.0
+no-route = 210.0.0.0/255.192.0.0
+no-route = 210.64.0.0/255.224.0.0
+no-route = 210.160.0.0/255.224.0.0
+no-route = 210.192.0.0/255.224.0.0
+no-route = 211.64.0.0/255.248.0.0
+no-route = 211.80.0.0/255.240.0.0
+no-route = 211.96.0.0/255.248.0.0
+no-route = 211.136.0.0/255.248.0.0
+no-route = 211.144.0.0/255.240.0.0
+no-route = 211.160.0.0/255.248.0.0
+no-route = 216.250.108.0/255.255.252.0
+no-route = 218.0.0.0/255.128.0.0
+no-route = 218.160.0.0/255.224.0.0
+no-route = 218.192.0.0/255.192.0.0
+no-route = 219.64.0.0/255.224.0.0
+no-route = 219.128.0.0/255.224.0.0
+no-route = 219.192.0.0/255.192.0.0
+no-route = 220.96.0.0/255.224.0.0
+no-route = 220.128.0.0/255.128.0.0
+no-route = 221.0.0.0/255.224.0.0
+no-route = 221.96.0.0/255.224.0.0
+no-route = 221.128.0.0/255.128.0.0
+no-route = 222.0.0.0/255.0.0.0
+no-route = 223.0.0.0/255.224.0.0
+no-route = 223.64.0.0/255.192.0.0
+no-route = 223.128.0.0/255.128.0.0
+</pre><div class="c-meta"><span class="c-author">喜乐</span>2017-06-22 10:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14981#respond' onclick='return addComment.moveForm( "div-comment-14981", "14981", "respond", "2228" )' aria-label='回复给喜乐'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-14309"><div class="c-avatar"><div class="c-main" id="div-comment-14309">不干扰很快 凌晨时候  干扰的时候直接断网 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_mrgreen.gif" alt=":mrgreen:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">KKK</span>2017-05-30 10:41 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14309#respond' onclick='return addComment.moveForm( "div-comment-14309", "14309", "respond", "2228" )' aria-label='回复给KKK'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-14307"><div class="c-avatar"><div class="c-main" id="div-comment-14307">想问一下 如果用这个玩游戏（彩虹六号之类的），显示的nat类型是strict，google上没有找到，有什么方法可以解决吗<div class="c-meta"><span class="c-author">smaillj</span>2017-05-30 10:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14307#respond' onclick='return addComment.moveForm( "div-comment-14307", "14307", "respond", "2228" )' aria-label='回复给smaillj'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-14314"><div class="c-avatar"><div class="c-main" id="div-comment-14314">不清楚你说的 显示的nat类型是strict 是什么意思。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-30 11:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14314#respond' onclick='return addComment.moveForm( "div-comment-14314", "14314", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-14529"><div class="c-avatar"><div class="c-main" id="div-comment-14529">就是anyconnect的默认nat好像是Symmetric，有没有办法修改成Full Cone的 谢谢了<div class="c-meta"><span class="c-author">smaillj</span>2017-06-05 19:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14529#respond' onclick='return addComment.moveForm( "div-comment-14529", "14529", "respond", "2228" )' aria-label='回复给smaillj'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-14538"><div class="c-avatar"><div class="c-main" id="div-comment-14538">不懂这些，我基本不用VPN。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-06 02:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14538#respond' onclick='return addComment.moveForm( "div-comment-14538", "14538", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt depth-2" id="comment-18809"><div class="c-avatar"><div class="c-main" id="div-comment-18809">你的解決方案應該是要在作業系統內進行端口流量轉發吧，詳見firewalld的指令應該可以成功<div class="c-meta"><span class="c-author">kevin</span>2017-09-21 16:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=18809#respond' onclick='return addComment.moveForm( "div-comment-18809", "18809", "respond", "2228" )' aria-label='回复给kevin'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-14306"><div class="c-avatar"><div class="c-main" id="div-comment-14306">有控制流量的办法吗？不然没法多人共享使用。<div class="c-meta"><span class="c-author">ocserv</span>2017-05-30 09:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14306#respond' onclick='return addComment.moveForm( "div-comment-14306", "14306", "respond", "2228" )' aria-label='回复给ocserv'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-14312"><div class="c-avatar"><div class="c-main" id="div-comment-14312">没有。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-30 11:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14312#respond' onclick='return addComment.moveForm( "div-comment-14312", "14312", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-14300"><div class="c-avatar"><div class="c-main" id="div-comment-14300">我的做法。。手动设置 
+1. 把iptables -I INPUT -p tcp --dport 443 -j ACCEPT
+iptables -I INPUT -p udp --dport 443 -j ACCEPT 加入/etc/iptables.up.rules 保存   
+2.打开ipv4 转发
+编辑/etc/sysctl.conf，将net.ipv4.ip_forward=1一行前面的#号去掉(否则连接上后将无法访问外网)，保存后执行sysctl -p(如果执行后有报错的,重新打开sysctl.conf将报错的部分#注释掉保存,直到执行sysctl -p不再报错为止)。<div class="c-meta"><span class="c-author">KKK</span>2017-05-30 06:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14300#respond' onclick='return addComment.moveForm( "div-comment-14300", "14300", "respond", "2228" )' aria-label='回复给KKK'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-14301"><div class="c-avatar"><div class="c-main" id="div-comment-14301">-I INPUT -p tcp --dport 443 -j ACCEPT
+-I INPUT -p udp --dport 443 -j ACCEPT
+前面iptables不要。。<div class="c-meta"><span class="c-author">KKK</span>2017-05-30 06:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14301#respond' onclick='return addComment.moveForm( "div-comment-14301", "14301", "respond", "2228" )' aria-label='回复给KKK'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-14311"><div class="c-avatar"><div class="c-main" id="div-comment-14311">我的所有脚本和教程的防火墙设置步骤都一样。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-30 11:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14311#respond' onclick='return addComment.moveForm( "div-comment-14311", "14311", "respond", "2228" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-14298"><div class="c-avatar"><div class="c-main" id="div-comment-14298">感谢大佬，发现一个小问题 防火墙配置重启失效，需手动设置<div class="c-meta"><span class="c-author">KKK</span>2017-05-30 04:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14298#respond' onclick='return addComment.moveForm( "div-comment-14298", "14298", "respond", "2228" )' aria-label='回复给KKK'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-14299"><div class="c-avatar"><div class="c-main" id="div-comment-14299">难道跟ssr起冲突?防火墙设置开机自启也不行<div class="c-meta"><span class="c-author">KKK</span>2017-05-30 04:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14299#respond' onclick='return addComment.moveForm( "div-comment-14299", "14299", "respond", "2228" )' aria-label='回复给KKK'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-14297"><div class="c-avatar"><div class="c-main" id="div-comment-14297">我这用这个比ssr快 ?<div class="c-meta"><span class="c-author">KKK</span>2017-05-30 04:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14297#respond' onclick='return addComment.moveForm( "div-comment-14297", "14297", "respond", "2228" )' aria-label='回复给KKK'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-14296"><div class="c-avatar"><div class="c-main" id="div-comment-14296">速度快的飞起  说没必要搞的可以闭嘴了<div class="c-meta"><span class="c-author">KKK</span>2017-05-30 04:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14296#respond' onclick='return addComment.moveForm( "div-comment-14296", "14296", "respond", "2228" )' aria-label='回复给KKK'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-14288"><div class="c-avatar"><div class="c-main" id="div-comment-14288">搭出来竟然比想象中的好用 感动了<div class="c-meta"><span class="c-author">Zazen</span>2017-05-29 23:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14288#respond' onclick='return addComment.moveForm( "div-comment-14288", "14288", "respond", "2228" )' aria-label='回复给Zazen'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-14271"><div class="c-avatar"><div class="c-main" id="div-comment-14271"><img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_mrgreen.gif" alt=":mrgreen:" class="wp-smiley" style="height: 1em; max-height: 1em;" /> 效率真高，赞一个<div class="c-meta"><span class="c-author">Bob</span>2017-05-29 18:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-7/?replytocom=14271#respond' onclick='return addComment.moveForm( "div-comment-14271", "14271", "respond", "2228" )' aria-label='回复给Bob'>回复</a></div></div></div></li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+		<span class='page-numbers current'>1</span>
+<a class='page-numbers' href='44q3pd7t.html#comments'>2</a>
+<a class='page-numbers' href='7mia6e4r.html#comments'>3</a>
+<a class="next page-numbers" href="44q3pd7t.html#comments">»</a>	</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://kanfanba.com/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script data-cfasync="false" src="hnpipwj_.js"></script><script type="text/javascript">
+var image_url=new Array()
+image_url=["https://www.vultr.com/","vh8576m0.html","https://virmach.com/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="dk85a57-container dk85a57-1 dk85a57-hide">
+    <div class="dk85a57-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="dk85a57"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

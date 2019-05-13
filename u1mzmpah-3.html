@@ -1,0 +1,1273 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>ShadowsocksR服务端伪装成 正常网站流量，以更好的欺骗流量匹配 | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1954] -->
+<meta name="description"  content="前两天，ShadowsocksR作者做了一个 公益站，同时演示了 如何将ShadowsocksR服务端的流量伪装成正常网站的流量，有点意思，写一点简单的教程。 如果只是单纯的去伪装ShadowsocksR流量，那么不需要安装Nginx/Apache这些功能多但是配置相对也复杂一点的HTTP服务器，用Cad" />
+
+<meta name="keywords"  content="caddy,shadowsocks,shadowsocksr" />
+
+<link rel="canonical" href="hi10k-7p-5.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='利用 Caddy 非常简单的部署 反向代理/镜像（支持自签SSL证书）' href='l-en8vwt-2.html' />
+<link rel='next' title='ShadowsocksR 客户端 各种隐藏使用技巧说明' href='kd691l4o-3.html' />
+<link rel='shortlink' href='https://doub.io/?p=1989' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fss-jc48%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fss-jc48%2F&amp;format=xml" />
+<style>
+.xka5b15{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.xka5b15-hide{
+    display: none;
+}
+.xka5b15-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.xka5b15-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.xka5b15-2 .xka5b15-body,.xka5b15-3 .xka5b15-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.xka5b15-2 .close-btn,.xka5b15-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.xka5b15-3 .xka5b15-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.xka5b15').html(kill_adBlock_message);
+            jQuery('.xka5b15-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.xka5b15-container').fadeOut('xka5b15-hide');
+        });
+    });
+    var kill_adBlock_status = 1;
+    var kill_adBlock_message = '逗比很伤心😥，您的<strong>广告拦截扩展</strong>屏蔽了我们的小广告，网站的发展离不开大家的支持，请先看过<a target=\"_blank\" style=\"color: #ffe500;\" href=\"3--didfb.html\">这个文章</a>后，再确定是否要将我们的域名添加到<strong>拦截白名单</strong>中，谢谢！😘👌';
+    var kill_adBlock_message_delay = 0;
+    var kill_adBlock_close_btn = 1;
+    var kill_adBlock_close_automatically = 0;
+    var kill_adBlock_close_automatically_delay = 0;
+    var kill_adBlock_message_type = 1;
+    function adBlockDetected() {
+      show_message();
+    }
+    
+    if(typeof killAdBlock === 'undefined') {
+        adBlockDetected();
+    } else {
+        killAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+    }
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="Caddy, Shadowsocks, ShadowsocksR, Shadowsocks">
+<meta name="description" content="前两天，ShadowsocksR作者做了一个 公益站，同时演示了 如何将ShadowsocksR服务端的流量伪装成正常网站的流量，有点意思，写一点简单的教程。    如果只是单纯的去伪装ShadowsocksR流量，那么不需要安装Nginx/Apache这些功能多但是配置相对也复杂一点的HTTP服务器，用Caddy就好了。 本文章主要是实现： 首先我们要知道 SSR 的混淆插件中的 HTTP HTTPS 混淆伪装均为 伪·伪装，仅仅是模">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-1989 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li class="current-post-ancestor"><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="./softs.wtf/"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Atoyodadoubi.github.io'; return false;" action="https://toyodadoubi.github.io/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 逗比云还是逃不过被墙的命运，既然如此那以后逗比云也就一直用被墙的旧域名 <strong><a target="_blank" href="./softs.wtf/">[softs.wtf]</a></strong> 算了。
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://www.gigsgigscloud.com/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="hi10k-7p-5.html">ShadowsocksR服务端伪装成 正常网站流量，以更好的欺骗流量匹配</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="qha-5xcm.html"> Shadowsocks</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 2年前 (2017-03-14)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 36199℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="hi10k-7p-5.html#comments">219评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="hi10k-7p-5.html#本文章主要是实现：" title="本文章主要是实现："><span>本文章主要是实现：</span></a><ul class="children"><li class="content-index-level-2"><a href="hi10k-7p-5.html#文章里的原理：" title="文章里的原理："><span>文章里的原理：</span></a></li></ul></li><li class="content-index-level-1"><a href="hi10k-7p-5.html#推荐一个伪装配置" title="推荐一个伪装配置"><span>推荐一个伪装配置</span></a></li><li class="content-index-level-1"><a href="hi10k-7p-5.html#前提准备" title="前提准备"><span>前提准备</span></a></li><li class="content-index-level-1"><a href="hi10k-7p-5.html#Caddy 配置步骤" title="Caddy 配置步骤"><span>Caddy 配置步骤</span></a><ul class="children"><li class="content-index-level-2"><a href="hi10k-7p-5.html#安装 Caddy" title="安装 Caddy"><span>安装 Caddy</span></a></li><li class="content-index-level-2"><a href="hi10k-7p-5.html#配置 Caddy" title="配置 Caddy"><span>配置 Caddy</span></a><ul class="children"><li class="content-index-level-3"><a href="hi10k-7p-5.html#HTTP（80端口）" title="HTTP（80端口）"><span>HTTP（80端口）</span></a></li><li class="content-index-level-3"><a href="hi10k-7p-5.html#HTTPS（443端口）" title="HTTPS（443端口）"><span>HTTPS（443端口）</span></a></li></ul></li><li class="content-index-level-2"><a href="hi10k-7p-5.html#使用说明" title="使用说明"><span>使用说明</span></a></li></ul></li><li class="content-index-level-1"><a href="hi10k-7p-5.html#ShadowsocksR 配置步骤" title="ShadowsocksR 配置步骤"><span>ShadowsocksR 配置步骤</span></a><ul class="children"><li class="content-index-level-2"><a href="hi10k-7p-5.html#HTTP（80端口）" title="HTTP（80端口）"><span>HTTP（80端口）</span></a></li><li class="content-index-level-2"><a href="hi10k-7p-5.html#HTTPS（443端口）" title="HTTPS（443端口）"><span>HTTPS（443端口）</span></a></li><li class="content-index-level-2"><a href="hi10k-7p-5.html#多端口配置" title="多端口配置"><span>多端口配置</span></a></li></ul></li><li class="content-index-level-1"><a href="hi10k-7p-5.html#客户端混淆设置" title="客户端混淆设置"><span>客户端混淆设置</span></a></li><li class="content-index-level-1"><a href="hi10k-7p-5.html#其他说明" title="其他说明"><span>其他说明</span></a><ul class="children"><li class="content-index-level-2"><a href="hi10k-7p-5.html#启动显示成功，但是实际未运行" title="启动显示成功，但是实际未运行"><span>启动显示成功，但是实际未运行</span></a></li><li class="content-index-level-2"><a href="hi10k-7p-5.html#Nginx配置说明" title="Nginx配置说明"><span>Nginx配置说明</span></a></li></ul></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年10月31日 13:04</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>前两天，ShadowsocksR作者做了一个 公益站，同时演示了 如何将ShadowsocksR服务端的流量伪装成正常网站的流量，有点意思，写一点简单的教程。</p>
+<hr />
+<p>如果只是单纯的去伪装ShadowsocksR流量，那么不需要安装Nginx/Apache这些功能多但是配置相对也复杂一点的HTTP服务器，用Caddy就好了。</p>
+<h2 id="本文章主要是实现：">本文章主要是实现：</h2>
+<blockquote><p>首先我们要知道 SSR 的混淆插件中的 <strong>HTTP HTTPS</strong> 混淆伪装均为 <strong>伪·伪装</strong>，仅仅是模拟为 HTTP HTTPS 访问流量，容易被主动探测识破，况且很多人连混淆参数都不填，更是进一步降低其伪装混淆安全性，而该教程就是为了<strong>加强混淆伪装，使 伪·伪装 变成 真·伪装！</strong></p></blockquote>
+<p>访问 <code>http://xxx.xx 域名(http 80端口)</code>，能正常看到网站内容，但如果你链接这个网站服务器上面的ShadowsocksR服务端账号(也是80端口)，也能正常使用。实现了同端口网站和ShadowsocksR共存。</p>
+<p>而对于墙或者运营商来说，当他们检测你传输的流量特征的时候，会看到你的流量是去访问海外服务器的 80 端口，就算跟踪过去，也会发现是一个正常的海外网站（随便搞一个静态的 HTML 英文页面），一个没有敏感词的海外英文网站，墙和运营商是不会去注意的。</p>
+<p>所以就实现了伪装ShadowsocksR服务端流量的功能，每天国内访问海外网站(80/443端口)的流量非常庞大，在这个伪装中，可以很大程度的降低被发现(匹配流量特征)的几率，所以有兴趣的可以折腾玩玩。</p>
+<h3 id="文章里的原理：">文章里的原理：</h3>
+<p>你链接你的服务器 <strong>80端口(SSR服务端端口)</strong>，然后就会链接到ShadowsocksR服务端，ShadowsocksR服务端会判断你是<strong>链接SSR，还是访问网站</strong>，如果是访问网站，就会把你的流量数据<strong>重定向到网站监听的端口(2333端口)</strong>，然后你就显示网页了。</p>
+<blockquote><p><em>注意：</em>如果要用这个同端口伪装功能，请<strong>不要开启 协议(origin)和混淆插件(obfs)的兼容原版模式(_compatible)，不要使用原版SS链接！</strong></p>
+<p>同时，<strong>Shadowsocks-libev版服务端的simple-obfs功能，并不能实现本教程所说的同端口共存功能！</strong></p></blockquote>
+<h2 id="推荐一个伪装配置">推荐一个伪装配置</h2>
+<p>这个伪装配置不需要你服务器上面搭建网站，而是把HTTPS访问的网页信息转发到微软的网站，实现伪装HTTPS访问微软！</p>
+<p>目前已知这种设置方式可以<strong>有效降低 IP 被墙几率（非 100%）。</strong></p>
+<pre class="prettyprint linenums"># 服务端端口设置为：
+    "server_port": 443,
+# 客户端服务器端口填写：443
+
+# 服务端混淆插件设置为：
+    "obfs": "tls1.2_ticket_auth",
+# 客户端混淆插件选择：tls1.2_ticket_auth 或 tls1.2_ticket_fastauth
+
+# 服务端 redirect 设置为：
+    "redirect": ["*:443#HK2SCH130083c18593.wns.windows.com:443"],
+# 客户端混淆参数填写：HK2SCH130083c18593.wns.windows.com</pre>
+<p>至于其他的加密方式、协议插件等都不影响什么都行。</p>
+<p><strong>SSR 客户端的混淆参数</strong>记得填写为：<strong>HK2SCH130083c18593.wns.windows.com</strong></p>
+<h2 id="前提准备">前提准备</h2>
+<p>其实也没什么要准备的，就是你需要有个域名，然后将域名解析为你的SSR服务器IP</p>
+<blockquote><p><em>例如：</em></p>
+<p><strong>toyoo.pw</strong> 域名，记录名为 <strong>@</strong> ，解析类型为 <strong>A</strong>，解析IP为 <strong>服务器IP</strong>。</p>
+<p><strong>abc.toyoo.pw</strong> 域名，记录名为 <strong>abc</strong> ，解析类型为 <strong>A</strong>，解析IP为 <strong>服务器IP</strong>。</p></blockquote>
+<p><strong>免费域名申请教程：<a title="教你申请.tk/.ml/.cf/.gq/.ga等免费域名" href="y1cauqqx.html" target="_blank" rel="noopener">教你申请.tk/.ml/.cf/.gq/.ga等免费域名</a></strong></p>
+<h2 id="Caddy 配置步骤">Caddy 配置步骤</h2>
+<h3 id="安装 Caddy">安装 Caddy</h3>
+<p>Caddy 是 Go语言编译好的二进制程序，所以只有一个 Caddy 文件（还需要生成一个配置文件），但是为了管理方便，所以我做了个一键脚本。</p>
+<pre class="prettyprint linenums">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh install http.filemanager
+</pre>
+<p>安装Caddy成功后，我们就继续下面的步骤。</p>
+<h3 id="配置 Caddy">配置 Caddy</h3>
+<p>Caddy的特点之一就是，配置文件非常的简单，继续下面看就知道了。</p>
+<pre>注意：以下示例域名皆为<code> toyoo.pw </code>，请注意更换为自己的域名，并做好域名解析。</pre>
+<h4 id="HTTP（80端口）">HTTP（80端口）</h4>
+<p>假设你要伪装 <strong>80端口</strong>（ShadowsocksR服务端端口为 80），那么你可以在 Caddy中随便配置一个监听端口。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>比如的监听为 <code>2333</code> 端口（可以自己改）。</p>
+<pre class="prettyprint linenums"><strong># 以下全部内容是一个整体，是一个命令，全部复制粘贴到SSH软件中并一起执行！</strong>
+echo "http://toyoo.pw:2333 {
+ root /usr/local/caddy/www/ssr
+ timeouts none
+ gzip
+}" &gt; /usr/local/caddy/Caddyfile
+</pre>
+<p></p></div>
+<h4 id="HTTPS（443端口）">HTTPS（443端口）</h4>
+<p>如果你想要伪装 <strong>443端口</strong>（ShadowsocksR服务端端口为 443），那么你可以在 Caddy中随便配置一个监听端口。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>比如的监听为 <code>2333</code> 端口（可以自己改）。</p>
+<p>如果你有 SSL证书和密匙的话，把 <strong>SSL证书(xxx.crt)和密匙(xxx.key)文件</strong>放到 <code>/root</code> 文件夹下（也可以是其他文件夹，自己改下面代码），然后这样做：</p>
+<pre class="prettyprint linenums"><strong># 以下全部内容是一个整体，是一个命令，全部复制粘贴到SSH软件中并一起执行！</strong>
+echo "https://toyoo.pw:2333 {
+ root /usr/local/caddy/www/ssr
+ timeouts none
+ tls /root/xxx.crt /root/xxx.key
+ gzip
+}" &gt; /usr/local/caddy/Caddyfile</pre>
+<p><strong>如果你没有 SSL证书和密匙，那么你可以这样做：</strong></p>
+<p>下面的 <code><a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="691111111129111111471111">[email&#160;protected]</a></code> 改成你的邮箱，同时需要注意的是，<strong>申请 SSL证书前，请务必提前解析好域名记录(解析后最好等一会，以全球生效)，否则 Caddy会申请并配置失败！</strong></p>
+<pre class="prettyprint linenums"><strong># 以下全部内容是一个整体，是一个命令，全部复制粘贴到SSH软件中并一起执行！</strong>
+echo "https://toyoo.pw:2333 {
+ root /usr/local/caddy/www/ssr
+ timeouts none
+ tls <a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="4139393939013939396f3939">[email&#160;protected]</a>
+ gzip
+}" &gt; /usr/local/caddy/Caddyfile</pre>
+<p>如果一切正常，那么Caddy会自动帮你申请 SSL证书并配置好，而且会定时续约SSL证书 和 强制 http重定向至https ！</p>
+<p></p></div>
+<hr />
+<p>然后我们新建一个 虚拟主机文件夹</p>
+<pre class="prettyprint linenums">mkdir /usr/local/caddy/www &amp;&amp; mkdir /usr/local/caddy/www/ssr
+</pre>
+<p>然后去网上随便下载一个 <strong>HTML的网页模板</strong>（很好找的，这类模板非常多，随便找个英文模板就好了），解压后把网页文件通过SFTP 上传到刚才新建的虚拟主机文件夹中：<code>/usr/local/caddy/www/ssr </code></p>
+<p>然后我们重启 Caddy，当然这个时候我们还只能通过 <code>http://toyoo.pw:2333</code> 来访问我们的网站，我们还需要继续配置ShadowsocksR服务端。</p>
+<pre class="prettyprint linenums">/etc/init.d/caddy restart
+</pre>
+<h3 id="使用说明">使用说明</h3>
+<p><strong>启动：</strong>/etc/init.d/caddy start</p>
+<p><strong>停止：</strong>/etc/init.d/caddy stop</p>
+<p><strong>重启：</strong>/etc/init.d/caddy restart</p>
+<p><strong>查看状态：</strong>/etc/init.d/caddy status</p>
+<p><strong>查看Caddy启动日志：</strong> tail -f /tmp/caddy.log</p>
+<p><strong>Caddy配置文件位置：</strong>/usr/local/caddy/Caddyfile</p>
+<h2 id="ShadowsocksR 配置步骤">ShadowsocksR 配置步骤</h2>
+<p>打开你的配置文件（假设你的ShadowsocksR服务端安装在 <code>/root</code> 文件夹内）：</p>
+<pre class="prettyprint linenums">nano /root/shadowsocksr/user-config.json
+</pre>
+<p>然后我们会看到配置文件，我们需要找到 <code>server_port 和 redirect 参数</code> 并修改就行了</p>
+<p>修改完成后，按 <strong>Ctrl+X</strong> 退出，会提示你是否保存，输入 <strong>y</strong> 代表保存，然后会提示你要保存的文件名，直接回车覆盖。输入 <strong>n</strong> 代表不保存，直接退出。</p>
+<h3 id="HTTP（80端口）">HTTP（80端口）</h3>
+<p>按照上面Caddy的HTTP配置（监听2333端口），</p>
+<pre class="prettyprint linenums"># 把 server_port 参数改成这样：
+    "server_port": 80,
+
+# 把 redirect 参数改成这样：
+    "redirect": ["*:80#127.0.0.1:2333"],
+</pre>
+<h3 id="HTTPS（443端口）">HTTPS（443端口）</h3>
+<p>按照上面Caddy的HTTPS配置（监听6666端口），</p>
+<pre class="prettyprint linenums"># 把 server_port 参数改成这样：
+    "server_port": 443,
+
+# 把 redirect 参数改成这样：
+# 如果是配置的HTTP转HTTPS，那么也是使用下面这个配置（只需要设置一个 443的转发即可）
+    "redirect": ["*:443#127.0.0.1:2333"],
+</pre>
+<h3 id="多端口配置">多端口配置</h3>
+<p>如果你的Caddy和SSR服务端同时配置了多个端口（比如 888和666），</p>
+<pre class="prettyprint linenums"># 那么把 redirect 参数改成这样：
+    "redirect": ["*:888#127.0.0.1:2333", "*:666#127.0.0.1:6666"],
+</pre>
+<p>然后重启ShadowsocksR服务端（假设你的ShadowsocksR服务端安装在 <code>/root</code> 文件夹内，并且是单用户）：</p>
+<pre class="prettyprint linenums">bash /root/shadowsocksr/shadowsocks/run.sh
+</pre>
+<blockquote><p><em>注意：</em>如果要用这个同端口伪装功能，请<strong>不要开启 协议(origin)和混淆插件(obfs)的兼容原版模式(_compatible)，不要使用原版SS链接！</strong></p>
+<p>同时，<strong>Shadowsocks-libev版服务端的simple-obfs功能，并不能实现本教程所说的同端口共存功能！</strong></p></blockquote>
+<p>然后现在你可以尝试访问<code> http://toyoo.pw </code>，会发现不需要加端口号（<code> http://toyoo.pw:2333 </code>）也可以正常访问了！</p>
+<h2 id="客户端混淆设置">客户端混淆设置</h2>
+<p>这时候为了加强该伪装的作用，还需要客户端<strong>混淆插件和混淆参数</strong>设置一番。</p>
+<ul>
+<li>如果你是伪装的 <strong>80</strong> 端口，请选择 <strong>http_simple</strong> 混淆插件，<strong>混淆参数填写你的域名</strong>(示例 toyoo.pw)。</li>
+<li>如果你是伪装的 <strong>443</strong> 端口，请选择 <strong>tls1.2_ticket_auth</strong> 或 <strong>tls1.2_ticket_fastauth</strong> 混淆插件，<strong>混淆参数填写你的域名</strong>(示例 toyoo.pw)。</li>
+<li>SSR客户端的服务器地址填写<strong> 你的域名</strong>(示例 toyoo.pw)</li>
+<li>SSR客户端的服务器端口填写 <strong>80 或 443</strong> 端口(取决于服务端端口)。</li>
+</ul>
+<p>所以这个就实现了，伪装 ShadowsocksR 服务端流量为 正常海外网站流量的目的，同时也可以说实现了<strong> 网站和ShadowsocksR 同端口共存</strong>。</p>
+<h2 id="其他说明">其他说明</h2>
+<h3 id="启动显示成功，但是实际未运行">启动显示成功，但是实际未运行</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>因为 服务脚本判断的问题，只判断了nohub是否运行 Caddy成功，但没有判断 Caddy 是否保持正常运行。</p>
+<p>你可以理解为，nohub成功启动了 Caddy，但是 Caddy因为配置文件错误等原因，启动后又退出了。</p>
+<p>所以这种情况下，你应该去查看启动日志：</p>
+<pre class="prettyprint linenums">tail -f /tmp/caddy.log
+</pre>
+<p></p></div>
+<h3 id="Nginx配置说明">Nginx配置说明</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>至于 Nginx的话，你只需要找到你的 虚拟主机配置文件（lnmp.org 一键包的位置在<code> /usr/local/nginx/conf/vhost/域名.conf </code>），然后把监听端口改成像上面 Caddy配置里监听的端口一样。</p>
+<pre class="prettyprint linenums"># Nginx 默认监听 80 443。
+listen 80;
+listen 443;
+</pre>
+<p>端口 <strong>80或者443</strong> 可以改成其他的，比如 <strong>2333和6666</strong>，然后ShadowsocksR配置文件和上面的步骤还是一样。</p>
+<p></p></div>
+<hr />
+<p>参考资料：<a href="https://breakwa11.blogspot.ru/2017/01/shadowsocksr-mu.html?m=1" target="_blank" rel="noopener">https://breakwa11.blogspot.ru/2017/01/shadowsocksr-mu.html?m=1</a></p>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="hi10k-7p-5.html">ShadowsocksR服务端伪装成 正常网站流量，以更好的欺骗流量匹配</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="1989" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">111</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="kjvzw235.html" rel="tag">Caddy</a><a href="oyjpgxqd.html" rel="tag">Shadowsocks</a><a href="g6hfu0lq.html" rel="tag">ShadowsocksR</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="l-en8vwt-2.html" rel="prev">利用 Caddy 非常简单的部署 反向代理/镜像（支持自签SSL证书）</a></span>
+			<span class="article-nav-next"><a href="kd691l4o-3.html" rel="next">ShadowsocksR 客户端 各种隐藏使用技巧说明</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="kd691l4o.html" title="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" target="_blank">
+<img src="sp6xrfo1.png?src=https://doub.io/wp-content/uploads/shadowsocks3.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" />	<br><span class="r_title">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="hi10k-7p-3.html" title="给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)" target="_blank">
+<img src="iceink9-.png?src=https://doub.io/wp-content/uploads/shadowsocksR-1.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)" />	<br><span class="r_title">给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="a6551xds.html" title="『视频』ShadowsocksR 服务端一键脚本安装 新手小白视频教程" target="_blank">
+<img src="-b0b-ldi.png?src=https://doub.io/wp-content/uploads/qita-03.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『视频』ShadowsocksR 服务端一键脚本安装 新手小白视频教程" />	<br><span class="r_title">『视频』ShadowsocksR 服务端一键脚本安装 新手小白视频教程</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="yv4cp61c.html" title="『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本" target="_blank">
+<img src="kk4ik0cm.png?src=https://doub.io/wp-content/uploads/brook1.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本" />	<br><span class="r_title">『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="kd691l4o.html">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</a></li><li><i class="fa fa-minus"></i><a href="hi10k-7p-3.html">给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)</a></li><li><i class="fa fa-minus"></i><a href="a6551xds.html">『视频』ShadowsocksR 服务端一键脚本安装 新手小白视频教程</a></li><li><i class="fa fa-minus"></i><a href="yv4cp61c.html">『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本</a></li><li><i class="fa fa-minus"></i><a href="9n7kdq_k-2.html">『原创』Shadowsocks tinyPortMapper 中继(中转/端口转发) 便捷管理脚本</a></li><li><i class="fa fa-minus"></i><a href="6r9z6_wi-3.html">Shadowsocks利用 tinyPortMapper 实现中继(中转/端口转发)加速</a></li><li><i class="fa fa-minus"></i><a href="6jfbj938-2.html">『原创』应逗比要求 单独写了个 libsodium 一键安装脚本 (Chacha20 / Chacha20-ietf 等)</a></li><li><i class="fa fa-minus"></i><a href="3we1qxzj-7.html">ShadowsocksR PC客户端中的 [代理规则 &#8211; 用户自定义] 功能使用教程</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='1989' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (219)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-29087"><div class="c-avatar"><div class="c-main" id="div-comment-29087">toyo大佬，请问这个用https和http有区别吗？<div class="c-meta"><span class="c-author"><a href='http://theabedph.com/' rel='external nofollow' class='url'>fwing</a></span>2017-12-31 20:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=29087#respond' onclick='return addComment.moveForm( "div-comment-29087", "29087", "respond", "1989" )' aria-label='回复给fwing'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29092"><div class="c-avatar"><div class="c-main" id="div-comment-29092">有的，有条件建议https。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-01 09:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=29092#respond' onclick='return addComment.moveForm( "div-comment-29092", "29092", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-23587"><div class="c-avatar"><div class="c-main" id="div-comment-23587">谢谢博主的分享！请教一个困惑很久的问题：如果ShadowsocksR客户端直接填写服务器的ip，墙就算去追踪也不知道这个ip对应的域名是多少，那只能用尝试用ip地址去连接（如发出连接http://ip或https://ip的请求）。而直接用ip地址去连接得到的却是“421 Site xxx.xxx.xxx.xxx is not served on this interface”这样的回复，无法得到访问域名时呈现网页。那像这样做会有很大的意义吗？还是我上述推测有问题？<div class="c-meta"><span class="c-author">test</span>2017-11-29 19:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=23587#respond' onclick='return addComment.moveForm( "div-comment-23587", "23587", "respond", "1989" )' aria-label='回复给test'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-23791"><div class="c-avatar"><div class="c-main" id="div-comment-23791">同问，而且还有一个问题，手机上的客户端好像填域名的话连不上，不知是不是个别情况<div class="c-meta"><span class="c-author">Eazming</span>2017-12-03 18:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=23791#respond' onclick='return addComment.moveForm( "div-comment-23791", "23791", "respond", "1989" )' aria-label='回复给Eazming'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-30466"><div class="c-avatar"><div class="c-main" id="div-comment-30466">同问这个问题 博主出来释疑一波？<div class="c-meta"><span class="c-author">yotop</span>2018-01-28 13:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=30466#respond' onclick='return addComment.moveForm( "div-comment-30466", "30466", "respond", "1989" )' aria-label='回复给yotop'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-2" id="comment-31326"><div class="c-avatar"><div class="c-main" id="div-comment-31326">可以避免，我用nginx实现了跳转，可让IP或者http://IP直接跳转到https://域名。
+方法其实很简单，在你的nginx中修改一下配置：
+server {
+    listen 80 default_server;
+    listen 443 ssl http2;
+    rewrite ^(.*)$  https://你的域名;  
+}
+完成后不管是哪种访问都会跳转到HTTPS。
+参考：
+http://blog.csdn.net/wzy_1988/article/details/8549290
+https://www.bt.cn/bbs/thread-8583-1-1.html<div class="c-meta"><span class="c-author">SunZz</span>2018-02-11 12:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=31326#respond' onclick='return addComment.moveForm( "div-comment-31326", "31326", "respond", "1989" )' aria-label='回复给SunZz'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-31349"><div class="c-avatar"><div class="c-main" id="div-comment-31349">好吧，这个方法还有一点问题……<div class="c-meta"><span class="c-author">SunZz</span>2018-02-11 23:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=31349#respond' onclick='return addComment.moveForm( "div-comment-31349", "31349", "respond", "1989" )' aria-label='回复给SunZz'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-23582"><div class="c-avatar"><div class="c-main" id="div-comment-23582">用caddy自动申请证书，只配置443。访问http时能够自动转发到https，但是会把端口号显示出来。请问该怎么解决这个问题？<div class="c-meta"><span class="c-author">https</span>2017-11-29 15:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=23582#respond' onclick='return addComment.moveForm( "div-comment-23582", "23582", "respond", "1989" )' aria-label='回复给https'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-23792"><div class="c-avatar"><div class="c-main" id="div-comment-23792">仅供参考
+http://xx.xx {
+	redir https://xx.xx:443{url}
+}
+https://xx.xx:2333 {
+
+}<div class="c-meta"><span class="c-author">Eazming</span>2017-12-03 19:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=23792#respond' onclick='return addComment.moveForm( "div-comment-23792", "23792", "respond", "1989" )' aria-label='回复给Eazming'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-23573"><div class="c-avatar"><div class="c-main" id="div-comment-23573">设置好了以后 SSR客户端 和 服务端 只能和VPS的IPv4 地址通信。 但是将客户端中的服务器IP 直接修改为VPS的IPv6地址，又可以使用IPv6.<div class="c-meta"><span class="c-author">HAHAHA</span>2017-11-29 12:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=23573#respond' onclick='return addComment.moveForm( "div-comment-23573", "23573", "respond", "1989" )' aria-label='回复给HAHAHA'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-23483"><div class="c-avatar"><div class="c-main" id="div-comment-23483">我申请到的ssl证书是cer后缀的，我查了一下好像跟crt是比较类似的一个格式，请问可以直接用吗？还是要先转换一下<div class="c-meta"><span class="c-author">GG</span>2017-11-27 21:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=23483#respond' onclick='return addComment.moveForm( "div-comment-23483", "23483", "respond", "1989" )' aria-label='回复给GG'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-23497"><div class="c-avatar"><div class="c-main" id="div-comment-23497">不清楚，没遇到过，我的证书都是 .crt 后缀的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-28 08:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=23497#respond' onclick='return addComment.moveForm( "div-comment-23497", "23497", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-23164"><div class="c-avatar"><div class="c-main" id="div-comment-23164">使用了几天，发现caddy不能开机启动，请问是哪里出了问题。重启后，要执行/etc/init.d/caddy start命令才能启动打开网站<div class="c-meta"><span class="c-author">csvv</span>2017-11-22 16:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=23164#respond' onclick='return addComment.moveForm( "div-comment-23164", "23164", "respond", "1989" )' aria-label='回复给csvv'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-23185"><div class="c-avatar"><div class="c-main" id="div-comment-23185">使用我的Caddy脚本后，会自动下载服务脚本并配置开机启动等功能（三个系统测试正常），如果没有正常开机启动，需要重启后查看Caddy日志，看看是否出错，如果有错误日志就代表启动了但是失败了，如果没有错误日志说明根本没有启动。<br />
+可以尝试再执行以下设置开机启动的命令，然后重启试试，如果还是无法启动，可能是系统服务相关问题吧，请报告你的系统和位数。
+<pre class="prettyprint linenums" ># CentOS系统：
+chkconfig --add caddy
+chkconfig caddy on
+
+# Debian/Ubuntu系统：
+update-rc.d -f caddy defaults
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-23 10:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=23185#respond' onclick='return addComment.moveForm( "div-comment-23185", "23185", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-23402"><div class="c-avatar"><div class="c-main" id="div-comment-23402">执行命令后，还是不行。版本号Ubuntu 14.04 LTS。回头我再重做一次看看。日志文件重启后caddy没有启动，显示找不到/tmp下的日志。手动启动后显示正常<div class="c-meta"><span class="c-author">csvv</span>2017-11-26 19:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=23402#respond' onclick='return addComment.moveForm( "div-comment-23402", "23402", "respond", "1989" )' aria-label='回复给csvv'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-3" id="comment-23407"><div class="c-avatar"><div class="c-main" id="div-comment-23407">unbut  Linux Ubuntu 14.04 执行命令后还是不行。换DEBIAN 8就可以了。<div class="c-meta"><span class="c-author">csvv</span>2017-11-26 21:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=23407#respond' onclick='return addComment.moveForm( "div-comment-23407", "23407", "respond", "1989" )' aria-label='回复给csvv'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-23085"><div class="c-avatar"><div class="c-main" id="div-comment-23085">粘帖那段长命令以后总是没反应，查看caddy日志出现invalid character "{" in host name，应该是格式的问题吧？ <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_sad.gif" alt=":sad:" class="wp-smiley" style="height: 1em; max-height: 1em;" />  可是怎么贴都不对，我用的是xshell<div class="c-meta"><span class="c-author">GG</span>2017-11-21 01:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=23085#respond' onclick='return addComment.moveForm( "div-comment-23085", "23085", "respond", "1989" )' aria-label='回复给GG'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-23091"><div class="c-avatar"><div class="c-main" id="div-comment-23091">贴出配置文件完整内容。<br />
+另外，下面这种示例是[一个]完整的命令，需要全部复制，然后直接粘贴在SSH软件中回车运行(就像运行普通命令一样)，而不是直接粘贴到配置文件内，这样绝对报错。
+<pre class="prettyprint linenums" >echo "http://toyoo.ml:2333 {
+ root /usr/local/caddy/www/ssr
+ timeouts none
+ gzip
+}" > /usr/local/caddy/Caddyfile
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-21 10:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=23091#respond' onclick='return addComment.moveForm( "div-comment-23091", "23091", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-22618"><div class="c-avatar"><div class="c-main" id="div-comment-22618">你好。我现在执行完教材后，网站还是要带端口才能访问。SSR还是可以用。使用的是80端口。有一事不明。我只用80端口。HTTP重定向为HTTPS这一步也要执行吗？<div class="c-meta"><span class="c-author">csvv</span>2017-11-13 12:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=22618#respond' onclick='return addComment.moveForm( "div-comment-22618", "22618", "respond", "1989" )' aria-label='回复给csvv'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-22640"><div class="c-avatar"><div class="c-main" id="div-comment-22640">只用80端口就不需要HTTPS了，否则这不是太假了？本文的几个示例是让你选择一个，而不是都做。<br />
+本教程正常结果应该是，假如用80端口 而网站是2333端口，访问 http://域名/ 80端口能正常访问，通过 80端口链接SSR能正常链接，当然 http://域名:2333 端口也能外部访问。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-13 14:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=22640#respond' onclick='return addComment.moveForm( "div-comment-22640", "22640", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-22658"><div class="c-avatar"><div class="c-main" id="div-comment-22658">谢谢Toyo。犯了了一个低级错误。我找错了SSR下的配置文件位置。这下OK了。希望有不能识现的看到我这条回文。修改文件位置是不是正确的。还有一个问题我就一起了吧。Toyo能不能写一个关于Fail2ban的脚本？防止扫描SSR的，经常看到一大篇的扫描日志。先谢谢了。<div class="c-meta"><span class="c-author">csvv</span>2017-11-13 18:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=22658#respond' onclick='return addComment.moveForm( "div-comment-22658", "22658", "respond", "1989" )' aria-label='回复给csvv'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-22571"><div class="c-avatar"><div class="c-main" id="div-comment-22571">simple-obfs是可以做到这个功能的<div class="c-meta"><span class="c-author"><a href='http://quora.com/' rel='external nofollow' class='url'>shironeko</a></span>2017-11-12 22:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=22571#respond' onclick='return addComment.moveForm( "div-comment-22571", "22571", "respond", "1989" )' aria-label='回复给shironeko'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-22532"><div class="c-avatar"><div class="c-main" id="div-comment-22532">Toyo, Shadowsocks-libev的simple-obfs现在是能够实现这个功能的<div class="c-meta"><span class="c-author"><a href='http://none/' rel='external nofollow' class='url'>none</a></span>2017-11-12 13:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=22532#respond' onclick='return addComment.moveForm( "div-comment-22532", "22532", "respond", "1989" )' aria-label='回复给none'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-22555"><div class="c-avatar"><div class="c-main" id="div-comment-22555">问过了，不能。这个功能和混淆插件是两个概念。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-12 17:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=22555#respond' onclick='return addComment.moveForm( "div-comment-22555", "22555", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-22577"><div class="c-avatar"><div class="c-main" id="div-comment-22577">感谢回复
+https://ttz.im/2017/08/1415
+我这里按照这个方式配置了一下，系统是debian，网站用的Nginx。结果从表面看，浏览器的https访问确实能正确显示我的网站，而SS也能通过443正常运行
+和网站里写的一样，obfs监听443并转交（failover）不能识别的内容到网站所监听的端口，能识别的流量则转给SS监听的端口。还请Toyo看看这是不是正确的配置<div class="c-meta"><span class="c-author"><a href='http://none/' rel='external nofollow' class='url'>none</a></span>2017-11-12 23:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=22577#respond' onclick='return addComment.moveForm( "div-comment-22577", "22577", "respond", "1989" )' aria-label='回复给none'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-3" id="comment-22578"><div class="c-avatar"><div class="c-main" id="div-comment-22578">虽然没有用教程提到的caddy……有偏题嫌疑，不过如果这个方法是可行的话，还是可以写进教程，让SS用户有一个新玩具可用<div class="c-meta"><span class="c-author"><a href='http://none/' rel='external nofollow' class='url'>none</a></span>2017-11-12 23:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=22578#respond' onclick='return addComment.moveForm( "div-comment-22578", "22578", "respond", "1989" )' aria-label='回复给none'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-22446"><div class="c-avatar"><div class="c-main" id="div-comment-22446">博主，我用lnmp脚本安装博客，一共三个，安装自动申请，开启了ssl以后，三个博客都正常访问htps，我试图用这个走443端口，结果三个博客就有的能走https 有的走https打开另外一个博客的内容，剩下那个干脆http https都访问不了，这是什么情况呢？ 各个博客的conf文件 80端口 和443端口 各种改 都试过了，就是不行。难道这个就不能在多个https博客的VPS上面用么？<div class="c-meta"><span class="c-author">go</span>2017-11-11 14:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=22446#respond' onclick='return addComment.moveForm( "div-comment-22446", "22446", "respond", "1989" )' aria-label='回复给go'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-22151"><div class="c-avatar"><div class="c-main" id="div-comment-22151">逗比大大，我start caddy时无法启动，看了日志文件是：Activating privacy features...2017/11/07 12:40:25 [somelou.me] failed to get certificate: [somelou.me] error presenting token: Could not start HTTPS server for challenge -&gt; listen tcp :443: bind: address already in use或者Activating privacy features...2017/11/07 12:35:59 [somelou.me] failed to get certificate: [somelou.me] error presenting token: Could not start HTTP server for challenge -&gt; listen tcp :80: bind: address already in use，请问是什么原因？<div class="c-meta"><span class="c-author">Some</span>2017-11-07 20:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=22151#respond' onclick='return addComment.moveForm( "div-comment-22151", "22151", "respond", "1989" )' aria-label='回复给Some'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-22169"><div class="c-avatar"><div class="c-main" id="div-comment-22169">443端口 或者 80端口 被占用。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-08 10:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=22169#respond' onclick='return addComment.moveForm( "div-comment-22169", "22169", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-2" id="comment-23086"><div class="c-avatar"><div class="c-main" id="div-comment-23086">我现在也是这个问题，你解决了吗<div class="c-meta"><span class="c-author">GG</span>2017-11-21 02:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=23086#respond' onclick='return addComment.moveForm( "div-comment-23086", "23086", "respond", "1989" )' aria-label='回复给GG'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-21687"><div class="c-avatar"><div class="c-main" id="div-comment-21687">博主你好:
+
+I simply went by the book and did a good job, but I am still a little bit nervous, I tested the website, it end up that Firefox works perfectly, but original IE doesn't connect, 360explorer only can open https://, can't open http://.
+
+I just don't get it. 
+
+but I am still very happy with this, thank you very much.
+
+I am a Chinese, but I am trying to practice English, um-hum<div class="c-meta"><span class="c-author">Jam</span>2017-11-01 20:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=21687#respond' onclick='return addComment.moveForm( "div-comment-21687", "21687", "respond", "1989" )' aria-label='回复给Jam'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-21695"><div class="c-avatar"><div class="c-main" id="div-comment-21695">打开 http:// 提示什么？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-01 21:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=21695#respond' onclick='return addComment.moveForm( "div-comment-21695", "21695", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-21802"><div class="c-avatar"><div class="c-main" id="div-comment-21802">（我建的小站，搞错语言了）www.xiekai7347.tk         Could you help me test it with https:// and http:// , thanks<div class="c-meta"><span class="c-author">Jam</span>2017-11-03 15:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=21802#respond' onclick='return addComment.moveForm( "div-comment-21802", "21802", "respond", "1989" )' aria-label='回复给Jam'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-21298"><div class="c-avatar"><div class="c-main" id="div-comment-21298">请问如何设置可以不让https的后面出现端口号呢？SSR用443端口，caddy用8024端口。每次跳转都是https://*******.****:8024<div class="c-meta"><span class="c-author"><a href='http://world3324.ml/' rel='external nofollow' class='url'>world3324</a></span>2017-10-27 11:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=21298#respond' onclick='return addComment.moveForm( "div-comment-21298", "21298", "respond", "1989" )' aria-label='回复给world3324'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-21377"><div class="c-avatar"><div class="c-main" id="div-comment-21377">我也是这个问题...但是用80端口伪装的时候 URL后面没显示caddy监听的端口...<div class="c-meta"><span class="c-author">Bucc</span>2017-10-28 20:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=21377#respond' onclick='return addComment.moveForm( "div-comment-21377", "21377", "respond", "1989" )' aria-label='回复给Bucc'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-20989"><div class="c-avatar"><div class="c-main" id="div-comment-20989">你好~我就一个疑问,就是我如何知道我伪装成功了呢?只要能打开网站就算成功吗?能看流量走向吗?<div class="c-meta"><span class="c-author"><a href='http://fengfeng.cf/' rel='external nofollow' class='url'>feng</a></span>2017-10-23 18:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=20989#respond' onclick='return addComment.moveForm( "div-comment-20989", "20989", "respond", "1989" )' aria-label='回复给feng'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-21012"><div class="c-avatar"><div class="c-main" id="div-comment-21012">按照教程配置后，同一个端口能链接SSR，直接访问也能看到网页，就是伪装成功，剩下的就是完善网页的真实性了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-23 23:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=21012#respond' onclick='return addComment.moveForm( "div-comment-21012", "21012", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-20983"><div class="c-avatar"><div class="c-main" id="div-comment-20983">大佬， 我发现我最后一步配置ssr的user-config没有成功。配置
+ "redirect":["*:443#127.0.0.1:5577"]
+是想用443端口伪装的，直接域名加5577端口可以访问，而配置ssr转发5577不行。
+用命令检查发现443端口没有被ssr监听，ssr是用大佬的一键多用户脚本配置的<div class="c-meta"><span class="c-author">壮士请留步</span>2017-10-23 15:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=20983#respond' onclick='return addComment.moveForm( "div-comment-20983", "20983", "respond", "1989" )' aria-label='回复给壮士请留步'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-21013"><div class="c-avatar"><div class="c-main" id="div-comment-21013">SSR服务端配置的账号需要设置为 443端口，也就是你通过443端口可以链接SSR服务端，而直接作为域名访问又能通过SSR服务端转发至Caddy看到网页。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-24 00:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=21013#respond' onclick='return addComment.moveForm( "div-comment-21013", "21013", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-21029"><div class="c-avatar"><div class="c-main" id="div-comment-21029">三扣大佬，搞定了， 发现必须把ssr账号端口也设为443后才能访问到网页，没设之前ssr是不监听443端口的<div class="c-meta"><span class="c-author">壮士请留步</span>2017-10-24 09:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=21029#respond' onclick='return addComment.moveForm( "div-comment-21029", "21029", "respond", "1989" )' aria-label='回复给壮士请留步'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-3" id="comment-22279"><div class="c-avatar"><div class="c-main" id="div-comment-22279">所以SSR服务端不能够用443以外的端口对吧？我自己设的是1026，估计得改咯？<div class="c-meta"><span class="c-author">爱因斯港</span>2017-11-09 23:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=22279#respond' onclick='return addComment.moveForm( "div-comment-22279", "22279", "respond", "1989" )' aria-label='回复给爱因斯港'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-22292"><div class="c-avatar"><div class="c-main" id="div-comment-22292">你告诉我 用443端口的网站多 还是 用1026端口的网站多？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-10 09:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=22292#respond' onclick='return addComment.moveForm( "div-comment-22292", "22292", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-20272"><div class="c-avatar"><div class="c-main" id="div-comment-20272">@Toyo 你好，为啥我新装好几次VPS 新添加80单端口的ssr， 然后ssr根本就不通？怎么回事呢？在另外一个128M的小鸡上面都没问题，现在就是80端口的 ssr不通，换了91 和秋水 的脚本也不行，快帮帮忙吧，谢谢先<div class="c-meta"><span class="c-author">go</span>2017-10-14 10:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=20272#respond' onclick='return addComment.moveForm( "div-comment-20272", "20272", "respond", "1989" )' aria-label='回复给go'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-20280"><div class="c-avatar"><div class="c-main" id="div-comment-20280">换个端口试试，SSR客户端 服务器链接统计窗口提示什么[错误/超时/空连]？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-14 13:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=20280#respond' onclick='return addComment.moveForm( "div-comment-20280", "20280", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-20319"><div class="c-avatar"><div class="c-main" id="div-comment-20319">就是80端口被lnmp占用了，我那个lnmp里面多个用户 我只改一个 端口 别的没改就不行 具体我也不知道 反正依葫芦画瓢的也好使了，多谢热心回复<div class="c-meta"><span class="c-author">go</span>2017-10-15 06:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=20319#respond' onclick='return addComment.moveForm( "div-comment-20319", "20319", "respond", "1989" )' aria-label='回复给go'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-20263"><div class="c-avatar"><div class="c-main" id="div-comment-20263">從牆的角度來看這是個有問題的通信，畢竟全世界80端口走的都是明文http，結果有一堆看不懂的加密流量走在80，這個估計還用不到機器學習就先直接抓出來了重點審核了
+
+覺得走443配合tls1.2並且設置hostname混淆比較能混入正常的https流量，但轉發就很難搞定了，因為ssl證書搬不出來，手動訪問要怎樣做的真目前還沒甚麼想法，能給點建議嗎?<div class="c-meta"><span class="c-author">AZ</span>2017-10-14 03:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=20263#respond' onclick='return addComment.moveForm( "div-comment-20263", "20263", "respond", "1989" )' aria-label='回复给AZ'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-20145"><div class="c-avatar"><div class="c-main" id="div-comment-20145">使用自动申请证书的话caddy是不是必须得监听80端口？ssr配置了80和443，caddy配置了8080和4433，但是启动caddy的时候依然会监听80端口，提示端口占用，更换自己的证书就不再监听80了<div class="c-meta"><span class="c-author">啊</span>2017-10-13 00:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=20145#respond' onclick='return addComment.moveForm( "div-comment-20145", "20145", "respond", "1989" )' aria-label='回复给啊'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-20178"><div class="c-avatar"><div class="c-main" id="div-comment-20178">因为Caddy申请证书需要做验证，而验证是做一个临时的网站，存放Let's SSL的验证文件让Let's SSL来验证，所以需要80端口。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-13 12:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=20178#respond' onclick='return addComment.moveForm( "div-comment-20178", "20178", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-20259"><div class="c-avatar"><div class="c-main" id="div-comment-20259">其实是搞frp想用80端口，倒是也能在caddy配置文件监听80端口转发到frp，但是跳转之后网址还是会带上端口，这就和我就是因为不想看到端口才要frp用80端口的初衷不符了，只好自己申请了个证书搞上去了，亚洲诚信的证书，免费一年的，这一年也用不完，小鸡就到期了<div class="c-meta"><span class="c-author">啊</span>2017-10-14 01:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=20259#respond' onclick='return addComment.moveForm( "div-comment-20259", "20259", "respond", "1989" )' aria-label='回复给啊'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-19868"><div class="c-avatar"><div class="c-main" id="div-comment-19868">您好！请问我事先已经用Let’s Encrypt配置好了全站SSL，现在用此方法会443端口冲突不能使用，请问有什么方法可以实现吗？谢谢！！<div class="c-meta"><span class="c-author">gtsx</span>2017-10-11 00:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=19868#respond' onclick='return addComment.moveForm( "div-comment-19868", "19868", "respond", "1989" )' aria-label='回复给gtsx'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-19871"><div class="c-avatar"><div class="c-main" id="div-comment-19871"><a href="hi10k-7p-5.html#Nginx配置说明">https://doub.io/ss-jc48/#Nginx配置说明</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-11 01:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=19871#respond' onclick='return addComment.moveForm( "div-comment-19871", "19871", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-19887"><div class="c-avatar"><div class="c-main" id="div-comment-19887">谢谢，我试试！<div class="c-meta"><span class="c-author">gtsx</span>2017-10-11 09:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=19887#respond' onclick='return addComment.moveForm( "div-comment-19887", "19887", "respond", "1989" )' aria-label='回复给gtsx'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-3" id="comment-20020"><div class="c-avatar"><div class="c-main" id="div-comment-20020">您好，我用的是apache,还是不知道该怎么设置，我如果直接设置SSR端口为443会冲突，请问您我到底该怎么配置httpd才可以呢？能详细指点下吗?centos还不是很熟！谢谢！<div class="c-meta"><span class="c-author">gtsx</span>2017-10-11 23:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=20020#respond' onclick='return addComment.moveForm( "div-comment-20020", "20020", "respond", "1989" )' aria-label='回复给gtsx'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-20027"><div class="c-avatar"><div class="c-main" id="div-comment-20027">apache 我没用过，centos 我也几乎不用。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-12 00:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=20027#respond' onclick='return addComment.moveForm( "div-comment-20027", "20027", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-5" id="comment-20057"><div class="c-avatar"><div class="c-main" id="div-comment-20057">好吧，还是挺谢谢您的热心回复，请您如果有其他好的方法再回复一下我，谢谢！<div class="c-meta"><span class="c-author">gtsx</span>2017-10-12 11:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=20057#respond' onclick='return addComment.moveForm( "div-comment-20057", "20057", "respond", "1989" )' aria-label='回复给gtsx'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-17031"><div class="c-avatar"><div class="c-main" id="div-comment-17031">我觉得网站内容还是做丰富一点更保险，要是用的人多了被人工追踪过去，就一个单页面这么多人天天访问，还连接那么长时间，不是更奇怪？<div class="c-meta"><span class="c-author">Egoist</span>2017-08-14 10:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=17031#respond' onclick='return addComment.moveForm( "div-comment-17031", "17031", "respond", "1989" )' aria-label='回复给Egoist'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-17043"><div class="c-avatar"><div class="c-main" id="div-comment-17043">你流量要多少才会被人工处理（人工有限，不可能动不动就人工处理）？整个国内的国际出口流量那么大，访问网站的流量占了大多数，你的流量要多大才会名列前茅，你以为的大，可能在江河中只是一条小鱼，更何况没有任何方法可以完美的伪装自己，只是让自己的伪装看起来更完美一点罢了，至少比完全不伪装的墙一些。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-14 11:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=17043#respond' onclick='return addComment.moveForm( "div-comment-17043", "17043", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-17014"><div class="c-avatar"><div class="c-main" id="div-comment-17014">按照toyo的方法做了设置，网站能访问了，但是只要SSR开了，所有网站都提示“无法安全连接到此页面”，ssr的log为[Error] Proxy server [(104.194.67.157)] ClientDecode data error: wrong sha1，这是啥原因。。。<div class="c-meta"><span class="c-author">rainbow</span>2017-08-13 20:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=17014#respond' onclick='return addComment.moveForm( "div-comment-17014", "17014", "respond", "1989" )' aria-label='回复给rainbow'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-20774"><div class="c-avatar"><div class="c-main" id="div-comment-20774">我也是这个错误<div class="c-meta"><span class="c-author">MxdStudio</span>2017-10-20 17:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=20774#respond' onclick='return addComment.moveForm( "div-comment-20774", "20774", "respond", "1989" )' aria-label='回复给MxdStudio'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-2" id="comment-21301"><div class="c-avatar"><div class="c-main" id="div-comment-21301">这个问题我解决了，是因为你的ssr不是直接监听的443端口，而是靠caddy从443接到访问请求后，转发到你的ssr端口的，这样就会出这个问题。你注意看上面的教程，是需要ssr直接监听443端口，而caddy托管的网页不是在443端口<div class="c-meta"><span class="c-author">MxdStudio</span>2017-10-27 12:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=21301#respond' onclick='return addComment.moveForm( "div-comment-21301", "21301", "respond", "1989" )' aria-label='回复给MxdStudio'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-16958"><div class="c-avatar"><div class="c-main" id="div-comment-16958">toyo能出个nginx的么？我按照这样操作的使用80端口一直无法使用。。。用443倒是可以（vps上开了wordpress）<div class="c-meta"><span class="c-author">rainbow</span>2017-08-12 20:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=16958#respond' onclick='return addComment.moveForm( "div-comment-16958", "16958", "respond", "1989" )' aria-label='回复给rainbow'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-16661"><div class="c-avatar"><div class="c-main" id="div-comment-16661">这样一来，还需要在混淆参数那里填上自己的域名吗？？<div class="c-meta"><span class="c-author">sdf</span>2017-08-08 16:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=16661#respond' onclick='return addComment.moveForm( "div-comment-16661", "16661", "respond", "1989" )' aria-label='回复给sdf'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-16664"><div class="c-avatar"><div class="c-main" id="div-comment-16664">不需要。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-08 18:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=16664#respond' onclick='return addComment.moveForm( "div-comment-16664", "16664", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-16724"><div class="c-avatar"><div class="c-main" id="div-comment-16724">多个网站都想用443端口，redirect 那里该怎样填呢<div class="c-meta"><span class="c-author">sdf</span>2017-08-09 16:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=16724#respond' onclick='return addComment.moveForm( "div-comment-16724", "16724", "respond", "1989" )' aria-label='回复给sdf'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-16252"><div class="c-avatar"><div class="c-main" id="div-comment-16252">用端口扫描工具nmap可以扫出2个http服务，一个是80端口，一个是2333端口。能不能配置linux使2333端口对除了127.0.0.1的IP不可见？<div class="c-meta"><span class="c-author">ssr_lover</span>2017-07-31 19:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=16252#respond' onclick='return addComment.moveForm( "div-comment-16252", "16252", "respond", "1989" )' aria-label='回复给ssr_lover'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-16256"><div class="c-avatar"><div class="c-main" id="div-comment-16256">封禁防火墙端口，禁止外部访问 2333 端口。
+<pre class="prettyprint linenums" >iptables -D INPUT -p tcp --dport 2333 -j ACCEPT
+iptables -D INPUT -p udp --dport 2333 -j ACCEPT
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-07-31 20:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=16256#respond' onclick='return addComment.moveForm( "div-comment-16256", "16256", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-17891"><div class="c-avatar"><div class="c-main" id="div-comment-17891">在 Caddyfile 里填 bind local host 就行了吧！<div class="c-meta"><span class="c-author"><a href='https://fuckcf.cf/' rel='external nofollow' class='url'>lmath</a></span>2017-08-31 17:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=17891#respond' onclick='return addComment.moveForm( "div-comment-17891", "17891", "respond", "1989" )' aria-label='回复给lmath'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-15975"><div class="c-avatar"><div class="c-main" id="div-comment-15975">看着大大的另外两篇教程先用freenom申请了个域名（soyeaho.ml），然后用cloudxnd接管，dns应该是解析成功了，可是启动caddy的时候用service caddy start启动失败，提示Activating privacy features...2017/07/27 17:11:26 [soyeah.ml] failed to get certificate: acme: Error 400 - urn:acme:error:connection - DNS problem: NXDOMAIN looking up A for soyeah.ml
+ <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_sad.gif" alt=":sad:" class="wp-smiley" style="height: 1em; max-height: 1em;" /> 对不起。。。小白看不太懂，这咋解决呢？是不是先学会自己建站比较好。。。
+如果上面的问题太弱智或者不好回答的话，请问我能不能不弄自己的网页，直接把这篇文章里的https://toyoo.ml 换成https://www.amazon.com呢？
+谢谢老大！<div class="c-meta"><span class="c-author">yeah</span>2017-07-27 17:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=15975#respond' onclick='return addComment.moveForm( "div-comment-15975", "15975", "respond", "1989" )' aria-label='回复给yeah'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-15993"><div class="c-avatar"><div class="c-main" id="div-comment-15993">默认Caddy申请证书的话，是申请的Let’s Encrypt SSL，而Let’s Encrypt SSL会验证这个域名是否有解析记录，而验证用的服务器是海外的（毕竟是海外的SSL证书），所以你可能国内测试DNS解析成功了，但是海外还没成功，可以再等两天，或者用其他方法申请SSL证书并上传指定SSL证书，或者暂时使用http。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-07-28 00:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=15993#respond' onclick='return addComment.moveForm( "div-comment-15993", "15993", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-16034"><div class="c-avatar"><div class="c-main" id="div-comment-16034">好的，那我再试试！<div class="c-meta"><span class="c-author">yeah</span>2017-07-28 15:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=16034#respond' onclick='return addComment.moveForm( "div-comment-16034", "16034", "respond", "1989" )' aria-label='回复给yeah'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-3" id="comment-16037"><div class="c-avatar"><div class="c-main" id="div-comment-16037">恩今天就可以启动caddy啦~可是启动了之后貌似还是无法访问（httsp://域名：端口）这个网站，chrome提示它意外终止了连接，接下来是还要再等一等吗？<div class="c-meta"><span class="c-author">yeah</span>2017-07-28 15:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=16037#respond' onclick='return addComment.moveForm( "div-comment-16037", "16037", "respond", "1989" )' aria-label='回复给yeah'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-16050"><div class="c-avatar"><div class="c-main" id="div-comment-16050">等个毛线，这说明启动失败或者防火墙端口没开放。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-07-28 19:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=16050#respond' onclick='return addComment.moveForm( "div-comment-16050", "16050", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-5" id="comment-16060"><div class="c-avatar"><div class="c-main" id="div-comment-16060">用tail -f /tmp/caddy.log显示启动成功了呀(;´Д`)提示最后一行是WARNING: File descriptor limit 1024 is too low for production servers. At least 8192 is recommended. 
+那防火墙要怎么弄呢。。系统是debian 7x64<div class="c-meta"><span class="c-author">yeah</span>2017-07-28 21:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=16060#respond' onclick='return addComment.moveForm( "div-comment-16060", "16060", "respond", "1989" )' aria-label='回复给yeah'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-6" id="comment-16069"><div class="c-avatar"><div class="c-main" id="div-comment-16069"><a href="plucovvc-2.html#启动 Caddy后，无法访问" target="_blank" rel="nofollow">https://doub.io/shell-jc1/#启动 Caddy后，无法访问</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-07-29 01:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=16069#respond' onclick='return addComment.moveForm( "div-comment-16069", "16069", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-7" id="comment-16092"><div class="c-avatar"><div class="c-main" id="div-comment-16092">开好了，然后重启了caddy，好像还是不行。。。算啦，等我以后自学再试着搞搞吧，不麻烦您啦~谢谢！<div class="c-meta"><span class="c-author">yeah</span>2017-07-29 14:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=16092#respond' onclick='return addComment.moveForm( "div-comment-16092", "16092", "respond", "1989" )' aria-label='回复给yeah'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-15960"><div class="c-avatar"><div class="c-main" id="div-comment-15960">大佬http重定向https这里有个坑.好像少写了指点路径
+echo "http://toyoo.ml:80 {
+ timeouts none
+ redir https://toyoo.ml:443{url}
+}
+https://toyoo.ml:6666 {
+ gzip
+ tls /root/xxx.crt /root/xxx.key
+}" &gt; /usr/local/caddy/Caddyfile
+____________________________________________
+oot /usr/local/caddy/www/ssr<div class="c-meta"><span class="c-author">kk</span>2017-07-27 11:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=15960#respond' onclick='return addComment.moveForm( "div-comment-15960", "15960", "respond", "1989" )' aria-label='回复给kk'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-15963"><div class="c-avatar"><div class="c-main" id="div-comment-15963">嗯，感谢提醒，已修复。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-07-27 12:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=15963#respond' onclick='return addComment.moveForm( "div-comment-15963", "15963", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-15939"><div class="c-avatar"><div class="c-main" id="div-comment-15939">ssr mu 好像没有redirect的功能<div class="c-meta"><span class="c-author">双重生命</span>2017-07-26 15:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=15939#respond' onclick='return addComment.moveForm( "div-comment-15939", "15939", "respond", "1989" )' aria-label='回复给双重生命'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-15902"><div class="c-avatar"><div class="c-main" id="div-comment-15902">v2ray可以支持websocket协议通过nginx转发分流80、443端口数据，nginx是在服务器前端的，看教程ssr貌似是反过来的，由ssr作为服务器前端监听80、443端口，再由ssr根据请求转发给后端的nginx或是ssr服务端，是这样吗？这样说来，当v2ray与ssr都开启80、443端口伪装的话，会出现端口冲突，就不能在同一台vps上共存了吧？<div class="c-meta"><span class="c-author">bigbigfish</span>2017-07-25 23:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=15902#respond' onclick='return addComment.moveForm( "div-comment-15902", "15902", "respond", "1989" )' aria-label='回复给bigbigfish'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-15904"><div class="c-avatar"><div class="c-main" id="div-comment-15904">同一个端口，只允许同一个程序占用监听。你如何两个程序监听同一个端口？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-07-25 23:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=15904#respond' onclick='return addComment.moveForm( "div-comment-15904", "15904", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-15912"><div class="c-avatar"><div class="c-main" id="div-comment-15912">换个思路，将ssr设为前端代理监控80、443端口，访问ssr的发到ssr后端处理，其他的转发给nginx处理，nginx收到请求后是访问网页的直接显示，是v2ray请求的通过websocket对应路径和端口转发给v2ray后端，不知道这样是否可行？主要是协议间的转换是否兼容？<div class="c-meta"><span class="c-author">bigbigfish</span>2017-07-26 09:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=15912#respond' onclick='return addComment.moveForm( "div-comment-15912", "15912", "respond", "1989" )' aria-label='回复给bigbigfish'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-15914"><div class="c-avatar"><div class="c-main" id="div-comment-15914">能自己测试就自己测试，我不玩V2ray。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-07-26 10:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=15914#respond' onclick='return addComment.moveForm( "div-comment-15914", "15914", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-15455"><div class="c-avatar"><div class="c-main" id="div-comment-15455">这招好。不过话说定向转发到微软官网什么之类的去行不行……？<div class="c-meta"><span class="c-author">Duffy</span>2017-07-13 19:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=15455#respond' onclick='return addComment.moveForm( "div-comment-15455", "15455", "respond", "1989" )' aria-label='回复给Duffy'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-14244"><div class="c-avatar"><div class="c-main" id="div-comment-14244">看标题还以为在介绍ml呢。。。看完文章又学了一招~<div class="c-meta"><span class="c-author">lang</span>2017-05-28 23:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=14244#respond' onclick='return addComment.moveForm( "div-comment-14244", "14244", "respond", "1989" )' aria-label='回复给lang'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-14001"><div class="c-avatar"><div class="c-main" id="div-comment-14001">直接重定向转发至国内正常网站不会更好吗？ 比如直接转发到百度<div class="c-meta"><span class="c-author"><a href='http://233/' rel='external nofollow' class='url'>2333</a></span>2017-05-21 11:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=14001#respond' onclick='return addComment.moveForm( "div-comment-14001", "14001", "respond", "1989" )' aria-label='回复给2333'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-14005"><div class="c-avatar"><div class="c-main" id="div-comment-14005">你访问海外服务器上面的国内网站？不要自作聪明<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-21 12:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=14005#respond' onclick='return addComment.moveForm( "div-comment-14005", "14005", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-13437"><div class="c-avatar"><div class="c-main" id="div-comment-13437">HTTP重新定向HTTPS直接443端口就可以了，因为SSR已经把443转到6666了,如果重新定向为6666端口会在网页结尾显示端口号，重新定向443端口则不会显示端口号，即Caddy（80）→SSR（443）→Caddy（6666），这样伪装更彻底。。。虽然感觉没什么卵用。最近跟博主学了不少东西，非常感谢！<div class="c-meta"><span class="c-author"><a href='http://www.p3ter.me/' rel='external nofollow' class='url'>P3terChan</a></span>2017-05-04 16:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=13437#respond' onclick='return addComment.moveForm( "div-comment-13437", "13437", "respond", "1989" )' aria-label='回复给P3terChan'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-21297"><div class="c-avatar"><div class="c-main" id="div-comment-21297">哥们，问一下即Caddy（80）→SSR（443）→Caddy（6666）这个流程的具体过程么？我跳转的后面都有端口<div class="c-meta"><span class="c-author"><a href='http://world3324.ml/' rel='external nofollow' class='url'>world3324</a></span>2017-10-27 11:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=21297#respond' onclick='return addComment.moveForm( "div-comment-21297", "21297", "respond", "1989" )' aria-label='回复给world3324'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-13024"><div class="c-avatar"><div class="c-main" id="div-comment-13024">2017-04-21 18:42:17--  https://caddyserver.com/download/build?os=linux&amp;arch=amd64&amp;features=
+Resolving caddyserver.com (caddyserver.com)... 2604:a880:2:d0::1145:e001, 138.68.240.78
+Connecting to caddyserver.com (caddyserver.com)|2604:a880:2:d0::1145:e001|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2017-04-21 18:42:17 ERROR 404: Not Found.
+
+debian8无法安装提示错误
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+[错误] Caddy 解压失败或压缩文件错误 !<div class="c-meta"><span class="c-author">Ty</span>2017-04-21 18:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=13024#respond' onclick='return addComment.moveForm( "div-comment-13024", "13024", "respond", "1989" )' aria-label='回复给Ty'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-13025"><div class="c-avatar"><div class="c-main" id="div-comment-13025">Caddy官网升级，下载连接也改了，我已经更新脚本了，重新下载脚本即可(v1.0.3)。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-21 19:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=13025#respond' onclick='return addComment.moveForm( "div-comment-13025", "13025", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-15151"><div class="c-avatar"><div class="c-main" id="div-comment-15151">又出现该错误了<div class="c-meta"><span class="c-author">梗</span>2017-06-29 10:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=15151#respond' onclick='return addComment.moveForm( "div-comment-15151", "15151", "respond", "1989" )' aria-label='回复给梗'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-15161"><div class="c-avatar"><div class="c-main" id="div-comment-15161">不，没有404，不是这个错误，而是链接(下载)超时，我去官网浏览器手动下载也是超时，是Caddy官网下载处自身的问题，等等官网恢复吧。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-29 12:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=15161#respond' onclick='return addComment.moveForm( "div-comment-15161", "15161", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-12905"><div class="c-avatar"><div class="c-main" id="div-comment-12905">shadowsocks可以配合着使用caddy吗？<div class="c-meta"><span class="c-author">phil</span>2017-04-17 17:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=12905#respond' onclick='return addComment.moveForm( "div-comment-12905", "12905", "respond", "1989" )' aria-label='回复给phil'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-12908"><div class="c-avatar"><div class="c-main" id="div-comment-12908">不能，本教程只有ShadowsocksR Python服务端能实现。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-17 18:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=12908#respond' onclick='return addComment.moveForm( "div-comment-12908", "12908", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-12686"><div class="c-avatar"><div class="c-main" id="div-comment-12686">caddy 开机启动不了呀..Ubuntu 14 ...能做个启动脚本嘛. 呵呵..<div class="c-meta"><span class="c-author">SS</span>2017-04-11 20:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=12686#respond' onclick='return addComment.moveForm( "div-comment-12686", "12686", "respond", "1989" )' aria-label='回复给SS'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-12692"><div class="c-avatar"><div class="c-main" id="div-comment-12692">服务控制init脚本(service caddy xxx)已经设置开机启动了，没有启动说明因为某原因失败了。<br />
+Centos6 Debian7 Ubuntu14 系统我都测试过，但不保证所有系统都正常，使用<code> cat /tmp/caddy.log </code>查看启动日志。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-11 23:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=12692#respond' onclick='return addComment.moveForm( "div-comment-12692", "12692", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-12720"><div class="c-avatar"><div class="c-main" id="div-comment-12720">警告WARNING: File descriptor limit 1024 is too low for production servers. At least 8192 is recommended. Fix with "ulimit -n 8192".<div class="c-meta"><span class="c-author">SS</span>2017-04-12 18:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=12720#respond' onclick='return addComment.moveForm( "div-comment-12720", "12720", "respond", "1989" )' aria-label='回复给SS'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-12724"><div class="c-avatar"><div class="c-main" id="div-comment-12724">这个是正常的提示，指的是你的系统文件最大打开数（并发数）只有1024太少（linux 默认1024），Caddy建议你改成 8192或者更多。
+你可以执行<code> ulimit -n 8192 </code>来临时设置文件并发数，但重启后会失效。
+也可以永久的设定：
+<pre class="prettyprint linenums" >echo "* soft nofile 51200
+* hard nofile 51200" >> /etc/security/limits.conf
+# 执行后是没有反应的，再执行这个即可
+ulimit -n 51200
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-12 19:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=12724#respond' onclick='return addComment.moveForm( "div-comment-12724", "12724", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-12415"><div class="c-avatar"><div class="c-main" id="div-comment-12415">我樹莓派搭建了SSR服務端，debian的。剛在上面嘗試了下~提示不支持arm設備！<div class="c-meta"><span class="c-author">ntg</span>2017-04-04 10:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=12415#respond' onclick='return addComment.moveForm( "div-comment-12415", "12415", "respond", "1989" )' aria-label='回复给ntg'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12001"><div class="c-avatar"><div class="c-main" id="div-comment-12001">https://www.nanqinlang.com/analyze-pretend-website
+在本文基础上写了更为详细的分析讲解 详细到我都嫌罗嗦了 相信刚看帖子的人肯定有很多和我当时一样特别迷<div class="c-meta"><span class="c-author"><a href='https://www.nanqinlang.com/' rel='external nofollow' class='url'>南琴浪</a></span>2017-03-24 21:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=12001#respond' onclick='return addComment.moveForm( "div-comment-12001", "12001", "respond", "1989" )' aria-label='回复给南琴浪'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-11938"><div class="c-avatar"><div class="c-main" id="div-comment-11938">http重定向https的时候，443用1443代替，80用1080代替，日志还是提示443端口被占用，单独使用1080端口就没问题，ssr开的80和443<div class="c-meta"><span class="c-author">shin</span>2017-03-23 15:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11938#respond' onclick='return addComment.moveForm( "div-comment-11938", "11938", "respond", "1989" )' aria-label='回复给shin'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-11943"><div class="c-avatar"><div class="c-main" id="div-comment-11943">请提供Caddy配置文件和SSR配置文件。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-23 18:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11943#respond' onclick='return addComment.moveForm( "div-comment-11943", "11943", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-11714"><div class="c-avatar"><div class="c-main" id="div-comment-11714">这样部署对UDP转发有影响吗?<div class="c-meta"><span class="c-author">嘿嘿嘿</span>2017-03-17 10:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11714#respond' onclick='return addComment.moveForm( "div-comment-11714", "11714", "respond", "1989" )' aria-label='回复给嘿嘿嘿'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-11718"><div class="c-avatar"><div class="c-main" id="div-comment-11718">没有。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-17 14:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11718#respond' onclick='return addComment.moveForm( "div-comment-11718", "11718", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-11690"><div class="c-avatar"><div class="c-main" id="div-comment-11690">话说我现在有点迷
+在同一服务器上建了lnmp的wordpress站<div class="c-meta"><span class="c-author"><a href='http://sindery.me/' rel='external nofollow' class='url'>南琴浪</a></span>2017-03-16 17:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11690#respond' onclick='return addComment.moveForm( "div-comment-11690", "11690", "respond", "1989" )' aria-label='回复给南琴浪'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-11692"><div class="c-avatar"><div class="c-main" id="div-comment-11692">话都没打完发出去了...
+我把站和ssr放在同一服务器
+nginx监听80/433,rewrite重定向80http到443https
+ssr监听8080端口
+nginx好像并不能像caddy那样监听2333/6666端口吧 那我ssr的redirect参数要怎么填<div class="c-meta"><span class="c-author"><a href='http://sindery.me/' rel='external nofollow' class='url'>南琴浪</a></span>2017-03-16 17:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11692#respond' onclick='return addComment.moveForm( "div-comment-11692", "11692", "respond", "1989" )' aria-label='回复给南琴浪'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-3" id="comment-11693"><div class="c-avatar"><div class="c-main" id="div-comment-11693">谁告诉你Nginx不能监听其他端口？Nginx/Apache/Caddy都是一样的，想监听什么端口就监听什么端口。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-16 18:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11693#respond' onclick='return addComment.moveForm( "div-comment-11693", "11693", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-4" id="comment-11697"><div class="c-avatar"><div class="c-main" id="div-comment-11697">明白了 原来是用ssr把端口转接到44端口
+之前觉着nginx不设置443的话https根本不能通
+我好像成功了。<div class="c-meta"><span class="c-author"><a href='http://sindery.me/' rel='external nofollow' class='url'>南琴浪</a></span>2017-03-16 19:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11697#respond' onclick='return addComment.moveForm( "div-comment-11697", "11697", "respond", "1989" )' aria-label='回复给南琴浪'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-5" id="comment-11699"><div class="c-avatar"><div class="c-main" id="div-comment-11699">为了互联网的规范，所以这些端口都赋予了固定的意义，比如 22是SSH端口，25是邮件端口，80是HTTP端口，443是HTTPS端口。<br />
+你访问 谷歌，你只需要输入<code> www.google.com </code>，然后浏览器会自动加上<code>协议 http:// 和端口 80</code>，完整的地址应该是：<code> http://www.google.com:80 </code>，不过http的默认端口就是80，所以浏览器隐藏了端口。<br />
+HTTPS也一样，隐藏了443端口，当你设置其他端口的话，你就需要手动加上端口了，比如<code> https://xxx.xx:2333 </code>这样<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-16 19:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11699#respond' onclick='return addComment.moveForm( "div-comment-11699", "11699", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-6" id="comment-11702"><div class="c-avatar"><div class="c-main" id="div-comment-11702">嗯明白了。<div class="c-meta"><span class="c-author"><a href='http://sindery.me/' rel='external nofollow' class='url'>南琴浪</a></span>2017-03-16 20:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11702#respond' onclick='return addComment.moveForm( "div-comment-11702", "11702", "respond", "1989" )' aria-label='回复给南琴浪'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-11678"><div class="c-avatar"><div class="c-main" id="div-comment-11678">toyoyo君，是不是意思就是，caddy是用来建站而已，并且实际web端口是2333和6666，然后由shadow使用80和443转发web或流量？那我是不是用其他别的搭web都可以了，只要确保端口正确指向就好了？<div class="c-meta"><span class="c-author">在烀</span>2017-03-16 13:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11678#respond' onclick='return addComment.moveForm( "div-comment-11678", "11678", "respond", "1989" )' aria-label='回复给在烀'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-11679"><div class="c-avatar"><div class="c-main" id="div-comment-11679">是的，你通过<code> http://ip:2333 </code>也能访问网站，你通过<code> http://ip:80(80默认是隐藏的) </code>你就会访问到ShadowsocksR服务端，然后ShadowsocksR服务端会根据配置去把 流量重定向到<code> http://ip:2333 </code>。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-16 13:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11679#respond' onclick='return addComment.moveForm( "div-comment-11679", "11679", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-11636"><div class="c-avatar"><div class="c-main" id="div-comment-11636">希望出一个shadowsocks-libev版加装simple-obfs插件跟真实web共存的教程 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_rolleyes.gif" alt=":roll:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">catdot</span>2017-03-15 15:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11636#respond' onclick='return addComment.moveForm( "div-comment-11636", "11636", "respond", "1989" )' aria-label='回复给catdot'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-11807"><div class="c-avatar"><div class="c-main" id="div-comment-11807">shadowsocks-libev版服务端 + simple-obfs插件并不能实现本文章所写的同端口共存。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-19 16:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11807#respond' onclick='return addComment.moveForm( "div-comment-11807", "11807", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-11621"><div class="c-avatar"><div class="c-main" id="div-comment-11621">简直是太棒了！！！这样做是不是可以不用去再用混淆和协议了呢？不然延迟好高。。<div class="c-meta"><span class="c-author">大熊</span>2017-03-15 10:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11621#respond' onclick='return addComment.moveForm( "div-comment-11621", "11621", "respond", "1989" )' aria-label='回复给大熊'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-11622"><div class="c-avatar"><div class="c-main" id="div-comment-11622">协议插件建议还是使用，混淆插件会提高延迟（特别是玩游戏有影响），可以考虑使用原版。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-15 10:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11622#respond' onclick='return addComment.moveForm( "div-comment-11622", "11622", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-11609"><div class="c-avatar"><div class="c-main" id="div-comment-11609">发现问题所在了。。。caddy一直是未运行 运行start显示启动成功 再运行status却显示caddy未运行<div class="c-meta"><span class="c-author"><a href='http://minami.sindery.me/' rel='external nofollow' class='url'>南琴浪</a></span>2017-03-14 23:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11609#respond' onclick='return addComment.moveForm( "div-comment-11609", "11609", "respond", "1989" )' aria-label='回复给南琴浪'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-11611"><div class="c-avatar"><div class="c-main" id="div-comment-11611">这的确是一个BUG，因为检测是命令执行是否成功，实际上 nohub 运行成功了就会显示启动成功，但是Caddy启动后 如果配置文件有问题或者 端口被占用，会报错然后自己退出。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-15 00:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11611#respond' onclick='return addComment.moveForm( "div-comment-11611", "11611", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-11608"><div class="c-avatar"><div class="c-main" id="div-comment-11608">上传的模板应该是什么后缀的文件啊 我下载的模板有fonts/html/psd三个文件夹<div class="c-meta"><span class="c-author"><a href='http://minami.sindery.me/' rel='external nofollow' class='url'>南琴浪</a></span>2017-03-14 23:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11608#respond' onclick='return addComment.moveForm( "div-comment-11608", "11608", "respond", "1989" )' aria-label='回复给南琴浪'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-11610"><div class="c-avatar"><div class="c-main" id="div-comment-11610">HTML+CSS这样的网页模板就行了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-15 00:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11610#respond' onclick='return addComment.moveForm( "div-comment-11610", "11610", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-11612"><div class="c-avatar"><div class="c-main" id="div-comment-11612">其它的配置都成功了 
+只剩一步就是访问域名
+电脑上只有一串英文提示“not at this site on:2333”
+手机上却是“404 not found”
+开不开代理都是一样的提示.<div class="c-meta"><span class="c-author">南琴浪</span>2017-03-15 06:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11612#respond' onclick='return addComment.moveForm( "div-comment-11612", "11612", "respond", "1989" )' aria-label='回复给南琴浪'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-11620"><div class="c-avatar"><div class="c-main" id="div-comment-11620">然而你说这些，都没有意义，配置文件具体内容我都不清楚，无法判断。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-15 09:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11620#respond' onclick='return addComment.moveForm( "div-comment-11620", "11620", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even depth-3" id="comment-11613"><div class="c-avatar"><div class="c-main" id="div-comment-11613">总是no such site at:2333
+难道是我模板上传错了.<div class="c-meta"><span class="c-author">南琴浪</span>2017-03-15 07:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11613#respond' onclick='return addComment.moveForm( "div-comment-11613", "11613", "respond", "1989" )' aria-label='回复给南琴浪'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-11607"><div class="c-avatar"><div class="c-main" id="div-comment-11607">Bad response. The server or forwarder response doesn't look like HTTP.
+这是哪个部分的问题 是我放的模板有问题 还是我的域名解析有问题<div class="c-meta"><span class="c-author"><a href='http://minami.sindery.me/' rel='external nofollow' class='url'>南琴浪</a></span>2017-03-14 23:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11607#respond' onclick='return addComment.moveForm( "div-comment-11607", "11607", "respond", "1989" )' aria-label='回复给南琴浪'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-11595"><div class="c-avatar"><div class="c-main" id="div-comment-11595">测试成功 非常好用 小巧！~<div class="c-meta"><span class="c-author">Bruce</span>2017-03-14 17:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11595#respond' onclick='return addComment.moveForm( "div-comment-11595", "11595", "respond", "1989" )' aria-label='回复给Bruce'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-11593"><div class="c-avatar"><div class="c-main" id="div-comment-11593">这个有意思，和ariang共存是不是改ariang的端口就行了么，鄙人从来没有碰过nginx或者caddy这些东西...<div class="c-meta"><span class="c-author">kurokutomoko</span>2017-03-14 17:41 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11593#respond' onclick='return addComment.moveForm( "div-comment-11593", "11593", "respond", "1989" )' aria-label='回复给kurokutomoko'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-11597"><div class="c-avatar"><div class="c-main" id="div-comment-11597">和ariang共存没什么影响，端口不用管。该怎么设置怎么设置。<br />
+不过需要这注意的是，我的教程里的写入配置文件代码，都是 清空配置文件然后再写入的，最后一句代码：
+<pre class="prettyprint linenums" >}" > /usr/local/caddy/Caddyfile
+# 把上面这个改成下面这个，就是 把配置信息加入到配置文件最后，而不是清空后加入。
+}" >> /usr/local/caddy/Caddyfile
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-14 18:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11597#respond' onclick='return addComment.moveForm( "div-comment-11597", "11597", "respond", "1989" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-11602"><div class="c-avatar"><div class="c-main" id="div-comment-11602">十分感谢！<div class="c-meta"><span class="c-author">kurokutomoko</span>2017-03-14 21:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11602#respond' onclick='return addComment.moveForm( "div-comment-11602", "11602", "respond", "1989" )' aria-label='回复给kurokutomoko'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-3" id="comment-16730"><div class="c-avatar"><div class="c-main" id="div-comment-16730">都删了吧,我知道了,原来是直接打命令,已经弄好了,十分感谢大大<div class="c-meta"><span class="c-author">iiko</span>2017-08-09 19:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=16730#respond' onclick='return addComment.moveForm( "div-comment-16730", "16730", "respond", "1989" )' aria-label='回复给iiko'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-11592"><div class="c-avatar"><div class="c-main" id="div-comment-11592">沙发<div class="c-meta"><span class="c-author"><a href='https://www.zrj96.com/' rel='external nofollow' class='url'>zrj766</a></span>2017-03-14 16:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=11592#respond' onclick='return addComment.moveForm( "div-comment-11592", "11592", "respond", "1989" )' aria-label='回复给zrj766'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-16720"><div class="c-avatar"><div class="c-main" id="div-comment-16720">上一条删了,编辑错了,眼睛花了
+<pre class="prettyprint linenums" >vi /usr/local/caddy/Caddyfile
+</pre>
+
+里面是空白的,添加代码:
+<pre class="prettyprint linenums" >echo "http://XXXXXX.XXX:2333 {
+ root /usr/local/caddy/www/ssr
+ timeouts none
+ gzip
+}" &gt; /usr/local/caddy/Caddyfile
+</pre>
+
+代码是白色的<br />
+ssr用的是你的一键脚本安装的<br />
+请问大大哪里错了<br />
+另外我的ssl证书是.KEM,不是.KEY.这个影响https配置吗<div class="c-meta"><span class="c-author">iiko</span>2017-08-09 15:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc48/?replytocom=16720#respond' onclick='return addComment.moveForm( "div-comment-16720", "16720", "respond", "1989" )' aria-label='回复给iiko'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+		<span class='page-numbers current'>1</span>
+<a class='page-numbers' href='yvewr2xg-4.html#comments'>2</a>
+<a class="next page-numbers" href="yvewr2xg-4.html#comments">»</a>	</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://kanfanba.com/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script data-cfasync="false" src="hnpipwj_.js"></script><script type="text/javascript">
+var image_url=new Array()
+image_url=["https://www.vultr.com/","vh8576m0.html","https://virmach.com/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="xka5b15-container xka5b15-1 xka5b15-hide">
+    <div class="xka5b15-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="xka5b15"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

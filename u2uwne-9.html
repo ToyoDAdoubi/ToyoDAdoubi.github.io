@@ -1,0 +1,940 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>『原创』一个快捷方便且实用性高的PAC管理器 —— SquidPAC Tools | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1958] -->
+<meta name="description"  content="听说了 某叶香蕉 用 开源的squid技术 去吹自主原创开发黑科技啥的！叫什么Sq**dPress，现在还搞了个什么技术培训，永久六七百，就去捞钱，什么VIP&quot;终身&quot;几百元的，我也是醉了。还说什么独创的Squid技术，远超shadowsocks、vpn等等。 我记得他当初用 开源的GoAgent" />
+
+<meta name="keywords"  content="pac,squidpac tools,原创软件" />
+
+<link rel="canonical" href="u2uwne-9.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='推荐一个可以在地图上显示TraceRoute（路由追踪）路径信息的软件' href='cvdqb0y7.html' />
+<link rel='next' title='SS-Panel V2 MailGun修改为SMTP发信方式教程' href='tnqxqx_n-4.html' />
+<link rel='shortlink' href='https://doub.io/?p=1145' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fsquidpac-tools-js1%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fsquidpac-tools-js1%2F&amp;format=xml" />
+<style>
+.okcfe5b{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.okcfe5b-hide{
+    display: none;
+}
+.okcfe5b-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.okcfe5b-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.okcfe5b-2 .okcfe5b-body,.okcfe5b-3 .okcfe5b-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.okcfe5b-2 .close-btn,.okcfe5b-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.okcfe5b-3 .okcfe5b-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.okcfe5b').html(kill_adBlock_message);
+            jQuery('.okcfe5b-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.okcfe5b-container').fadeOut('okcfe5b-hide');
+        });
+    });
+    var kill_adBlock_status = 1;
+    var kill_adBlock_message = '逗比很伤心😥，您的<strong>广告拦截扩展</strong>屏蔽了我们的小广告，网站的发展离不开大家的支持，请先看过<a target=\"_blank\" style=\"color: #ffe500;\" href=\"3--didfb.html\">这个文章</a>后，再确定是否要将我们的域名添加到<strong>拦截白名单</strong>中，谢谢！😘👌';
+    var kill_adBlock_message_delay = 0;
+    var kill_adBlock_close_btn = 1;
+    var kill_adBlock_close_automatically = 0;
+    var kill_adBlock_close_automatically_delay = 0;
+    var kill_adBlock_message_type = 1;
+    function adBlockDetected() {
+      show_message();
+    }
+    
+    if(typeof killAdBlock === 'undefined') {
+        adBlockDetected();
+    } else {
+        killAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+    }
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="PAC, SquidPAC Tools, 原创软件, 网络资源, 逗比软件">
+<meta name="description" content="听说了 某叶香蕉 用 开源的squid技术 去吹自主原创开发黑科技啥的！叫什么Sq**dPress，现在还搞了个什么技术培训，永久六七百，就去捞钱，什么VIP“终身”几百元的，我也是醉了。还说什么独创的Squid技术，远超shadowsocks、vpn等等。  我记得他当初用 开源的GoAgent 写了个付费软件，结果因为在海外社交网站发布侮辱dang的言论，被抓了几个月。放出来后拿着正火的 开源Shadowsocks源码，写了个软件，">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-1145 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li class="current-post-ancestor"><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li class="current-post-ancestor"><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="./softs.wtf/"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Atoyodadoubi.github.io'; return false;" action="https://toyodadoubi.github.io/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 逗比云还是逃不过被墙的命运，既然如此那以后逗比云也就一直用被墙的旧域名 <strong><a target="_blank" href="./softs.wtf/">[softs.wtf]</a></strong> 算了。
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://www.gigsgigscloud.com/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="u2uwne-9.html">『原创』一个快捷方便且实用性高的PAC管理器 —— SquidPAC Tools</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="c8ljt6o8.html"> 网络资源</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 3年前 (2016-02-26)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 29300℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="u2uwne-9.html#comments">65评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="u2uwne-9.html#软件介绍" title="软件介绍"><span>软件介绍</span></a><ul class="children"><li class="content-index-level-2"><a href="u2uwne-9.html#当前版本：1.1.8" title="当前版本：1.1.8"><span>当前版本：1.1.8</span></a></li></ul></li><li class="content-index-level-1"><a href="u2uwne-9.html#主要功能：" title="主要功能："><span>主要功能：</span></a></li><li class="content-index-level-1"><a href="u2uwne-9.html#截图展示" title="截图展示"><span>截图展示</span></a></li><li class="content-index-level-1"><a href="u2uwne-9.html#使用方法" title="使用方法"><span>使用方法</span></a><ul class="children"><li class="content-index-level-2"><a href="u2uwne-9.html#PAC模式" title="PAC模式"><span>PAC模式</span></a></li><li class="content-index-level-2"><a href="u2uwne-9.html#自定义PAC模式" title="自定义PAC模式"><span>自定义PAC模式</span></a></li><li class="content-index-level-2"><a href="u2uwne-9.html#全局模式" title="全局模式"><span>全局模式</span></a></li><li class="content-index-level-2"><a href="u2uwne-9.html#智能模式" title="智能模式"><span>智能模式</span></a></li></ul></li><li class="content-index-level-1"><a href="u2uwne-9.html#更新内容" title="更新内容"><span>更新内容</span></a><ul class="children"><li class="content-index-level-2"><a href="u2uwne-9.html#版本1.1.8 日期2016年11月22日" title="版本1.1.8 日期2016年11月22日"><span>版本1.1.8 日期2016年11月22日</span></a></li><li class="content-index-level-2"><a href="u2uwne-9.html#版本1.1.7 日期2016年3月20日" title="版本1.1.7 日期2016年3月20日"><span>版本1.1.7 日期2016年3月20日</span></a></li><li class="content-index-level-2"><a href="u2uwne-9.html#版本1.1.5 日期2016年3月9日" title="版本1.1.5 日期2016年3月9日"><span>版本1.1.5 日期2016年3月9日</span></a></li><li class="content-index-level-2"><a href="u2uwne-9.html#版本1.1.4 日期2016年3月8日" title="版本1.1.4 日期2016年3月8日"><span>版本1.1.4 日期2016年3月8日</span></a></li><li class="content-index-level-2"><a href="u2uwne-9.html#版本1.1.3 日期2016年3月7日" title="版本1.1.3 日期2016年3月7日"><span>版本1.1.3 日期2016年3月7日</span></a></li><li class="content-index-level-2"><a href="u2uwne-9.html#版本1.1.2 日期2016年3月5日" title="版本1.1.2 日期2016年3月5日"><span>版本1.1.2 日期2016年3月5日</span></a></li></ul></li><li class="content-index-level-1"><a href="u2uwne-9.html#下载地址" title="下载地址"><span>下载地址</span></a></li><li class="content-index-level-1"><a href="u2uwne-9.html#PAC和代理服务器" title="PAC和代理服务器"><span>PAC和代理服务器</span></a><ul class="children"><li class="content-index-level-2"><a href="u2uwne-9.html#自建：" title="自建："><span>自建：</span></a></li><li class="content-index-level-2"><a href="u2uwne-9.html#网上收集：" title="网上收集："><span>网上收集：</span></a></li></ul></li><li class="content-index-level-1"><a href="u2uwne-9.html#注意事项" title="注意事项"><span>注意事项</span></a></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年8月22日 14:45</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>听说了 <span style="text-decoration: line-through;">某叶香蕉 </span>用 开源的squid技术 去吹自主原创开发黑科技啥的！叫什么Sq**dPress，现在还搞了个什么技术培训，永久六七百，就去捞钱，什么VIP“终身”几百元的，我也是醉了。还说什么独创的Squid技术，远超shadowsocks、vpn等等。</p>
+<p>我记得他当初用 开源的GoAgent 写了个付费软件，结果因为在海外社交网站发布侮辱dang的言论，被抓了几个月。放出来后拿着正火的 开源Shadowsocks源码，写了个软件，先免费宣传，然后搞公众号关注送Shadowsocks账号啥的，然后就开始卖了也是几百块/年，随后不到两个月就又失踪了，再出现就是Sq**dPress了，我即使打码你们也应该知道是什么软件。：）</p>
+<p>实在是太不要脸了，于是我就也写了PAC管理器——SquidPAC Tools（就为打他脸）。</p>
+<hr />
+<h2 id="软件介绍">软件介绍</h2>
+<p>SquidPAC Tools是一个管理PAC的软件，分为PAC模式和自定义PAC模式。</p>
+<p>在PAC模式中，可以自由添加管理PAC网址或者PAC脚本内容；带有PAC离线功能，可以将PAC离线到本地直接调用，可以加快判断时间；</p>
+<p>在自定义PAC模式中，可以自由添加管理代理服务器，然后在一个单独的PAC中自由替换代理服务器（PAC是由代理服务器+网址组成的，当你访问其中一个网址的时候，会走代理服务器）。</p>
+<h3 id="当前版本：1.1.8"><span style="color: #ff6464;">当前版本：1.1.8</span></h3>
+<h2 id="主要功能：">主要功能：</h2>
+<ol>
+<li>系统代理设置</li>
+<li>离线本地PAC</li>
+<li>多服务器切换</li>
+<li>支持HTTP代理</li>
+<li>支持智能和全局模式</li>
+<li>PAC模式和自定义模式</li>
+</ol>
+<h2 id="截图展示">截图展示</h2>
+<p><img class=" aligncenter" src="d__z3tl3.png" alt="" width="451" height="305" /></p>
+<p><img class=" aligncenter" src="gs2xh6i2.png" alt="" width="375" height="287" /></p>
+<p><img class=" aligncenter" src="-d52ytp5.png" alt="" width="233" height="398" /></p>
+<h2 id="使用方法">使用方法</h2>
+<p><strong><span style="color: #339966;">使用方法很简单，默认带有我自建的服务器，打开软件后直接点托盘菜单的<code>启动代理</code>！就可以科学上网了！</span></strong></p>
+<p>使用方法上比较接近shadowsocks的使用方法，所以使用过SS的应该很容易上手的。</p>
+<p><strong>右键托盘图标显示主要操作菜单。双击托盘图标会根据当前的模式打开对应的编辑窗口。（部分Win10会出现兼容性问题无法显示菜单，请按 <code>Alt+~</code> 键呼出！如果不需要可以在其他选项卡中关闭！）</strong></p>
+<h3 id="PAC模式">PAC模式</h3>
+<p>右键托盘图标，点击<strong>编辑PAC服务器</strong>，然后<strong>添加</strong>按钮，如果你要添加的是一个PAC网址，就点<strong>[是]</strong>，如果是PAC脚本内容，就点<strong>[否]</strong>，然后输入PAC网址或者PAC脚本内容<strong>（记得点应用才会生效）</strong>。然后右键托盘图标并点击你添加的PAC服务器，再点击<strong>启动代理</strong>便可以使用PAC了！并且可以自由切换代理。</p>
+<h3 id="自定义PAC模式">自定义PAC模式</h3>
+<p>右键托盘图标，点击<strong>自定义模式</strong>，然后点击<strong>编辑自定义</strong>，添加代理服务器<strong>（记得点应用才会生效）</strong>，然后右键托盘图标并点击你添加的代理服务器，再点击<strong>启动代理</strong>便可以使用PAC了！并且可以自由切换代理。</p>
+<p>自定义PAC模式就是，你只要有HTTP代理服务器，你就可以用PAC的功能。因为单独使用代理服务器是全局的，而PAC则会根据文件里的网址来判断是不是需要用代理服务器，PAC是由代理服务器+网址组成的，这个模式就是替换一个单独的PAC里的代理服务器。</p>
+<h3 id="全局模式">全局模式</h3>
+<p>全局模式只能在自定义PAC模式下使用，如果要PAC模式使用全局模式，请打开PAC模式服务器编辑窗口，然后选中你要使用的全局PAC后点 <span style="color: #ff6600;"><strong>提取</strong></span> 或者点 <strong><span style="color: #ff6600;">全部提取</span></strong>，这时候在自定义PAC模式的列表里就可以找到 这个/全部 的代理服务器了（因为如果直接读取在线/离线PAC中的代理服务器，效率太低，所以只能这样子干）。</p>
+<h3 id="智能模式">智能模式</h3>
+<p>智能模式也就是默认的模式，也就是走PAC代理。</p>
+<h2 id="更新内容">更新内容</h2>
+<h3 id="版本1.1.8 日期2016年11月22日"><span style="color: #ff6464;">版本1.1.8 日期2016年11月22日</span></h3>
+<ol>
+<li>修复检测更新功能。</li>
+<li>删除默认PAC和代理服务器。<br />
+Tip：因为更换域名，所以检测更新失效了，而默认的PAC和代理服务器，我也不在维护了。</li>
+</ol>
+<h3 id="版本1.1.7 日期2016年3月20日">版本1.1.7 日期2016年3月20日</h3>
+<ol>
+<li>新增记录关闭时当前模式，下次启动会自动切换。</li>
+<li>修复第一次添加PAC服务器无法编辑的BUG。</li>
+</ol>
+<h3 id="版本1.1.5 日期2016年3月9日">版本1.1.5 日期2016年3月9日</h3>
+<ol>
+<li>锁定默认服务器，自动检测默认服务器更新。</li>
+<li>优化默认服务器获取。</li>
+<li>优化检测更新功能。</li>
+</ol>
+<h3 id="版本1.1.4 日期2016年3月8日">版本1.1.4 日期2016年3月8日</h3>
+<ol>
+<li>增加编辑默认PAC功能（可以自己编辑PAC添加你想要的网址了，改完记得点[重载 默认PAC]按钮）。</li>
+<li>修复模式切换时托盘提示信息显示不正确BUG。</li>
+<li>修复切换代理服务器（智能模式）/重载默认PAC时不能立即生效的BUG。</li>
+<li>优化路由器和ADSL判断逻辑。</li>
+<li>优化检测更新功能。</li>
+</ol>
+<h3 id="版本1.1.3 日期2016年3月7日">版本1.1.3 日期2016年3月7日</h3>
+<ol>
+<li>1.优化检测更新逻辑。</li>
+<li>2.优化默认账号获取逻辑。<br />
+（https://doub.io/pac/dou-bi.com.pac用不了的请换成http://doubi.date/pac/dou-bi.com.pac）</li>
+</ol>
+<h3 id="版本1.1.2 日期2016年3月5日">版本1.1.2 日期2016年3月5日</h3>
+<ol>
+<li>优化默认账号获取逻辑（默认账号已换！请去发布文章中查看）。</li>
+<li>新增托盘图标状态（开启和关闭两个图标）。</li>
+</ol>
+<h2 id="下载地址">下载地址</h2>
+<p><a class="dl" title="" href="http://pan.baidu.com/s/1ZvMrG" target="_blank" rel="nofollow" data-original-title=""><i class="fa fa-cloud-download"></i>百度网盘</a><a class="dl" title="" href="./softs.wtf/?dir=%e7%a7%91%e5%ad%a6%e4%b8%8a%e7%bd%91/Other" target="_blank" rel="nofollow" data-original-title=""><i class="fa fa-cloud-download"></i>逗比 · 云</a></p>
+<h2 id="PAC和代理服务器"><span style="color: #ff6600;">PAC和代理服务器</span></h2>
+<h3 id="自建：">自建：</h3>
+<p><del><strong>http://doubi.date/pac/dou-bi.com.pac</strong></del></p>
+<p><del><strong>pac01.doubi.date:25</strong></del></p>
+<p>自建PAC已经取消维护了。</p>
+<p>自建PAC教程：<a title="一种便捷的全自动代理方式——PAC代理" href="5uz9z0sd.html" target="_blank">一种便捷的全自动代理方式——PAC代理</a></p>
+<pre>这两个已经添加到软件默认PAC/代理服务器中了。<span style="color: #ff6600;"><strong>如果软件默认PAC失效了，就来本页面看看是不是有更新！</strong></span></pre>
+<h3 id="网上收集：">网上收集：</h3>
+<p>https://pac.mcplay.cn/jp.pac</p>
+<p>http://pac.itzmx.com/abc.pac</p>
+<p>http://p.hxapn.com/h.pac</p>
+<h2 id="注意事项">注意事项</h2>
+<ul>
+<li>软件仅支持win系统，对于Linux和Mac用户说声抱歉。</li>
+<li>win7如无法使用请用管理员模式启动。</li>
+<li>软件由易语言编写，所以一些杀毒软件可能报毒，我再次保证，我原创的软件绝对没有病毒。</li>
+</ul>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="u2uwne-9.html">『原创』一个快捷方便且实用性高的PAC管理器 —— SquidPAC Tools</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="1145" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">66</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="msy3kxx5.html" rel="tag">PAC</a><a href="zyw-uliw.html" rel="tag">SquidPAC Tools</a><a href="xyx3p-8d.html" rel="tag">原创软件</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="cvdqb0y7.html" rel="prev">推荐一个可以在地图上显示TraceRoute（路由追踪）路径信息的软件</a></span>
+			<span class="article-nav-next"><a href="tnqxqx_n-4.html" rel="next">SS-Panel V2 MailGun修改为SMTP发信方式教程</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="ouiwm7ss-2.html" title="『原创』更方便的Windows系统 DAZE 客户端 —— DAZE Tools" target="_blank">
+<img src="7irzwvxm.png?src=https://doub.io/wp-content/uploads/daze-01.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』更方便的Windows系统 DAZE 客户端 —— DAZE Tools" />	<br><span class="r_title">『原创』更方便的Windows系统 DAZE 客户端 —— DAZE Tools</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="_8lmsikm.html" title="『原创』更方便的Windows系统 Lightsocks 客户端 —— Lightsocks Tools" target="_blank">
+<img src="totjozz1.png?src=https://doub.io/wp-content/uploads/earth-01.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』更方便的Windows系统 Lightsocks 客户端 —— Lightsocks Tools" />	<br><span class="r_title">『原创』更方便的Windows系统 Lightsocks 客户端 —— Lightsocks Tools</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="7btobhno.html" title="『原创』更方便的Windows系统 Goflyway 客户端 —— GoFlyway Tools" target="_blank">
+<img src="o_y8vr92.png?src=https://doub.io/wp-content/uploads/goflyway.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』更方便的Windows系统 Goflyway 客户端 —— GoFlyway Tools" />	<br><span class="r_title">『原创』更方便的Windows系统 Goflyway 客户端 —— GoFlyway Tools</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="kyg7f0u5.html" title="『原创』更方便的Windows系统 Cloud Torrent 客户端 —— Cloud Torrent Tools" target="_blank">
+<img src="vo7eqiwm.png?src=https://doub.io/wp-content/uploads/magnet01.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』更方便的Windows系统 Cloud Torrent 客户端 —— Cloud Torrent Tools" />	<br><span class="r_title">『原创』更方便的Windows系统 Cloud Torrent 客户端 —— Cloud Torrent Tools</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="ouiwm7ss-2.html">『原创』更方便的Windows系统 DAZE 客户端 —— DAZE Tools</a></li><li><i class="fa fa-minus"></i><a href="_8lmsikm.html">『原创』更方便的Windows系统 Lightsocks 客户端 —— Lightsocks Tools</a></li><li><i class="fa fa-minus"></i><a href="7btobhno.html">『原创』更方便的Windows系统 Goflyway 客户端 —— GoFlyway Tools</a></li><li><i class="fa fa-minus"></i><a href="kyg7f0u5.html">『原创』更方便的Windows系统 Cloud Torrent 客户端 —— Cloud Torrent Tools</a></li><li><i class="fa fa-minus"></i><a href="g4b_0oy6.html">『原创』更方便的Windows系统 Brook 客户端 —— Brook Tools</a></li><li><i class="fa fa-minus"></i><a href="3we1qxzj-7.html">ShadowsocksR PC客户端中的 [代理规则 &#8211; 用户自定义] 功能使用教程</a></li><li><i class="fa fa-minus"></i><a href="n9y66y0n.html">『修复』做了个GFWList PAC最新下载地址，可用于更新 SSR PC客户端的PAC</a></li><li><i class="fa fa-minus"></i><a href="sl2a1i9t.html">DaoCloud免费部署 PipeSocks 国内中转Pipe/Pump</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='1145' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (65)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-11740"><div class="c-avatar"><div class="c-main" id="div-comment-11740">没怎么看懂 这个pac和ssr客户端的pac区别在哪啊 这篇帖子的pac讲的好绕<div class="c-meta"><span class="c-author"><a href='https://sindery.me/' rel='external nofollow' class='url'>南琴浪</a></span>2017-03-18 00:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=11740#respond' onclick='return addComment.moveForm( "div-comment-11740", "11740", "respond", "1145" )' aria-label='回复给南琴浪'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-11741"><div class="c-avatar"><div class="c-main" id="div-comment-11741">你首先要理解什么是PAC，等你理解了，你就明白 这个软件的PAC管理器与SSR客户端里面的PAC的区别了，我讲我也讲不明白。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-18 00:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=11741#respond' onclick='return addComment.moveForm( "div-comment-11741", "11741", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-9011"><div class="c-avatar"><div class="c-main" id="div-comment-9011">分享一个PAC地址给没有玩过PAC的朋友尝尝鲜： http://dwz.cn/us-pac<div class="c-meta"><span class="c-author">人间有爱</span>2016-12-06 23:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=9011#respond' onclick='return addComment.moveForm( "div-comment-9011", "9011", "respond", "1145" )' aria-label='回复给人间有爱'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-8855"><div class="c-avatar"><div class="c-main" id="div-comment-8855">1.1.8版，编辑PAC服务器，保存后失败。OS:WINDOWS SERVER 2016<div class="c-meta"><span class="c-author">II</span>2016-11-30 11:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=8855#respond' onclick='return addComment.moveForm( "div-comment-8855", "8855", "respond", "1145" )' aria-label='回复给II'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-8338"><div class="c-avatar"><div class="c-main" id="div-comment-8338">用不了<div class="c-meta"><span class="c-author">zjh</span>2016-10-16 14:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=8338#respond' onclick='return addComment.moveForm( "div-comment-8338", "8338", "respond", "1145" )' aria-label='回复给zjh'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-7938"><div class="c-avatar"><div class="c-main" id="div-comment-7938">喵喵喵 真赞<div class="c-meta"><span class="c-author">桃夭</span>2016-08-28 18:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=7938#respond' onclick='return addComment.moveForm( "div-comment-7938", "7938", "respond", "1145" )' aria-label='回复给桃夭'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-7934"><div class="c-avatar"><div class="c-main" id="div-comment-7934">已挂。。<div class="c-meta"><span class="c-author">hzzwxf</span>2016-08-28 15:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=7934#respond' onclick='return addComment.moveForm( "div-comment-7934", "7934", "respond", "1145" )' aria-label='回复给hzzwxf'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-6886"><div class="c-avatar"><div class="c-main" id="div-comment-6886">不错，支持<div class="c-meta"><span class="c-author"><a href='http://www.douziyuan.com/' rel='external nofollow' class='url'>逗资源</a></span>2016-06-13 11:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=6886#respond' onclick='return addComment.moveForm( "div-comment-6886", "6886", "respond", "1145" )' aria-label='回复给逗资源'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-6424"><div class="c-avatar"><div class="c-main" id="div-comment-6424">PAC和代理服务器怎么都不能用<div class="c-meta"><span class="c-author"><a href='http://www.ssqsq@qq.com/' rel='external nofollow' class='url'>让他也</a></span>2016-04-24 15:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=6424#respond' onclick='return addComment.moveForm( "div-comment-6424", "6424", "respond", "1145" )' aria-label='回复给让他也'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-5867"><div class="c-avatar"><div class="c-main" id="div-comment-5867">自建代理不能用了。。。只能用一个第三方的了。。。<div class="c-meta"><span class="c-author">sl258183305</span>2016-03-29 18:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=5867#respond' onclick='return addComment.moveForm( "div-comment-5867", "5867", "respond", "1145" )' aria-label='回复给sl258183305'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-5822"><div class="c-avatar"><div class="c-main" id="div-comment-5822">非常的方便和快捷，谢谢分享<div class="c-meta"><span class="c-author">zhuhuayong</span>2016-03-28 16:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=5822#respond' onclick='return addComment.moveForm( "div-comment-5822", "5822", "respond", "1145" )' aria-label='回复给zhuhuayong'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-5786"><div class="c-avatar"><div class="c-main" id="div-comment-5786">很好用、支持！！！！<div class="c-meta"><span class="c-author">Icoke.zero</span>2016-03-27 23:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=5786#respond' onclick='return addComment.moveForm( "div-comment-5786", "5786", "respond", "1145" )' aria-label='回复给Icoke.zero'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-5670"><div class="c-avatar"><div class="c-main" id="div-comment-5670">用不了了<div class="c-meta"><span class="c-author">XIA</span>2016-03-26 00:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=5670#respond' onclick='return addComment.moveForm( "div-comment-5670", "5670", "respond", "1145" )' aria-label='回复给XIA'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-5617"><div class="c-avatar"><div class="c-main" id="div-comment-5617">不稳定<div class="c-meta"><span class="c-author"><a href='http://www.ssqsq@qq.com/' rel='external nofollow' class='url'>让他也</a></span>2016-03-24 22:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=5617#respond' onclick='return addComment.moveForm( "div-comment-5617", "5617", "respond", "1145" )' aria-label='回复给让他也'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-5523"><div class="c-avatar"><div class="c-main" id="div-comment-5523">现在用不了了<div class="c-meta"><span class="c-author">zhuhuayong</span>2016-03-22 21:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=5523#respond' onclick='return addComment.moveForm( "div-comment-5523", "5523", "respond", "1145" )' aria-label='回复给zhuhuayong'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-5545"><div class="c-avatar"><div class="c-main" id="div-comment-5545">怎么用不了？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-03-23 12:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=5545#respond' onclick='return addComment.moveForm( "div-comment-5545", "5545", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-5346"><div class="c-avatar"><div class="c-main" id="div-comment-5346">用不了了<div class="c-meta"><span class="c-author">夜深了123</span>2016-03-19 11:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=5346#respond' onclick='return addComment.moveForm( "div-comment-5346", "5346", "respond", "1145" )' aria-label='回复给夜深了123'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-5280"><div class="c-avatar"><div class="c-main" id="div-comment-5280">两个默认的都挂了，用不了。<div class="c-meta"><span class="c-author">Mr.Lee</span>2016-03-17 16:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=5280#respond' onclick='return addComment.moveForm( "div-comment-5280", "5280", "respond", "1145" )' aria-label='回复给Mr.Lee'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-5161"><div class="c-avatar"><div class="c-main" id="div-comment-5161">离线PAC没有成功过，麻烦介绍一下离线的使用PAC方法<div class="c-meta"><span class="c-author">小站</span>2016-03-16 12:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=5161#respond' onclick='return addComment.moveForm( "div-comment-5161", "5161", "respond", "1145" )' aria-label='回复给小站'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-5209"><div class="c-avatar"><div class="c-main" id="div-comment-5209">说明一下具体情况<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-03-16 17:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=5209#respond' onclick='return addComment.moveForm( "div-comment-5209", "5209", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-5213"><div class="c-avatar"><div class="c-main" id="div-comment-5213">首先确保你能再浏览器中访问pac地址，然后你试试管理员模式运行。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-03-16 17:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=5213#respond' onclick='return addComment.moveForm( "div-comment-5213", "5213", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-5049"><div class="c-avatar"><div class="c-main" id="div-comment-5049">编辑PAC服务器 点新建之后  地址不能直接就添加了一个IP  而且无法删除  这样就导致无法新建Pac<div class="c-meta"><span class="c-author">12345</span>2016-03-13 23:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=5049#respond' onclick='return addComment.moveForm( "div-comment-5049", "5049", "respond", "1145" )' aria-label='回复给12345'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-5153"><div class="c-avatar"><div class="c-main" id="div-comment-5153">是最新版本吗，1.1.5并没有遇到这种情况。如果是的话请加群531201358截图反馈<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-03-16 10:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=5153#respond' onclick='return addComment.moveForm( "div-comment-5153", "5153", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-2" id="comment-5212"><div class="c-avatar"><div class="c-main" id="div-comment-5212">可能知道原因了，暂时没电脑修复，多新建几个pac，再来回点一下就没事了。或者用1.1.4版本，不影响使用！<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-03-16 17:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=5212#respond' onclick='return addComment.moveForm( "div-comment-5212", "5212", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-4876"><div class="c-avatar"><div class="c-main" id="div-comment-4876">自定义编辑代理服务器也是走软件默认服务器?<div class="c-meta"><span class="c-author">andrewblake</span>2016-03-11 13:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4876#respond' onclick='return addComment.moveForm( "div-comment-4876", "4876", "respond", "1145" )' aria-label='回复给andrewblake'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-4899"><div class="c-avatar"><div class="c-main" id="div-comment-4899">？你可以自己添加代理服务器<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-03-11 19:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4899#respond' onclick='return addComment.moveForm( "div-comment-4899", "4899", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4634"><div class="c-avatar"><div class="c-main" id="div-comment-4634">为啥要走百度下载.它也是优秀共党员.门槛多,速度慢.不解?<div class="c-meta"><span class="c-author">poi</span>2016-03-06 12:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4634#respond' onclick='return addComment.moveForm( "div-comment-4634", "4634", "respond", "1145" )' aria-label='回复给poi'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-4635"><div class="c-avatar"><div class="c-main" id="div-comment-4635">好吧，加入逗比云了！<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-03-06 12:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4635#respond' onclick='return addComment.moveForm( "div-comment-4635", "4635", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-4621"><div class="c-avatar"><div class="c-main" id="div-comment-4621">我觉得这个(https://github.com/squidproxy/squidproxy
+)更加傻瓜式呢，添加PAC文件更简单<div class="c-meta"><span class="c-author">renzhe</span>2016-03-06 08:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4621#respond' onclick='return addComment.moveForm( "div-comment-4621", "4621", "respond", "1145" )' aria-label='回复给renzhe'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-4624"><div class="c-avatar"><div class="c-main" id="div-comment-4624">我和他主攻的方向不同，觉得那个好用就用那个<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-03-06 10:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4624#respond' onclick='return addComment.moveForm( "div-comment-4624", "4624", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-4817"><div class="c-avatar"><div class="c-main" id="div-comment-4817">那个添加不了IP地址吧<div class="c-meta"><span class="c-author">wind_cn</span>2016-03-10 11:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4817#respond' onclick='return addComment.moveForm( "div-comment-4817", "4817", "respond", "1145" )' aria-label='回复给wind_cn'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4589"><div class="c-avatar"><div class="c-main" id="div-comment-4589">感谢最新版的增加了退出按钮！这个版本没有造成PC死机现象，谢谢大师！<div class="c-meta"><span class="c-author">renzhe</span>2016-03-05 18:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4589#respond' onclick='return addComment.moveForm( "div-comment-4589", "4589", "respond", "1145" )' aria-label='回复给renzhe'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-4588"><div class="c-avatar"><div class="c-main" id="div-comment-4588">今天一打开软件，电脑就死机，XP的，两次这样<div class="c-meta"><span class="c-author">renzhe</span>2016-03-05 18:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4588#respond' onclick='return addComment.moveForm( "div-comment-4588", "4588", "respond", "1145" )' aria-label='回复给renzhe'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-4595"><div class="c-avatar"><div class="c-main" id="div-comment-4595">用的是昨天的版本，今天的升级版本没问题<div class="c-meta"><span class="c-author">renzhe</span>2016-03-05 19:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4595#respond' onclick='return addComment.moveForm( "div-comment-4595", "4595", "respond", "1145" )' aria-label='回复给renzhe'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4579"><div class="c-avatar"><div class="c-main" id="div-comment-4579">哈哈，不知是哪位拿着开源的收费VIP了？求曝光，哈哈<div class="c-meta"><span class="c-author"><a href='http://www.51google.org/' rel='external nofollow' class='url'>51Google</a></span>2016-03-05 15:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4579#respond' onclick='return addComment.moveForm( "div-comment-4579", "4579", "respond", "1145" )' aria-label='回复给51Google'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-4566"><div class="c-avatar"><div class="c-main" id="div-comment-4566">非常遗憾都已死翘翘了 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_surprised.gif" alt=":eek:" class="wp-smiley" style="height: 1em; max-height: 1em;" />  <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_cry.gif" alt=":cry:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">fhzyfjy</span>2016-03-05 13:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4566#respond' onclick='return addComment.moveForm( "div-comment-4566", "4566", "respond", "1145" )' aria-label='回复给fhzyfjy'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4560"><div class="c-avatar"><div class="c-main" id="div-comment-4560">启动生成新的文件和文件夹后自动退出<div class="c-meta"><span class="c-author">柴静穹顶之下</span>2016-03-05 12:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4560#respond' onclick='return addComment.moveForm( "div-comment-4560", "4560", "respond", "1145" )' aria-label='回复给柴静穹顶之下'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-4561"><div class="c-avatar"><div class="c-main" id="div-comment-4561">通知区出现，然后消失了，没有提示<div class="c-meta"><span class="c-author">柴静穹顶之下</span>2016-03-05 12:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4561#respond' onclick='return addComment.moveForm( "div-comment-4561", "4561", "respond", "1145" )' aria-label='回复给柴静穹顶之下'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-4523"><div class="c-avatar"><div class="c-main" id="div-comment-4523">你这么打脸，他知道吗？<div class="c-meta"><span class="c-author">abc</span>2016-03-04 19:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4523#respond' onclick='return addComment.moveForm( "div-comment-4523", "4523", "respond", "1145" )' aria-label='回复给abc'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-4525"><div class="c-avatar"><div class="c-main" id="div-comment-4525">已经旁敲侧击的让他看不到了 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_razz.gif" alt=":razz:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-03-04 19:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4525#respond' onclick='return addComment.moveForm( "div-comment-4525", "4525", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4519"><div class="c-avatar"><div class="c-main" id="div-comment-4519">代理服务器 不能用啊<div class="c-meta"><span class="c-author"><a href='http://www.ssqsq@qq.com/' rel='external nofollow' class='url'>让他也</a></span>2016-03-04 18:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4519#respond' onclick='return addComment.moveForm( "div-comment-4519", "4519", "respond", "1145" )' aria-label='回复给让他也'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-4526"><div class="c-avatar"><div class="c-main" id="div-comment-4526">请说明具体情况<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-03-04 19:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4526#respond' onclick='return addComment.moveForm( "div-comment-4526", "4526", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-4527"><div class="c-avatar"><div class="c-main" id="div-comment-4527">192.99.238.66:25
+
+170.178.188.216:25
+
+192.157.230.134:25这几个能用吗<div class="c-meta"><span class="c-author"><a href='http://www.ssqsq@qq.com/' rel='external nofollow' class='url'>让他也</a></span>2016-03-04 19:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4527#respond' onclick='return addComment.moveForm( "div-comment-4527", "4527", "respond", "1145" )' aria-label='回复给让他也'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-4532"><div class="c-avatar"><div class="c-main" id="div-comment-4532">似乎已经失效了 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_surprised.gif" alt=":eek:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-03-04 20:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4532#respond' onclick='return addComment.moveForm( "div-comment-4532", "4532", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-5" id="comment-4533"><div class="c-avatar"><div class="c-main" id="div-comment-4533">今天怎么都不能·用了 昨晚还可以用两个<div class="c-meta"><span class="c-author"><a href='http://www.ssqsq@qq.com/' rel='external nofollow' class='url'>让他也</a></span>2016-03-04 20:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4533#respond' onclick='return addComment.moveForm( "div-comment-4533", "4533", "respond", "1145" )' aria-label='回复给让他也'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-4469"><div class="c-avatar"><div class="c-main" id="div-comment-4469">很好，很快，编辑自定义代理服务器不成功，求指导。<div class="c-meta"><span class="c-author">andrewblake</span>2016-03-04 01:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4469#respond' onclick='return addComment.moveForm( "div-comment-4469", "4469", "respond", "1145" )' aria-label='回复给andrewblake'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-4473"><div class="c-avatar"><div class="c-main" id="div-comment-4473">谢谢反馈bug，会尽快修复<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-03-04 06:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4473#respond' onclick='return addComment.moveForm( "div-comment-4473", "4473", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-4489"><div class="c-avatar"><div class="c-main" id="div-comment-4489">编辑自定义代理服务器 点应用后没反应 不能添加<div class="c-meta"><span class="c-author"><a href='http://www.ssqsq@qq.com/' rel='external nofollow' class='url'>让他也</a></span>2016-03-04 12:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4489#respond' onclick='return addComment.moveForm( "div-comment-4489", "4489", "respond", "1145" )' aria-label='回复给让他也'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-4502"><div class="c-avatar"><div class="c-main" id="div-comment-4502">最新版本1.1.0已经修复<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-03-04 15:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4502#respond' onclick='return addComment.moveForm( "div-comment-4502", "4502", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4466"><div class="c-avatar"><div class="c-main" id="div-comment-4466"><img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_redface.gif" alt=":oops:" class="wp-smiley" style="height: 1em; max-height: 1em;" /> 话说我打开这个软件后托盘右击图标并没有弹出菜单，单机 双击左键也没反应是为什么嘞？<div class="c-meta"><span class="c-author">Http://</span>2016-03-04 00:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4466#respond' onclick='return addComment.moveForm( "div-comment-4466", "4466", "respond", "1145" )' aria-label='回复给Http://'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-4472"><div class="c-avatar"><div class="c-main" id="div-comment-4472">是win10吗，可能存在不兼容问题，我会尽量修复的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-03-04 06:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4472#respond' onclick='return addComment.moveForm( "div-comment-4472", "4472", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-4493"><div class="c-avatar"><div class="c-main" id="div-comment-4493">是WIN7，我兼容性和管理员运行都测试过了 ，AERO我也关了都没效果……<div class="c-meta"><span class="c-author">Http://</span>2016-03-04 13:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4493#respond' onclick='return addComment.moveForm( "div-comment-4493", "4493", "respond", "1145" )' aria-label='回复给Http://'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-4503"><div class="c-avatar"><div class="c-main" id="div-comment-4503">最新版本1.1.0已经修复，可以用热键显示菜单<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-03-04 15:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4503#respond' onclick='return addComment.moveForm( "div-comment-4503", "4503", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-5" id="comment-4509"><div class="c-avatar"><div class="c-main" id="div-comment-4509">感谢，已经可以使用了，好评！<div class="c-meta"><span class="c-author">Http://</span>2016-03-04 16:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4509#respond' onclick='return addComment.moveForm( "div-comment-4509", "4509", "respond", "1145" )' aria-label='回复给Http://'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-4459"><div class="c-avatar"><div class="c-main" id="div-comment-4459">win7启动一下就自动退出。第一次时生成了config.ini和pac文件夹。<div class="c-meta"><span class="c-author">柴静穹顶之下</span>2016-03-03 23:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4459#respond' onclick='return addComment.moveForm( "div-comment-4459", "4459", "respond", "1145" )' aria-label='回复给柴静穹顶之下'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-4505"><div class="c-avatar"><div class="c-main" id="div-comment-4505">请说明具体情<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-03-04 15:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4505#respond' onclick='return addComment.moveForm( "div-comment-4505", "4505", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4458"><div class="c-avatar"><div class="c-main" id="div-comment-4458">怎么没有退出按钮？<div class="c-meta"><span class="c-author">renzhe</span>2016-03-03 23:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4458#respond' onclick='return addComment.moveForm( "div-comment-4458", "4458", "respond", "1145" )' aria-label='回复给renzhe'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-4471"><div class="c-avatar"><div class="c-main" id="div-comment-4471">是没有退出按钮还是没有右键菜单？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-03-04 06:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4471#respond' onclick='return addComment.moveForm( "div-comment-4471", "4471", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-4587"><div class="c-avatar"><div class="c-main" id="div-comment-4587">就是找不到推出软件的地方<div class="c-meta"><span class="c-author">renzhe</span>2016-03-05 18:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4587#respond' onclick='return addComment.moveForm( "div-comment-4587", "4587", "respond", "1145" )' aria-label='回复给renzhe'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-4426"><div class="c-avatar"><div class="c-main" id="div-comment-4426">阿里云那个速度非常快<div class="c-meta"><span class="c-author">sijidaidai</span>2016-03-02 23:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4426#respond' onclick='return addComment.moveForm( "div-comment-4426", "4426", "respond", "1145" )' aria-label='回复给sijidaidai'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4424"><div class="c-avatar"><div class="c-main" id="div-comment-4424">我顶<div class="c-meta"><span class="c-author">huangjy24</span>2016-03-02 23:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4424#respond' onclick='return addComment.moveForm( "div-comment-4424", "4424", "respond", "1145" )' aria-label='回复给huangjy24'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-4273"><div class="c-avatar"><div class="c-main" id="div-comment-4273">pac和代理服务器经测试全部能用，感谢大神！！！<div class="c-meta"><span class="c-author">kdfine</span>2016-02-27 16:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4273#respond' onclick='return addComment.moveForm( "div-comment-4273", "4273", "respond", "1145" )' aria-label='回复给kdfine'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-4312"><div class="c-avatar"><div class="c-main" id="div-comment-4312">不用谢，有什么BUG的话多多反馈 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_mrgreen.gif" alt=":mrgreen:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-02-28 13:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4312#respond' onclick='return addComment.moveForm( "div-comment-4312", "4312", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4259"><div class="c-avatar"><div class="c-main" id="div-comment-4259">强烈支持一下~好资源呀 收藏<div class="c-meta"><span class="c-author">y165052785</span>2016-02-27 11:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4259#respond' onclick='return addComment.moveForm( "div-comment-4259", "4259", "respond", "1145" )' aria-label='回复给y165052785'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-4475"><div class="c-avatar"><div class="c-main" id="div-comment-4475">谢谢支持！<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-03-04 06:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/squidpac-tools-js1/?replytocom=4475#respond' onclick='return addComment.moveForm( "div-comment-4475", "4475", "respond", "1145" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+			</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://kanfanba.com/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script type="text/javascript">
+var image_url=new Array()
+image_url=["https://www.vultr.com/","vh8576m0.html","https://virmach.com/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="okcfe5b-container okcfe5b-1 okcfe5b-hide">
+    <div class="okcfe5b-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="okcfe5b"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

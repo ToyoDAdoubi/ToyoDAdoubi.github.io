@@ -1,0 +1,1461 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>利用 Caddy FileBrowser扩展 非常简单的部署 私人网盘/在线文件管理器 | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1961] -->
+<meta name="description"  content="今天在评论里看到一个逗比 @kurokutomoko 告诉我，Caddy有一个 FileBrowser扩展，可以非常简单的部署一个私人网盘或者在线文件管理工具，我试了试的确很简单很好用，所以写一个简单教程。 Caddy FileBrowser扩展介绍 FileBrowser 是基于Caddy" />
+
+<meta name="keywords"  content="caddy,云盘,文件管理器,网盘" />
+
+<link rel="canonical" href="ouiwm7ss.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='『开源』Directory Lister 逗比魔改版 Github开源（逗比云）' href='5av9kbaz-3.html' />
+<link rel='next' title='Linux 添加 SWAP 交换内存/虚拟内存 的简单方法' href='-1rsyn4a-2.html' />
+<link rel='shortlink' href='https://doub.io/?p=2012' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fjzzy-3%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fjzzy-3%2F&amp;format=xml" />
+<style>
+.yk5b14b{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.yk5b14b-hide{
+    display: none;
+}
+.yk5b14b-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.yk5b14b-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.yk5b14b-2 .yk5b14b-body,.yk5b14b-3 .yk5b14b-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.yk5b14b-2 .close-btn,.yk5b14b-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.yk5b14b-3 .yk5b14b-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.yk5b14b').html(kill_adBlock_message);
+            jQuery('.yk5b14b-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.yk5b14b-container').fadeOut('yk5b14b-hide');
+        });
+    });
+    var kill_adBlock_status = 1;
+    var kill_adBlock_message = '逗比很伤心😥，您的<strong>广告拦截扩展</strong>屏蔽了我们的小广告，网站的发展离不开大家的支持，请先看过<a target=\"_blank\" style=\"color: #ffe500;\" href=\"3--didfb.html\">这个文章</a>后，再确定是否要将我们的域名添加到<strong>拦截白名单</strong>中，谢谢！😘👌';
+    var kill_adBlock_message_delay = 0;
+    var kill_adBlock_close_btn = 1;
+    var kill_adBlock_close_automatically = 0;
+    var kill_adBlock_close_automatically_delay = 0;
+    var kill_adBlock_message_type = 1;
+    function adBlockDetected() {
+      show_message();
+    }
+    
+    if(typeof killAdBlock === 'undefined') {
+        adBlockDetected();
+    } else {
+        killAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+    }
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="Caddy, 云盘, 文件管理器, 网盘, 建站资源">
+<meta name="description" content="今天在评论里看到一个逗比 @kurokutomoko 告诉我，Caddy有一个 FileBrowser扩展，可以非常简单的部署一个私人网盘或者在线文件管理工具，我试了试的确很简单很好用，所以写一个简单教程。      Caddy FileBrowser扩展介绍 FileBrowser 是基于Caddy 的扩展。它提供文件管理界面，可用于 上传/下载/删除/预览和重命名 等该目录中的文件。   	支持 上传文件  	支持 按类型 搜索文件">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-2012 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li class="current-post-ancestor"><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="./softs.wtf/"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Atoyodadoubi.github.io'; return false;" action="https://toyodadoubi.github.io/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 逗比云还是逃不过被墙的命运，既然如此那以后逗比云也就一直用被墙的旧域名 <strong><a target="_blank" href="./softs.wtf/">[softs.wtf]</a></strong> 算了。
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://www.gigsgigscloud.com/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="ouiwm7ss.html">利用 Caddy FileBrowser扩展 非常简单的部署 私人网盘/在线文件管理器</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="f3dg9hl6.html"> 建站资源</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 2年前 (2017-03-23)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 45584℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="ouiwm7ss.html#comments">324评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="ouiwm7ss.html#Caddy FileBrowser扩展介绍" title="Caddy FileBrowser扩展介绍"><span>Caddy FileBrowser扩展介绍</span></a></li><li class="content-index-level-1"><a href="ouiwm7ss.html#安装 Caddy" title="安装 Caddy"><span>安装 Caddy</span></a></li><li class="content-index-level-1"><a href="ouiwm7ss.html#配置 Caddy" title="配置 Caddy"><span>配置 Caddy</span></a></li><li class="content-index-level-1"><a href="ouiwm7ss.html#配置示例" title="配置示例"><span>配置示例</span></a><ul class="children"><li class="content-index-level-2"><a href="ouiwm7ss.html#IP HTTP" title="IP HTTP"><span>IP HTTP</span></a></li><li class="content-index-level-2"><a href="ouiwm7ss.html#域名 HTTP" title="域名 HTTP"><span>域名 HTTP</span></a></li><li class="content-index-level-2"><a href="ouiwm7ss.html#域名 HTTPS" title="域名 HTTPS"><span>域名 HTTPS</span></a></li><li class="content-index-level-2"><a href="ouiwm7ss.html#域名 HTTP重定向 HTTPS(仅手动指定SSL证书和密匙)" title="域名 HTTP重定向 HTTPS(仅手动指定SSL证书和密匙)"><span>域名 HTTP重定向 HTTPS(仅手动指定SSL证书和密匙)</span></a></li></ul></li><li class="content-index-level-1"><a href="ouiwm7ss.html#FileBrowser 使用说明" title="FileBrowser 使用说明"><span>FileBrowser 使用说明</span></a><ul class="children"><li class="content-index-level-2"><a href="ouiwm7ss.html#切换中文" title="切换中文"><span>切换中文</span></a></li><li class="content-index-level-2"><a href="ouiwm7ss.html#使用技巧" title="使用技巧"><span>使用技巧</span></a></li></ul></li><li class="content-index-level-1"><a href="ouiwm7ss.html#Caddy 使用说明" title="Caddy 使用说明"><span>Caddy 使用说明</span></a></li><li class="content-index-level-1"><a href="ouiwm7ss.html#升级FileBrowser" title="升级FileBrowser"><span>升级FileBrowser</span></a></li><li class="content-index-level-1"><a href="ouiwm7ss.html#卸载" title="卸载"><span>卸载</span></a></li><li class="content-index-level-1"><a href="ouiwm7ss.html#其他说明" title="其他说明"><span>其他说明</span></a><ul class="children"><li class="content-index-level-2"><a href="ouiwm7ss.html#启动显示成功，但是实际未运行" title="启动显示成功，但是实际未运行"><span>启动显示成功，但是实际未运行</span></a></li><li class="content-index-level-2"><a href="ouiwm7ss.html#单网站/多网站" title="单网站/多网站"><span>单网站/多网站</span></a></li><li class="content-index-level-2"><a href="ouiwm7ss.html#Caddy下载文件频繁中断" title="Caddy下载文件频繁中断"><span>Caddy下载文件频繁中断</span></a></li><li class="content-index-level-2"><a href="ouiwm7ss.html#Caddy启动失败，打开 http://ip 显示的是 It works !" title="Caddy启动失败，打开 http://ip 显示的是 It works !"><span>Caddy启动失败，打开 http://ip 显示的是 It works !</span></a></li><li class="content-index-level-2"><a href="ouiwm7ss.html#如果你是 Aria2 教程里过来的，那么请看这个示例和说明" title="如果你是 Aria2 教程里过来的，那么请看这个示例和说明"><span>如果你是 Aria2 教程里过来的，那么请看这个示例和说明</span></a></li><li class="content-index-level-2"><a href="ouiwm7ss.html#启动 Caddy后，无法访问" title="启动 Caddy后，无法访问"><span>启动 Caddy后，无法访问</span></a></li><li class="content-index-level-2"><a href="ouiwm7ss.html#FileBrowser账号密码忘了或想要重置账号信息" title="FileBrowser账号密码忘了或想要重置账号信息"><span>FileBrowser账号密码忘了或想要重置账号信息</span></a></li></ul></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年11月5日 14:23</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>今天在评论里看到一个逗比 <a href="3n2bfgy_.html#comment-11921" target="_blank" rel="noopener">@kurokutomoko</a> 告诉我，Caddy有一个 FileBrowser扩展，可以非常简单的部署一个私人网盘或者在线文件管理工具，我试了试的确很简单很好用，所以写一个简单教程。</p>
+<p><img class="size-medium aligncenter" src="xvvnutnd.png" width="716" height="297" /></p>
+<hr />
+<h2 id="Caddy FileBrowser扩展介绍">Caddy FileBrowser扩展介绍</h2>
+<p>FileBrowser 是基于Caddy 的扩展。它提供文件管理界面，可用于 上传/下载/删除/预览和重命名 等该目录中的文件。</p>
+<ol>
+<li><strong>支持</strong> 上传文件</li>
+<li><strong>支持</strong> 按类型 搜索文件</li>
+<li><strong>支持</strong> 批量压缩 文件下载</li>
+<li><strong>支持</strong> 多用户管理(权限可控)</li>
+<li><strong>支持</strong> 在网页执行 <strong>Linux命令</strong></li>
+<li><strong>支持</strong> 创建 <strong>共享链接(限时/永久)</strong></li>
+<li><strong>支持</strong> 在线编辑 各类文本文件</li>
+<li><strong>支持</strong> 在线浏览 图片/文本/视频等</li>
+<li><strong>支持</strong> 新建/重命名/移动/删除 文件和文件夹等</li>
+<li><strong>部署简单，几步完成，无需任何依赖环境</strong></li>
+<li><strong>等等 ...</strong></li>
+</ol>
+<blockquote><p>目前这个扩展已经支持中文， <a href="https://github.com/hacdias/filemanager/issues/168" target="_blank" rel="noopener">简体中文语言文件</a><strong> </strong>由本人支持制作！</p></blockquote>
+<p><strong>Caddy 文档：</strong><a href="https://caddyserver.com/docs/http.filemanager" target="_blank" rel="noopener">https://caddyserver.com/docs/http.filemanager</a></p>
+<p><strong>Github 项目：</strong><a href="https://github.com/filebrowser/filebrowser" target="_blank" rel="noopener">https://github.com/filebrowser/filebrowser</a></p>
+<p>前面的几篇教程，我都用到了Caddy，大家应该都能看出来Caddy的易用性，所以本篇教程也很简单，我会提供一些示例，不懂的也可以留言。</p>
+<p><strong>其他私人网盘教程：<a href="dibdjmr6.html#私有网盘 相关教程" target="_blank" rel="noopener">https://doub.io/all-one/#私有网盘 相关教程</a></strong></p>
+<blockquote><p><em>注意：</em>因为自从该扩展 <strong>v1.5.0</strong> 开始，就从<strong> FileManager 改名为 FileBrowser</strong> 了，但是其作为 Caddy 扩展的使用代码没区别，所以我只修改了本文章里的部分名称，代码什么的都不变。</p></blockquote>
+<h2 id="安装 Caddy">安装 Caddy</h2>
+<pre class="prettyprint linenums">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh install http.filemanager
+
+# 如果你要同时安装多个 Caddy 插件，那么请修改下面的命令格式为：
+# bash caddy_install.sh install http.filemanager,http.xxx,http.xxx
+# 英文半角逗号分隔多个插件名称
+# 注意并不能单独安装一个扩展，所以如果你要新安装扩展，请执行上面的命令安装 Caddy 并加上你要安装的所有扩展的名称。</pre>
+<p>安装Caddy成功后，继续新建一个用于使用的虚拟主机文件夹，例如 <strong>file</strong>（可以自己改）：</p>
+<pre class="prettyprint linenums">mkdir /usr/local/caddy/www &amp;&amp; mkdir /usr/local/caddy/www/file
+</pre>
+<h2 id="配置 Caddy">配置 Caddy</h2>
+<p>首先，我们先讲一下，FileBrowser扩展各个参数。</p>
+<pre class="prettyprint linenums">filemanager [url] [scope] {
+ database path
+}
+</pre>
+<ol>
+<li><strong>url</strong> 是要设置的网站URL。默认是 <code>/</code> (比如 <code>/doubi</code> 那么访问入口就是 <code>http://ip/doubi</code> )。</li>
+<li><strong>scope </strong>是要浏览的服务器文件目录路径，可以使相对或绝对路径。默认是 <code>./</code> (服务器上面文件的绝对或相对路径)。</li>
+<li><strong>database path</strong> 是 filemanager 的数据库路径（如果不写这个参数，则默认就是 <strong>/usr/local/caddy/filemanager.db</strong>）。</li>
+</ol>
+<h2 id="配置示例">配置示例</h2>
+<p>以下示例中，虚拟主机文件夹皆为 <code>/usr/local/caddy/www/file </code></p>
+<p>示例域名皆为 <code>toyoo.pw </code></p>
+<h3 id="IP HTTP">IP HTTP</h3>
+<p>本示例是，绑定虚拟主机为IP（即通过IP访问），HTTP协议（80端口）。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看内容</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"><strong># 以下全部内容是一个整体，是一个命令，修改后全部复制粘贴到SSH软件中并一起执行！</strong>
+echo ":80 {
+ root /usr/local/caddy/www/file
+ timeouts none
+ gzip
+ filemanager / /usr/local/caddy/www/file {
+  database /usr/local/caddy/filemanager.db
+ }
+}" &gt; /usr/local/caddy/Caddyfile
+</pre>
+<p></p></div>
+<h3 id="域名 HTTP">域名 HTTP</h3>
+<p>本示例是，绑定虚拟主机为域名（即通过域名访问），HTTP协议（80端口）。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看内容</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"><strong># 以下全部内容是一个整体，是一个命令，修改后全部复制粘贴到SSH软件中并一起执行（注意替换示例域名）！</strong>
+echo "http://toyoo.pw {
+ root /usr/local/caddy/www/file
+ timeouts none
+ gzip
+ filemanager / /usr/local/caddy/www/file {
+  database /usr/local/caddy/filemanager.db
+ }
+}" &gt; /usr/local/caddy/Caddyfile
+</pre>
+<p></p></div>
+<h3 id="域名 HTTPS">域名 HTTPS</h3>
+<p>本示例是，绑定虚拟主机为域名（即通过域名访问），HTTPS协议（443端口）。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看内容</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>如果你有 SSL证书和密匙的话，把 SSL证书(xxx.crt)和密匙(xxx.key)文件放到<code> /root </code>文件夹下（也可以是其他文件夹，自己改下面代码），然后这样做：</p>
+<pre class="prettyprint linenums"><strong># 以下全部内容是一个整体，是一个命令，修改后全部复制粘贴到SSH软件中并一起执行（注意替换示例域名）！</strong>
+echo "toyoo.pw {
+ root /usr/local/caddy/www/file
+ timeouts none
+ tls /root/xxx.crt /root/xxx.key
+ gzip
+ filemanager / /usr/local/caddy/www/file {
+  database /usr/local/caddy/filemanager.db
+ }
+}" &gt; /usr/local/caddy/Caddyfile
+</pre>
+<p>如果你没有 SSL证书和密匙，那么你可以这样做：</p>
+<p>下面的<code> <a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="f58d8d8d8db58d8d8ddb8d8d">[email&#160;protected]</a> </code>改成你的邮箱，同时需要注意的是，申请 SSL证书前，<strong>请务必提前解析好域名记录(解析后最好等一会，以全球生效)，否则 Caddy会申请并配置失败！</strong></p>
+<pre class="prettyprint linenums"><strong># 以下全部内容是一个整体，是一个命令，修改后全部复制粘贴到SSH软件中并一起执行（注意替换示例域名）！</strong>
+echo "toyoo.pw {
+ root /usr/local/caddy/www/file
+ timeouts none
+ tls <a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="3d454545457d454545134545">[email&#160;protected]</a>
+ gzip
+ filemanager / /usr/local/caddy/www/file {
+  database /usr/local/caddy/filemanager.db
+ }
+}" &gt; /usr/local/caddy/Caddyfile
+</pre>
+<p></p></div>
+<h3 id="域名 HTTP重定向 HTTPS(仅手动指定SSL证书和密匙)">域名 HTTP重定向 HTTPS(仅手动指定SSL证书和密匙)</h3>
+<p>本示例是，域名HTTP重定向为HTTPS。</p>
+<p>当你是手动指定 SSL证书和密匙 来配置的话，Caddy只会监听 443端口(https)，并不会自动设置 80端口(http)的重定向，如果要做重定向的话，可以这样做：</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看内容</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>下面的示例代码中，是把 http://toyoo.pw 重定向到了 https://toyoo.pw 。</p>
+<pre class="prettyprint linenums"><strong># 以下全部内容是一个整体，是一个命令，修改后全部复制粘贴到SSH软件中并一起执行（注意替换示例域名）！</strong>
+echo "http://toyoo.pw {
+ timeouts none
+ redir https://toyoo.pw{url}
+}
+toyoo.pw {
+ root /usr/local/caddy/www/file
+ timeouts none
+ tls /root/xxx.crt /root/xxx.key
+ gzip
+ filemanager / /usr/local/caddy/www/file {
+  database /usr/local/caddy/filemanager.db
+ }
+}" &gt; /usr/local/caddy/Caddyfile
+</pre>
+<p></p></div>
+<p>当你已经配置完上面步骤后，那就需要启动Caddy了。</p>
+<pre class="prettyprint linenums">/etc/init.d/caddy start
+# 如果启动失败可以看Caddy日志： tail -f /tmp/caddy.log
+</pre>
+<h2 id="FileBrowser 使用说明">FileBrowser 使用说明</h2>
+<blockquote><p>配置并打开网站后，默认账号和密码都是 <strong>admin</strong>，可以登陆后修改。<strong>[Settings]</strong></p></blockquote>
+<h3 id="切换中文">切换中文</h3>
+<p>进入后可以点击左边侧栏 <strong>[Settings]</strong> 进入设置页面，然后选择 <strong>[language - Chinese (Simplified)]</strong> ，并点击右下角第一个 <strong>[Update]</strong> 按钮更新。</p>
+<h3 id="使用技巧">使用技巧</h3>
+<p>一些按键有对应的作用：</p>
+<ol>
+<li><strong>F1</strong> - 查看帮助</li>
+<li><strong>F2</strong> - 重命名 文件/文件夹</li>
+<li><strong>DEL</strong> - 删除所选 文件/文件夹</li>
+<li><strong>ESC</strong> - 清除当前选择 或 关闭提示</li>
+<li><strong>CTRL + S</strong> - 保存下载 文件/文件夹（zip压缩）</li>
+<li><strong>CTRL + 鼠标左键 单击</strong> - 选择多个文件/文件夹</li>
+<li><strong>鼠标左键 双击</strong> - 打开文件/文件夹</li>
+<li><strong>鼠标左键 单击</strong> - 选择文件/文件夹</li>
+</ol>
+<h2 id="Caddy 使用说明">Caddy 使用说明</h2>
+<p><strong>启动：</strong>/etc/init.d/caddy start</p>
+<p><strong>停止：</strong>/etc/init.d/caddy stop</p>
+<p><strong>重启：</strong>/etc/init.d/caddy restart</p>
+<p><strong>查看状态：</strong>/etc/init.d/caddy status</p>
+<p><strong>查看Caddy启动日志：</strong> tail -f /tmp/caddy.log</p>
+<p><strong>Caddy配置文件位置：</strong>/usr/local/caddy/Caddyfile</p>
+<p><strong>FileBrowser数据库位置：</strong>/usr/local/caddy/filemanager.db</p>
+<p><strong>Caddy自动申请SSL证书位置：</strong>/.caddy/acme/acme-v02.api.letsencrypt.org/sites/xxx.xxx(域名)/</p>
+<h2 id="升级FileBrowser">升级FileBrowser</h2>
+<p>因为FileBrowser是Caddy的扩展，是融合成一个文件的，升级FileBrowser=升级Caddy（加扩展），所以只需要重新执行下面的命令覆盖安装Caddy即可<strong>（只会覆盖 Caddy自身，不影响配置文件）</strong>，覆盖安装后启动Caddy即可（ <code>/etc/init.d/caddy start</code> ）。</p>
+<pre class="prettyprint linenums">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh install http.filemanager</pre>
+<h2 id="卸载">卸载</h2>
+<p>只需要把安装命令 <strong>install</strong> 改成 <strong>uninstall</strong> 就是卸载了，因为扩展是集成于Caddy中的，所以无法单独卸载某个扩展。</p>
+<pre class="prettyprint linenums">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh uninstall
+</pre>
+<h2 id="其他说明">其他说明</h2>
+<h3 id="启动显示成功，但是实际未运行">启动显示成功，但是实际未运行</h3>
+<p>因为 服务脚本判断的问题，只判断了nohub是否运行 Caddy成功，但没有判断 Caddy 是否保持正常运行。</p>
+<p>你可以理解为，nohub成功启动了 Caddy，但是 Caddy因为配置文件错误等原因，启动后又退出了。</p>
+<p>所以这种情况下，你应该去查看启动日志：</p>
+<pre class="prettyprint linenums">tail -f /tmp/caddy.log
+</pre>
+<h3 id="单网站/多网站">单网站/多网站</h3>
+<p>当然，上面的几个示例，实际上都算是单网站。<br />
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p><br />
+最后一句代码都是 <code>}" &gt; /usr/local/caddy/Caddyfile</code> ，也就是清空了 Caddy配置文件，然后再写入了配置信息。</p>
+<p>如果你要设置多个网站，那么把最后一句代码改成 <code>}" &gt;&gt; /usr/local/caddy/Caddyfile</code> 即可，注意是把 <code>&gt; 改成 &gt;&gt;</code> ，这样就不会清空原来的配置信息了，而是会把要添加的配置信息加到配置文件最后！<br />
+</p></div></p>
+<h3 id="Caddy下载文件频繁中断">Caddy下载文件频繁中断</h3>
+<p>可能是因为 Caddy的超时时间机制导致的，可以在配置文件中加入这句代 码<code>timeouts none</code> ，例如这样：</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums">http://toyoo.pw (
+ timeouts none
+ root /home/www
+ ...(省略号代表 这下面的内容是重复的，请不要直接写省略号到配置文件中)
+)
+</pre>
+<p></p></div>
+<h3 id="Caddy启动失败，打开 http://ip 显示的是 It works !">Caddy启动失败，打开 http://ip 显示的是 It works !</h3>
+<p>一些系统会自带 apache2 ，而 apache2 会占用80端口，导致Caddy无法绑定端口，所以只要关掉就好了。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums">netstat -lntp
+# 我们可以通过这个命令查看是不是被其他软件占用了 80 端口。
+</pre>
+<p>不过 apache2 会默认开机自启动，如果不需要可以关闭自启动或者卸载 apache2 。</p>
+<p><strong>停止 Apache2</strong></p>
+<pre class="prettyprint linenums">/etc/init.d/apache2 stop
+# 尝试使用上面这个关闭，如果没效果或者提示什么错误无法关闭，那就用下面这个强行关闭进程。
+kill -9 $(ps -ef|grep "apache2"|grep -v "grep"|awk '{print $2}')
+</pre>
+<p><strong>取消开机自启动</strong></p>
+<pre class="prettyprint linenums"># 以下代码仅限 Debian/Ubuntu 系统 #
+update-rc.d -f apache2 remove
+</pre>
+<p><strong>卸载 Apache2</strong></p>
+<pre class="prettyprint linenums"># 以下代码仅限 Debian/Ubuntu 系统 #
+apt-get remove --purge apache2
+</pre>
+<p>关闭 Apache2后，就可以尝试启动 Caddy ，并试试能不能打开网页。</p>
+<pre class="prettyprint linenums">/etc/init.d/caddy start
+</pre>
+<p></p></div>
+<h3 id="如果你是 Aria2 教程里过来的，那么请看这个示例和说明">如果你是 Aria2 教程里过来的，那么请看这个示例和说明</h3>
+<p>使用这个扩展的时候，请先确定你的caddy安装了这个扩展(2017/03/23 17:50 以前通过我网站其他教程安装的皆没有)，否则请卸载重装！<br />
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p><strong>卸载 Caddy：</strong></p>
+<pre class="prettyprint linenums">bash caddy_install.sh uninstall
+</pre>
+<p>使用这个扩展，那么就不需要 caddy 自带的列表功能了，所以可以删除参数 <code>browse</code> ，然后如下设置即可。</p>
+<p>因为只有一个用户，所以不需要设置全局配置，你访问下载的BT文件就可以通过 <code>http://ip或域名/Download/</code> 来访问和操作了，默认用户名和密码都是 admin。</p>
+<p>更多的示例，请<a href="ouiwm7ss.html#Caddy FileManager扩展介绍" target="_blank" rel="noopener">查看这里</a>。</p>
+<pre class="prettyprint linenums"><strong># 以下全部内容是一个整体，是一个命令，修改后全部复制粘贴到SSH软件中并一起执行（注意替换示例域名）！</strong>
+echo -e "http://toyoo.pw {
+ root /usr/local/caddy/www/aria2
+ timeouts none
+ gzip
+ filemanager /Download /usr/local/caddy/www/aria2/Download {
+  database /usr/local/caddy/filemanager.db
+ }
+}" &gt; /usr/local/caddy/Caddyfile
+</pre>
+<p></p></div></p>
+<h3 id="启动 Caddy后，无法访问">启动 Caddy后，无法访问</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>这个可能是防火墙的问题，开放防火墙端口即可。</p>
+<pre class="prettyprint linenums">iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 端口 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 端口 -j ACCEPT
+
+# 删除防火墙规则，内容一样把 -I 换成 -D 就行了：
+iptables -D INPUT -m state --state NEW -m tcp -p tcp --dport 端口 -j ACCEPT
+iptables -D INPUT -m state --state NEW -m udp -p udp --dport 端口 -j ACCEPT
+</pre>
+<p></p></div>
+<h3 id="FileBrowser账号密码忘了或想要重置账号信息">FileBrowser账号密码忘了或想要重置账号信息</h3>
+<p>FileBrowser没有找回密码功能，所以一旦你忘记了密码，那么GG，不过没事 有办法重置。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>当然我们可以重置FileBrowser的数据库文件来清除所有账号信息，这样我们就变成初始账号和密码了(admin/admin)。</p>
+<pre>注意：删除数据库文件只会影响数据库内储存的各账号信息，并不会影响服务器本地的文件夹/文件。</pre>
+<p>很简单，关闭Caddy，然后删除FileBrowser数据库文件，启动Caddy，使用初始账号密码登陆。</p>
+<pre class="prettyprint linenums">/etc/init.d/caddy stop
+rm -rf /usr/local/caddy/filemanager.db
+/etc/init.d/caddy start
+</pre>
+<p></p></div>
+<hr />
+<p><strong>其他私人网盘教程：<a href="dibdjmr6.html#私有网盘 相关教程" target="_blank" rel="noopener">https://doub.io/all-one/#私有网盘 相关教程</a></strong></p>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="ouiwm7ss.html">利用 Caddy FileBrowser扩展 非常简单的部署 私人网盘/在线文件管理器</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="2012" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">67</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="kjvzw235.html" rel="tag">Caddy</a><a href="f5gbz442.html" rel="tag">云盘</a><a href="cpwpcl0o.html" rel="tag">文件管理器</a><a href="yl7jysj6.html" rel="tag">网盘</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="5av9kbaz-3.html" rel="prev">『开源』Directory Lister 逗比魔改版 Github开源（逗比云）</a></span>
+			<span class="article-nav-next"><a href="-1rsyn4a-2.html" rel="next">Linux 添加 SWAP 交换内存/虚拟内存 的简单方法</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="soatrior.html" title="通过 WebDAV 将服务器全部或某个文件夹挂载到电脑上当 网络硬盘" target="_blank">
+<img src="e-_nhhl8.png?src=https://doub.io/wp-content/uploads/web-01.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="通过 WebDAV 将服务器全部或某个文件夹挂载到电脑上当 网络硬盘" />	<br><span class="r_title">通过 WebDAV 将服务器全部或某个文件夹挂载到电脑上当 网络硬盘</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="wae9j8oa.html" title="『原创』多服务器 云探针、云监控 —— ServerStatus 一键管理脚本" target="_blank">
+<img src="-no-ahjv.png?src=https://doub.io/wp-content/uploads/qita-04-09.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』多服务器 云探针、云监控 —— ServerStatus 一键管理脚本" />	<br><span class="r_title">『原创』多服务器 云探针、云监控 —— ServerStatus 一键管理脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="hi10k-7p-5.html" title="ShadowsocksR服务端伪装成 正常网站流量，以更好的欺骗流量匹配" target="_blank">
+<img src="fimkj9ab.png?src=https://doub.io/wp-content/uploads/shadowsocksR-0.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="ShadowsocksR服务端伪装成 正常网站流量，以更好的欺骗流量匹配" />	<br><span class="r_title">ShadowsocksR服务端伪装成 正常网站流量，以更好的欺骗流量匹配</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="l-en8vwt-2.html" title="利用 Caddy 非常简单的部署 反向代理/镜像（支持自签SSL证书）" target="_blank">
+<img src="awqcocdw.png?src=https://doub.io/wp-content/uploads/caddy.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="利用 Caddy 非常简单的部署 反向代理/镜像（支持自签SSL证书）" />	<br><span class="r_title">利用 Caddy 非常简单的部署 反向代理/镜像（支持自签SSL证书）</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="soatrior.html">通过 WebDAV 将服务器全部或某个文件夹挂载到电脑上当 网络硬盘</a></li><li><i class="fa fa-minus"></i><a href="wae9j8oa.html">『原创』多服务器 云探针、云监控 —— ServerStatus 一键管理脚本</a></li><li><i class="fa fa-minus"></i><a href="hi10k-7p-5.html">ShadowsocksR服务端伪装成 正常网站流量，以更好的欺骗流量匹配</a></li><li><i class="fa fa-minus"></i><a href="l-en8vwt-2.html">利用 Caddy 非常简单的部署 反向代理/镜像（支持自签SSL证书）</a></li><li><i class="fa fa-minus"></i><a href="plucovvc-2.html">『原创』Go语言 跨平台支持的极简 HTTP Server —— Caddy一键安装脚本</a></li><li><i class="fa fa-minus"></i><a href="5mvl2z-3.html">Linux通过HTTP服务下载文件到本地以测试<strong>VPS回程速度</strong></a></li><li><i class="fa fa-minus"></i><a href="iflqrizu-2.html">搭建一个属于自己 可多平台同步的私有云盘 —— Seafile</a></li><li><i class="fa fa-minus"></i><a target="_blank" href="plucovvc.html">『视频』VPS使用宝塔面板安装 WordPress 博客新手小白视频教程</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='2012' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (324)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-23331"><div class="c-avatar"><div class="c-main" id="div-comment-23331">挂载google drive总是失败，是配置不对吗
+80 {
+ root /usr/local/caddy/www/file
+ timeouts none
+ gzip
+ filemanager /mnt/gdrivefs /usr/local/caddy/www/file {
+  database /usr/local/caddy/filemanager.db
+ }
+}" &gt; /usr/local/caddy/Caddyfile<div class="c-meta"><span class="c-author">剑仙山水</span>2017-11-25 16:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=23331#respond' onclick='return addComment.moveForm( "div-comment-23331", "23331", "respond", "2012" )' aria-label='回复给剑仙山水'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-23263"><div class="c-avatar"><div class="c-main" id="div-comment-23263">同样是配置后运行报错
+2017/11/24 13:37:07 parse //:80 {
+ root /usr/local/caddy/www/file
+ timeouts none
+ gzip
+ filemanager / /usr/local/caddy/www/file {
+  database /usr/local/caddy/filemanager.db
+ }
+}: invalid character " " in host name
+^C
+<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="aad8c5c5deeacecfcec387c0c3c4c0ccd3">[email&#160;protected]</a>:~# cat /tmp/caddy.log
+2017/11/24 13:37:07 parse //:80 {
+ root /usr/local/caddy/www/file
+ timeouts none
+ gzip
+ filemanager / /usr/local/caddy/www/file {
+  database /usr/local/caddy/filemanager.db
+ }
+}: invalid character " " in host name<div class="c-meta"><span class="c-author">jfy</span>2017-11-24 13:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=23263#respond' onclick='return addComment.moveForm( "div-comment-23263", "23263", "respond", "2012" )' aria-label='回复给jfy'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-23266"><div class="c-avatar"><div class="c-main" id="div-comment-23266">贴出你的完整配置文件。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-24 14:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=23266#respond' onclick='return addComment.moveForm( "div-comment-23266", "23266", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-23332"><div class="c-avatar"><div class="c-main" id="div-comment-23332">明白了。我用的是vi .得去掉""外面的字符。<div class="c-meta"><span class="c-author">剑仙山水</span>2017-11-25 16:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=23332#respond' onclick='return addComment.moveForm( "div-comment-23332", "23332", "respond", "2012" )' aria-label='回复给剑仙山水'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-23336"><div class="c-avatar"><div class="c-main" id="div-comment-23336">我给的命令是一个整体，改一改后直接粘贴到SSH里，只会回车运行就写入配置文件了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-25 17:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=23336#respond' onclick='return addComment.moveForm( "div-comment-23336", "23336", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-23241"><div class="c-avatar"><div class="c-main" id="div-comment-23241">唯一的问题，Aria2无法下载filemanager生成的分享链接。这个问题要如何解决呢？FileRun和Nextcloud生成的分享链接Aria2能下载，亲自搭建测试。用Aria2多点备份大文件是个不错的方案。可是对于filemanager却不行了。。。<div class="c-meta"><span class="c-author">12359</span>2017-11-24 09:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=23241#respond' onclick='return addComment.moveForm( "div-comment-23241", "23241", "respond", "2012" )' aria-label='回复给12359'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-23249"><div class="c-avatar"><div class="c-main" id="div-comment-23249">Filemanager生成的分享链接还需要访问进去点下载按钮才能得到真正的下载链接。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-24 11:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=23249#respond' onclick='return addComment.moveForm( "div-comment-23249", "23249", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-23285"><div class="c-avatar"><div class="c-main" id="div-comment-23285">这个真正的链接，用迅雷下载直接报错。迅雷的下载本来是多线程加速请求资源的。失去了迅雷的加速下载能力，我觉得这方面还是比不上FileRun和Nextcloud。我用FileRun和Nextcloud分享的文件，下载时，即使ping值延迟比较高&gt;300ms，但还是能接近或者跑满我的带宽。<div class="c-meta"><span class="c-author">12359</span>2017-11-24 18:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=23285#respond' onclick='return addComment.moveForm( "div-comment-23285", "23285", "respond", "2012" )' aria-label='回复给12359'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-23287"><div class="c-avatar"><div class="c-main" id="div-comment-23287">迅雷我不清楚，但是我刚才测试了下，我用 真实下载链接 放到IDM里多线程下载正常。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-24 19:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=23287#respond' onclick='return addComment.moveForm( "div-comment-23287", "23287", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-5" id="comment-23289"><div class="c-avatar"><div class="c-main" id="div-comment-23289">这工具的速度果然快。点个赞！<div class="c-meta"><span class="c-author">12359</span>2017-11-24 19:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=23289#respond' onclick='return addComment.moveForm( "div-comment-23289", "23289", "respond", "2012" )' aria-label='回复给12359'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-5" id="comment-23292"><div class="c-avatar"><div class="c-main" id="div-comment-23292">这工具的速度果然快(同时开启8个线程并行下载)。点个赞！<div class="c-meta"><span class="c-author">12359</span>2017-11-24 19:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=23292#respond' onclick='return addComment.moveForm( "div-comment-23292", "23292", "respond", "2012" )' aria-label='回复给12359'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-23237"><div class="c-avatar"><div class="c-main" id="div-comment-23237">Something really went wrong
+Toyo大大你好，我有一次修改了Scope文件夹读取路径后，现在无论如何重装caddy，都提示内部错误，应该如何处理呢？<div class="c-meta"><span class="c-author">crazi</span>2017-11-24 06:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=23237#respond' onclick='return addComment.moveForm( "div-comment-23237", "23237", "respond", "2012" )' aria-label='回复给crazi'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-23253"><div class="c-avatar"><div class="c-main" id="div-comment-23253">修改了Scope文件夹读取路径 什么意思？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-24 11:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=23253#respond' onclick='return addComment.moveForm( "div-comment-23253", "23253", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-23260"><div class="c-avatar"><div class="c-main" id="div-comment-23260">改了设置里面，用户管理，目录范围，然后返回到我的文件，就出现内部出现麻烦了，而且再把设置改回去也没法恢复正常<div class="c-meta"><span class="c-author">crazi</span>2017-11-24 13:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=23260#respond' onclick='return addComment.moveForm( "div-comment-23260", "23260", "respond", "2012" )' aria-label='回复给crazi'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-23262"><div class="c-avatar"><div class="c-main" id="div-comment-23262">不清楚，这种问题我无法解决，你只能去Github联系作者反馈。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-24 13:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=23262#respond' onclick='return addComment.moveForm( "div-comment-23262", "23262", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-22953"><div class="c-avatar"><div class="c-main" id="div-comment-22953">root /usr/local/caddy/www/aria2
+ basicauth / fuck 233 
+ timeouts none
+ gzip
+ filemanager / /usr/local/caddy/www/aria2/Download {
+  database /usr/local/caddy/filemanager.db
+
+这样进不去aria2 输入用户名密码进不去，一直原地跳转，把用户名密码去掉可以进去，是不是filemanager的原因，应该怎样设置<div class="c-meta"><span class="c-author">Tom_Jerry</span>2017-11-17 16:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=22953#respond' onclick='return addComment.moveForm( "div-comment-22953", "22953", "respond", "2012" )' aria-label='回复给Tom_Jerry'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-22968"><div class="c-avatar"><div class="c-main" id="div-comment-22968">如果要配置 filemanager 不需要配置basicauth了，因为 filemanager 有自己的用户管理系统。你出现这个问题的原因是没有好好看教程：<a href="ouiwm7ss.html#如果你是 Aria2 教程里过来的，那么请看这个示例和说明">https://doub.io/jzzy-3/#如果你是 Aria2 教程里过来的，那么请看这个示例和说明</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-17 21:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=22968#respond' onclick='return addComment.moveForm( "div-comment-22968", "22968", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-22895"><div class="c-avatar"><div class="c-main" id="div-comment-22895">大佬，用了这个脚本，我的博客好像都无法访问了，不管一级二级页面都会被定向到filemanager，我已经设置了/cloud是访问路径啊<div class="c-meta"><span class="c-author">Hikari</span>2017-11-16 18:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=22895#respond' onclick='return addComment.moveForm( "div-comment-22895", "22895", "respond", "2012" )' aria-label='回复给Hikari'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-22938"><div class="c-avatar"><div class="c-main" id="div-comment-22938">你的博客也是用Caddy的么？配置文件贴出来我才能简单分析。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-17 12:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=22938#respond' onclick='return addComment.moveForm( "div-comment-22938", "22938", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-24364"><div class="c-avatar"><div class="c-main" id="div-comment-24364">我猜他博客啥的用的别的，比如我用的nginx，也是所有网页跳到filemanage。然后nginx和caddy都是占用80端口，无法同时使用。所以我想问是不是无法共存？<div class="c-meta"><span class="c-author">loli5555</span>2017-12-14 18:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=24364#respond' onclick='return addComment.moveForm( "div-comment-24364", "24364", "respond", "2012" )' aria-label='回复给loli5555'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-25002"><div class="c-avatar"><div class="c-main" id="div-comment-25002">同端口当然无法共存，一个端口只能被一个程序监听。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-15 14:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=25002#respond' onclick='return addComment.moveForm( "div-comment-25002", "25002", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-22869"><div class="c-avatar"><div class="c-main" id="div-comment-22869">你好，我安装了aria2,直接通过ip访问，在安装这个扩展，把示例
+echo -e "http://toyoo.ml改成
+echo -e "http://ip就可以了吗？我这样做通过http://ip/download/访问，一直显示网页无法访问。指点下应该怎么做？<div class="c-meta"><span class="c-author">lao</span>2017-11-16 15:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=22869#respond' onclick='return addComment.moveForm( "div-comment-22869", "22869", "respond", "2012" )' aria-label='回复给lao'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-22873"><div class="c-avatar"><div class="c-main" id="div-comment-22873">用IP的话这样改（假设端口为 2333），主要看第一行，下面配置文件内容的看你情况：
+<pre class="prettyprint linenums" >echo -e ":2333 {
+ root /usr/local/caddy/www/aria2
+ timeouts none
+ gzip
+ filemanager /Download /usr/local/caddy/www/aria2/Download {
+  database /usr/local/caddy/filemanager.db
+ }
+}" > /usr/local/caddy/Caddyfile
+</pre>
+这样配置则通过<code> http://ip:2333/ </code>访问Aria2你安装的前端面板（如有）。<br />
+通过<code> http://ip:2333/Download </code>访问Aria2的下载目录（如有）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-16 15:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=22873#respond' onclick='return addComment.moveForm( "div-comment-22873", "22873", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-22879"><div class="c-avatar"><div class="c-main" id="div-comment-22879">大佬，我是80端口，aria2ng正常的，http://ip/download访问一直显示
+网页无法打开
+位于 http://15.154.xxx.xxx/download 的网页无法加载，因为：net::ERR_INVALID_RESPONSE。
+配置如下echo -e ":80 {
+ root /usr/local/caddy/www/aria2
+ timeouts none
+ gzip
+ filemanager /Download /usr/local/caddy/www/aria2/Download {
+  database /usr/local/caddy/filemanager.db
+ }
+}" &gt; /usr/local/caddy/Caddyfile<div class="c-meta"><span class="c-author">lao</span>2017-11-16 16:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=22879#respond' onclick='return addComment.moveForm( "div-comment-22879", "22879", "respond", "2012" )' aria-label='回复给lao'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-22887"><div class="c-avatar"><div class="c-main" id="div-comment-22887">我通过你评论写的IP（已打码）试了下都是链接超时（是你改过了么）。<br />
+是访问 http://ip/Download ，而不是 http://ip/download 。<br />
+具体的信息太少，无法判断。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-16 17:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=22887#respond' onclick='return addComment.moveForm( "div-comment-22887", "22887", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-5" id="comment-22946"><div class="c-avatar"><div class="c-main" id="div-comment-22946">你好，重装系统，然后先安装这个扩展，再安装aria2,然后就成功了。谢谢！<div class="c-meta"><span class="c-author">lao</span>2017-11-17 14:43 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=22946#respond' onclick='return addComment.moveForm( "div-comment-22946", "22946", "respond", "2012" )' aria-label='回复给lao'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-5" id="comment-22960"><div class="c-avatar"><div class="c-main" id="div-comment-22960">大佬，85.204.246.61/Download,账号密码都是admin,vps里的文件我怎么都不能下载。迅雷显示资源服务器连接失败，ADM显示访问出错，客户端被拒绝，但是点击视频可以播放。vps是全新安装的，只有aria2和这个扩展。请大佬看看，谢谢。<div class="c-meta"><span class="c-author">lao</span>2017-11-17 20:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=22960#respond' onclick='return addComment.moveForm( "div-comment-22960", "22960", "respond", "2012" )' aria-label='回复给lao'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-6" id="comment-22962"><div class="c-avatar"><div class="c-main" id="div-comment-22962">试了下，没问题，在线观看正常，浏览器也能正常下载视频。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-17 21:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=22962#respond' onclick='return addComment.moveForm( "div-comment-22962", "22962", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-22719"><div class="c-avatar"><div class="c-main" id="div-comment-22719">逗比大佬，发现一个奇怪的问题。直接按照了你的脚本之后。80端口访问是没有东西出来。但是修改一下配置，加多一个81端口的配置就可以了。不知道什么原因。配置是这样
+:80 {
+ root /usr/local/caddy/www/file
+ timeouts none
+ gzip
+ filemanager / /usr/local/caddy/www/file {
+  database /usr/local/caddy/filemanager.db
+ }
+}
+:81 {
+ root /usr/local/caddy/www/file
+ timeouts none
+ gzip
+ filemanager / /usr/local/caddy/www/file/81
+}<div class="c-meta"><span class="c-author">梨花菜</span>2017-11-14 11:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=22719#respond' onclick='return addComment.moveForm( "div-comment-22719", "22719", "respond", "2012" )' aria-label='回复给梨花菜'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-22723"><div class="c-avatar"><div class="c-main" id="div-comment-22723">“没有东西出来”是什么意思，网页无法访问？还是访问进去没有文件信息？多加一个 81端口配置，80端口就能访问了？<br />
+我看你两个配置的区别只是 filemanager 设定的根目录不一样，/usr/local/caddy/www/file/81 就是你访问 filemanager 后，filemanager 显示的文件列表根目录。<br />
+至于【database /usr/local/caddy/filemanager.db】这个参数如果省略，filemanager 会默认在Caddy文件目录下生成/读取filemanager.db文件（实际就是/usr/local/caddy/filemanager.db），也就是说，这个参数加不加都是一样的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-14 11:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=22723#respond' onclick='return addComment.moveForm( "div-comment-22723", "22723", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-22508"><div class="c-avatar"><div class="c-main" id="div-comment-22508">腾讯云申请的免费证书有apache，IIS，tomcat和nginx，SSL证书选用哪一个的？<div class="c-meta"><span class="c-author">大胖丁</span>2017-11-12 05:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=22508#respond' onclick='return addComment.moveForm( "div-comment-22508", "22508", "respond", "2012" )' aria-label='回复给大胖丁'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-22510"><div class="c-avatar"><div class="c-main" id="div-comment-22510">这取决于你 网站环境用的是什么，lnmp 就是 nginx , lamp 就是 apache，IIS是Windows系统的服务器建站用的，tomcat没听过。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-12 08:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=22510#respond' onclick='return addComment.moveForm( "div-comment-22510", "22510", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-21787"><div class="c-avatar"><div class="c-main" id="div-comment-21787">启动成功，但打不开
+日志
+Activating privacy features... done.
+http://btym.me<div class="c-meta"><span class="c-author">Flight Dolphin</span>2017-11-03 14:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=21787#respond' onclick='return addComment.moveForm( "div-comment-21787", "21787", "respond", "2012" )' aria-label='回复给Flight Dolphin'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-21791"><div class="c-avatar"><div class="c-main" id="div-comment-21791">日志没什么问题，打不开提示什么？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-03 14:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=21791#respond' onclick='return addComment.moveForm( "div-comment-21791", "21791", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-21801"><div class="c-avatar"><div class="c-main" id="div-comment-21801">搞定了，域名解析地址忘记改了 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_smile.gif" alt=":smile:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">Flight Dolphin</span>2017-11-03 15:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=21801#respond' onclick='return addComment.moveForm( "div-comment-21801", "21801", "respond", "2012" )' aria-label='回复给Flight Dolphin'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-21779"><div class="c-avatar"><div class="c-main" id="div-comment-21779">中文乱码怎么破...
+@Toyo<div class="c-meta"><span class="c-author">Nooooooo</span>2017-11-03 13:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=21779#respond' onclick='return addComment.moveForm( "div-comment-21779", "21779", "respond", "2012" )' aria-label='回复给Nooooooo'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-21796"><div class="c-avatar"><div class="c-main" id="div-comment-21796">不清楚。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-03 14:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=21796#respond' onclick='return addComment.moveForm( "div-comment-21796", "21796", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-21722"><div class="c-avatar"><div class="c-main" id="div-comment-21722">带ssh权限的虚拟主机能支持吗<div class="c-meta"><span class="c-author">小</span>2017-11-02 11:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=21722#respond' onclick='return addComment.moveForm( "div-comment-21722", "21722", "respond", "2012" )' aria-label='回复给小'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-21693"><div class="c-avatar"><div class="c-main" id="div-comment-21693">80端口开不了  用了这个命令但是没什么反应iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT<div class="c-meta"><span class="c-author">段段</span>2017-11-01 21:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=21693#respond' onclick='return addComment.moveForm( "div-comment-21693", "21693", "respond", "2012" )' aria-label='回复给段段'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-21708"><div class="c-avatar"><div class="c-main" id="div-comment-21708">这个命令是 开放防火墙 80 端口的TCP协议，正常情况下是没有任何提示的，<code> iptables -L -n </code>可以看到防火墙端口开放封禁信息。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-02 07:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=21708#respond' onclick='return addComment.moveForm( "div-comment-21708", "21708", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-20914"><div class="c-avatar"><div class="c-main" id="div-comment-20914">debian7 Caddy开启自启动失败，请大佬给个方案，谢谢<div class="c-meta"><span class="c-author">huang yuyu</span>2017-10-22 13:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=20914#respond' onclick='return addComment.moveForm( "div-comment-20914", "20914", "respond", "2012" )' aria-label='回复给huang yuyu'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-20923"><div class="c-avatar"><div class="c-main" id="div-comment-20923">Caddy开启自启动失败？什么鬼<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-22 17:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=20923#respond' onclick='return addComment.moveForm( "div-comment-20923", "20923", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-20932"><div class="c-avatar"><div class="c-main" id="div-comment-20932">开机自启失败，打错了，抱歉<div class="c-meta"><span class="c-author">黄鱼鱼</span>2017-10-22 20:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=20932#respond' onclick='return addComment.moveForm( "div-comment-20932", "20932", "respond", "2012" )' aria-label='回复给黄鱼鱼'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-20965"><div class="c-avatar"><div class="c-main" id="div-comment-20965">这要看有没有日志报错，如果没有日志报错，那说明根本没有启动Caddy，如果有日志报错则分析日志看什么原因导致的启动失败。
+<pre class="prettyprint linenums" >tail -f /tmp/caddy.log
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-23 12:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=20965#respond' onclick='return addComment.moveForm( "div-comment-20965", "20965", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-5" id="comment-20984"><div class="c-avatar"><div class="c-main" id="div-comment-20984">您好，开机后直接输入以上命令提示"tail: cannot open `/tmp/caddy.log' for reading: No such file or directory"，在手动开启caddy后才有日志，视乎是caddy根本就没有启动，求一个手动将caddy加入开机自启动的方法。谢谢大佬<div class="c-meta"><span class="c-author">黄鱼鱼</span>2017-10-23 16:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=20984#respond' onclick='return addComment.moveForm( "div-comment-20984", "20984", "respond", "2012" )' aria-label='回复给黄鱼鱼'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-6" id="comment-21009"><div class="c-avatar"><div class="c-main" id="div-comment-21009">脚本安装后，默认注册为系统服务并且配置开机启动，可能是配置有问题，那就换个方法。
+<pre class="prettyprint linenums" >chmod +x /etc/rc.local && vi /etc/rc.local
+
+# 运行上面命令赋予执行权限+打开系统自启动脚本，把下面这个启动代码加入脚本内 exit 0 这一行前面。
+/etc/init.d/caddy start
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-23 23:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=21009#respond' onclick='return addComment.moveForm( "div-comment-21009", "21009", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-7" id="comment-21015"><div class="c-avatar"><div class="c-main" id="div-comment-21015">非常棒，谢谢大佬<div class="c-meta"><span class="c-author">黄鱼鱼</span>2017-10-24 00:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=21015#respond' onclick='return addComment.moveForm( "div-comment-21015", "21015", "respond", "2012" )' aria-label='回复给黄鱼鱼'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-20828"><div class="c-avatar"><div class="c-main" id="div-comment-20828">上传文件没有取消按钮吗？<div class="c-meta"><span class="c-author">mrzenwell</span>2017-10-21 13:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=20828#respond' onclick='return addComment.moveForm( "div-comment-20828", "20828", "respond", "2012" )' aria-label='回复给mrzenwell'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-20830"><div class="c-avatar"><div class="c-main" id="div-comment-20830">没有。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-21 14:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=20830#respond' onclick='return addComment.moveForm( "div-comment-20830", "20830", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-20866"><div class="c-avatar"><div class="c-main" id="div-comment-20866">还有一个问题 再给FM设定非80端口时，是否还可自定义/url？<div class="c-meta"><span class="c-author">mrzenwell</span>2017-10-21 21:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=20866#respond' onclick='return addComment.moveForm( "div-comment-20866", "20866", "respond", "2012" )' aria-label='回复给mrzenwell'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-20875"><div class="c-avatar"><div class="c-main" id="div-comment-20875">这是不影响的，例如：http://233.com:2333/file 这样去访问即可。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-21 23:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=20875#respond' onclick='return addComment.moveForm( "div-comment-20875", "20875", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-20724"><div class="c-avatar"><div class="c-main" id="div-comment-20724">配置那里完全复制的http的那个
+echo ":80 {
+ root /usr/local/caddy/www/file
+ timeouts none
+ gzip
+ filemanager / /usr/local/caddy/www/file {
+  database /usr/local/caddy/filemanager.db
+ }
+}" &gt; /usr/local/caddy/Caddyfile
+能进去，但是文件列表是空的，看不到aria2的下载，这是下载路径/usr/local/caddy/www/aria2/Download<div class="c-meta"><span class="c-author">yeluo</span>2017-10-20 03:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=20724#respond' onclick='return addComment.moveForm( "div-comment-20724", "20724", "respond", "2012" )' aria-label='回复给yeluo'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-20746"><div class="c-avatar"><div class="c-main" id="div-comment-20746"><pre class="prettyprint linenums" >你设置的路径：
+/usr/local/caddy/www/file
+你说的Aria2 下载路径：
+/usr/local/caddy/www/aria2/Download
+都不在一个目录内，自然看不到呀。
+</pre>
+你需要看这个：<a href="ouiwm7ss.html#如果你是 Aria2 教程里过来的，那么请看这个示例和说明">https://doub.io/jzzy-3/#如果你是 Aria2 教程里过来的，那么请看这个示例和说明</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-20 12:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=20746#respond' onclick='return addComment.moveForm( "div-comment-20746", "20746", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-19317"><div class="c-avatar"><div class="c-main" id="div-comment-19317">请问有没有支持离线下载的私人网盘<div class="c-meta"><span class="c-author"><a href='http://blog.mrssh.site/' rel='external nofollow' class='url'>爱的温度</a></span>2017-10-03 12:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=19317#respond' onclick='return addComment.moveForm( "div-comment-19317", "19317", "respond", "2012" )' aria-label='回复给爱的温度'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-19321"><div class="c-avatar"><div class="c-main" id="div-comment-19321">可能有，但是不推荐，还是建议与其他软件合作使用，例如通过Aria2控制离线下载行为，然后你去网盘中查看或者下载回本地。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-03 14:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=19321#respond' onclick='return addComment.moveForm( "div-comment-19321", "19321", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-19312"><div class="c-avatar"><div class="c-main" id="div-comment-19312">没法在线观看视频怎么破？<div class="c-meta"><span class="c-author">雪碧</span>2017-10-03 11:41 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=19312#respond' onclick='return addComment.moveForm( "div-comment-19312", "19312", "respond", "2012" )' aria-label='回复给雪碧'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-19315"><div class="c-avatar"><div class="c-main" id="div-comment-19315">在线视频，只能播放 .mp4 / .webm / .ogg 格式的，因为HTML5目前只支持这三种格式，其他格式都需要额外的解码器。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-03 11:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=19315#respond' onclick='return addComment.moveForm( "div-comment-19315", "19315", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-19287"><div class="c-avatar"><div class="c-main" id="div-comment-19287">逗比大佬 可以如何修改caddyfile实现同一个服务器支持多个域名吗<div class="c-meta"><span class="c-author">dd</span>2017-10-02 16:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=19287#respond' onclick='return addComment.moveForm( "div-comment-19287", "19287", "respond", "2012" )' aria-label='回复给dd'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-19293"><div class="c-avatar"><div class="c-main" id="div-comment-19293">Caddy配置文件多域名格式如下：
+<pre class="prettyprint linenums" >123.com {
+root /xxx/123.com
+...
+}
+233.com {
+root /xxx/233.com
+...
+}
+666.com {
+root /xxx/666.com
+...
+}
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-02 18:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=19293#respond' onclick='return addComment.moveForm( "div-comment-19293", "19293", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-19182"><div class="c-avatar"><div class="c-main" id="div-comment-19182">网盘搭建使用了有一段时间了，最近突然点击下载显示forbidden，如何解决呢。。。<div class="c-meta"><span class="c-author">Toyo's fans</span>2017-09-29 21:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=19182#respond' onclick='return addComment.moveForm( "div-comment-19182", "19182", "respond", "2012" )' aria-label='回复给Toyo&#039;s fans'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-19201"><div class="c-avatar"><div class="c-main" id="div-comment-19201">具体描述。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-30 14:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=19201#respond' onclick='return addComment.moveForm( "div-comment-19201", "19201", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-19216"><div class="c-avatar"><div class="c-main" id="div-comment-19216">caddy运行正常，网盘也能打的开，但是点击下载的时候跳转到新标签页并且显示forbidden<div class="c-meta"><span class="c-author">Toyo's fans</span>2017-09-30 20:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=19216#respond' onclick='return addComment.moveForm( "div-comment-19216", "19216", "respond", "2012" )' aria-label='回复给Toyo&#039;s fans'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-19252"><div class="c-avatar"><div class="c-main" id="div-comment-19252">看你的描述，我无法判断具体问题是什么，怕是你要去向作者反馈了，我只能解决安装失败之类的常见问题，程序自身问题就无能为力了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-01 19:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=19252#respond' onclick='return addComment.moveForm( "div-comment-19252", "19252", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-5" id="comment-19289"><div class="c-avatar"><div class="c-main" id="div-comment-19289">切换网络环境确认是我们学校校园网缓存的问题了，然而并不知道要怎么解决。。。谢谢老大<div class="c-meta"><span class="c-author">Toyo's fans</span>2017-10-02 17:41 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=19289#respond' onclick='return addComment.moveForm( "div-comment-19289", "19289", "respond", "2012" )' aria-label='回复给Toyo&#039;s fans'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-19092"><div class="c-avatar"><div class="c-main" id="div-comment-19092">Filemanager如何添加磁链下载？没有找到添加磁链的地方，caddy的browser是有添加磁链的<div class="c-meta"><span class="c-author">SaebaRyo</span>2017-09-27 17:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=19092#respond' onclick='return addComment.moveForm( "div-comment-19092", "19092", "respond", "2012" )' aria-label='回复给SaebaRyo'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-19093"><div class="c-avatar"><div class="c-main" id="div-comment-19093">Filemanager 没有添加磁力链接下载功能，他只是一个 文件管理器，或者说小型私人网盘[上传/管理/下载文件、文件夹]。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-27 18:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=19093#respond' onclick='return addComment.moveForm( "div-comment-19093", "19093", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-18701"><div class="c-avatar"><div class="c-main" id="div-comment-18701">大神你好，想问下，，这个搭建好了，然后我上传文件到里面，占服务器的流量的么？。。分享给别人下载是会占用服务器的流量的吧。。。服务器每个月有限额流量。。本人小白不知道所以想请问下~~~<div class="c-meta"><span class="c-author">dahuilang</span>2017-09-19 22:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18701#respond' onclick='return addComment.moveForm( "div-comment-18701", "18701", "respond", "2012" )' aria-label='回复给dahuilang'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-18703"><div class="c-avatar"><div class="c-main" id="div-comment-18703">你上传100MB文件到服务器，服务器上面算为下载流量100M，然后别人通过分享链接下载你这个文件，那么服务器上面算为上传流量100M。这要取决于你的IDC是流量计算方式是：只计算上行流量还是只计算下行流量、还是都算，这个需要你问客服或者自己测试（上传和下载100M，分别看后台流量统计消耗了多少流量）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-19 22:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18703#respond' onclick='return addComment.moveForm( "div-comment-18703", "18703", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-18742"><div class="c-avatar"><div class="c-main" id="div-comment-18742">好的。感谢。 才知道服务器也有上行流量下行流量。。下载服务器的文件算上行流量？我上传文件算服务器的下行流。。额。有点蒙。。我去测试测试<div class="c-meta"><span class="c-author">dahuilang</span>2017-09-20 15:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18742#respond' onclick='return addComment.moveForm( "div-comment-18742", "18742", "respond", "2012" )' aria-label='回复给dahuilang'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-18761"><div class="c-avatar"><div class="c-main" id="div-comment-18761">因为你下载服务器上面的100M文件，实际上是服务器通过上传把文件传给你，而你这边则是把这个文件下载到本地电脑硬盘。同理，你上传100M文件到服务器上面，实际上就是服务器通过下载(下行)把100M文件下载到服务器硬盘。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-20 21:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18761#respond' onclick='return addComment.moveForm( "div-comment-18761", "18761", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-18273"><div class="c-avatar"><div class="c-main" id="div-comment-18273">博主 能不能裸用 Filemanager 这个插件？如果不能，有没有类似的文件管理器。我在安装Caddy前安装了宝塔面板。因为Caddy不支持PHP。这就很无语了<div class="c-meta"><span class="c-author">记忆</span>2017-09-06 23:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18273#respond' onclick='return addComment.moveForm( "div-comment-18273", "18273", "respond", "2012" )' aria-label='回复给记忆'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-18276"><div class="c-avatar"><div class="c-main" id="div-comment-18276">可以裸用，但是需要自己配置 HTTP服务，你去Github就能看到说明了，主要是用Caddy的话配置步骤更简单。Caddy不是不支持PHP，只是需要自己配置。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-06 23:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18276#respond' onclick='return addComment.moveForm( "div-comment-18276", "18276", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-18278"><div class="c-avatar"><div class="c-main" id="div-comment-18278">那个有裸用的教程嘛。。我在Github里没到怎么裸用的教程。。<div class="c-meta"><span class="c-author">记忆</span>2017-09-07 00:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18278#respond' onclick='return addComment.moveForm( "div-comment-18278", "18278", "respond", "2012" )' aria-label='回复给记忆'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-18279"><div class="c-avatar"><div class="c-main" id="div-comment-18279"><a href="https://henriquedias.com/filemanager/installation/#one-step-script" target="_blank" rel="nofollow">https://henriquedias.com/filemanager/installation/#one-step-script</a> 和 <a href="https://henriquedias.com/filemanager/configuration/" target="_blank" rel="nofollow">https://henriquedias.com/filemanager/configuration/</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-07 00:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18279#respond' onclick='return addComment.moveForm( "div-comment-18279", "18279", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-5" id="comment-18281"><div class="c-avatar"><div class="c-main" id="div-comment-18281">谢谢博主。。我去研究研究<div class="c-meta"><span class="c-author">记忆</span>2017-09-07 00:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18281#respond' onclick='return addComment.moveForm( "div-comment-18281", "18281", "respond", "2012" )' aria-label='回复给记忆'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-6" id="comment-18326"><div class="c-avatar"><div class="c-main" id="div-comment-18326">博主。我还是没搞懂。。我先安装了《Filemanager》执行命令：wget -qO- https://henriquedias.com/filemanager/get.sh | bash。。然后执行了:filemanager --port 80 --database /etc/fm.db --scope /data 这个命令。后面就不懂了。。请问博主之后应该怎么办<div class="c-meta"><span class="c-author">记忆</span>2017-09-07 18:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18326#respond' onclick='return addComment.moveForm( "div-comment-18326", "18326", "respond", "2012" )' aria-label='回复给记忆'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-18208"><div class="c-avatar"><div class="c-main" id="div-comment-18208">大佬你好，介绍写到  1.支持 批量压缩 文件下载支持  2.支持 在网页执行 Linux命令     1.请问批量压缩如何操作？  2.如何在网页执行命令，如果我添加了unar，原来没有的，可以执行解压吗<div class="c-meta"><span class="c-author">哈哈</span>2017-09-05 19:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18208#respond' onclick='return addComment.moveForm( "div-comment-18208", "18208", "respond", "2012" )' aria-label='回复给哈哈'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-18211"><div class="c-avatar"><div class="c-main" id="div-comment-18211">1. 选择多个文件，然后点击页面上的下载按钮，会让你选择压缩包后缀格式，选择后会自动压缩成一个文件并下载。<br />
+2. 这里指的执行Linux是，在网页搜索栏处运行命令，命令必须是Linux系统上已安装并且可以正常用的，你执行不存在的命令他怎么可能执行？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-05 19:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18211#respond' onclick='return addComment.moveForm( "div-comment-18211", "18211", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-18214"><div class="c-avatar"><div class="c-main" id="div-comment-18214">Toyo大佬，原作者似乎最近又更新了版本，我们需要怎么操作才能同步github上发行的新版<div class="c-meta"><span class="c-author">哈哈</span>2017-09-05 21:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18214#respond' onclick='return addComment.moveForm( "div-comment-18214", "18214", "respond", "2012" )' aria-label='回复给哈哈'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-18218"><div class="c-avatar"><div class="c-main" id="div-comment-18218"><a href="ouiwm7ss.html#升级Filemanager" rel="nofollow">https://doub.io/jzzy-3/#升级Filemanager</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-05 22:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18218#respond' onclick='return addComment.moveForm( "div-comment-18218", "18218", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-5" id="comment-18495"><div class="c-avatar"><div class="c-main" id="div-comment-18495">可是上面那个位置不是作者的，应该不会实时同步作者的，怎么能保证是最新版呢。。。<div class="c-meta"><span class="c-author">break</span>2017-09-16 11:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18495#respond' onclick='return addComment.moveForm( "div-comment-18495", "18495", "respond", "2012" )' aria-label='回复给break'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-6" id="comment-18496"><div class="c-avatar"><div class="c-main" id="div-comment-18496">这个扩展就是这个作者的，FileManager更新，扩展也会同时更新的，你只需要定期重新运行更新覆盖安装即可。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-16 11:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18496#respond' onclick='return addComment.moveForm( "div-comment-18496", "18496", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-7" id="comment-18529"><div class="c-avatar"><div class="c-main" id="div-comment-18529">谢谢<div class="c-meta"><span class="c-author">break</span>2017-09-16 19:41 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18529#respond' onclick='return addComment.moveForm( "div-comment-18529", "18529", "respond", "2012" )' aria-label='回复给break'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-18074"><div class="c-avatar"><div class="c-main" id="div-comment-18074">doubi大佬，自动申请的是什么证书，哪里的<div class="c-meta"><span class="c-author">Shark</span>2017-09-04 01:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18074#respond' onclick='return addComment.moveForm( "div-comment-18074", "18074", "respond", "2012" )' aria-label='回复给Shark'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-18090"><div class="c-avatar"><div class="c-main" id="div-comment-18090">Caddy自动申请的是Let's Encrypt SSL证书，这个是免费SSL证书中最出名的吧，主打全自动化免费SSL证书申请，所以你在网上找那些自动申请SSL的网站、脚本，基本都是这个证书，最大一次签3个月，Caddy会自动配置和续期的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-04 10:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18090#respond' onclick='return addComment.moveForm( "div-comment-18090", "18090", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-18131"><div class="c-avatar"><div class="c-main" id="div-comment-18131">谢谢<div class="c-meta"><span class="c-author">维尼</span>2017-09-04 16:41 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=18131#respond' onclick='return addComment.moveForm( "div-comment-18131", "18131", "respond", "2012" )' aria-label='回复给维尼'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-17975"><div class="c-avatar"><div class="c-main" id="div-comment-17975">不麻烦偷油大佬啦，找到了find / -type f -size +200M 2&gt;/dev/null
+/tmp/126858626/temp
+是这个文件<div class="c-meta"><span class="c-author"><a href='http://littlepure.top/' rel='external nofollow' class='url'>小纯洁</a></span>2017-09-02 09:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=17975#respond' onclick='return addComment.moveForm( "div-comment-17975", "17975", "respond", "2012" )' aria-label='回复给小纯洁'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-17974"><div class="c-avatar"><div class="c-main" id="div-comment-17974">请问：执行批量压缩 文件下载后，被压缩的临时文件在哪儿？服务器硬盘可用大小改变了，但是找不到临时文件在哪儿。<div class="c-meta"><span class="c-author"><a href='http://littlepure.top/' rel='external nofollow' class='url'>小纯洁</a></span>2017-09-02 09:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=17974#respond' onclick='return addComment.moveForm( "div-comment-17974", "17974", "respond", "2012" )' aria-label='回复给小纯洁'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-17632"><div class="c-avatar"><div class="c-main" id="div-comment-17632">报错：2017/08/26 18:56:03 parse //:2015 {
+     root /usr/local/caddy/www/file
+     timeouts none
+     gzip
+     filemanager / /usr/local/caddy/www/file {
+      database /usr/local/caddy/filemanager.db
+     }
+    }: invalid character " " in host name
+求指教<div class="c-meta"><span class="c-author">linzing</span>2017-08-26 18:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=17632#respond' onclick='return addComment.moveForm( "div-comment-17632", "17632", "respond", "2012" )' aria-label='回复给linzing'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-17634"><div class="c-avatar"><div class="c-main" id="div-comment-17634">请发出配置文件完整内容。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-26 20:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=17634#respond' onclick='return addComment.moveForm( "div-comment-17634", "17634", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-17628"><div class="c-avatar"><div class="c-main" id="div-comment-17628">在配置文件夹那一块出错了，粘贴复制后不知道要怎么弄，直接ctrl+c退出，求解，顺便说下怎么返回操作，或者卸载，我不想重装系统啊 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_arrow.gif" alt=":arrow:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">linzing</span>2017-08-26 16:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=17628#respond' onclick='return addComment.moveForm( "div-comment-17628", "17628", "respond", "2012" )' aria-label='回复给linzing'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-17607"><div class="c-avatar"><div class="c-main" id="div-comment-17607">tail -f /tmp/caddy.log
+Activating privacy features... done.
+http://:2015
+WARNING: File descriptor limit 1024 is too low for production servers. At least 8192 is recommended. Fix with "ulimit -n 8192".怎么解？<div class="c-meta"><span class="c-author">晓夜</span>2017-08-26 08:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=17607#respond' onclick='return addComment.moveForm( "div-comment-17607", "17607", "respond", "2012" )' aria-label='回复给晓夜'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-17617"><div class="c-avatar"><div class="c-main" id="div-comment-17617">这并不是报错，只是提醒，因为系统默认的 文件符同时打开并发数为 1024，太低了，所以caddy建议你改成8192。<br />
+你开启caddy前执行<code> ulimit -n 8192 </code>即可。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-26 11:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=17617#respond' onclick='return addComment.moveForm( "div-comment-17617", "17617", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-16787"><div class="c-avatar"><div class="c-main" id="div-comment-16787">这个版本的caddy不能多站点吗？？设置了第二个域名，提示Parse error: Unknown directive https：//……<div class="c-meta"><span class="c-author">sdf</span>2017-08-10 12:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=16787#respond' onclick='return addComment.moveForm( "div-comment-16787", "16787", "respond", "2012" )' aria-label='回复给sdf'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-16791"><div class="c-avatar"><div class="c-main" id="div-comment-16791">当然可以设置多个站点，报错说明姿势不对，贴出详细错误和配置文件内容。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-10 12:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=16791#respond' onclick='return addComment.moveForm( "div-comment-16791", "16791", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-16406"><div class="c-avatar"><div class="c-main" id="div-comment-16406">新脚本覆盖之后caddy就打不开了。。。<div class="c-meta"><span class="c-author">toyo's fans</span>2017-08-03 15:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=16406#respond' onclick='return addComment.moveForm( "div-comment-16406", "16406", "respond", "2012" )' aria-label='回复给toyo&#039;s fans'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-16407"><div class="c-avatar"><div class="c-main" id="div-comment-16407">注意 FileManager扩展的 Caddy配置修改了，旧版的 Caddy配置（配置文件格式）会出问题。<br />
+还有其他问题请出示 caddy 日志。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-03 15:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=16407#respond' onclick='return addComment.moveForm( "div-comment-16407", "16407", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-16080"><div class="c-avatar"><div class="c-main" id="div-comment-16080">这个新版本很不错，比原来好用多了，好评！而且原来的重命名功能不支持中文，现在实测可以了！<div class="c-meta"><span class="c-author">Doge2017</span>2017-07-29 11:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=16080#respond' onclick='return addComment.moveForm( "div-comment-16080", "16080", "respond", "2012" )' aria-label='回复给Doge2017'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-16035"><div class="c-avatar"><div class="c-main" id="div-comment-16035">提示需要密码<div class="c-meta"><span class="c-author">Bob</span>2017-07-28 15:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=16035#respond' onclick='return addComment.moveForm( "div-comment-16035", "16035", "respond", "2012" )' aria-label='回复给Bob'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-16057"><div class="c-avatar"><div class="c-main" id="div-comment-16057">新版本的扩展，默认账号和密码都是 admin 。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-07-28 20:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=16057#respond' onclick='return addComment.moveForm( "div-comment-16057", "16057", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-16005"><div class="c-avatar"><div class="c-main" id="div-comment-16005">已经不能用了。这个插件更新了，用这个方法好像不能指定目录了。<div class="c-meta"><span class="c-author">PeakX</span>2017-07-28 04:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=16005#respond' onclick='return addComment.moveForm( "div-comment-16005", "16005", "respond", "2012" )' aria-label='回复给PeakX'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-16058"><div class="c-avatar"><div class="c-main" id="div-comment-16058">教程已更新。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-07-28 20:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=16058#respond' onclick='return addComment.moveForm( "div-comment-16058", "16058", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-15280"><div class="c-avatar"><div class="c-main" id="div-comment-15280">你好，安装完之后只有chrome能一切正常使用，IE和手机上面显示错乱，在文件表层显示insert drive file，不知道是caddy支持不够完善还是哪里的配置问题，能不能提供点思路出去找原因，不胜感谢！<div class="c-meta"><span class="c-author">AIRJ</span>2017-07-05 10:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=15280#respond' onclick='return addComment.moveForm( "div-comment-15280", "15280", "respond", "2012" )' aria-label='回复给AIRJ'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-15289"><div class="c-avatar"><div class="c-main" id="div-comment-15289">我这边安卓手机浏览器正常，IE的确无法使用，可能作者没有做兼容，毕竟IE。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-07-05 13:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=15289#respond' onclick='return addComment.moveForm( "div-comment-15289", "15289", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-14546"><div class="c-avatar"><div class="c-main" id="div-comment-14546">头油大佬啊，问一下，为什么电脑上一切正常，但是手机上就上传不了文件，而且设置多用户后，打开视频文件，需要再次输入用户名和密码？？？<div class="c-meta"><span class="c-author">123</span>2017-06-06 17:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=14546#respond' onclick='return addComment.moveForm( "div-comment-14546", "14546", "respond", "2012" )' aria-label='回复给123'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-14549"><div class="c-avatar"><div class="c-main" id="div-comment-14549">这扩展还处于开发初期，目前也只是刚刚把PC端开发的差不多，移动设备等小屏幕还有不少问题。至于多用户后，打开视频文件需要再次输入用户名和密码的问题，我没有遇见过，我也一直在使用这个工具，可能和浏览器有关系，用户名和密码登陆后浏览器会记住cookie，过一段时间自己就会失效，失效后才会再次提示，你的问题应该是出在这里，解决方法：无<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-06 18:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=14549#respond' onclick='return addComment.moveForm( "div-comment-14549", "14549", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-14499"><div class="c-avatar"><div class="c-main" id="div-comment-14499">在某些VPS下下载大文件（如1G）会导致caddy服务挂掉，小文件（如100MB）没事，另一些VPS下大文件也没事……有人知道为什么么<div class="c-meta"><span class="c-author">littlef0x</span>2017-06-04 13:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=14499#respond' onclick='return addComment.moveForm( "div-comment-14499", "14499", "respond", "2012" )' aria-label='回复给littlef0x'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-15266"><div class="c-avatar"><div class="c-main" id="div-comment-15266">Vultr $5/M 同理，同问<div class="c-meta"><span class="c-author">昵称</span>2017-07-04 09:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=15266#respond' onclick='return addComment.moveForm( "div-comment-15266", "15266", "respond", "2012" )' aria-label='回复给昵称'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-14497"><div class="c-avatar"><div class="c-main" id="div-comment-14497">这个可以装进lnmp的vhost里面吗<div class="c-meta"><span class="c-author">KCP</span>2017-06-04 12:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=14497#respond' onclick='return addComment.moveForm( "div-comment-14497", "14497", "respond", "2012" )' aria-label='回复给KCP'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-14498"><div class="c-avatar"><div class="c-main" id="div-comment-14498">不可以，这个不是网页文件，而是Caddy的一个扩展，而Caddy则是HTTP服务软件，和Nginx同等。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-04 12:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=14498#respond' onclick='return addComment.moveForm( "div-comment-14498", "14498", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-14508"><div class="c-avatar"><div class="c-main" id="div-comment-14508">谢谢，那我去试试seafile<div class="c-meta"><span class="c-author">KCP</span>2017-06-05 02:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=14508#respond' onclick='return addComment.moveForm( "div-comment-14508", "14508", "respond", "2012" )' aria-label='回复给KCP'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-14370"><div class="c-avatar"><div class="c-main" id="div-comment-14370">你好 我电脑端可以正常使用，但是手机无法使用，问下是我哪里配置错了还是大家都这样?<div class="c-meta"><span class="c-author">tiger233</span>2017-06-01 15:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=14370#respond' onclick='return addComment.moveForm( "div-comment-14370", "14370", "respond", "2012" )' aria-label='回复给tiger233'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-14315"><div class="c-avatar"><div class="c-main" id="div-comment-14315">[信息] Caddy 未运行 !
+[错误] Caddy 启动失败 !
+root:~# tail -f /tmp/caddy.log
+ gzip
+ basicauth / user doub.bid
+ filemanager / {
+  show /usr/local/caddy/www/aria2/download
+  user:
+  allow_new true
+  allow_edit true
+  allow_commands true
+ }
+}: invalid character " " in host name
+启动错误<div class="c-meta"><span class="c-author">CN</span>2017-05-30 11:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=14315#respond' onclick='return addComment.moveForm( "div-comment-14315", "14315", "respond", "2012" )' aria-label='回复给CN'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-14318"><div class="c-avatar"><div class="c-main" id="div-comment-14318">贴出完整配置文件和完整日志内容（cat /tmp/caddy.log）<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-30 11:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=14318#respond' onclick='return addComment.moveForm( "div-comment-14318", "14318", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-14326"><div class="c-avatar"><div class="c-main" id="div-comment-14326"><a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="097b66667d496460676c6a65667c6d7f797a">[email&#160;protected]</a>:/usr/local/caddy/www/aria2# cat /tmp/caddy.log
+2017/05/30 08:38:43 parse //:80 {
+ root /usr/local/caddy/www/aria2
+ timeouts none
+ gzip
+ filemanager / {
+  show /usr/local/caddy/www/aria2/download
+  allow_new true
+  allow_edit true
+  allow_commands true
+  allow_command mv
+ }
+}: invalid character " " in host name
+我也和层主一样<div class="c-meta"><span class="c-author">CN</span>2017-05-30 20:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=14326#respond' onclick='return addComment.moveForm( "div-comment-14326", "14326", "respond", "2012" )' aria-label='回复给CN'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-14330"><div class="c-avatar"><div class="c-main" id="div-comment-14330">"2017/05/30 08:38:43 parse //:80 {"，这是什么鬼？贴出配置文件内容，多半是配置文件错误。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-31 00:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=14330#respond' onclick='return addComment.moveForm( "div-comment-14330", "14330", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-14147"><div class="c-avatar"><div class="c-main" id="div-comment-14147">请问如何用同一个域名的不同端口来分别访问AriaNG和下载目录？<div class="c-meta"><span class="c-author">joyride</span>2017-05-26 20:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=14147#respond' onclick='return addComment.moveForm( "div-comment-14147", "14147", "respond", "2012" )' aria-label='回复给joyride'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-14148"><div class="c-avatar"><div class="c-main" id="div-comment-14148">把你的配置文件贴出来，我帮你改，说的话说不清。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-26 21:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=14148#respond' onclick='return addComment.moveForm( "div-comment-14148", "14148", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-13154"><div class="c-avatar"><div class="c-main" id="div-comment-13154">大神你好，这个脚本 已经完全搞定了 非常不错，但是有个小问题 在线播放视频好像是不可以的。。<div class="c-meta"><span class="c-author">junwei</span>2017-04-26 17:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=13154#respond' onclick='return addComment.moveForm( "div-comment-13154", "13154", "respond", "2012" )' aria-label='回复给junwei'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-13157"><div class="c-avatar"><div class="c-main" id="div-comment-13157">内置的MP4视频播放功能有BUG，不用内置的即可，直接打开视频的连接用浏览器播放即可。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-26 19:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=13157#respond' onclick='return addComment.moveForm( "div-comment-13157", "13157", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-13823"><div class="c-avatar"><div class="c-main" id="div-comment-13823">这个扩展依然在不停的更新，目前已经支持 内置视频播放了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-15 15:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=13823#respond' onclick='return addComment.moveForm( "div-comment-13823", "13823", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-13020"><div class="c-avatar"><div class="c-main" id="div-comment-13020">我用https 进入了Aria2 面板。。然后连接不了服务端。。也试过RPC协议也换成了https也不行，是不是还需要设置什么<div class="c-meta"><span class="c-author">Lucas</span>2017-04-21 16:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=13020#respond' onclick='return addComment.moveForm( "div-comment-13020", "13020", "respond", "2012" )' aria-label='回复给Lucas'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-13499"><div class="c-avatar"><div class="c-main" id="div-comment-13499">要给aria2配置ssl证书，然后才能用https访问<div class="c-meta"><span class="c-author">cac</span>2017-05-06 13:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=13499#respond' onclick='return addComment.moveForm( "div-comment-13499", "13499", "respond", "2012" )' aria-label='回复给cac'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-12997"><div class="c-avatar"><div class="c-main" id="div-comment-12997">完全看不懂，这个怎么安装的。<div class="c-meta"><span class="c-author">子夜</span>2017-04-20 20:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=12997#respond' onclick='return addComment.moveForm( "div-comment-12997", "12997", "respond", "2012" )' aria-label='回复给子夜'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-13004"><div class="c-avatar"><div class="c-main" id="div-comment-13004">安装Caddy，然后根据示例，写入配置文件，启动Caddy即可，如果不懂就慢慢理解，有些东西只能靠自己理解。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-21 00:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=13004#respond' onclick='return addComment.moveForm( "div-comment-13004", "13004", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12295"><div class="c-avatar"><div class="c-main" id="div-comment-12295">toyo能推荐几个适合做私有云盘的VPS或者云存储么，VU洛杉矶的速度不是太满意，东京还没货<div class="c-meta"><span class="c-author">Alex</span>2017-04-01 18:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=12295#respond' onclick='return addComment.moveForm( "div-comment-12295", "12295", "respond", "2012" )' aria-label='回复给Alex'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-12325"><div class="c-avatar"><div class="c-main" id="div-comment-12325">东欧无dmca版权，欢迎你 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_lol.gif" alt=":lol:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">kurokitomoko</span>2017-04-02 10:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=12325#respond' onclick='return addComment.moveForm( "div-comment-12325", "12325", "respond", "2012" )' aria-label='回复给kurokitomoko'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-12062"><div class="c-avatar"><div class="c-main" id="div-comment-12062">aria的那个教程，配置完之后可以显示file manager，但没有aria下载后的文件是怎么回事呢？由于我没有绑定域名，配置文件的第一行写为echo -e ":80 {。这样应该没错吧？<div class="c-meta"><span class="c-author">CMour</span>2017-03-26 00:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=12062#respond' onclick='return addComment.moveForm( "div-comment-12062", "12062", "respond", "2012" )' aria-label='回复给CMour'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-12064"><div class="c-avatar"><div class="c-main" id="div-comment-12064">:80 即代表ip:80，这是没错的，你说不显示，你先去Aria2的下载文件夹里面<code> ls -a </code>查看一下文件夹内是否有文件。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-26 00:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=12064#respond' onclick='return addComment.moveForm( "div-comment-12064", "12064", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-2" id="comment-12069"><div class="c-avatar"><div class="c-main" id="div-comment-12069">toyo改了目标地址<div class="c-meta"><span class="c-author">kurokitomoko</span>2017-03-26 10:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=12069#respond' onclick='return addComment.moveForm( "div-comment-12069", "12069", "respond", "2012" )' aria-label='回复给kurokitomoko'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-12090"><div class="c-avatar"><div class="c-main" id="div-comment-12090">嗯。是的。原来的教程好像下载目录是在aria2ng下，现在的在aria2下。现在修改后OK了。不过file manager中，大文件用zip下载总是失败，不知道是不是跟vps的性能有关。<div class="c-meta"><span class="c-author">CMour</span>2017-03-27 00:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=12090#respond' onclick='return addComment.moveForm( "div-comment-12090", "12090", "respond", "2012" )' aria-label='回复给CMour'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-4" id="comment-12109"><div class="c-avatar"><div class="c-main" id="div-comment-12109">这货手机端有问题呢，残念<div class="c-meta"><span class="c-author">kurokitomoko</span>2017-03-27 16:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=12109#respond' onclick='return addComment.moveForm( "div-comment-12109", "12109", "respond", "2012" )' aria-label='回复给kurokitomoko'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-12046"><div class="c-avatar"><div class="c-main" id="div-comment-12046">toyo,aria教程配置有点问题，如果按照你的配置，只能是显示文件栏(file manager)
+我只能是按照多网站配置来搞<div class="c-meta"><span class="c-author">kurokitomoko</span>2017-03-25 20:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=12046#respond' onclick='return addComment.moveForm( "div-comment-12046", "12046", "respond", "2012" )' aria-label='回复给kurokitomoko'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-12051"><div class="c-avatar"><div class="c-main" id="div-comment-12051">更新了下，凑合能用，就是 show的值我无论设置什么路径，都是显示 VPS根目录，无法解决，缺点是链接很长，你自己看吧，当然分开域名或者端口也行，比如 ariang是 2333端口(http://ip:2333)，Download文件夹是 6666 端口(http://ip:6666)。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-25 21:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=12051#respond' onclick='return addComment.moveForm( "div-comment-12051", "12051", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-12054"><div class="c-avatar"><div class="c-main" id="div-comment-12054">个人觉得分开端口较好,比如aria2就80，file manager就8000，只能是这样
+如果不设置密码账户，是完美跳转show所指定的目录，总之这货有点蛋疼<div class="c-meta"><span class="c-author">kurokitomoko</span>2017-03-25 21:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=12054#respond' onclick='return addComment.moveForm( "div-comment-12054", "12054", "respond", "2012" )' aria-label='回复给kurokitomoko'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-12055"><div class="c-avatar"><div class="c-main" id="div-comment-12055">又测试了几遍，解决了这个问题，更新了一下。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-25 22:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=12055#respond' onclick='return addComment.moveForm( "div-comment-12055", "12055", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-5" id="comment-12061"><div class="c-avatar"><div class="c-main" id="div-comment-12061">感谢，已经没有任何问题了
+关于命令问题，好像官方有例子
+allow_commands true
+allow_command rm
+allow_command mv<div class="c-meta"><span class="c-author">kurokitomoko</span>2017-03-26 00:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=12061#respond' onclick='return addComment.moveForm( "div-comment-12061", "12061", "respond", "2012" )' aria-label='回复给kurokitomoko'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-11978"><div class="c-avatar"><div class="c-main" id="div-comment-11978">偷油快写个百度云离线到vps的教程啊<div class="c-meta"><span class="c-author"><a href='https://www.nanqinlang.com/' rel='external nofollow' class='url'>南琴浪</a></span>2017-03-24 15:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=11978#respond' onclick='return addComment.moveForm( "div-comment-11978", "11978", "respond", "2012" )' aria-label='回复给南琴浪'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-11979"><div class="c-avatar"><div class="c-main" id="div-comment-11979">什么鬼？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-24 15:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=11979#respond' onclick='return addComment.moveForm( "div-comment-11979", "11979", "respond", "2012" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-11954"><div class="c-avatar"><div class="c-main" id="div-comment-11954">感谢toyo
+嗯，过了那么久才知道自己打错了名字…嗯<div class="c-meta"><span class="c-author">kurokitomoko</span>2017-03-23 22:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=11954#respond' onclick='return addComment.moveForm( "div-comment-11954", "11954", "respond", "2012" )' aria-label='回复给kurokitomoko'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-11957"><div class="c-avatar"><div class="c-main" id="div-comment-11957">是时候申请个域名了… <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_lol.gif" alt=":lol:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">kurokitomoko</span>2017-03-24 06:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-3/?replytocom=11957#respond' onclick='return addComment.moveForm( "div-comment-11957", "11957", "respond", "2012" )' aria-label='回复给kurokitomoko'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+		<span class='page-numbers current'>1</span>
+<a class='page-numbers' href='56wstmhi.html#comments'>2</a>
+<a class='page-numbers' href='8poq9zeh.html#comments'>3</a>
+<a class="next page-numbers" href="56wstmhi.html#comments">»</a>	</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://kanfanba.com/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script data-cfasync="false" src="hnpipwj_.js"></script><script type="text/javascript">
+var image_url=new Array()
+image_url=["https://www.vultr.com/","vh8576m0.html","https://virmach.com/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="yk5b14b-container yk5b14b-1 yk5b14b-hide">
+    <div class="yk5b14b-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="yk5b14b"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

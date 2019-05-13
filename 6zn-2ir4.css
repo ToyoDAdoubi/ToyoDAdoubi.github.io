@@ -1,0 +1,19 @@
+.content-index {padding-bottom: 5px;border:1px solid #1abc9c;background:#ffffff;line-height:150%;max-width:60%;font-size:12px;position:absolute;z-index:1000;top: 19px;right: 19px;margin-left: 19px;}
+.content-index-title {padding: 9px 20px;margin-bottom: -7px;margin-left: -1px;letter-spacing: 1px;font-size:140%;font-weight:bold;color: #fff;background-color: #1abc9c;text-align: center;text-indent: 0;float: none;}
+.content-index-title a {color: #fff;}
+.content-index-title a:hover {color: #fff;}
+.content-index ul {padding:0;margin:0;list-style:none inside none;font-size:10px;margin: 0 10px;}
+.content-index ul.children {padding-left:1em;list-style:none inside none}
+.content-index li {}
+.content-index li a em {font-size:68%;font-style:normal;font-weight:700;padding-right:5px}
+.content-index li a.hide {display:none}
+.content-index li:before {color:#009083}
+.content-index-heading em {font-size:85%;font-style:normal;font-weight:700;margin-right:5px}
+.content-index .content-index-level-1 {}
+.content-index .content-index-level-2 {}
+.content-index .content-index-level-3 {}
+.content-index .content-index-level-4 {}
+.content-index .content-index-level-5 {}
+.content-index .content-index-level-6 {}
+ul#content-index-contents {margin-top: 10px;}
+@media only screen and (max-width: 600px) {.content-index {max-width:100%;}}

@@ -1,0 +1,1081 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>『原创』Shadowsocks HaProxy 中继(中转/端口转发) 便捷管理脚本 | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1960] -->
+<meta name="description"  content="最近没什么教程好写的，那就闲的没事写个脚本吧！ Shadowsocks 中继（中转）能用的工具很多，我的网站介绍过 HaProxy、iptables、Socat。 昨天我写了Socat的脚本，今天我就写个HaProxy的脚本。当然，iptables的端口转发一键脚本我暂时是不会写的，iptables我也并不" />
+
+<meta name="keywords"  content="haproxy,中继,国内中转,服务器中转,端口转发,脚本" />
+
+<link rel="canonical" href="bizht36j-2.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='『原创』Shadowsocks Socat 中继(中转/端口转发) 便捷管理脚本' href='9n7kdq_k-3.html' />
+<link rel='next' title='『原创』Shadowsocks iptables 中继(中转/端口转发) 便捷管理脚本' href='mbofzp9h-2.html' />
+<link rel='shortlink' href='https://doub.io/?p=1748' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fwlzy-19%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fwlzy-19%2F&amp;format=xml" />
+<style>
+.hkb7c9e{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.hkb7c9e-hide{
+    display: none;
+}
+.hkb7c9e-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.hkb7c9e-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.hkb7c9e-2 .hkb7c9e-body,.hkb7c9e-3 .hkb7c9e-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.hkb7c9e-2 .close-btn,.hkb7c9e-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.hkb7c9e-3 .hkb7c9e-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.hkb7c9e').html(kill_adBlock_message);
+            jQuery('.hkb7c9e-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.hkb7c9e-container').fadeOut('hkb7c9e-hide');
+        });
+    });
+    var kill_adBlock_status = 1;
+    var kill_adBlock_message = '逗比很伤心😥，您的<strong>广告拦截扩展</strong>屏蔽了我们的小广告，网站的发展离不开大家的支持，请先看过<a target=\"_blank\" style=\"color: #ffe500;\" href=\"3--didfb.html\">这个文章</a>后，再确定是否要将我们的域名添加到<strong>拦截白名单</strong>中，谢谢！😘👌';
+    var kill_adBlock_message_delay = 0;
+    var kill_adBlock_close_btn = 1;
+    var kill_adBlock_close_automatically = 0;
+    var kill_adBlock_close_automatically_delay = 0;
+    var kill_adBlock_message_type = 1;
+    function adBlockDetected() {
+      show_message();
+    }
+    
+    if(typeof killAdBlock === 'undefined') {
+        adBlockDetected();
+    } else {
+        killAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+    }
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="haproxy, 中继, 国内中转, 服务器中转, 端口转发, 脚本, Shadowsocks, Shell脚本, 网络资源">
+<meta name="description" content="最近没什么教程好写的，那就闲的没事写个脚本吧！  Shadowsocks 中继（中转）能用的工具很多，我的网站介绍过 HaProxy、iptables、Socat。  昨天我写了Socat的脚本，今天我就写个HaProxy的脚本。当然，iptables的端口转发一键脚本我暂时是不会写的，iptables我也并不是很熟练 - -。    HaProxy手动教程：Shadowsocks利用HaProxy实现中继（中转）加速  其他 Shad">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-1748 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li class="current-post-ancestor"><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="./softs.wtf/"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Atoyodadoubi.github.io'; return false;" action="https://toyodadoubi.github.io/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 逗比云还是逃不过被墙的命运，既然如此那以后逗比云也就一直用被墙的旧域名 <strong><a target="_blank" href="./softs.wtf/">[softs.wtf]</a></strong> 算了。
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://www.gigsgigscloud.com/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="bizht36j-2.html">『原创』Shadowsocks HaProxy 中继(中转/端口转发) 便捷管理脚本</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="qha-5xcm.html"> Shadowsocks</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 2年前 (2016-12-22)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 11370℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="bizht36j-2.html#comments">34评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="bizht36j-2.html#系统要求" title="系统要求"><span>系统要求</span></a><ul class="children"><li class="content-index-level-2"><a href="bizht36j-2.html#脚本版本" title="脚本版本"><span>脚本版本</span></a></li></ul></li><li class="content-index-level-1"><a href="bizht36j-2.html#安装步骤" title="安装步骤"><span>安装步骤</span></a></li><li class="content-index-level-1"><a href="bizht36j-2.html#使用方法" title="使用方法"><span>使用方法</span></a><ul class="children"><li class="content-index-level-2"><a href="bizht36j-2.html#Shadowsocks客户端说明" title="Shadowsocks客户端说明"><span>Shadowsocks客户端说明</span></a></li><li class="content-index-level-2"><a href="bizht36j-2.html#安装目录" title="安装目录"><span>安装目录</span></a></li></ul></li><li class="content-index-level-1"><a href="bizht36j-2.html#其他说明" title="其他说明"><span>其他说明</span></a><ul class="children"><li class="content-index-level-2"><a href="bizht36j-2.html#防火墙设置" title="防火墙设置"><span>防火墙设置</span></a></li><li class="content-index-level-2"><a href="bizht36j-2.html#提示wget: unknown host “raw.githubusercontent.com” 之类的错误" title="提示wget: unknown host “raw.githubusercontent.com” 之类的错误"><span>提示wget: unknown host “raw.githubusercontent.com” 之类的错误</span></a></li><li class="content-index-level-2"><a href="bizht36j-2.html#提示 wget: command not found 的错误" title="提示 wget: command not found 的错误"><span>提示 wget: command not found 的错误</span></a></li><li class="content-index-level-2"><a href="bizht36j-2.html#更换 apt源，解决安装错误：[错误] Socat安装失败 等等" title="更换 apt源，解决安装错误：[错误] Socat安装失败 等等"><span>更换 apt源，解决安装错误：[错误] Socat安装失败 等等</span></a></li></ul></li><li class="content-index-level-1"><a href="bizht36j-2.html#更新日志" title="更新日志"><span>更新日志</span></a><ul class="children"><li class="content-index-level-2"><a href="bizht36j-2.html#2017年08月12日，版本 v1.0.7" title="2017年08月12日，版本 v1.0.7"><span>2017年08月12日，版本 v1.0.7</span></a></li><li class="content-index-level-2"><a href="bizht36j-2.html#2017年08月12日，版本 v1.0.6" title="2017年08月12日，版本 v1.0.6"><span>2017年08月12日，版本 v1.0.6</span></a></li><li class="content-index-level-2"><a href="bizht36j-2.html#2017年08月12日，版本 v1.0.5" title="2017年08月12日，版本 v1.0.5"><span>2017年08月12日，版本 v1.0.5</span></a></li><li class="content-index-level-2"><a href="bizht36j-2.html#2017年08月12日，版本 v1.0.4" title="2017年08月12日，版本 v1.0.4"><span>2017年08月12日，版本 v1.0.4</span></a></li><li class="content-index-level-2"><a href="bizht36j-2.html#2017年08月11日，版本 v1.0.3" title="2017年08月11日，版本 v1.0.3"><span>2017年08月11日，版本 v1.0.3</span></a></li><li class="content-index-level-2"><a href="bizht36j-2.html#2017年03月11日，版本 v1.0.2" title="2017年03月11日，版本 v1.0.2"><span>2017年03月11日，版本 v1.0.2</span></a></li><li class="content-index-level-2"><a href="bizht36j-2.html#2016年12月24日，版本 v1.0.1" title="2016年12月24日，版本 v1.0.1"><span>2016年12月24日，版本 v1.0.1</span></a></li><li class="content-index-level-2"><a href="bizht36j-2.html#2016年12月22日，版本 v1.0.0" title="2016年12月22日，版本 v1.0.0"><span>2016年12月22日，版本 v1.0.0</span></a></li></ul></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年9月20日 20:10</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>最近没什么教程好写的，那就闲的没事写个脚本吧！</p>
+<p>Shadowsocks 中继（中转）能用的工具很多，我的网站介绍过 HaProxy、iptables、Socat。</p>
+<p>昨天我写了Socat的脚本，今天我就写个HaProxy的脚本。当然，iptables的端口转发一键脚本我暂时是不会写的，iptables我也并不是很熟练 - -。</p>
+<hr />
+<p><strong>HaProxy手动教程：<a title="" href="e0926y-q.html" target="_blank" rel="noopener" data-original-title="Shadowsocks利用HaProxy实现中继（中转）加速">Shadowsocks利用HaProxy实现中继（中转）加速</a></strong></p>
+<p><strong>其他 Shadowsocks中继（中转）教程：<a title="" href="6r9z6_wi.html#服务器中继（国内中转）" target="_blank" rel="noopener" data-original-title="">传送门</a></strong></p>
+<p><strong>Socat：</strong></p>
+<p><strong>优点：</strong>支持 TCP/UDP 转发。<strong>缺点：</strong>不支持端口段（多个端口需要开启多个转发）</p>
+<p><strong>HaProxy：</strong></p>
+<p><strong>优点：</strong>支持 TCP 转发，支持 端口段 转发。<strong>缺点：</strong>不支持 UDP 转发。</p>
+<p><strong>iptables：</strong></p>
+<p><strong>优点：</strong>支持 TCP/UDP 转发，支持 端口段 转发。<strong>缺点：</strong>配置麻烦，容易出错。</p>
+<h2 id="系统要求">系统要求</h2>
+<p>Centos / Debian / Ubuntu 14.04 +</p>
+<p>推荐 Debian / Ubuntu，这个是我一直使用的系统，我的脚本在这个系统上面出错率最低。</p>
+<h3 id="脚本版本">脚本版本</h3>
+<p><strong>Ver:</strong> 1.0.7</p>
+<h2 id="安装步骤">安装步骤</h2>
+<pre class="prettyprint linenums">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/haproxy.sh &amp;&amp; chmod +x haproxy.sh &amp;&amp; bash haproxy.sh
+</pre>
+<p>下载并运行脚本后，会自动检测并开始安装。安装完成后，会提示你输入监听的端口(转发的端口，支持端口段 2333-6666)，欲转发到的IP：</p>
+<pre class="prettyprint linenums">请输入 HaProxy 的 本地监听端口(转发端口) [1-65535](支持端口段: 2333-6666): 10000-20000
+请输入 HaProxy 欲转发的 IP:2.2.2.2
+
+——————————————————————————————
+请检查 HaProxy 配置是否有误 !
+
+本地监听端口 : 10000
+欲转发 IP : 2.2.2.2
+——————————————————————————————
+
+请按任意键继续，如有配置错误请使用 Ctrl+C 退出。
+</pre>
+<p>安装完成之后会提示：</p>
+<pre class="prettyprint linenums">——————————————————————————————
+	HaProxy 已启动 !
+——————————————————————————————
+	HaProxy 配置信息: 
+
+	本地 IP :  1.1.1.1
+	本地监听端口 :  10000-2000
+
+	欲转发 IP :  2.2.2.2
+	欲转发端口 :  10000-20000
+——————————————————————————————
+</pre>
+<h2 id="使用方法">使用方法</h2>
+<pre class="prettyprint linenums"># 查看haproxy配置
+bash haproxy.sh view
+
+# 设置haproxy
+bash haproxy.sh set
+
+# 启动haproxy
+bash haproxy.sh start
+
+# 停止haproxy
+bash haproxy.sh stop
+
+# 重启haproxy
+bash haproxy.sh restart
+
+# 查看haproxy状态
+bash haproxy.sh status
+
+# 卸载haproxy
+bash haproxy.sh uninstall
+
+# 对了，haproxy安装的时候自动设置了系统服务，所以你还可以用以下命令来管理
+# 启动haproxy
+service haproxy start
+
+# 停止haproxy
+service haproxy stop
+
+# 重启haproxy
+service haproxy restart
+
+# 查看haproxy状态
+service haproxy status
+
+# 重载haproxy配置
+service haproxy reload
+</pre>
+<h3 id="Shadowsocks客户端说明">Shadowsocks客户端说明</h3>
+<p>假设你的 <strong>海外服务器(被中转) </strong>中搭建的Shadowsocks服务端的IP是<code> 2.2.2.2  </code>，SS端口是<code> 10000 </code>。</p>
+<p>假设你的 <strong>中转服务器 </strong>的IP是<code> 1.1.1.1 </code>，本地监听端口和SS端口一致，都是<code> 10000 </code>。</p>
+<p>那么，你的Shadowsocks客户端，添加Shadowsocks服务器，IP填写<code> 1.1.1.1 </code>，端口填写<code> 10000 </code>，<strong>其他的 密码/加密方式/协议/混淆等等 全部和原Shadowsocks账号一样！</strong></p>
+<h3 id="安装目录">安装目录</h3>
+<p><strong>配置文件：</strong>/etc/haproxy/haproxy.cfg</p>
+<h2 id="其他说明">其他说明</h2>
+<h3 id="防火墙设置">防火墙设置</h3>
+<pre>脚本 v1.0.1版本 已经自动设置了防火墙规则，如果发现没有或者其他情况，可以自己开放端口。</pre>
+<p>如果你设置后无法链接，那么多半是防火墙 阻拦了，只要开放端口 就行了。以上面的 示例的中继端口 23333 为例。</p>
+<pre class="prettyprint linenums">iptables -I INPUT -p tcp --dport 23333 -j ACCEPT
+# 端口段
+iptables -I INPUT -p tcp --dport 2333:6666 -j ACCEPT
+</pre>
+<p><strong>Centos系统执行(debian/ubuntu 不需要)：</strong></p>
+<pre class="prettyprint linenums">/etc/init.d/iptables save
+# 保存防火墙
+/etc/init.d/iptables restart
+# 重启防火墙
+</pre>
+<h3 id="提示wget: unknown host “raw.githubusercontent.com” 之类的错误">提示wget: unknown host “raw.githubusercontent.com” 之类的错误</h3>
+<p>这是无法解析我的域名，多半是DNS的问题，请更换DNS为谷歌DNS。</p>
+<pre class="prettyprint linenums">echo "nameserver 8.8.8.8" &gt; /etc/resolv.conf
+echo "nameserver 8.8.4.4" &gt;&gt; /etc/resolv.conf
+</pre>
+<h3 id="提示 wget: command not found 的错误">提示 wget: command not found 的错误</h3>
+<p>这是你的系统精简的太干净了，wget都没有安装，所以需要安装wget。</p>
+<p><strong>Centos系统:</strong></p>
+<pre class="prettyprint linenums">yum install -y wget
+</pre>
+<p><strong>Debian/Ubuntu系统:</strong></p>
+<pre class="prettyprint linenums">apt-get install -y wget
+</pre>
+<h3 id="更换 apt源，解决安装错误：[错误] Socat安装失败 等等">更换 apt源，解决安装错误：[错误] Socat安装失败 等等</h3>
+<p>一些VPS的 apt源太老旧，导致无法安装socat，所以我这里写上如何更换 apt源。所以我只针对这两个系统，Centos的自己去谷歌yum镜像源。</p>
+<p>依次输入就可以更换apt源了，下面的代码是以 us美国 为例，你可以自己去这里<a href="https://github.com/ToyoDAdoubiBackup/doubi/tree/master/sources" target="_blank" rel="noopener">选一个近一些合适</a>的，然后替换下面代码中 <strong>us.sources.list</strong> 的 us 。</p>
+<pre class="prettyprint linenums">wget -N --no-check-certificate -P /etc/apt https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/sources/us.sources.list
+rm -rf /etc/apt/sources.list
+cp /etc/apt/us.sources.list /etc/apt/sources.list</pre>
+<h2 id="更新日志">更新日志</h2>
+<h3 id="2017年08月12日，版本 v1.0.7">2017年08月12日，版本 v1.0.7</h3>
+<p><strong>1.修复</strong> 部分系统 停止HaProxy异常的问题。</p>
+<h3 id="2017年08月12日，版本 v1.0.6">2017年08月12日，版本 v1.0.6</h3>
+<p><strong>1.修复</strong> 检测系统版本不正确的问题。</p>
+<h3 id="2017年08月12日，版本 v1.0.5">2017年08月12日，版本 v1.0.5</h3>
+<p><strong>1.修复</strong> CentOS7 可能停止失败的问题。</p>
+<h3 id="2017年08月12日，版本 v1.0.4">2017年08月12日，版本 v1.0.4</h3>
+<p><strong>1.修复</strong> CentOS7 默认系统服务为systemctl 导致启动失败的问题。</p>
+<h3 id="2017年08月11日，版本 v1.0.3">2017年08月11日，版本 v1.0.3</h3>
+<p><strong>1.新增</strong> 保存防火墙规则功能（原来的时候重启服务器防火墙规则就没了）。</p>
+<p><strong>2.修复</strong> Debian系统 卸载失败问题。</p>
+<p><strong>3.优化</strong> 开机启动问题（改了开机启动方式）。</p>
+<p>—— 这个脚本好老了，里面的代码也挺乱的，简单更新一下好了。</p>
+<h3 id="2017年03月11日，版本 v1.0.2">2017年03月11日，版本 v1.0.2</h3>
+<p><strong>1.修复</strong> CentOS系统 启动失败问题</p>
+<h3 id="2016年12月24日，版本 v1.0.1">2016年12月24日，版本 v1.0.1</h3>
+<p><strong>1.增加</strong> 自动设置开机启动功能。</p>
+<p><strong>2.增加</strong> 自动设置开放防火墙端口功能。</p>
+<p><strong>3.修复</strong> 启动/停止 成功，但是提示失败的BUG。</p>
+<h3 id="2016年12月22日，版本 v1.0.0">2016年12月22日，版本 v1.0.0</h3>
+<p>1.推出 正式版本。</p>
+<hr />
+<p><strong>HaProxy手动教程：<a title="" href="e0926y-q.html" target="_blank" rel="noopener" data-original-title="Shadowsocks利用HaProxy实现中继（中转）加速">Shadowsocks利用HaProxy实现中继（中转）加速</a></strong></p>
+<p><strong>其他 Shadowsocks中继（中转）教程：<a title="" href="6r9z6_wi.html#服务器中继（国内中转）" target="_blank" rel="noopener" data-original-title="">传送门</a></strong></p>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="bizht36j-2.html">『原创』Shadowsocks HaProxy 中继(中转/端口转发) 便捷管理脚本</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="1748" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">25</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="4ug_-11l-2.html" rel="tag">haproxy</a><a href="psu7jp3t.html" rel="tag">中继</a><a href="_2p4tau_.html" rel="tag">国内中转</a><a href="a72_offe.html" rel="tag">服务器中转</a><a href="4_30fwtg.html" rel="tag">端口转发</a><a href="meyy1poe.html" rel="tag">脚本</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="9n7kdq_k-3.html" rel="prev">『原创』Shadowsocks Socat 中继(中转/端口转发) 便捷管理脚本</a></span>
+			<span class="article-nav-next"><a href="mbofzp9h-2.html" rel="next">『原创』Shadowsocks iptables 中继(中转/端口转发) 便捷管理脚本</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="kd691l4o.html" title="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" target="_blank">
+<img src="sp6xrfo1.png?src=https://doub.io/wp-content/uploads/shadowsocks3.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" />	<br><span class="r_title">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="es5fj9se.html" title="『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本" target="_blank">
+<img src="ul1omzk8.png?src=https://doub.io/wp-content/uploads/telegram.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本" />	<br><span class="r_title">『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="aybh4ww5.html" title="『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本" target="_blank">
+<img src="ul1omzk8.png?src=https://doub.io/wp-content/uploads/telegram.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本" />	<br><span class="r_title">『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="xcwybsz2.html" title="『原创』Go语言轻量化 代理工具 —— DAZE 一键安装管理脚本" target="_blank">
+<img src="7irzwvxm.png?src=https://doub.io/wp-content/uploads/daze-01.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Go语言轻量化 代理工具 —— DAZE 一键安装管理脚本" />	<br><span class="r_title">『原创』Go语言轻量化 代理工具 —— DAZE 一键安装管理脚本</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="kd691l4o.html">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</a></li><li><i class="fa fa-minus"></i><a href="es5fj9se.html">『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="aybh4ww5.html">『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="xcwybsz2.html">『原创』Go语言轻量化 代理工具 —— DAZE 一键安装管理脚本</a></li><li><i class="fa fa-minus"></i><a href="939koj07-2.html">『原创』Telegram 专用的轻量化代理工具 —— MTProxy 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="qjfhz_ch.html">『原创』Go语言轻量化 网络混淆代理工具 —— Lightsocks 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="yv4cp61c.html">『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本</a></li><li><i class="fa fa-minus"></i><a href="9-b8lkgt-3.html">Shadowsocks利用 Brook 实现中继(中转/端口转发)加速</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='1748' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (34)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-44271"><div class="c-avatar"><div class="c-main" id="div-comment-44271"><pre class="prettyprint linenums" >haproxy 启动失败
+● haproxy.service - HAProxy Load Balancer
+   Loaded: loaded (/lib/systemd/system/haproxy.service; enabled)
+   Active: failed (Result: start-limit) since Fri 2018-10-12 07:10:06 CST; 29s ago
+     Docs: man:haproxy(1)
+           file:/usr/share/doc/haproxy/configuration.txt.gz
+  Process: 4231 ExecStart=/usr/sbin/haproxy-systemd-wrapper -f ${CONFIG} -p /run/haproxy.pid $EXTRAOPTS (code=exited, status=0/SUCCESS)
+  Process: 4230 ExecStartPre=/usr/sbin/haproxy -f ${CONFIG} -c -q (code=exited, status=0/SUCCESS)
+ Main PID: 4231 (code=exited, status=0/SUCCESS)
+
+Oct 12 07:10:06 debian systemd[1]: haproxy.service holdoff time over, scheduling restart.
+Oct 12 07:10:06 debian systemd[1]: Stopping HAProxy Load Balancer...
+Oct 12 07:10:06 debian systemd[1]: Starting HAProxy Load Balancer...
+Oct 12 07:10:06 debian systemd[1]: haproxy.service start request repeated too quickly, refusing to start.
+Oct 12 07:10:06 debian systemd[1]: Failed to start HAProxy Load Balancer.
+Oct 12 07:10:06 debian systemd[1]: Unit haproxy.service entered failed state.
+</pre><div class="c-meta"><span class="c-author">chuanshuo</span>2018-10-12 14:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=44271#respond' onclick='return addComment.moveForm( "div-comment-44271", "44271", "respond", "1748" )' aria-label='回复给chuanshuo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-45253"><div class="c-avatar"><div class="c-main" id="div-comment-45253">请问怎么解决的
+最近更新脚本以后
+经常爆出这个问题<div class="c-meta"><span class="c-author">kk</span>2018-10-29 21:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=45253#respond' onclick='return addComment.moveForm( "div-comment-45253", "45253", "respond", "1748" )' aria-label='回复给kk'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-32082"><div class="c-avatar"><div class="c-main" id="div-comment-32082">Ubuntu 17 安装后报 Haproxy 启动失败，查看 status 只是报 Haproxy 没有运行<div class="c-meta"><span class="c-author">wayne</span>2018-02-25 21:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=32082#respond' onclick='return addComment.moveForm( "div-comment-32082", "32082", "respond", "1748" )' aria-label='回复给wayne'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-32108"><div class="c-avatar"><div class="c-main" id="div-comment-32108">有日志吗？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-26 10:41 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=32108#respond' onclick='return addComment.moveForm( "div-comment-32108", "32108", "respond", "1748" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-23436"><div class="c-avatar"><div class="c-main" id="div-comment-23436">套路云， debian 7x64位系统，安装失败，提示如下，不知道什么原因？安全组端口已放开了0-30000.
+<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="aad8c5c5deeac3f0ddd0939ccccfc8cfdcc2ddd9cec3d2d2de98dac2f0">[email&#160;protected]</a>:~# wget -N --no-check-certificate https://softs.host/Bash/haproxy.sh &amp;&amp; chmod +x haproxy.sh &amp;&amp; bash haproxy.sh
+--2017-11-27 14:45:43--  https://softs.host/Bash/haproxy.sh
+Resolving softs.host (softs.host)... 69.12.67.44
+Connecting to softs.host (softs.host)|69.12.67.44|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 8785 (8.6K) [application/octet-stream]
+Saving to: `haproxy.sh'
+
+100%[======================================&gt;] 8,785       --.-K/s   in 0s      
+
+2017-11-27 14:45:55 (202 MB/s) - `haproxy.sh' saved [8785/8785]
+
+haproxy.sh: line 62: haproxy: command not found
+Get:1 http://mirrors.cloud.aliyuncs.com wheezy Release.gpg [2,373 B]
+Ign http://mirrors.cloud.aliyuncs.com wheezy/updates Release.gpg
+Get:2 http://mirrors.cloud.aliyuncs.com wheezy-updates Release.gpg [1,601 B]
+Get:3 http://mirrors.cloud.aliyuncs.com wheezy Release [191 kB]
+Ign http://mirrors.cloud.aliyuncs.com wheezy/updates Release
+Get:4 http://mirrors.cloud.aliyuncs.com wheezy-updates Release [155 kB]
+Get:5 http://mirrors.cloud.aliyuncs.com wheezy/main Sources [5,993 kB]
+Get:6 http://mirrors.cloud.aliyuncs.com wheezy/contrib Sources [47.7 kB]
+Get:7 http://mirrors.cloud.aliyuncs.com wheezy/non-free Sources [93.4 kB]
+Get:8 http://mirrors.cloud.aliyuncs.com wheezy/main amd64 Packages [5,839 kB]
+Get:9 http://mirrors.cloud.aliyuncs.com wheezy/contrib amd64 Packages [42.0 kB]
+Get:10 http://mirrors.cloud.aliyuncs.com wheezy/non-free amd64 Packages [80.8 kB]
+Get:11 http://mirrors.cloud.aliyuncs.com wheezy/contrib Translation-en [34.8 kB]
+Get:12 http://mirrors.cloud.aliyuncs.com wheezy/main Translation-en [3,846 kB]
+Get:13 http://mirrors.cloud.aliyuncs.com wheezy/non-free Translation-en [66.1 kB]
+Get:14 http://mirrors.cloud.aliyuncs.com wheezy-updates/main Sources [5,505 B]
+Get:15 http://mirrors.cloud.aliyuncs.com wheezy-updates/contrib Sources [14 B]
+Get:16 http://mirrors.cloud.aliyuncs.com wheezy-updates/non-free Sources [929 B]
+Get:17 http://mirrors.cloud.aliyuncs.com wheezy-updates/main amd64 Packages [7,047 B]
+Get:18 http://mirrors.cloud.aliyuncs.com wheezy-updates/contrib amd64 Packages [14 B]
+Get:19 http://mirrors.cloud.aliyuncs.com wheezy-updates/non-free amd64 Packages [488 B]
+Get:20 http://mirrors.cloud.aliyuncs.com wheezy-updates/contrib Translation-en [14 B]
+Get:21 http://mirrors.cloud.aliyuncs.com wheezy-updates/main Translation-en [4,879 B]
+Get:22 http://mirrors.cloud.aliyuncs.com wheezy-updates/non-free Translation-en [496 B]
+Err http://mirrors.cloud.aliyuncs.com wheezy/updates/main Sources
+  404  Not Found
+Err http://mirrors.cloud.aliyuncs.com wheezy/updates/contrib Sources
+  404  Not Found
+Err http://mirrors.cloud.aliyuncs.com wheezy/updates/non-free Sources
+  404  Not Found
+Err http://mirrors.cloud.aliyuncs.com wheezy/updates/main amd64 Packages
+  404  Not Found
+Err http://mirrors.cloud.aliyuncs.com wheezy/updates/contrib amd64 Packages
+  404  Not Found
+Err http://mirrors.cloud.aliyuncs.com wheezy/updates/non-free amd64 Packages
+  404  Not Found
+Ign http://mirrors.cloud.aliyuncs.com wheezy/updates/contrib Translation-en_US
+Ign http://mirrors.cloud.aliyuncs.com wheezy/updates/contrib Translation-en
+Ign http://mirrors.cloud.aliyuncs.com wheezy/updates/main Translation-en_US
+Ign http://mirrors.cloud.aliyuncs.com wheezy/updates/main Translation-en
+Ign http://mirrors.cloud.aliyuncs.com wheezy/updates/non-free Translation-en_US
+Ign http://mirrors.cloud.aliyuncs.com wheezy/updates/non-free Translation-en
+Fetched 16.4 MB in 4s (3,290 kB/s)                      
+W: Failed to fetch http://mirrors.cloud.aliyuncs.com/debian/dists/wheezy/updates/main/source/Sources  404  Not Found
+
+W: Failed to fetch http://mirrors.cloud.aliyuncs.com/debian/dists/wheezy/updates/contrib/source/Sources  404  Not Found
+
+W: Failed to fetch http://mirrors.cloud.aliyuncs.com/debian/dists/wheezy/updates/non-free/source/Sources  404  Not Found
+
+W: Failed to fetch http://mirrors.cloud.aliyuncs.com/debian/dists/wheezy/updates/main/binary-amd64/Packages  404  Not Found
+
+W: Failed to fetch http://mirrors.cloud.aliyuncs.com/debian/dists/wheezy/updates/contrib/binary-amd64/Packages  404  Not Found
+
+W: Failed to fetch http://mirrors.cloud.aliyuncs.com/debian/dists/wheezy/updates/non-free/binary-amd64/Packages  404  Not Found
+
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+haproxy.sh: line 72: haproxy: command not found
+ [错误]  安装HaProxy失败，请检查 !<div class="c-meta"><span class="c-author">墙出新境界</span>2017-11-27 14:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=23436#respond' onclick='return addComment.moveForm( "div-comment-23436", "23436", "respond", "1748" )' aria-label='回复给墙出新境界'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-23444"><div class="c-avatar"><div class="c-main" id="div-comment-23444">不要用阿里云自带的 软件包源，更换源文件即可。<a href="https://softs.host/?dir=Bash/sources" target="_blank" rel="nofollow">https://softs.host/?dir=Bash/sources</a> ，看这里，注意根据地区修改下载的文件名。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-27 16:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=23444#respond' onclick='return addComment.moveForm( "div-comment-23444", "23444", "respond", "1748" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-23530"><div class="c-avatar"><div class="c-main" id="div-comment-23530">搞定了，谢谢逗比大佬。用国内套路云100M宽带的中转套路云新加坡，试了tinyport和haproxy，中转后速度都基本没提升，不知道为什么，这情况的话中转就没什么意义了。<div class="c-meta"><span class="c-author">墙出新境界</span>2017-11-28 19:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=23530#respond' onclick='return addComment.moveForm( "div-comment-23530", "23530", "respond", "1748" )' aria-label='回复给墙出新境界'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-17356"><div class="c-avatar"><div class="c-main" id="div-comment-17356">想问一下，这个支持代理多个服务器么？就是假设我有2个美国的ssr服务器，想用这个中转服务器的不同端口做中转，怎么添加多个ip呢？<div class="c-meta"><span class="c-author">机智的苏先锋</span>2017-08-20 18:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=17356#respond' onclick='return addComment.moveForm( "div-comment-17356", "17356", "respond", "1748" )' aria-label='回复给机智的苏先锋'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-17358"><div class="c-avatar"><div class="c-main" id="div-comment-17358">HaProxy是支持多个端口中转不同IP，不过我这个脚本嫌麻烦没加上多IP中转，你可以参考手动教程修改配置文件：<a href="e0926y-q.html" target="_blank" rel="nofollow">https://doub.io/ss-jc29/</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-20 19:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=17358#respond' onclick='return addComment.moveForm( "div-comment-17358", "17358", "respond", "1748" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-16899"><div class="c-avatar"><div class="c-main" id="div-comment-16899">补充：haproxy.sh: line 176: /etc/init.d/haproxy: No such file or directory<div class="c-meta"><span class="c-author">狐狸</span>2017-08-11 23:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=16899#respond' onclick='return addComment.moveForm( "div-comment-16899", "16899", "respond", "1748" )' aria-label='回复给狐狸'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-16914"><div class="c-avatar"><div class="c-main" id="div-comment-16914">什么系统？安装的haproxy什么版本？是否安装正常？/etc/init.d/haproxy是haproxy安装完整后自带的服务脚本。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-12 09:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=16914#respond' onclick='return addComment.moveForm( "div-comment-16914", "16914", "respond", "1748" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-16897"><div class="c-avatar"><div class="c-main" id="div-comment-16897">请问：总是HaProxy 启动失败 !怎么办？谢谢！<div class="c-meta"><span class="c-author">狐狸</span>2017-08-11 22:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=16897#respond' onclick='return addComment.moveForm( "div-comment-16897", "16897", "respond", "1748" )' aria-label='回复给狐狸'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-16884"><div class="c-avatar"><div class="c-main" id="div-comment-16884">haproxy.sh: line 239: sudo: command not found
+haproxy.sh: line 240: sudo: command not found
+ [错误]  HaProxy卸载失败，请检查 !<div class="c-meta"><span class="c-author">X</span>2017-08-11 19:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=16884#respond' onclick='return addComment.moveForm( "div-comment-16884", "16884", "respond", "1748" )' aria-label='回复给X'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-16887"><div class="c-avatar"><div class="c-main" id="div-comment-16887">脚本已更新，请重新下载覆盖。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-11 19:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=16887#respond' onclick='return addComment.moveForm( "div-comment-16887", "16887", "respond", "1748" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-15790"><div class="c-avatar"><div class="c-main" id="div-comment-15790">小白,折腾了好久 终于搞定了. CentOS 如果启动不成功的话 尝试 关闭SELinux.
+
+感谢大神的一键脚本, 虽然我没有一键安装成功吧-.-<div class="c-meta"><span class="c-author">OldKing</span>2017-07-23 17:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=15790#respond' onclick='return addComment.moveForm( "div-comment-15790", "15790", "respond", "1748" )' aria-label='回复给OldKing'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-11282"><div class="c-avatar"><div class="c-main" id="div-comment-11282">大神，ssr可以设置转发吗求教程，一键<div class="c-meta"><span class="c-author">子夜</span>2017-03-07 17:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=11282#respond' onclick='return addComment.moveForm( "div-comment-11282", "11282", "respond", "1748" )' aria-label='回复给子夜'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-11284"><div class="c-avatar"><div class="c-main" id="div-comment-11284">这个教程不就是一键脚本？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-07 19:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=11284#respond' onclick='return addComment.moveForm( "div-comment-11284", "11284", "respond", "1748" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-10856"><div class="c-avatar"><div class="c-main" id="div-comment-10856">请问这个有办法解决嚒：
+请按任意键继续，如有配置错误请使用 Ctrl+C 退出。
+iptables v1.4.21: invalid port/service `ve' specified
+Try `iptables -h' or 'iptables --help' for more information.
+haproxy.sh: line 99: /etc/haproxy/haproxy.cfg: Permission denied
+haproxy.sh: line 160: /etc/init.d/haproxy: No such file or directory
+ [错误]  HaProxy 启动失败 !
+而且输入 service haproxy status 会提示：
+Redirecting to /bin/systemctl status  haproxy.service
+● haproxy.service - HAProxy Load Balancer
+   Loaded: loaded (/usr/lib/systemd/system/haproxy.service; disabled; vendor preset: disabled)
+   Active: failed (Result: exit-code) since Tue 2017-02-21 08:10:13 CST; 23h ago
+ Main PID: 17508 (code=exited, status=1/FAILURE)
+(reverse-i-search)`': ^C<div class="c-meta"><span class="c-author">jmyz_0455</span>2017-02-22 08:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=10856#respond' onclick='return addComment.moveForm( "div-comment-10856", "10856", "respond", "1748" )' aria-label='回复给jmyz_0455'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-10846"><div class="c-avatar"><div class="c-main" id="div-comment-10846">请问直接用 yum install -y haproxy 安装的跟你的脚本有什么不一样？
+用上面的命令安装后用 service haproxy start 提示 Redirecting to /bin/systemctl start haproxy.service<div class="c-meta"><span class="c-author">jmyz_0455</span>2017-02-21 16:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=10846#respond' onclick='return addComment.moveForm( "div-comment-10846", "10846", "respond", "1748" )' aria-label='回复给jmyz_0455'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-10847"><div class="c-avatar"><div class="c-main" id="div-comment-10847">上句话有歧义，是用 yum install -y haproxy 会出现后面句话。后来我用 /bin/systemctl start haproxy.service
+回车后一点反应都没有，在 netstat -apn | grep haproxy 里什么都看不到，为什么源的软件反而不行呢？<div class="c-meta"><span class="c-author">jmyz_0455</span>2017-02-21 19:41 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=10847#respond' onclick='return addComment.moveForm( "div-comment-10847", "10847", "respond", "1748" )' aria-label='回复给jmyz_0455'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-3" id="comment-10848"><div class="c-avatar"><div class="c-main" id="div-comment-10848">centos很迷，我用过的次数屈指可数，所以不清楚。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-02-21 19:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=10848#respond' onclick='return addComment.moveForm( "div-comment-10848", "10848", "respond", "1748" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-4" id="comment-10852"><div class="c-avatar"><div class="c-main" id="div-comment-10852">哈哈，我看见好多人都是用 Centos 就装了，没办法<div class="c-meta"><span class="c-author">jmyz_0455</span>2017-02-21 22:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=10852#respond' onclick='return addComment.moveForm( "div-comment-10852", "10852", "respond", "1748" )' aria-label='回复给jmyz_0455'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-10210"><div class="c-avatar"><div class="c-main" id="div-comment-10210">安装后提示unknown keyword 'ulimit' in 'global' section，我把那一行#掉后可以运行，什么原因呢，谢谢，Aliyun转发Vultr,谢谢,都是Debian 系统<div class="c-meta"><span class="c-author">Lion</span>2017-01-30 19:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=10210#respond' onclick='return addComment.moveForm( "div-comment-10210", "10210", "respond", "1748" )' aria-label='回复给Lion'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-10211"><div class="c-avatar"><div class="c-main" id="div-comment-10211">这个注释掉不影响haproxy运行，至于报错，可能跟haproxy版本有关系，因为是通过包管理器安装，根据源不同，安装的haproxy版本也可能不一样，会有差别。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-01-30 20:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=10211#respond' onclick='return addComment.moveForm( "div-comment-10211", "10211", "respond", "1748" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-10212"><div class="c-avatar"><div class="c-main" id="div-comment-10212">谢谢<div class="c-meta"><span class="c-author">Lion</span>2017-01-30 20:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=10212#respond' onclick='return addComment.moveForm( "div-comment-10212", "10212", "respond", "1748" )' aria-label='回复给Lion'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-9727"><div class="c-avatar"><div class="c-main" id="div-comment-9727">请问一下 中转后 流量是扣中转服务器还是被中转的?<div class="c-meta"><span class="c-author">chp</span>2017-01-08 14:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=9727#respond' onclick='return addComment.moveForm( "div-comment-9727", "9727", "respond", "1748" )' aria-label='回复给chp'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-9731"><div class="c-avatar"><div class="c-main" id="div-comment-9731">都扣，你SS下载100MB文件，你的SS服务器(被中转服务器)首先下载这个文件到VPS，然后通过上行上传给中转服务器，然后中转服务器，通过下行接收，下载到中转服务器本地，然后通过上行上传给你PC SS客户端。<br />
+所以说，你挂SS下载100M文件，SS服务器(被中转)消耗了200MB流量，然后中转服务器消耗了200MB流量。<br />
+Shadowsocks本身就是一个流量中转软件。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-01-08 16:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=9731#respond' onclick='return addComment.moveForm( "div-comment-9731", "9731", "respond", "1748" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-9818"><div class="c-avatar"><div class="c-main" id="div-comment-9818">想再问问 如果中转服务器带宽200m SS服务器5m 那中转后是不是200m?<div class="c-meta"><span class="c-author">chp</span>2017-01-11 10:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=9818#respond' onclick='return addComment.moveForm( "div-comment-9818", "9818", "respond", "1748" )' aria-label='回复给chp'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-9822"><div class="c-avatar"><div class="c-main" id="div-comment-9822">还是5M，你下载一个文件，Shadowsocks服务器下载完你要的文件后，会把数据通过上行上传给中转服务器，然后中转服务器通过下行下载到VPS本地，然后中转服务器再把数据通过上行上传给你的电脑SS客户端。<br />
+而服务器说的5M一般都是指的 上行5M.<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-01-11 12:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=9822#respond' onclick='return addComment.moveForm( "div-comment-9822", "9822", "respond", "1748" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-9471"><div class="c-avatar"><div class="c-main" id="div-comment-9471">Reading package lists...
+W: There is no public key available for the following key IDs:
+9D6D8F6BC857C906
+W: There is no public key available for the following key IDs:
+7638D0442B90D010
+Reading package lists...
+Building dependency tree...
+Reading state information...
+E: Unable to locate package haproxy
+
+haproxy install failed.
+手动./haproxy.shh.1 可以填写端口和转发IP，但是结尾也是haproxy install failed.
+我用的是板瓦工的DEBIAN 7<div class="c-meta"><span class="c-author">789</span>2016-12-30 04:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=9471#respond' onclick='return addComment.moveForm( "div-comment-9471", "9471", "respond", "1748" )' aria-label='回复给789'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-9470"><div class="c-avatar"><div class="c-main" id="div-comment-9470">Debian 7 一键安装包提示
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package haproxy
+haproxy.sh: line 62: haproxy: command not found
+ [错误]  安装HaProxy失败，请检查 !
+手动安装提示无法找到haproxy 
+我从官网找的1.7安装后找到了在/usr/local/haproxy
+然后就不知道怎么弄了。。
+最近刚学习这些东西。。
+感谢你<div class="c-meta"><span class="c-author">789</span>2016-12-30 04:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=9470#respond' onclick='return addComment.moveForm( "div-comment-9470", "9470", "respond", "1748" )' aria-label='回复给789'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-9481"><div class="c-avatar"><div class="c-main" id="div-comment-9481">一些比较老的apt源不包括HaProxy，你只要换一个新的源就行了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-12-30 14:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=9481#respond' onclick='return addComment.moveForm( "div-comment-9481", "9481", "respond", "1748" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-9314"><div class="c-avatar"><div class="c-main" id="div-comment-9314">我用Vultr家 日本的vps os:ub14 x64 ，一键脚本执行完后，提示请检查Haproxy配置是否有误。 在配置中提示的支持端口是不是意思，需要SS服务器端也是在这个端口端内。
+然后错误后也一直无法启动是否是上述原因？<div class="c-meta"><span class="c-author">Johnson.zha0</span>2016-12-23 15:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=9314#respond' onclick='return addComment.moveForm( "div-comment-9314", "9314", "respond", "1748" )' aria-label='回复给Johnson.zha0'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-9315"><div class="c-avatar"><div class="c-main" id="div-comment-9315">比如你搭建的Shadowsocks服务端 设置的SS账号端口是 2333，那你这里就写2333，IP填写你SS账号的IP，然后你的Shadowsocks客户端连接中转服务器，就是IP填写 中转服务器的IP，端口依然是2333，其他的密码，加密方式什么的都一样。<br />
+错误是提示什么错误？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-12-23 17:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-19/?replytocom=9315#respond' onclick='return addComment.moveForm( "div-comment-9315", "9315", "respond", "1748" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+			</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://kanfanba.com/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script data-cfasync="false" src="hnpipwj_.js"></script><script type="text/javascript">
+var image_url=new Array()
+image_url=["https://www.vultr.com/","vh8576m0.html","https://virmach.com/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="hkb7c9e-container hkb7c9e-1 hkb7c9e-hide">
+    <div class="hkb7c9e-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="hkb7c9e"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

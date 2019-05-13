@@ -1,0 +1,871 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>浅谈HTTP劫持、DNS污染的影响及解决办法（仅个人理解） | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1947] -->
+<meta name="description"  content="首先我们说一下&quot;墙：防火长城&quot;，它是由 互联网科学家（比如：方滨兴）、工作人员、五毛、分布式超级计算机、三大运营商组成的。 我们可以看到，墙并不是一个独立的单独存在的一个组织，而是由国内各领域的互联网重要结构组成的。 互联网科学家：专门研究如何低成本高效率的更有效的过滤审核。 工作人员：一些非机器替代的人" />
+
+<meta name="keywords"  content="dns污染,http劫持,防火长城" />
+
+<link rel="canonical" href="6t3mypbm-5.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='CentOS/Debian/Ubuntu一键安装IPSEC/IKEV2 VPN脚本' href='azj55-67.html' />
+<link rel='next' title='『失效』分享一种利用百度接口API 无限速下载百度云文件的方法' href='-s7byrbs.html' />
+<link rel='shortlink' href='https://doub.io/?p=1460' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fsxsx-08%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fsxsx-08%2F&amp;format=xml" />
+<style>
+.qka0148{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.qka0148-hide{
+    display: none;
+}
+.qka0148-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.qka0148-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.qka0148-2 .qka0148-body,.qka0148-3 .qka0148-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.qka0148-2 .close-btn,.qka0148-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.qka0148-3 .qka0148-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.qka0148').html(kill_adBlock_message);
+            jQuery('.qka0148-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.qka0148-container').fadeOut('qka0148-hide');
+        });
+    });
+    var kill_adBlock_status = 1;
+    var kill_adBlock_message = '逗比很伤心😥，您的<strong>广告拦截扩展</strong>屏蔽了我们的小广告，网站的发展离不开大家的支持，请先看过<a target=\"_blank\" style=\"color: #ffe500;\" href=\"3--didfb.html\">这个文章</a>后，再确定是否要将我们的域名添加到<strong>拦截白名单</strong>中，谢谢！😘👌';
+    var kill_adBlock_message_delay = 0;
+    var kill_adBlock_close_btn = 1;
+    var kill_adBlock_close_automatically = 0;
+    var kill_adBlock_close_automatically_delay = 0;
+    var kill_adBlock_message_type = 1;
+    function adBlockDetected() {
+      show_message();
+    }
+    
+    if(typeof killAdBlock === 'undefined') {
+        adBlockDetected();
+    } else {
+        killAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+    }
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="DNS污染, HTTP劫持, 防火长城, 随心随想">
+<meta name="description" content="首先我们说一下“墙：防火长城”，它是由 互联网科学家（比如：方滨兴）、工作人员、五毛、分布式超级计算机、三大运营商组成的。  我们可以看到，墙并不是一个独立的单独存在的一个组织，而是由国内各领域的互联网重要结构组成的。 互联网科学家：专门研究如何低成本高效率的更有效的过滤审核。  工作人员：一些非机器替代的人工操作，比如人工审核。  五毛：五毛。  分布式超级计算机：要知道每一秒经过大陆各国际出口经过的流量是非常庞大的，需要很多超级计算">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-1460 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="./softs.wtf/"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Atoyodadoubi.github.io'; return false;" action="https://toyodadoubi.github.io/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 逗比云还是逃不过被墙的命运，既然如此那以后逗比云也就一直用被墙的旧域名 <strong><a target="_blank" href="./softs.wtf/">[softs.wtf]</a></strong> 算了。
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://www.gigsgigscloud.com/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="6t3mypbm-5.html">浅谈HTTP劫持、DNS污染的影响及解决办法（仅个人理解）</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="c8ljt6o8-2.html"> 随心随想</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 2年前 (2016-09-11)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 15412℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="6t3mypbm-5.html#comments">31评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="6t3mypbm-5.html#HTTP劫持" title="HTTP劫持"><span>HTTP劫持</span></a><ul class="children"><li class="content-index-level-2"><a href="6t3mypbm-5.html#解决方法" title="解决方法"><span>解决方法</span></a></li></ul></li><li class="content-index-level-1"><a href="6t3mypbm-5.html#DNS污染" title="DNS污染"><span>DNS污染</span></a><ul class="children"><li class="content-index-level-2"><a href="6t3mypbm-5.html#原理解析" title="原理解析"><span>原理解析</span></a></li><li class="content-index-level-2"><a href="6t3mypbm-5.html#验证污染" title="验证污染"><span>验证污染</span></a></li><li class="content-index-level-2"><a href="6t3mypbm-5.html#解决方法" title="解决方法"><span>解决方法</span></a></li><li class="content-index-level-2"><a href="6t3mypbm-5.html#污染攻击大事记" title="污染攻击大事记"><span>污染攻击大事记</span></a></li></ul></li><li class="content-index-level-1"><a href="6t3mypbm-5.html#IP黑名单" title="IP黑名单"><span>IP黑名单</span></a></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2017年1月20日 20:26</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>首先我们说一下“墙：防火长城”，它是由 <strong>互联网科学家（比如：方滨兴）、工作人员、五毛、分布式超级计算机、三大运营商组成的。</strong></p>
+<p>我们可以看到，墙并不是一个独立的单独存在的一个组织，而是由国内各领域的互联网重要结构组成的。</p>
+<blockquote><p><strong>互联网科学家：</strong>专门研究如何低成本高效率的更有效的过滤审核。</p>
+<p><strong>工作人员：</strong>一些非机器替代的人工操作，比如人工审核。</p>
+<p><strong>五毛：</strong>五毛。</p>
+<p><strong>分布式超级计算机：</strong>要知道每一秒经过大陆各国际出口经过的流量是非常庞大的，需要很多超级计算机进行运算过滤。</p>
+<p><strong>三大运营商：</strong>这个是最重要的组成部分，没有运营商的支持，墙就是个屁。大陆各国际出口都是三大运营商建立和控制的，如果他们不点头，墙又如何在“大门口”（国际宽带出口处）建立“过滤审核检查站”，当然运营商也是国家控制的，所以还是一家人。</p></blockquote>
+<p>所以，墙就相当于在 <strong>大陆的各个国际宽带出口处</strong>建立的 <strong>过滤审核检查站</strong>。</p>
+<hr />
+<p>还有我发现一个很有趣的事情，很多人以为<strong>只有中国和朝鲜存在墙，这很无知。</strong></p>
+<p>如果你把 屏蔽Google、Facebook、Youtube、Twitter的国家 就当作这个国家存在墙的话，那我无话可说。</p>
+<p><strong>墙或者说 互联网防火长城，是任何一个拥有互联网主权国家的必备组成。</strong></p>
+<p>如果你的国家没有墙，没有信息审核过滤机制，那政权随时可能推翻，这不是吹牛，有好几个国家的总统或者总理因为不注重这个问题，导致不仅下位还坐牢了。</p>
+<p>美国是个自称最自由的国家，所以他就没有墙了吗？不，他们对盗版网站，儿童色情网站等也是屏蔽。</p>
+<p>还有韩国，在互联网方面最发达的国家之一，同样也是针对色情行业大力清理屏蔽。就算是越南、缅甸、泰国，这种互联网相对不发达的国家，依然存在墙。</p>
+<p>墙是必然的，你不可能阻止墙的存在，只是我们的墙更高一些，我并不是为 中国防火长城 开脱什么，我只是阐述墙必须存在的事实。</p>
+<p>我们之所以感觉我们的墙更高，一是，我们生活在这个国家的墙内，我们经常碰触到墙；二是，我们也是属于审查最严格的那一类国家。</p>
+<p><strong>同时墙也是一种变相的保护国内互联网产业的发展，否则微博，百度哪那么容易发展起来。</strong></p>
+<p><strong>因为一些话太敏感，不能说的太直白，否则就要拆水表了，理解不了就反过来站在领导人的角度思考，所以上面说的你们能理解多少那就是多少吧。</strong></p>
+<h2 id="HTTP劫持">HTTP劫持</h2>
+<p>大家都知道，我的 dou-bi.com 域名在前段时间的G20期间被HTTP劫持和DNS污染了，而我也简单的研究了一下这两个。</p>
+<p>HTTP劫持很容易理解，因为HTTP传输协议是明文的，并且我的网站服务器是在海外，要访问我的网站就要通过中国的国际宽带出口，出去与我的网站建立连接。</p>
+<p>但是那G20期间因为戒严，所以加强了HTTP关键词审查，我的网站也是因为关键词的原因在经过出口的时候，被<strong>“检查站：墙”</strong>扫描到了违规关键词，于是掐断了TCP链接。</p>
+<p>所以当时用户访问网站会遇到：<strong>链接已重置、该网站已永久移动到其他地址等等。</strong></p>
+<h3 id="解决方法">解决方法</h3>
+<p>而HTTP劫持很容易解决，那就是<strong>加上SSL证书，网站链接全部内容加密</strong>，这样“检查站：墙”就无法解密数据分析关键词了。</p>
+<p>但是这不是绝对能解决这个问题的，如果你的网站只是误杀或者违规擦边球，那还好，如果是大型网站，就会特殊对待了。</p>
+<p>HTTPS在建立加密连接的时候，需要一次握手，也就是达成链接协议建立加密连接，但是这次握手是明文的（建立加密链接首先就是链接双方信任，比如网站的SSL证书是自己签的，或者SSL证书到期或伪造的，在访问这个网站的时候浏览器就会进行提示，表示此网站不安全啥的。）</p>
+<p>握手是明文的就意味着，如果你的域名被重点关注，<strong>即使你加上了SSL证书，也会在首次握手的时候，被关键词匹配然后掐断链接。</strong></p>
+<p><strong>还有一种方式，就是域名备案，使用国内服务器。</strong>这样用户在访问你的网站时，根本不需要经过墙，自然也没有了拦截。</p>
+<h2 id="DNS污染">DNS污染</h2>
+<p><strong>DNS污染</strong>，又称为<strong>域名服务器缓存污染</strong>（DNS cache pollution）或者<strong>域名服务器快照侵害</strong>（DNS cache poisoning）。</p>
+<p><strong>DNS污染</strong>是指一些刻意制造或无意中制造出来的域名服务器分组，把域名指往不正确的IP地址。</p>
+<p>一般来说，网站在互联网上一般都有可信赖的域名服务器，但为减免网络上的交通，一般的域名都会把外间的域名服务器数据暂存起来，待下次有其他机器要求解析域名时，可以立即提供服务。一旦有相关网域的局域域名服务器的缓存受到污染，就会把网域内的电脑导引往错误的服务器或服务器的网址。</p>
+<h3 id="原理解析">原理解析</h3>
+<p>我们假设 <strong>A为用户端也就是你的电脑设备，B为DNS服务器，C为A到B链路中一个节点的网络设备</strong>（路由器、交换机、网关等）。</p>
+<p>然后我们模拟一次被污染的DNS请求过程。</p>
+<p>A访问一个网站，比如 <code>google.com</code> ，然后，A向B通过UDP方式发送查询请求，比如查询内容 <code>A google.com</code> ，这个数据库在前往B的时候要经过数个节点网络设备比如C，然后继续前往DNS服务器B。</p>
+<p>然而在这个传输过程中，C针对这个数据包进行特征分析，（DNS端口为53，进行特定端口监视扫描，对UDP明文传输的DNS查询请求进行特征和关键词匹配分析，比如“google.com”是关键词，也或者是“A记录”），从而立刻返回一个错误的解析结果（比如返回了 <code>A 233.233.233.233 </code> ）。</p>
+<p>众所周知，作为链路上的一个节点，<strong>网络设备C 必定比真正的 DNS服务器B 更快的返回结果到 用户电脑A</strong>，而目前的DNS解析机制策略有一个重要的原则，就是<strong>只认第一</strong>。因此 节点网络设备C所返回的查询结果就被 用户电脑A当作了最终结果，于是用户电脑A因为获得了错误的IP，导致无法正常访问 <code>google.com</code> 。</p>
+<h3 id="验证污染">验证污染</h3>
+<p>我的 doub.iom 主域名虽然在大部分地区解除了DNS污染，但是我的两个SS站域名并没有，所以我尝试对我的SS 子域名进行nslookup测试。</p>
+<pre class="prettyprint linenums">C:\Users\Administrator&gt;nslookup ss.dou-bi.com 8.8.8.8
+服务器: google-public-dns-a.google.com
+Address: 8.8.8.8
+
+非权威应答:
+名称: ss.dou-bi.com
+Addresses: 200:2:9f6a:794b::
+8.7.198.45
+</pre>
+<p>我使用的是谷歌的 8.8.8.8 DNS，但是我得到的A记录 IP却是<strong>8.7.198.45</strong>，这个明显不是我的IP，看一下其他被DNS污染的域名就会发现都会有这个IP。</p>
+<p>所以很明显，我的 ss.dou-bi.com 域名受到了DNS污染。</p>
+<h3 id="解决方法">解决方法</h3>
+<ol>
+<li><strong>使用加密代理</strong>，比如Shadowsocks，在加密代理里进行远程DNS解析，或者使用VPN上网。</li>
+<li><strong>修改hosts文件</strong>，操作系统中Hosts文件的权限优先级高于DNS服务器，操作系统在访问某个域名时，会先检测HOSTS文件，然后再查询DNS服务器。<br />
+可以在hosts添加受到污染的DNS地址来解决DNS污染和DNS劫持。</li>
+<li><strong>通过一些软件编程处理</strong>，可以直接忽略返回结果是虚假IP地址的数据包，直接解决DNS污染的问题。</li>
+<li>如果你是Firefox用户，并且只用Firefox，又懒得折腾，直接打开Firefox的<strong>远程DNS解析</strong>就行了。在地址栏中输入：<strong>about:config</strong><br />
+找到 <code>network.proxy.socks_remote_dns</code> 一项改成<strong>true</strong>。</li>
+<li><strong>使用DNSCrypt软件</strong>，此软件与使用的OpenDNS直接建立相对安全的TCP连接并加密请求数据，从而不会被污染。</li>
+</ol>
+<p>对于被DNS污染的网站站长来说，最有效的方法就是 <strong>换域名或者IP </strong>了。</p>
+<h3 id="污染攻击大事记">污染攻击大事记</h3>
+<blockquote><p><strong>2010年3月</strong>，当美国和智利的用户试图访问热门社交网站如 http://facebook.com 和 http://youtube.com 还有 http://twitter.com 等域名，他们的域名查询请求转交给<strong>中国控制的DNS根镜像服务器处理</strong>，由于这些网站在中国被封锁，结果用户收到了错误的DNS解析信息，这意味着防火长城的DNS域名污染域名劫持已影响国际互联网。</p>
+<p><strong>2010年4月8日</strong>，中国大陆一个小型ISP的错误路由数据，经过中国电信的二次传播，扩散到了整个国际互联网，波及到了AT&amp;T、Level3、Deutsche Telekom、Qwest Communications和Telefonica等多个国家的大型ISP。</p>
+<p><strong>2012年11月9日下午3点半开始</strong>，防火长城对Google的泛域名 http://google.com 进行了大面积的污染，所有以 http://google.com 结尾的域名均遭到污染而解析错误不能正常访问，其中甚至包括不存在的域名，而Google为各国定制的域名也遭到不同程度的污染（因为Google通过使用CNAME记录来平衡访问的流量，CNAME记录大多亦为 http://google.com 结尾），但Google拥有的其它域名如 http://googleusercontent.com 等则不受影响。有网友推测这也许是自防火长城创建以来最大规模的污染事件，而Google被大面积阻碍连接则是因为18大 。</p>
+<p>——摘取自：知乎</p></blockquote>
+<p>当然，DNS污染的大事件肯定不会只有这几个，但是这也说明了DNS污染的力量和危害之大。</p>
+<h2 id="IP黑名单">IP黑名单</h2>
+<p>即使没有DNS污染 或者 你获得了正确的IP，你就能正常访问这些被屏蔽的网站了吗？</p>
+<p>不，墙目前已经有了<strong>IP黑名单</strong>，针对谷歌这种网站已经不再是普通的DNS污染了，因为总会有办法访问被DNS污染的网站（比如指定Hosts）。</p>
+<p>那么就直接把所有的谷歌IP拉黑不就好了？就算你获得了正确的谷歌IP，但是当你去访问这个IP的时候，墙会发现这个IP存在于黑名单中，于是直接阻断，于是浏览器就会提示：www.google.com的响应时间过长等等。</p>
+<p>当然谷歌的IP非常多，而且有很多都是隐藏的。</p>
+<p>像Goagent、XX-NET、Hosts方式访问谷歌或者其他被屏蔽的网站，都是使用的谷歌IP，当大量谷歌IP被拉黑后，这三种方式就会衰败。</p>
+<p>现在这三种方式依然在不停的扫描那些隐藏的谷歌IP，但是谷歌IP再多也不是无穷无尽的，迟早会消耗完毕，坐吃山空。到时候就是这几种方法的死期了。</p>
+<p>在普通用户扫描的时候，“墙”中的工作人员和超级计算机何尝也不是在扫描？正是看到了这种依赖于谷歌IP方式的末路，所以我网站到现在也没有一篇和这几种方式有关的教程和文章。</p>
+<hr />
+<p>以上的言论仅为个人理解，只为共享以方便讨论交流，具体事实是如何，自行探索。</p>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="6t3mypbm-5.html">浅谈HTTP劫持、DNS污染的影响及解决办法（仅个人理解）</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="1460" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">75</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="ztqomoac.html" rel="tag">DNS污染</a><a href="swefo973.html" rel="tag">HTTP劫持</a><a href="zfrj3g3n.html" rel="tag">防火长城</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="azj55-67.html" rel="prev">CentOS/Debian/Ubuntu一键安装IPSEC/IKEV2 VPN脚本</a></span>
+			<span class="article-nav-next"><a href="-s7byrbs.html" rel="next">『失效』分享一种利用百度接口API 无限速下载百度云文件的方法</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+	<li class="related_box"  >
+		<a href="wkcjzpyd.html" title="没教程写我要死了（滑稽），有想要让我写的教程请在这里告诉我！" target="_blank">
+		<img src="xpz5exhd.jpg?src=https://doub.io/wp-content/uploads/3.jpg&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="没教程写我要死了（滑稽），有想要让我写的教程请在这里告诉我！" /><br><span class="r_title">没教程写我要死了（滑稽），有想要让我写的教程请在这里告诉我！</span></a>
+		</li>
+	
+	<li class="related_box"  >
+		<a href="3--didfb.html" title="关于本站广告的一些说明" target="_blank">
+		<img src="_a2jiq2t.png?src=https://doub.io/wp-content/uploads/logo-2.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="关于本站广告的一些说明" /><br><span class="r_title">关于本站广告的一些说明</span></a>
+		</li>
+	
+	<li class="related_box"  >
+		<a href="wkcjzpyd-2.html" title="关于目前 GFW(墙) 的封锁方式<strong>TCP封锁(阻断)</strong>猜想" target="_blank">
+		<img src="q7pxrz40.png?src=https://doub.io/wp-content/uploads/gfw.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="关于目前 GFW(墙) 的封锁方式<strong>TCP封锁(阻断)</strong>猜想" /><br><span class="r_title">关于目前 GFW(墙) 的封锁方式<strong>TCP封锁(阻断)</strong>猜想</span></a>
+		</li>
+	
+	<li class="related_box"  >
+		<a href="tp_-ic2f-2.html" title="『取消』做了一个可以获取 逗比根据地 最新镜像域名的网站，需要的人请收藏备用" target="_blank">
+		<img src="_a2jiq2t.png?src=https://doub.io/wp-content/uploads/logo-2.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『取消』做了一个可以获取 逗比根据地 最新镜像域名的网站，需要的人请收藏备用" /><br><span class="r_title">『取消』做了一个可以获取 逗比根据地 最新镜像域名的网站，需要的人请收藏备用</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a target="_blank" href="wkcjzpyd.html">没教程写我要死了（滑稽），有想要让我写的教程请在这里告诉我！</a></li><li><i class="fa fa-minus"></i><a target="_blank" href="3--didfb.html">关于本站广告的一些说明</a></li><li><i class="fa fa-minus"></i><a target="_blank" href="wkcjzpyd-2.html">关于目前 GFW(墙) 的封锁方式<strong>TCP封锁(阻断)</strong>猜想</a></li><li><i class="fa fa-minus"></i><a target="_blank" href="tp_-ic2f-2.html">『取消』做了一个可以获取 逗比根据地 最新镜像域名的网站，需要的人请收藏备用</a></li><li><i class="fa fa-minus"></i><a target="_blank" href="q7gcd25g-3.html">关于最近(01月24日后) GFW 大规模封禁 代理服务器IP 的一些猜测</a></li><li><i class="fa fa-minus"></i><a target="_blank" href="mbofzp9h.html">关于 1月6日~1月9日 期间网站无法访问的原因说明</a></li><li><i class="fa fa-minus"></i><a target="_blank" href="jgjhicaj-2.html">10月09日下午，代理IP(SS/SSR/V2ray等) 大规模被GFW封锁</a></li><li><i class="fa fa-minus"></i><a target="_blank" href="9n7kdq_k.html">逗比根据地 域名更换为 doub.io ，同时说明一下以后的域名情况</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='1460' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (31)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-12296"><div class="c-avatar"><div class="c-main" id="div-comment-12296">Pure DNS就是因为深受此文的启发才搭建的，前来膜拜一番！
+还有就是追梦人博客希望能加贵站一个友链！！！<div class="c-meta"><span class="c-author"><a href='https://dream.ren/' rel='external nofollow' class='url'>Dreamer</a></span>2017-04-01 18:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=12296#respond' onclick='return addComment.moveForm( "div-comment-12296", "12296", "respond", "1460" )' aria-label='回复给Dreamer'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-11397"><div class="c-avatar"><div class="c-main" id="div-comment-11397">好尴尬，我的ss站.com跟.site域名都被DNS污染了 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_cry.gif" alt=":cry:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">Awelling</span>2017-03-10 18:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=11397#respond' onclick='return addComment.moveForm( "div-comment-11397", "11397", "respond", "1460" )' aria-label='回复给Awelling'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-10512"><div class="c-avatar"><div class="c-main" id="div-comment-10512">请问可否了解Pcap_DNSProxy这个项目，我用着挺好<div class="c-meta"><span class="c-author">warter</span>2017-02-10 14:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=10512#respond' onclick='return addComment.moveForm( "div-comment-10512", "10512", "respond", "1460" )' aria-label='回复给warter'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-9769"><div class="c-avatar"><div class="c-main" id="div-comment-9769">http://www.xsico.cn/dnshttp/
+这个没注明出处。<div class="c-meta"><span class="c-author">dorglsn</span>2017-01-09 22:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=9769#respond' onclick='return addComment.moveForm( "div-comment-9769", "9769", "respond", "1460" )' aria-label='回复给dorglsn'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-9772"><div class="c-avatar"><div class="c-main" id="div-comment-9772">转载我文章不注明源链接的网站多的是，多到我已经懒得去通知了，既然他一开始就没有注明源链接，那么即使我通知了，也是没用的，好点的不理我或者删评论，恶劣点的就是强词夺理张口就骂(那些转载我文章我让他注明源链接，不注明就算了，还骂我，被骂了几次，我就看透了)。<br />
+转载文章不注明源链接的人本来就是没有素质的人，所以我也不需要跟他们讲道理。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-01-09 22:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=9772#respond' onclick='return addComment.moveForm( "div-comment-9772", "9772", "respond", "1460" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-9777"><div class="c-avatar"><div class="c-main" id="div-comment-9777">是啊，我评论说没注明出处，结果被秒删。他的博客有个XsicoDNS，可以科学上网。我谷歌一下服务器的ip，发现就是Udns的，估计也是他搬运Udns的吧。像Udns这样的科学上网的DNS，速度也不错，有什么缺点呢？是容易被封杀么？是维护难度大么？<div class="c-meta"><span class="c-author">dorglsn</span>2017-01-10 09:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=9777#respond' onclick='return addComment.moveForm( "div-comment-9777", "9777", "respond", "1460" )' aria-label='回复给dorglsn'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-4" id="comment-9778"><div class="c-avatar"><div class="c-main" id="div-comment-9778">打脸了。刚发现XsicoDNS就是原Udns，不是搬运的，而是Udns更名了。。。<div class="c-meta"><span class="c-author">dorglsn</span>2017-01-10 09:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=9778#respond' onclick='return addComment.moveForm( "div-comment-9778", "9778", "respond", "1460" )' aria-label='回复给dorglsn'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-9781"><div class="c-avatar"><div class="c-main" id="div-comment-9781"><strong>首先</strong>，做DNS服务器必须要是国内服务器，否则你放到国外，你访问DNS还是要经过墙，而DNS是明文UDP传输的，会被墙检测到并伪造污染返回错误的IP给你，所以必须国内的服务器。而国内的完全相对国外昂贵很多，这个就是成本问题。<br />
+<strong>二是</strong>，科学上网的DNS，我知道的就是DNS服务器+SNI Proxy做出来的，技术难度不大，但是如果DNS用的人多的话，还是有几率把搭建SNI Proxy的服务器IP封掉的。<br />
+SNI Proxy就是一个简洁的反代工具，配置后，你本地hosts设置<code>  1.1.1.1 google.com </code>(1.1.1.1是搭建SNI Proxy的服务器IP)这样，你就直接访问 SNI Proxy服务器了，而SNI Proxy会接受你的流量并转发给<code> goolge.com </code>然后又会把谷歌返回来的数据发给你。<br />
+<strong>所以</strong>，就是这种简单的原理，hosts可以这样做，但是DNS更方便。<br />
+<strong>还有</strong>，做科学上网的DNS，被封杀没什么事，但是搞不好会出现"人身安全"<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-01-10 11:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=9781#respond' onclick='return addComment.moveForm( "div-comment-9781", "9781", "respond", "1460" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-4" id="comment-9883"><div class="c-avatar"><div class="c-main" id="div-comment-9883">膜拜一下，确实不错，我要在你的博客上充电。<div class="c-meta"><span class="c-author"><a href='http://54lsj.net/' rel='external nofollow' class='url'>wangbuer</a></span>2017-01-13 13:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=9883#respond' onclick='return addComment.moveForm( "div-comment-9883", "9883", "respond", "1460" )' aria-label='回复给wangbuer'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-9757"><div class="c-avatar"><div class="c-main" id="div-comment-9757">其实我更愿意相信LZ是曲线救国，多的就不说了<div class="c-meta"><span class="c-author"><a href='http://dou-bi.co/' rel='external nofollow' class='url'>泡泡</a></span>2017-01-09 17:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=9757#respond' onclick='return addComment.moveForm( "div-comment-9757", "9757", "respond", "1460" )' aria-label='回复给泡泡'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-9761"><div class="c-avatar"><div class="c-main" id="div-comment-9761">没有那么伟大，我只是感觉好玩，玩一玩而已，玩了快两年了，反而不舍得了，更高层次的我就不考虑了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-01-09 18:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=9761#respond' onclick='return addComment.moveForm( "div-comment-9761", "9761", "respond", "1460" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-9676"><div class="c-avatar"><div class="c-main" id="div-comment-9676">很欣赏你，才会给你写这么长的留言，不过你很让我失望，罢了，天朝教育，能生产出阁下，已经是个异数了。<div class="c-meta"><span class="c-author">天朝</span>2017-01-07 13:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=9676#respond' onclick='return addComment.moveForm( "div-comment-9676", "9676", "respond", "1460" )' aria-label='回复给天朝'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-9679"><div class="c-avatar"><div class="c-main" id="div-comment-9679">不知道什么叫做评论审核？我一会不在，你就跟个小丑一样的跳来跳去。<br />
+我做网站仅是业余兴趣，而不是给你们提供一个讨论国家评论国家的平台！<br />
+我的网站是帮助大家科学上网的，而不是让大家出去后讨论国家的。这些事情你在哪里讨论都可以，但是在我的网站，那就是我说的算，有本事你自己建站自己讨论去！<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-01-07 14:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=9679#respond' onclick='return addComment.moveForm( "div-comment-9679", "9679", "respond", "1460" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-2" id="comment-10145"><div class="c-avatar"><div class="c-main" id="div-comment-10145">“天朝教育”
+呵呵
+另，墙内确实不是讨论中国政治的好地方<div class="c-meta"><span class="c-author">Yongmeng</span>2017-01-26 13:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=10145#respond' onclick='return addComment.moveForm( "div-comment-10145", "10145", "respond", "1460" )' aria-label='回复给Yongmeng'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-8807"><div class="c-avatar"><div class="c-main" id="div-comment-8807">network.proxy.socks_remote_dns &lt;-- only if you use sock(5) proxy 写点汉字吧，博主外语很捉急<div class="c-meta"><span class="c-author">no</span>2016-11-27 09:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=8807#respond' onclick='return addComment.moveForm( "div-comment-8807", "8807", "respond", "1460" )' aria-label='回复给no'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-8813"><div class="c-avatar"><div class="c-main" id="div-comment-8813">我不是学习网络和计算机的，所以具体原理我不懂。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-11-27 13:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=8813#respond' onclick='return addComment.moveForm( "div-comment-8813", "8813", "respond", "1460" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-8216"><div class="c-avatar"><div class="c-main" id="div-comment-8216">我想问下站长WordPress如何防止在域名后面加/?author=2泄露用户名<div class="c-meta"><span class="c-author">宅の物语</span>2016-09-22 13:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=8216#respond' onclick='return addComment.moveForm( "div-comment-8216", "8216", "respond", "1460" )' aria-label='回复给宅の物语'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-8210"><div class="c-avatar"><div class="c-main" id="div-comment-8210">太厉害了，随便不是很懂！<div class="c-meta"><span class="c-author">Selene</span>2016-09-21 13:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=8210#respond' onclick='return addComment.moveForm( "div-comment-8210", "8210", "respond", "1460" )' aria-label='回复给Selene'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-8177"><div class="c-avatar"><div class="c-main" id="div-comment-8177">请问，你用的哪里的服务器？ 能推荐一下服务商吗？ 为什么你的网站和国内区别也不是很大？<div class="c-meta"><span class="c-author"><a href='http://www.zhulou.net/' rel='external nofollow' class='url'>筑楼</a></span>2016-09-16 21:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=8177#respond' onclick='return addComment.moveForm( "div-comment-8177", "8177", "respond", "1460" )' aria-label='回复给筑楼'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-8179"><div class="c-avatar"><div class="c-main" id="div-comment-8179">我网站有介绍，ramnode美国洛杉矶的，速度一般凑合着用。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-09-17 00:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=8179#respond' onclick='return addComment.moveForm( "div-comment-8179", "8179", "respond", "1460" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-8174"><div class="c-avatar"><div class="c-main" id="div-comment-8174">博主用的startssl有隐患啊<div class="c-meta"><span class="c-author"><a href='http://32mb.space/' rel='external nofollow' class='url'>Jrohy</a></span>2016-09-16 14:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=8174#respond' onclick='return addComment.moveForm( "div-comment-8174", "8174", "respond", "1460" )' aria-label='回复给Jrohy'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-8157"><div class="c-avatar"><div class="c-main" id="div-comment-8157">站长的网站被firefox提示使用了不安全的证书。。。
+```Strict-Transport-Security：该网站的连接不可信，因此指定的头被忽略```<div class="c-meta"><span class="c-author">Aix</span>2016-09-15 11:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=8157#respond' onclick='return addComment.moveForm( "div-comment-8157", "8157", "respond", "1460" )' aria-label='回复给Aix'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-8149"><div class="c-avatar"><div class="c-main" id="div-comment-8149">盗版网站，儿童色情网站屏蔽无可厚非。屏蔽“比较自由“的社交，视频网站目的就其心可诛了。<div class="c-meta"><span class="c-author">ddddd</span>2016-09-14 20:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=8149#respond' onclick='return addComment.moveForm( "div-comment-8149", "8149", "respond", "1460" )' aria-label='回复给ddddd'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-8151"><div class="c-avatar"><div class="c-main" id="div-comment-8151">这种事情自己知道就行了，讨论起来网站就会被盯上和谐的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-09-15 01:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=8151#respond' onclick='return addComment.moveForm( "div-comment-8151", "8151", "respond", "1460" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-8187"><div class="c-avatar"><div class="c-main" id="div-comment-8187">一部分是保护国内互联网产业的发展 一方面为了国家安稳考虑 现在国内一大帮弱智和脑残 真开放了的话 全世界的知名论坛
+网站都是喷子的天下 丢的是中国的脸 等理性的一代发展起来之后可能会开放【现在是喷子的天下 哪个地方都能看到喷子】 现在网上环境太乱 不可能开放的<div class="c-meta"><span class="c-author">1111</span>2016-09-18 02:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=8187#respond' onclick='return addComment.moveForm( "div-comment-8187", "8187", "respond", "1460" )' aria-label='回复给1111'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-16568"><div class="c-avatar"><div class="c-main" id="div-comment-16568">强烈反对<div class="c-meta"><span class="c-author"><a href='http://xn--r6j/' rel='external nofollow' class='url'>。更</a></span>2017-08-06 02:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=16568#respond' onclick='return addComment.moveForm( "div-comment-16568", "16568", "respond", "1460" )' aria-label='回复给。更'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-8122"><div class="c-avatar"><div class="c-main" id="div-comment-8122">虽然写的很牛逼  但是没看懂<div class="c-meta"><span class="c-author">twmgod</span>2016-09-13 09:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=8122#respond' onclick='return addComment.moveForm( "div-comment-8122", "8122", "respond", "1460" )' aria-label='回复给twmgod'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-8101"><div class="c-avatar"><div class="c-main" id="div-comment-8101">ipv6普及会怎么样<div class="c-meta"><span class="c-author">dk</span>2016-09-11 16:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=8101#respond' onclick='return addComment.moveForm( "div-comment-8101", "8101", "respond", "1460" )' aria-label='回复给dk'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-8108"><div class="c-avatar"><div class="c-main" id="div-comment-8108">ipv6貌似已经也攻陷了吧？<div class="c-meta"><span class="c-author">hehe</span>2016-09-11 22:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=8108#respond' onclick='return addComment.moveForm( "div-comment-8108", "8108", "respond", "1460" )' aria-label='回复给hehe'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-8111"><div class="c-avatar"><div class="c-main" id="div-comment-8111">前几个月，IPv6 DNS污染已经成型，如果开始大规模普及IPv6，那既说明了 IPv6方面的墙也跟上了步伐。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-09-11 23:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=8111#respond' onclick='return addComment.moveForm( "div-comment-8111", "8111", "respond", "1460" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-8100"><div class="c-avatar"><div class="c-main" id="div-comment-8100">沙发来一波<div class="c-meta"><span class="c-author">泷泽萝拉</span>2016-09-11 15:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/sxsx-08/?replytocom=8100#respond' onclick='return addComment.moveForm( "div-comment-8100", "8100", "respond", "1460" )' aria-label='回复给泷泽萝拉'>回复</a></div></div></div></li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+			</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://kanfanba.com/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script type="text/javascript">
+var image_url=new Array()
+image_url=["https://www.vultr.com/","vh8576m0.html","https://virmach.com/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="qka0148-container qka0148-1 qka0148-hide">
+    <div class="qka0148-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="qka0148"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

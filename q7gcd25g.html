@@ -1,0 +1,1029 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>Linux TCP加速工具 —— LotServer(锐速母公司) 一键安装脚本 | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1958] -->
+<meta name="description"  content="锐速(ServerSpeeder)可以说是LotServer的马甲，是针对民用的，而LotServer则是针对企业用户的，锐速现在基本上已经关了，而这个LotServer还在持续运营。 声明：本锐速(lotserver)仅为个人测试程序及提速效果使用，如有商业用途请购买正版！ Only for" />
+
+<meta name="keywords"  content="lotserver,vps,脚本,锐速" />
+
+<link rel="canonical" href="q7gcd25g.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='『原创』Debian/Ubuntu TCP拥塞控制技术 ——TCP-BBR 一键安装脚本' href='3--didfb-2.html' />
+<link rel='next' title='多线程 HTTP/BT/磁力链接 下载工具 —— Aria2 (Windows版教程)' href='6t3mypbm-2.html' />
+<link rel='shortlink' href='https://doub.io/?p=1733' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fwlzy-21%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fwlzy-21%2F&amp;format=xml" />
+<style>
+.nk1baff{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.nk1baff-hide{
+    display: none;
+}
+.nk1baff-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.nk1baff-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.nk1baff-2 .nk1baff-body,.nk1baff-3 .nk1baff-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.nk1baff-2 .close-btn,.nk1baff-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.nk1baff-3 .nk1baff-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.nk1baff').html(kill_adBlock_message);
+            jQuery('.nk1baff-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.nk1baff-container').fadeOut('nk1baff-hide');
+        });
+    });
+    var kill_adBlock_status = 1;
+    var kill_adBlock_message = '逗比很伤心😥，您的<strong>广告拦截扩展</strong>屏蔽了我们的小广告，网站的发展离不开大家的支持，请先看过<a target=\"_blank\" style=\"color: #ffe500;\" href=\"3--didfb.html\">这个文章</a>后，再确定是否要将我们的域名添加到<strong>拦截白名单</strong>中，谢谢！😘👌';
+    var kill_adBlock_message_delay = 0;
+    var kill_adBlock_close_btn = 1;
+    var kill_adBlock_close_automatically = 0;
+    var kill_adBlock_close_automatically_delay = 0;
+    var kill_adBlock_message_type = 1;
+    function adBlockDetected() {
+      show_message();
+    }
+    
+    if(typeof killAdBlock === 'undefined') {
+        adBlockDetected();
+    } else {
+        killAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+    }
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="lotserver, VPS, 脚本, 锐速, Shell脚本, 网络资源">
+<meta name="description" content="锐速(ServerSpeeder)可以说是LotServer的马甲，是针对民用的，而LotServer则是针对企业用户的，锐速现在基本上已经关了，而这个LotServer还在持续运营。    声明：本锐速(lotserver)仅为个人测试程序及提速效果使用，如有商业用途请购买正版！ Only for Linux.  从根本原因上解决锐速断流问题，断流的根本原因是没有完整破解验证机制。   	支持自动检测公网网卡，多个网卡也能区分。  	">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-1733 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li class="current-post-ancestor"><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="./softs.wtf/"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Atoyodadoubi.github.io'; return false;" action="https://toyodadoubi.github.io/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 逗比云还是逃不过被墙的命运，既然如此那以后逗比云也就一直用被墙的旧域名 <strong><a target="_blank" href="./softs.wtf/">[softs.wtf]</a></strong> 算了。
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://www.gigsgigscloud.com/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="q7gcd25g.html">Linux TCP加速工具 —— LotServer(锐速母公司) 一键安装脚本</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="1jg9z3mv.html"> Shell脚本</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 2年前 (2016-12-10)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 30721℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="q7gcd25g.html#comments">68评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="q7gcd25g.html#其他问题" title="其他问题"><span>其他问题</span></a></li><li class="content-index-level-1"><a class="hide" onclick="return false;" href="q7gcd25g.html#" title=""><span></span></a><ul class="children"><li class="content-index-level-2"><a href="q7gcd25g.html#安装LotServer" title="安装LotServer"><span>安装LotServer</span></a></li><li class="content-index-level-2"><a href="q7gcd25g.html#卸载LotServer" title="卸载LotServer"><span>卸载LotServer</span></a></li><li class="content-index-level-2"><a href="q7gcd25g.html#使用说明" title="使用说明"><span>使用说明</span></a></li><li class="content-index-level-2"><a href="q7gcd25g.html#提示错误：Kernel not be matched!You should change kernel manually, and try again!" title="提示错误：Kernel not be matched!You should change kernel manually, and try again!"><span>提示错误：Kernel not be matched!You should change kernel manually, and try again!</span></a></li><li class="content-index-level-2"><a href="q7gcd25g.html#提示错误：I can not find the server pubilc Ethernet!" title="提示错误：I can not find the server pubilc Ethernet!"><span>提示错误：I can not find the server pubilc Ethernet!</span></a></li></ul></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2017年10月17日 22:58</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>锐速(ServerSpeeder)可以说是LotServer的马甲，是针对民用的，而LotServer则是针对企业用户的，锐速现在基本上已经关了，而这个LotServer还在持续运营。</p>
+<hr />
+<pre><strong>声明：</strong>本锐速(lotserver)仅为个人测试程序及提速效果使用，如有商业用途请购买正版！</pre>
+<p><strong>Only for Linux.</strong></p>
+<p><strong>从根本原因上解决锐速断流问题，断流的根本原因是没有完整破解验证机制。</strong></p>
+<ol>
+<li>支持自动检测公网网卡，多个网卡也能区分。</li>
+<li>支持自动适配内核 (需锐速支持)。</li>
+<li>添加询问是否开启accppp功能 (实测并开启后没有效果)。</li>
+<li>默认设置为G口宽带 (听说设置大点可以提高速度)。</li>
+<li>支持一键完全卸载 (此脚本安装的无残留)。</li>
+<li><strong>所需文件均来自 <a href="https://github.com/0oVicero0/serverSpeeder_Install" target="_blank" rel="noopener">GiuHub</a>，不放心可自行查阅 (完全公开)。</strong></li>
+<li>不支持自动更换内核，请自行更换(网上教程非常多)。</li>
+<li><span style="color: #993300;"><strong>不支持OpenVZ，不需要尝试，会告诉你找不到网卡。</strong></span></li>
+</ol>
+<pre>注意：OVZ虚拟化的VPS并不支持锐速加速器的安装，KVM和XEN应该基本都可以。</pre>
+<p><strong>作者博客：<a href="https://moeclub.org/2017/03/08/14/" target="_blank" rel="noopener">https://moeclub.org/2017/03/08/14/</a></strong></p>
+<p>安装文件 <strong>appex.zip</strong> 为 LotServer 的，(感谢 LotServer 提供安装文件)。</p>
+<p>使用前请日常<code> apt-get update / yum update </code>，欢迎反馈bug(各种安装错误)。</p>
+<p><strong>使用前建议先查看<a title="" href="https://github.com/0oVicero0/serverSpeeder_kernel/blob/master/serverSpeeder.txt" target="_blank" rel="noopener" data-original-title="">linux支持内核列表</a>，对照一下系统和内核是否可以安装 LotServer！</strong></p>
+<p>服务器使用<code>uname -r</code>命令来查询内核版本，例如返回的是<code>3.2.0-4-amd64</code>，<code>3.2.0-4-amd64</code>就是你的内核版本。</p>
+<blockquote><p>强烈推荐大家使用 <strong>Debian7 x64系统 | 3.2.0-4-amd64内核</strong> ，这个系统和内核无论是锐速、Lotserver还是BBR，除了配置太低的我都没安装失败过！</p></blockquote>
+<h3 id="安装LotServer">安装LotServer</h3>
+<pre class="prettyprint linenums">wget --no-check-certificate -qO /tmp/appex.sh "https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh" &amp;&amp; bash /tmp/appex.sh 'install'</pre>
+<p>安装一开始的时候，会提示：</p>
+<pre class="prettyprint linenums">Press Enter to Continue...
+# 这个是提示你按回车键继续
+</pre>
+<p>如果安装过程中没问题的话，最后会提示：</p>
+<pre class="prettyprint linenums">Accelerate VPN (PPTP,L2TP,etc.)? [n]:
+# 是否加速VPN
+
+Auto load ServerSpeeder on linux start-up? [y]:
+# 是否开机启动
+
+Run ServerSpeeder now? [y]:
+# 是否现在启动锐速
+
+# 全部默认回车即可。
+</pre>
+<p>最后出现这样的提示就说明安装并启动成功：</p>
+<pre class="prettyprint linenums">[Running Status]
+ServerSpeeder is running!
+version              3.11.20.4
+
+[License Information]
+License              6001ADDF578B6C0E (valid on current device)
+MaxSession           unlimited
+MaxTcpAccSession     unlimited
+MaxBandwidth(kbps)   1024000
+ExpireDate           2035-12-31
+....
+# 以下省略....
+</pre>
+<h3 id="卸载LotServer">卸载LotServer</h3>
+<pre class="prettyprint linenums">wget --no-check-certificate -qO /tmp/appex.sh "https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh" &amp;&amp; bash /tmp/appex.sh 'uninstall'
+</pre>
+<h3 id="使用说明">使用说明</h3>
+<pre class="prettyprint linenums">/appex/bin/serverSpeeder.sh start
+# 启动 LotServer
+
+/appex/bin/serverSpeeder.sh stop
+# 停止 LotServer
+
+/appex/bin/serverSpeeder.sh restart
+# 重启 LotServer
+
+<strong>/appex/bin/serverSpeeder.sh status
+# 状态查询</strong>
+
+/appex/bin/serverSpeeder.sh renewLic
+# 更新许可</pre>
+<p><a class="dl" title="" href="https://github.com/0oVicero0/serverSpeeser_Install" target="_blank" rel="nofollow noopener" data-original-title=""><i class="fa fa-external-link"></i>代码托管地址</a></p>
+<p><a class="dl" title="" href="https://github.com/0oVicero0/serverSpeeder_Install/blob/master/lotServer.pdf" target="_blank" rel="nofollow noopener" data-original-title=""><i class="fa fa-external-link"></i>LotServer 完整使用介绍 PDF手册</a></p>
+<p><strong>安装完了，想要自己修改配置最大化加速效果，那么请看：<a title="锐速(ServerSpeeder/LotServer)配置参数简单说明，合理修改配置 提高加速效果" href="0e6gd2jc.html" target="_blank" rel="noopener">锐速(ServerSpeeder/LotServer)配置参数简单说明，合理修改配置 提高加速效果</a></strong></p>
+<p>这个LotServer与锐速(ServerSpeeder)的加速区别并不大，不过91yun的破解版因为破解不完整导致会出现断流等情况，而这个 LotServer 则没有这种问题。</p>
+<h2 id="其他问题">其他问题</h2>
+<h3 id="提示错误：Kernel not be matched!You should change kernel manually, and try again!">提示错误：Kernel not be matched!You should change kernel manually, and try again!</h3>
+<p>出现这个错误，说明你的系统或内核 不满足<a href="https://github.com/0oVicero0/serverSpeeder_kernel/blob/master/serverSpeeder.txt" target="_blank" rel="noopener">LotServer的要求</a>，建议使用 Debian 7 x64 系统，此系统内核大多默认都满足要求。</p>
+<p>更换内核教程可以参考：<a href="8hzuha81.html" target="_blank" rel="noopener">Debian/Ubuntu 内核降级教程 —— 降低(BBR)为支持锐速的内核版本</a></p>
+<h3 id="提示错误：I can not find the server pubilc Ethernet!">提示错误：I can not find the server pubilc Ethernet!</h3>
+<p>出现这个错误，说明你的系统没有安装 ifconfig ，这导致了 脚本无法获取网卡绑定的IP，一般是CentOS 7系统出现这个问题，安装这个工具后重新执行脚本即可。</p>
+<pre class="prettyprint linenums">yum -y install net-tools
+</pre>
+<hr />
+<p><strong>本文转载自：<a href="https://moeclub.org/2017/03/08/14/" target="_blank" rel="noopener">https://moeclub.org/2017/03/08/14/</a>、<a href="http://ylnote.com/723.html" target="_blank" rel="noopener">http://ylnote.com/723.html</a></strong></p>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="q7gcd25g.html">Linux TCP加速工具 —— LotServer(锐速母公司) 一键安装脚本</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="1733" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">37</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="xvyd07yk.html" rel="tag">lotserver</a><a href="tjolx2iu.html" rel="tag">VPS</a><a href="meyy1poe.html" rel="tag">脚本</a><a href="z5xlbkji.html" rel="tag">锐速</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="3--didfb-2.html" rel="prev">『原创』Debian/Ubuntu TCP拥塞控制技术 ——TCP-BBR 一键安装脚本</a></span>
+			<span class="article-nav-next"><a href="6t3mypbm-2.html" rel="next">多线程 HTTP/BT/磁力链接 下载工具 —— Aria2 (Windows版教程)</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="kd691l4o.html" title="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" target="_blank">
+<img src="sp6xrfo1.png?src=https://doub.io/wp-content/uploads/shadowsocks3.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" />	<br><span class="r_title">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="es5fj9se.html" title="『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本" target="_blank">
+<img src="ul1omzk8.png?src=https://doub.io/wp-content/uploads/telegram.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本" />	<br><span class="r_title">『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="aybh4ww5.html" title="『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本" target="_blank">
+<img src="ul1omzk8.png?src=https://doub.io/wp-content/uploads/telegram.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本" />	<br><span class="r_title">『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="xcwybsz2.html" title="『原创』Go语言轻量化 代理工具 —— DAZE 一键安装管理脚本" target="_blank">
+<img src="7irzwvxm.png?src=https://doub.io/wp-content/uploads/daze-01.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Go语言轻量化 代理工具 —— DAZE 一键安装管理脚本" />	<br><span class="r_title">『原创』Go语言轻量化 代理工具 —— DAZE 一键安装管理脚本</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="kd691l4o.html">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</a></li><li><i class="fa fa-minus"></i><a href="es5fj9se.html">『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="aybh4ww5.html">『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="xcwybsz2.html">『原创』Go语言轻量化 代理工具 —— DAZE 一键安装管理脚本</a></li><li><i class="fa fa-minus"></i><a href="5av9kbaz.html">新手购买服务器<strong>必读知识点</strong> —— 少走弯路 少踩坑</a></li><li><i class="fa fa-minus"></i><a href="939koj07-2.html">『原创』Telegram 专用的轻量化代理工具 —— MTProxy 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="8lp6-hyu.html">『买一送一』GigsGigsCloud – 购买 HKBN 香港即送 GIA CN2 美国洛杉矶</a></li><li><i class="fa fa-minus"></i><a href="soatrior.html">通过 WebDAV 将服务器全部或某个文件夹挂载到电脑上当 网络硬盘</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='1733' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (68)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-40347"><div class="c-avatar"><div class="c-main" id="div-comment-40347">大佬，我想问下，在你的SSR一键脚本里有锐速和LotServer两个安装选项，两者的加速效果是否有区别？<div class="c-meta"><span class="c-author">Janna</span>2018-07-19 23:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=40347#respond' onclick='return addComment.moveForm( "div-comment-40347", "40347", "respond", "1733" )' aria-label='回复给Janna'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-40355"><div class="c-avatar"><div class="c-main" id="div-comment-40355">一般情况下没什么区别。这两个软件本质是一样的，不过马甲不一样罢了。另外锐速已经停止更新一两年了吧，LotServer 依然在更新，不过官方更新没用，必须搞破解的该脚本作者(不是我)持续破解才行。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-07-20 11:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=40355#respond' onclick='return addComment.moveForm( "div-comment-40355", "40355", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-39714"><div class="c-avatar"><div class="c-main" id="div-comment-39714">为什么我填写用户名时，输入错误然后退回键不能删除？
+我在putty命令行下是可以的。<div class="c-meta"><span class="c-author">seaspirit</span>2018-07-01 00:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=39714#respond' onclick='return addComment.moveForm( "div-comment-39714", "39714", "respond", "1733" )' aria-label='回复给seaspirit'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-39718"><div class="c-avatar"><div class="c-main" id="div-comment-39718">那就用 Shift+退格键 或 Ctrl+退格键 。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-07-01 09:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=39718#respond' onclick='return addComment.moveForm( "div-comment-39718", "39718", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-29968"><div class="c-avatar"><div class="c-main" id="div-comment-29968">【不行，卡在这里了】
+
+Kernel not be matched!
+You should change kernel manually, and try again!
+
+View the link to get detaits:
+https://raw.githubusercontent.com/0oVicero0/serverSpeeder_kernel/master/serverSpeeder.txt<div class="c-meta"><span class="c-author">8555</span>2018-01-23 01:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=29968#respond' onclick='return addComment.moveForm( "div-comment-29968", "29968", "respond", "1733" )' aria-label='回复给8555'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29972"><div class="c-avatar"><div class="c-main" id="div-comment-29972">你的内核或者系统不支持安装 LotServer 。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-23 11:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=29972#respond' onclick='return addComment.moveForm( "div-comment-29972", "29972", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-30551"><div class="c-avatar"><div class="c-main" id="div-comment-30551">这个怎么办？怎么才可以安装<div class="c-meta"><span class="c-author">8555</span>2018-01-29 09:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=30551#respond' onclick='return addComment.moveForm( "div-comment-30551", "30551", "respond", "1733" )' aria-label='回复给8555'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-30584"><div class="c-avatar"><div class="c-main" id="div-comment-30584">你只能想办法更换你的内核为支持的版本。<a href="https://github.com/0oVicero0/serverSpeeder_kernel/blob/master/serverSpeeder.txt" target="_blank" rel="nofollow">Linux支持内核列表</a>，每个系统版本对应几个内核版本，需要完全一致。<code> uname -r </code>命令可以查看内核名称版本。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-29 15:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=30584#respond' onclick='return addComment.moveForm( "div-comment-30584", "30584", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-5" id="comment-30953"><div class="c-avatar"><div class="c-main" id="div-comment-30953">有教程吗，小白看不懂<div class="c-meta"><span class="c-author">8555</span>2018-02-03 07:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=30953#respond' onclick='return addComment.moveForm( "div-comment-30953", "30953", "respond", "1733" )' aria-label='回复给8555'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-5" id="comment-30954"><div class="c-avatar"><div class="c-main" id="div-comment-30954">Vultr之前用逗比脚本，不知道怎么回事最近不能用了，太奇怪了<div class="c-meta"><span class="c-author">8555</span>2018-02-03 08:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=30954#respond' onclick='return addComment.moveForm( "div-comment-30954", "30954", "respond", "1733" )' aria-label='回复给8555'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-29559"><div class="c-avatar"><div class="c-main" id="div-comment-29559">wget: unable to resolve host address ‘。sh’
+“https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh”: Scheme missing.
+
+老是到这里停止<div class="c-meta"><span class="c-author"><a href='http://www.52api.ml/' rel='external nofollow' class='url'>admin</a></span>2018-01-14 16:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=29559#respond' onclick='return addComment.moveForm( "div-comment-29559", "29559", "respond", "1733" )' aria-label='回复给admin'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-29467"><div class="c-avatar"><div class="c-main" id="div-comment-29467">今天重装的vultr，debian版本7和版本8都没用了，说内核无法匹配。Preparatory work...
+Kernel not be matched! 
+You should change kernel manually, and try again!<div class="c-meta"><span class="c-author">loren</span>2018-01-12 11:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=29467#respond' onclick='return addComment.moveForm( "div-comment-29467", "29467", "respond", "1733" )' aria-label='回复给loren'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-28697"><div class="c-avatar"><div class="c-main" id="div-comment-28697">这个可以和BBR共存吗？<div class="c-meta"><span class="c-author">结动动作</span>2017-12-20 13:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=28697#respond' onclick='return addComment.moveForm( "div-comment-28697", "28697", "respond", "1733" )' aria-label='回复给结动动作'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-28702"><div class="c-avatar"><div class="c-main" id="div-comment-28702">和锐速一样都不支持 4.9以上版本的内核（BBR是集成于4.9以上版本中的一个功能模块），所以无法安装，及时更换4.9以上版本内核前安装了，也会无法启动。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-20 15:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=28702#respond' onclick='return addComment.moveForm( "div-comment-28702", "28702", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-23334"><div class="c-avatar"><div class="c-main" id="div-comment-23334">提示/tmp/appex.sh: Line 121:unzip: command not found 要安装一下unzip软件，装了好多次没成功，终于发现问题了<div class="c-meta"><span class="c-author">Frost</span>2017-11-25 16:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=23334#respond' onclick='return addComment.moveForm( "div-comment-23334", "23334", "respond", "1733" )' aria-label='回复给Frost'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-20551"><div class="c-avatar"><div class="c-main" id="div-comment-20551">我系统是Debian 7 x64,查了下VPS虚拟化技术是kvm,但是安装LotServer或锐速的时候还是提示我不支持内核,Kernel not be matched!You should change kernel manually, and try again!请问怎么处理才能安装?<div class="c-meta"><span class="c-author">setuanan</span>2017-10-17 21:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=20551#respond' onclick='return addComment.moveForm( "div-comment-20551", "20551", "respond", "1733" )' aria-label='回复给setuanan'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-20554"><div class="c-avatar"><div class="c-main" id="div-comment-20554">安装 锐速/LotServer 需要系统和内核都满足要求才行，不满足要求就会提示这个错误。<br />
+更换内核方法可以看这个教程：<a href="8hzuha81.html" target="_blank">https://doub.io/linux-jc6/</a><br />
+系统/内核要求看这个：<a href="https://github.com/0oVicero0/serverSpeeder_kernel/blob/master/serverSpeeder.txt" target="_blank" rel="nofollow">https://github.com/0oVicero0/serverSpeeder_kernel/blob/master/serverSpeeder.txt</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-17 22:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=20554#respond' onclick='return addComment.moveForm( "div-comment-20554", "20554", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-20402"><div class="c-avatar"><div class="c-main" id="div-comment-20402">我想问下，BBR和这个一起共存开启可以吗<div class="c-meta"><span class="c-author">765</span>2017-10-16 00:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=20402#respond' onclick='return addComment.moveForm( "div-comment-20402", "20402", "respond", "1733" )' aria-label='回复给765'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-20427"><div class="c-avatar"><div class="c-main" id="div-comment-20427">BBR是集成于4.9版本以后内核中的一个功能，所以安装BBR=更换4.9以后版本的内核然后直接开启BBR，而锐速和LotServer都需要指定系统对应指定内核才能安装，并且不支持4.9以后的内核，所以不能共存，即使你先安装锐速或LotServer再去更换内核开启BBR，这时候想再去开启锐速或LotServer也会因为内核问题提示错误。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-16 11:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=20427#respond' onclick='return addComment.moveForm( "div-comment-20427", "20427", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-20193"><div class="c-avatar"><div class="c-main" id="div-comment-20193">...Failed to write configuration: /proc/net/appex/trackRandomLoss 运行失败<div class="c-meta"><span class="c-author">liuXB</span>2017-10-13 15:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=20193#respond' onclick='return addComment.moveForm( "div-comment-20193", "20193", "respond", "1733" )' aria-label='回复给liuXB'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-19932"><div class="c-avatar"><div class="c-main" id="div-comment-19932">请教：已经安装了Lotserver，还需要安装BBR么？我看其它网站教程把两个一块装了，这两个之间会冲突么？<div class="c-meta"><span class="c-author">magicku</span>2017-10-11 12:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=19932#respond' onclick='return addComment.moveForm( "div-comment-19932", "19932", "respond", "1733" )' aria-label='回复给magicku'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-19943"><div class="c-avatar"><div class="c-main" id="div-comment-19943">BBR是集成与4.9以后版本的内核中的功能，所以要使用BBR需要更换内核为4.9以后版本的，而锐速和LotServer都需要特定系统和内核版本才能安装，而不支持4.9以后版本的内核，所以不能共存。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-11 13:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=19943#respond' onclick='return addComment.moveForm( "div-comment-19943", "19943", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-19024"><div class="c-avatar"><div class="c-main" id="div-comment-19024">Preparatory work...
+I can not find the server pubilc Ethernet! 
+这是什么问题？<div class="c-meta"><span class="c-author">lrli</span>2017-09-26 10:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=19024#respond' onclick='return addComment.moveForm( "div-comment-19024", "19024", "respond", "1733" )' aria-label='回复给lrli'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-19036"><div class="c-avatar"><div class="c-main" id="div-comment-19036">你的系统估计是 CentOS7，而这个系统没有 ifconfig 命令，这导致脚本无法获取网卡绑定的IP，所以你需要安装这个工具：yum -y install net-tools<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-26 15:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=19036#respond' onclick='return addComment.moveForm( "div-comment-19036", "19036", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-18578"><div class="c-avatar"><div class="c-main" id="div-comment-18578"><a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="473528283307313734">[email&#160;protected]</a>:~# wget --no-check-certificate -qO /tmp/appex.sh "https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh" &amp;&amp; bash /tmp/appex.sh 'install'
+                      Local Time :   2017-09-17 [16:44:49]       
+            ======================================================
+            |                    serverSpeeder                   |
+            |                                         for Linux  |
+            |----------------------------------------------------|
+            |                                       -- By .Vicer |
+            ======================================================
+
+Preparatory work...
+Press Enter to Continue...
+Archive:  /tmp/appex.zip
+   creating: /tmp/appex/apxfiles/
+   creating: /tmp/appex/apxfiles/bin/
+  inflating: /tmp/appex/apxfiles/bin/renewLic.sh  
+  inflating: /tmp/appex/apxfiles/bin/serverSpeeder.sh  
+  inflating: /tmp/appex/apxfiles/bin/setConfig.sh  
+  inflating: /tmp/appex/apxfiles/bin/showConfig.sh  
+  inflating: /tmp/appex/apxfiles/bin/update.sh  
+  inflating: /tmp/appex/apxfiles/bin/utils.sh  
+   creating: /tmp/appex/apxfiles/etc/
+  inflating: /tmp/appex/apxfiles/etc/config  
+  inflating: /tmp/appex/install.sh   
+Lic generate success! 
+Installation done!
+
+----
+You are about to be asked to enter information that will be used by ServerSpeeder,
+there are several fields and you can leave them blank,
+for all fields there will be a default value.
+----
+Accelerate VPN (PPTP,L2TP,etc.)? [n]:n
+Auto load ServerSpeeder on linux start-up? [y]:y
+Run ServerSpeeder now? [y]:y
+(license 465B506E144C5268539ea1af)
+cat: /proc/net/appex/cmd: Cannot allocate memory
+cat: /proc/net/appex/cmd: Cannot allocate memory
+.cat: /proc/net/appex/cmd: Cannot allocate memory
+cat: /proc/net/appex/cmd: Cannot allocate memory
+.cat: /proc/net/appex/cmd: Cannot allocate memory
+cat: /proc/net/appex/cmd: Cannot allocate memory
+.Failed to write configuration: /proc/net/appex/cmd:maxTxEffectiveMS
+[Running Status]
+ServerSpeeder is NOT running!
+version              3.11.20.10
+
+[License Information]
+License              465B506E144C5268 (valid on current device)
+MaxSession           unlimited
+MaxTcpAccSession     unlimited
+MaxBandwidth(kbps)   1024000
+ExpireDate           2035-12-31
+<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="a8dac7c7dce8ded8db">[email&#160;protected]</a>:~# /appex/bin/serverSpeeder.sh start
+(license 465B506E144C5268539ea1af)
+......Failed to write configuration: /proc/net/appex/advAccEnable
+
+不能写入参数，请求判断出错原因。<div class="c-meta"><span class="c-author">青水近蓝</span>2017-09-17 16:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=18578#respond' onclick='return addComment.moveForm( "div-comment-18578", "18578", "respond", "1733" )' aria-label='回复给青水近蓝'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-18580"><div class="c-avatar"><div class="c-main" id="div-comment-18580"><pre class="prettyprint linenums" >cat: /proc/net/appex/cmd: Cannot allocate memory
+内存不足。
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-17 17:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=18580#respond' onclick='return addComment.moveForm( "div-comment-18580", "18580", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-17458"><div class="c-avatar"><div class="c-main" id="div-comment-17458">安装提示Preparatory work...
+I can not find the server pubilc Ethernet!<div class="c-meta"><span class="c-author">snuffles</span>2017-08-23 11:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=17458#respond' onclick='return addComment.moveForm( "div-comment-17458", "17458", "respond", "1733" )' aria-label='回复给snuffles'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-17605"><div class="c-avatar"><div class="c-main" id="div-comment-17605">我也是...还有照着该站教程装SSR服务端过程中很多命令都是command not found<div class="c-meta"><span class="c-author">zzz</span>2017-08-26 01:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=17605#respond' onclick='return addComment.moveForm( "div-comment-17605", "17605", "respond", "1733" )' aria-label='回复给zzz'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-3" id="comment-17606"><div class="c-avatar"><div class="c-main" id="div-comment-17606">command not found 代表命令不存在，要么是 命令对应的软件没安装(或者安装了但是失败了)，要么就是 你看错系统教程，不同系统的教程命令会有区别，比如 centos和debian、ubuntu的一些命令不一样。<br />
+而往往新手执行命令都是，按着顺序一遍下来，不管是否报错（或者根本看不懂，也懒得翻译），一遍运行下来因为一些步骤错误导致后面全部错误，从而最后失败。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-26 01:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=17606#respond' onclick='return addComment.moveForm( "div-comment-17606", "17606", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-17337"><div class="c-avatar"><div class="c-main" id="div-comment-17337">实测，virmach推荐ubuntu 12.04，不会出任何问题。<div class="c-meta"><span class="c-author">李子</span>2017-08-20 11:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=17337#respond' onclick='return addComment.moveForm( "div-comment-17337", "17337", "respond", "1733" )' aria-label='回复给李子'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-17156"><div class="c-avatar"><div class="c-main" id="div-comment-17156">cac效果极其明显！晚9点半速度可达2.5MB。2160p不是梦<div class="c-meta"><span class="c-author">just过客</span>2017-08-15 21:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=17156#respond' onclick='return addComment.moveForm( "div-comment-17156", "17156", "respond", "1733" )' aria-label='回复给just过客'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-14841"><div class="c-avatar"><div class="c-main" id="div-comment-14841">请问这个可以加速文件下载速度吗？ <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_rolleyes.gif" alt=":roll:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">WorldLink</span>2017-06-16 10:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=14841#respond' onclick='return addComment.moveForm( "div-comment-14841", "14841", "respond", "1733" )' aria-label='回复给WorldLink'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-14425"><div class="c-avatar"><div class="c-main" id="div-comment-14425">2.6.32-696.1.1.el6.x86_64内核已经支持  脚本无法安装<div class="c-meta"><span class="c-author">MATRIX</span>2017-06-02 22:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=14425#respond' onclick='return addComment.moveForm( "div-comment-14425", "14425", "respond", "1733" )' aria-label='回复给MATRIX'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-14133"><div class="c-avatar"><div class="c-main" id="div-comment-14133">service serverSpeeder stats
+实时显示每个加速引擎的连接数、流量，以及所有引擎的总的连接数和流量
+应该还有这个命令<div class="c-meta"><span class="c-author">siam</span>2017-05-26 13:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=14133#respond' onclick='return addComment.moveForm( "div-comment-14133", "14133", "respond", "1733" )' aria-label='回复给siam'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-13868"><div class="c-avatar"><div class="c-main" id="div-comment-13868">博主这个是不是收费的<div class="c-meta"><span class="c-author">小不点</span>2017-05-16 19:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=13868#respond' onclick='return addComment.moveForm( "div-comment-13868", "13868", "respond", "1733" )' aria-label='回复给小不点'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-13869"><div class="c-avatar"><div class="c-main" id="div-comment-13869">不是，这个是免费的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-16 20:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=13869#respond' onclick='return addComment.moveForm( "div-comment-13869", "13869", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-13569"><div class="c-avatar"><div class="c-main" id="div-comment-13569">1G带宽下，最大速度200Mbps流出，无配置改动<div class="c-meta"><span class="c-author">喵？？</span>2017-05-08 16:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=13569#respond' onclick='return addComment.moveForm( "div-comment-13569", "13569", "respond", "1733" )' aria-label='回复给喵？？'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-13180"><div class="c-avatar"><div class="c-main" id="div-comment-13180">这个一键安装支持开机自启动吗<div class="c-meta"><span class="c-author">路人甲</span>2017-04-27 13:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=13180#respond' onclick='return addComment.moveForm( "div-comment-13180", "13180", "respond", "1733" )' aria-label='回复给路人甲'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-13191"><div class="c-avatar"><div class="c-main" id="div-comment-13191">支持。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-27 22:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=13191#respond' onclick='return addComment.moveForm( "div-comment-13191", "13191", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-12690"><div class="c-avatar"><div class="c-main" id="div-comment-12690">安装正常，但是重启、卸载等命令没用了，输入就提示：-bash: /appex/bin/lotServer.sh: No such file or directory<div class="c-meta"><span class="c-author">差一点就干掉了</span>2017-04-11 22:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=12690#respond' onclick='return addComment.moveForm( "div-comment-12690", "12690", "respond", "1733" )' aria-label='回复给差一点就干掉了'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-13133"><div class="c-avatar"><div class="c-main" id="div-comment-13133">已经修复。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-25 22:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=13133#respond' onclick='return addComment.moveForm( "div-comment-13133", "13133", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-11512"><div class="c-avatar"><div class="c-main" id="div-comment-11512">这个版本有没有20M加速限制的<div class="c-meta"><span class="c-author"><a href='http://minami.sindery.me/' rel='external nofollow' class='url'>南琴浪</a></span>2017-03-12 19:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=11512#respond' onclick='return addComment.moveForm( "div-comment-11512", "11512", "respond", "1733" )' aria-label='回复给南琴浪'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-13134"><div class="c-avatar"><div class="c-main" id="div-comment-13134">无限加速宽带。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-25 22:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=13134#respond' onclick='return addComment.moveForm( "div-comment-13134", "13134", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-11336"><div class="c-avatar"><div class="c-main" id="div-comment-11336">又发现一个实测结论
+开启tcponly就会没网 虽说是开启后锐速就会处理非tcp包<div class="c-meta"><span class="c-author">南琴浪</span>2017-03-09 09:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=11336#respond' onclick='return addComment.moveForm( "div-comment-11336", "11336", "respond", "1733" )' aria-label='回复给南琴浪'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-11329"><div class="c-avatar"><div class="c-main" id="div-comment-11329">先感谢各位开发者(比如appex大佬
+锐速自定义参数里有个选项是说是否开启拥塞控制 如果填“1 1”的话就是开启控制模式 会减少丢包但会降低加速
+我实测后发现是然并用 我是联通走c3 丢包大概稳定100ping丢一个两个<div class="c-meta"><span class="c-author"><a href='http://minami.sindery.me/' rel='external nofollow' class='url'>南琴浪</a></span>2017-03-08 23:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=11329#respond' onclick='return addComment.moveForm( "div-comment-11329", "11329", "respond", "1733" )' aria-label='回复给南琴浪'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-10749"><div class="c-avatar"><div class="c-main" id="div-comment-10749">话说这个安装后重启服务器必须手动开启，请问如何添加到启动列表里自动启动？<div class="c-meta"><span class="c-author">Sun</span>2017-02-17 14:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=10749#respond' onclick='return addComment.moveForm( "div-comment-10749", "10749", "respond", "1733" )' aria-label='回复给Sun'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-10752"><div class="c-avatar"><div class="c-main" id="div-comment-10752">我没有试过，但是你可以试试。<br />
+Debian/Ubuntu系统：
+<pre class="prettyprint linenums" >chmod +x /etc/rc.local
+sed -i '$d' /etc/rc.local
+echo -e "/appex/bin/serverSpeeder.sh start" >> /etc/rc.local
+echo -e "exit 0" >> /etc/rc.local
+</pre>
+CentOS系统：
+<pre class="prettyprint linenums" >chmod +x /etc/rc.d/rc.local
+echo -e "/appex/bin/serverSpeeder.sh start" >> /etc/rc.d/rc.local
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-02-17 15:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=10752#respond' onclick='return addComment.moveForm( "div-comment-10752", "10752", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-10592"><div class="c-avatar"><div class="c-main" id="div-comment-10592">转载竟然不署名<div class="c-meta"><span class="c-author">Vicer</span>2017-02-13 11:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=10592#respond' onclick='return addComment.moveForm( "div-comment-10592", "10592", "respond", "1733" )' aria-label='回复给Vicer'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-10593"><div class="c-avatar"><div class="c-main" id="div-comment-10593">请看文章最后一句话，我转载的都会注明源链接。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-02-13 12:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=10593#respond' onclick='return addComment.moveForm( "div-comment-10593", "10593", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-10384"><div class="c-avatar"><div class="c-main" id="div-comment-10384">BBR和这个可以共同使用吗？共同使用效果是否会更好？<div class="c-meta"><span class="c-author">Z.avi</span>2017-02-05 22:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=10384#respond' onclick='return addComment.moveForm( "div-comment-10384", "10384", "respond", "1733" )' aria-label='fl5um-xi.html'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-10387"><div class="c-avatar"><div class="c-main" id="div-comment-10387">BBR是集成于最新的 4.9.x内核的，而锐速和lotserver都不支持最新的 4.9.x 内核，而且短时间内也不会支持。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-02-05 23:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=10387#respond' onclick='return addComment.moveForm( "div-comment-10387", "10387", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-10340"><div class="c-avatar"><div class="c-main" id="div-comment-10340">厉害了，瞬间拯救了我的枫叶新立讯，1440p油管无压力。<div class="c-meta"><span class="c-author">我不是照耀</span>2017-02-04 01:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=10340#respond' onclick='return addComment.moveForm( "div-comment-10340", "10340", "respond", "1733" )' aria-label='回复给我不是照耀'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-9712"><div class="c-avatar"><div class="c-main" id="div-comment-9712">谢了，这个要钱不<div class="c-meta"><span class="c-author">禅猫</span>2017-01-08 02:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=9712#respond' onclick='return addComment.moveForm( "div-comment-9712", "9712", "respond", "1733" )' aria-label='回复给禅猫'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-9633"><div class="c-avatar"><div class="c-main" id="div-comment-9633">回车继续后就卡着了……怎破，蛮久了<div class="c-meta"><span class="c-author">Methratton</span>2017-01-05 21:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=9633#respond' onclick='return addComment.moveForm( "div-comment-9633", "9633", "respond", "1733" )' aria-label='回复给Methratton'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-9468"><div class="c-avatar"><div class="c-main" id="div-comment-9468">这两天用来和锐速做对比，还是这个加速稳定  总觉得锐速有问题<div class="c-meta"><span class="c-author">WP GG</span>2016-12-30 01:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=9468#respond' onclick='return addComment.moveForm( "div-comment-9468", "9468", "respond", "1733" )' aria-label='回复给WP GG'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-9636"><div class="c-avatar"><div class="c-main" id="div-comment-9636">请教一下用的是那内核版本号，我发现似乎不同版本内核加速效果不同。<div class="c-meta"><span class="c-author">Bingbingbang</span>2017-01-06 00:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=9636#respond' onclick='return addComment.moveForm( "div-comment-9636", "9636", "respond", "1733" )' aria-label='回复给Bingbingbang'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-9775"><div class="c-avatar"><div class="c-main" id="div-comment-9775">都一样吧，不过我倒是觉得91yun那个锐速有问题  而且加速不够这个lotserver稳定。系统我平时一直都是用centos 6 所以就只用这两个内核版本504.el6/504.3.3.el6<div class="c-meta"><span class="c-author">WP GG</span>2017-01-10 02:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=9775#respond' onclick='return addComment.moveForm( "div-comment-9775", "9775", "respond", "1733" )' aria-label='回复给WP GG'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-3" id="comment-10534"><div class="c-avatar"><div class="c-main" id="div-comment-10534">支持内核版本  https://raw.githubusercontent.com/0oVicero0/serverSpeeder_kernel/master/serverSpeeder.txt<div class="c-meta"><span class="c-author">DODAKT</span>2017-02-10 23:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=10534#respond' onclick='return addComment.moveForm( "div-comment-10534", "10534", "respond", "1733" )' aria-label='回复给DODAKT'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-9395"><div class="c-avatar"><div class="c-main" id="div-comment-9395">我现在是4.9内核，是不是不能用这个呀？<div class="c-meta"><span class="c-author">yaucy</span>2016-12-26 19:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=9395#respond' onclick='return addComment.moveForm( "div-comment-9395", "9395", "respond", "1733" )' aria-label='回复给yaucy'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-9400"><div class="c-avatar"><div class="c-main" id="div-comment-9400">不管是锐速还是lotserver都不支持最新的4.9内核<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-12-26 21:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=9400#respond' onclick='return addComment.moveForm( "div-comment-9400", "9400", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-9266"><div class="c-avatar"><div class="c-main" id="div-comment-9266">也是op不能用？<div class="c-meta"><span class="c-author">ian Hsu</span>2016-12-21 09:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=9266#respond' onclick='return addComment.moveForm( "div-comment-9266", "9266", "respond", "1733" )' aria-label='回复给ian Hsu'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-9271"><div class="c-avatar"><div class="c-main" id="div-comment-9271">openvz虚拟化技术 不支持任何TCP加速，任何！<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-12-21 12:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=9271#respond' onclick='return addComment.moveForm( "div-comment-9271", "9271", "respond", "1733" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-10643"><div class="c-avatar"><div class="c-main" id="div-comment-10643">不是还有之前的fs可以用<div class="c-meta"><span class="c-author">JohnYang1997</span>2017-02-14 21:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=10643#respond' onclick='return addComment.moveForm( "div-comment-10643", "10643", "respond", "1733" )' aria-label='回复给JohnYang1997'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-9243"><div class="c-avatar"><div class="c-main" id="div-comment-9243">安装开始出现
+Preparatory work…
+It is seem that you server not as usually.
+Please input your public Ethernet:<div class="c-meta"><span class="c-author">无影</span>2016-12-19 18:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=9243#respond' onclick='return addComment.moveForm( "div-comment-9243", "9243", "respond", "1733" )' aria-label='回复给无影'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-9257"><div class="c-avatar"><div class="c-main" id="div-comment-9257">让你输入你的网卡名啊<div class="c-meta"><span class="c-author"><a href='http://shaoit.ml/' rel='external nofollow' class='url'>Bruce</a></span>2016-12-20 19:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=9257#respond' onclick='return addComment.moveForm( "div-comment-9257", "9257", "respond", "1733" )' aria-label='回复给Bruce'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-9216"><div class="c-avatar"><div class="c-main" id="div-comment-9216">今天装了试了下速度 反而变慢了<div class="c-meta"><span class="c-author">Ace</span>2016-12-18 15:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=9216#respond' onclick='return addComment.moveForm( "div-comment-9216", "9216", "respond", "1733" )' aria-label='回复给Ace'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-9203"><div class="c-avatar"><div class="c-main" id="div-comment-9203">居然要审核 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_mrgreen.gif" alt=":mrgreen:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author"><a href='http://1599733070@qq.com/' rel='external nofollow' class='url'>服务源</a></span>2016-12-17 21:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=9203#respond' onclick='return addComment.moveForm( "div-comment-9203", "9203", "respond", "1733" )' aria-label='回复给服务源'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-9202"><div class="c-avatar"><div class="c-main" id="div-comment-9202">我就看看，别问我为什么，没有服务器 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_smile.gif" alt=":smile:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author"><a href='http://1599733070@qq.com/' rel='external nofollow' class='url'>服务源</a></span>2016-12-17 21:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-21/?replytocom=9202#respond' onclick='return addComment.moveForm( "div-comment-9202", "9202", "respond", "1733" )' aria-label='回复给服务源'>回复</a></div></div></div></li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+			</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://kanfanba.com/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script data-cfasync="false" src="hnpipwj_.js"></script><script type="text/javascript">
+var image_url=new Array()
+image_url=["https://www.vultr.com/","vh8576m0.html","https://virmach.com/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="nk1baff-container nk1baff-1 nk1baff-hide">
+    <div class="nk1baff-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="nk1baff"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

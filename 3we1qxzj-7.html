@@ -1,0 +1,1121 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>ShadowsocksR PC客户端中的 [代理规则 – 用户自定义] 功能使用教程 | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1966] -->
+<meta name="description"  content="ShadowsocksR PC客户端在 4.6.0 版本中添加了一个代理规则选项 ，说实话我一直没注意到，还是一个逗比在网站问我这个功能的作用是什么时，我才突然发现这个功能，就特地去了解了一下，然后写个简单的使用教程。 首先先明白 代理规则" />
+
+<meta name="keywords"  content="pac,shadowsocksr,代理规则" />
+
+<link rel="canonical" href="3we1qxzj-7.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='在 主流代理软件 被针对的现在，推荐一个小众好用的代理软件 — Brook' href='es5fj9se-3.html' />
+<link rel='next' title='『原创』应逗比要求 单独写了个 libsodium 一键安装脚本 (Chacha20 / Chacha20-ietf 等)' href='6jfbj938-2.html' />
+<link rel='shortlink' href='https://doub.io/?p=2497' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fss-jc61%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fss-jc61%2F&amp;format=xml" />
+<style>
+.ak90305{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.ak90305-hide{
+    display: none;
+}
+.ak90305-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.ak90305-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.ak90305-2 .ak90305-body,.ak90305-3 .ak90305-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.ak90305-2 .close-btn,.ak90305-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.ak90305-3 .ak90305-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.ak90305').html(kill_adBlock_message);
+            jQuery('.ak90305-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.ak90305-container').fadeOut('ak90305-hide');
+        });
+    });
+    var kill_adBlock_status = 1;
+    var kill_adBlock_message = '逗比很伤心😥，您的<strong>广告拦截扩展</strong>屏蔽了我们的小广告，网站的发展离不开大家的支持，请先看过<a target=\"_blank\" style=\"color: #ffe500;\" href=\"3--didfb.html\">这个文章</a>后，再确定是否要将我们的域名添加到<strong>拦截白名单</strong>中，谢谢！😘👌';
+    var kill_adBlock_message_delay = 0;
+    var kill_adBlock_close_btn = 1;
+    var kill_adBlock_close_automatically = 0;
+    var kill_adBlock_close_automatically_delay = 0;
+    var kill_adBlock_message_type = 1;
+    function adBlockDetected() {
+      show_message();
+    }
+    
+    if(typeof killAdBlock === 'undefined') {
+        adBlockDetected();
+    } else {
+        killAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+    }
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="PAC, ShadowsocksR, 代理规则, Shadowsocks">
+<meta name="description" content="ShadowsocksR PC客户端在 4.6.0 版本中添加了一个代理规则选项 [用户自定义]，说实话我一直没注意到，还是一个逗比在网站问我这个功能的作用是什么时，我才突然发现这个功能，就特地去了解了一下，然后写个简单的使用教程。    首先先明白 代理规则 是干什么的，和PAC（系统代理模式）是什么区别：  [toggle Title='点击展开 查看更多']  ShadowsocksR目前分两种规则方式，那就是 系统代理模式（PA">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-2497 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li class="current-post-ancestor"><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="./softs.wtf/"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Atoyodadoubi.github.io'; return false;" action="https://toyodadoubi.github.io/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 逗比云还是逃不过被墙的命运，既然如此那以后逗比云也就一直用被墙的旧域名 <strong><a target="_blank" href="./softs.wtf/">[softs.wtf]</a></strong> 算了。
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://www.gigsgigscloud.com/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="3we1qxzj-7.html">ShadowsocksR PC客户端中的 [代理规则 &#8211; 用户自定义] 功能使用教程</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="qha-5xcm.html"> Shadowsocks</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 1年前 (2017-11-12)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 12884℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="3we1qxzj-7.html#comments">85评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="3we1qxzj-7.html#文件位置" title="文件位置"><span>文件位置</span></a></li><li class="content-index-level-1"><a href="3we1qxzj-7.html#文件格式" title="文件格式"><span>文件格式</span></a><ul class="children"><li class="content-index-level-2"><a href="3we1qxzj-7.html#注释" title="注释"><span>注释</span></a></li><li class="content-index-level-2"><a href="3we1qxzj-7.html#基本规则" title="基本规则"><span>基本规则</span></a></li><li class="content-index-level-2"><a href="3we1qxzj-7.html#规则匹配结果类型" title="规则匹配结果类型"><span>规则匹配结果类型</span></a><ul class="children"><li class="content-index-level-3"><a href="3we1qxzj-7.html#域名规则" title="域名规则"><span>域名规则</span></a></li><li class="content-index-level-3"><a href="3we1qxzj-7.html#IP段规则" title="IP段规则"><span>IP段规则</span></a></li></ul></li></ul></li><li class="content-index-level-1"><a href="3we1qxzj-7.html#规则匹配次序" title="规则匹配次序"><span>规则匹配次序</span></a></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年5月14日 13:53</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>ShadowsocksR PC客户端在 4.6.0 版本中添加了一个<strong>代理规则选项 [用户自定义]</strong>，说实话我一直没注意到，还是一个逗比在网站问我这个功能的作用是什么时，我才突然发现这个功能，就特地去了解了一下，然后写个简单的使用教程。</p>
+<hr />
+<p>首先先明白 代理规则 是干什么的，和PAC（系统代理模式）是什么区别：</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>ShadowsocksR目前分两种规则方式，那就是 系统代理模式（PAC、全局，主要解释PAC） 和 代理规则 。</p>
+<p><strong>PAC规则</strong> 是根据PAC文件中的黑白地址名单来判断那些网站走代理。也就是<strong>判断 流量是否进入客户端。</strong></p>
+<p>当你要访问的网站满足 PAC里的设置，那么浏览器就会向代理服务器也就是客户端发送网站请求数据，这时候我们才进入了ShadowsocksR客户端，接下来我们就进入了代理规则判断环节。</p>
+<p><strong>代理规则</strong> 是根据IP判断，按选择的规则来<strong>判断进入 客户端的流量是直连还是走代理。</strong></p>
+<p>当你访问 XXX 网站，然后是全局或者满足PAC条件（不满足条件就直接直连访问了，也不会有接下来的代理规则判断了）从而访问<strong> XXX网站的请求数据流量进入了客户端</strong>，然后客户端会根据 <strong>XXX网站的IP来判断</strong>，如下：</p>
+<ul>
+<li><strong>绕过局域网</strong>：当IP属于局域网内的，那么SSR客户端就会让流量直连，反之则会让流量走代理（发送到SSR服务端）。</li>
+<li><strong>绕过局域网和大陆</strong>：当IP属于大陆内或局域网的，那么SSR客户端就会让流量直连，反之则会让流量走代理（发送到SSR服务端）。</li>
+<li><strong>绕过局域网和非大陆</strong>：当IP属于大陆外(非大陆IP都算大陆外)或局域网的，那么SSR客户端就会让流量直连，反之则会让流量走代理（发送到SSR服务端）。</li>
+<li><strong>全局</strong>：无论什么情况都直接走代理。</li>
+</ul>
+<p>这两种判断方式是相互配合使用的，先用<strong>系统代理模式来判断是否让数据进入SSR客户端</strong>，再用<strong>代理规则来判断进入SSR客户端的数据是直连还是走代理。</strong></p>
+<blockquote><p>举个栗子：假设系统代理模式为 PAC，那么访问 <strong>www.google.com</strong> ，浏览器在PAC文件中匹配这个域名，并发现这个域名按PAC规则应走代理，所以 浏览器就会发送 访问网页数据到 P<strong>AC中的代理服务器(默认如127.0.0.1:1080)</strong>，于是SSR客户端就收到了 访问谷歌的数据，而这时候就该用 <strong>代理规则 判断</strong>了。</p></blockquote>
+<p><strong>代理规则为：绕过局域网</strong>，则判断 www.google.com 域名的IP是否是局域网IP，然而不是局域网IP，于是走代理。</p>
+<p><strong>代理规则为：绕过局域网和大陆</strong>，则判断 www.google.com 域名的IP是否是局域网IP 或 大陆IP，然而不是局域网IP或大陆IP，于是走代理。</p>
+<p><strong>代理规则为：绕过局域网和非大陆</strong>，则判断 www.google.com 域名的IP是否是局域网IP 或 非大陆IP，然而是非大陆IP，于是不走代理，直连。</p>
+<p><strong>代理规则为：全局</strong>，不判断 www.google.com 域名的IP，直接走代理。</p>
+<p>你们大概能明白了吗？不明白可以评论区问我。</p>
+<p></p></div>
+<hr />
+<p>代理规则中的 <strong>用户自定义</strong>，就是可以让你自定义什么<strong>域名或IP 走代理还是直连</strong>，比PAC更方便添加/编辑规则，以后完全可以抛弃 PAC，而改用 用户自定义 代理规则（系统代理模式选择全局，浏览器扩展也设置 127.0.0.1 1080(默认端口)）。</p>
+<p>实际上 SSR 安卓客户端中的 <strong>ACL</strong> 和 <strong>代理规则 - 用户自定义</strong> 是一样的。</p>
+<p>接下来讲解代理规则格式等内容。</p>
+<h2 id="文件位置">文件位置</h2>
+<p><strong>代理规则 - 用户自定义</strong> 的规则文件是 ShadowsocksR.exe 客户端同目录下的 <strong>user.rule</strong> 文件（如果没有就自己新建）。</p>
+<blockquote><p><strong>注意：</strong>每次<strong>修改规则文件后</strong>，都需要 <strong>重启SSR客户端</strong> 才能应用最新规则。</p></blockquote>
+<hr />
+<p><strong>提供一个Github上面找到的 ACL（PC客户端 规则文件，带去广告）：<a href="https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/gfwlist-user.rule" target="_blank" rel="noopener">https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/gfwlist-user.rule</a></strong></p>
+<p>如果不满意，可以去 <strong>Github 搜索 ACL</strong>，应该会搜到类似的文件！</p>
+<p>你们可以<strong>边参考这个规则，边理解下面的解释，当然最好自己动手多测试几次。</strong></p>
+<p>当然你也可以直接下载这个现成的规则文件到ShadowsocksR客户端同目录下，并重命名为 <strong>user.rule</strong> 文件名拿来用。</p>
+<h2 id="文件格式">文件格式</h2>
+<h3 id="注释">注释</h3>
+<p>以<strong>#</strong>号开始的一行为注释内容，<strong>注意：#号的前面不得有空格</strong>，例如：</p>
+<pre class="prettyprint linenums"># 我是注释，我会被忽略，一行的<strong>行首字符</strong>必须是<strong>#号</strong>才行。
+</pre>
+<h3 id="基本规则">基本规则</h3>
+<p>规则文件内，除了空行和注释，其它的<strong>每行都是一条规则</strong>，规则之间有<strong>先后次序之分</strong>。若出现相同的规则，那么<strong>后一条规则可覆盖前一条规则</strong>。</p>
+<p><strong>规则分两类：</strong></p>
+<ul>
+<li><a href="3we1qxzj-7.html#域名规则">域名规则</a></li>
+<li><a href="3we1qxzj-7.html#IP段规则">IP段规则</a></li>
+</ul>
+<h3 id="规则匹配结果类型">规则匹配结果类型</h3>
+<p>规则匹配结果类型有 四种：<strong>remoteproxy、localproxy、direct、reject</strong>。均可用于两类规则。</p>
+<p><strong>四种结果的含义：</strong></p>
+<pre class="prettyprint linenums"><strong>remoteproxy：</strong>经过SSR服务器连接（走代理）
+<strong>localproxy：</strong>经过本地代理连接，或没有配置本地代理时使用直连连接（本地代理指的是：<strong>选项设置 - 二级(前置)代理</strong>）
+<strong>direct：</strong>直连连接（直连，不走代理）
+<strong>reject：</strong>拒绝连接（可用于屏蔽广告，当然前提是用<strong>系统代理规则：全局模式</strong>，否则<strong>只有进入SSR客户端的广告才会被过滤</strong>）
+</pre>
+<h4 id="域名规则">域名规则</h4>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"><strong>格式：</strong>
+hostname rule
+# 域名 规则</pre>
+<p><strong>hostname</strong> 格式支持三种写法：</p>
+<pre class="prettyprint linenums">直接写完整域名，如 b.com ，此时不匹配 a.b.com 这类子域名。
+# 配置[b.com remoteproxy]，即代表只有 b.com 走代理。
+带通配符的域名，如 *.b.com ，此时不匹配 b.com，但能匹配 a.b.com 这类子域名。
+# 配置[*.b.com remoteproxy]，即代表只有 b.com 的子域名走代理，b.com 将继续往下面判断，如果下面没有 b.com 的规则，那么就走代理。
+全部匹配的域名，比如.b.com，用于匹配 b.com 及 a.b.com 这类子域名的 ，任何末尾为 b.com 的域名均匹配。
+# 配置[.b.com remoteproxy]，即代表 b.com 以及其所有子域名例如 a.b.com 都走代理。</pre>
+<pre><strong>注意：b.com</strong> 与 <strong>.b.com</strong> 是会<strong>相互覆盖的（后写的有效）</strong>，如果你需要 <strong>b.com</strong> 和它的子域名<strong>走不同的规则</strong>，那么分别写 <strong>b.com</strong> 和 <strong>*.b.com</strong> 两条规则即可。</pre>
+<p>域名规则还有一种特殊的规则 rule 写法，<strong>例如（不过一般用不上，忽略即可）：</strong></p>
+<pre class="prettyprint linenums">a.com 127.0.0.1
+.b.com 123.123.123.123
+</pre>
+<p>这种规则相当于给 <strong>指定域名 (a.com)</strong> 或 <strong>一组子域名 (.b.com)</strong> 一个相应的IP，但<strong>不直接指定最终结果。</strong></p>
+<p>最终结果将由IP段规则决定，比如接下来的<strong>IP规则判断</strong>中，<strong>127.0.0.1</strong> 规则判断结果是直连，那么将使用此规则所指定的IP来连接。</p>
+<p></p></div>
+<h4 id="IP段规则">IP段规则</h4>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"><strong>格式：</strong>
+ip1 ip2 rule
+# IP段起始 IP段结尾 规则
+
+# 如果只要控制一个IP，那么 ip1 和 ip2 写一样就行，例如：
+# 1.0.1.1 1.0.1.1 remoteproxy
+# 1.0.1.1 走代理</pre>
+<pre>注意：<strong>ip2 必须大于或等于 ip1</strong> ，此规则应用于包含 ip1、ip2 及它们之间的所有IP。如果两条不同的IP规则发生IP重叠，那么重叠的那部分以 <strong>后一条规则为准</strong></pre>
+<p>利用这个规则可以编写基于黑名单或白名单的IP规则，例如在规则文件内先写：</p>
+<pre class="prettyprint linenums">:: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff remoteproxy
+0.0.0.0 255.255.255.255 remoteproxy
+
+1.0.1.0 1.0.1.255 localproxy
+......（等等其他规则）
+<strong># 解释：</strong>
+# 如果你访问的IP是 1.0.1.5 ，那么第二行规则判断<strong>该IP走代理</strong>，第四行规则判断<strong>该IP走直连（或者说二级代理）。</strong>
+# 如果你访问的IP是 1.0.2.5 ，那么第二行规则判断<strong>该IP走代理</strong>，第四行规则判断<strong>该IP走代理（因为没有在IP段规则范围内）。</strong></pre>
+<p>前两行这样意味着所有的IP（第一行是IPv6全部IP段，第二行是IPv4全部IP段）默认走代理，然后利用<strong>后一规则覆盖前一规则</strong>来设置<strong>不走代理的IP</strong>，所以这就是<strong>白名单规则。</strong></p>
+<p>反过来如果所有IP设置为 <strong>localproxy</strong>，那么就是<strong>黑名单规则：</strong></p>
+<pre class="prettyprint linenums">:: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff localproxy
+0.0.0.0 255.255.255.255 localproxy
+
+1.0.1.0 1.0.1.255 remoteproxy
+......（等等其他规则）
+<strong># 解释：</strong>
+# 如果你访问的IP是 1.0.1.5 ，那么第二行规则判断<strong>该IP直连（或者说二级代理）</strong>，第四行规则判断<strong>该IP走代理。</strong>
+# 如果你访问的IP是 1.0.2.5 ，那么第二行规则判断<strong>该IP直连（或者说二级代理）</strong>，第四行规则判断<strong>该IP继续走直连（或者说二级代理）。
+</strong></pre>
+<p></p></div>
+<h2 id="规则匹配次序">规则匹配次序</h2>
+<p>当你访问 <strong>www.google.com</strong> ，浏览器配置<strong>全局模式</strong>（或者PAC模式，但谷歌被墙，PAC判断为走代理），然后浏览器会把谷歌网址的访问请求发给 SSR 客户端，然后：</p>
+<pre class="prettyprint linenums">┏━ SSR客户端 代理规则选择：<strong>用户自定义</strong>（你已经配置好了规则），然后 SSR客户端 会去代理规则中匹配 域名：
+┃
+┗┳━ 如果匹配域名规则 <strong>返回结果为直连</strong>，那么就直连不走代理（将不再继续 IP判断）。
+  ┃
+  ┣━ 如果匹配域名规则 <strong>返回结果为走代理</strong>，那么就直接走代理（将不再继续 IP判断）。
+  ┃
+  ┗━ 如果匹配域名规则 <strong>没有返回结果（就是没找到相应规则）</strong>，那么就会去 SSR服务端 请求域名的 DNS解析，得到 IP 后，<strong>再继续匹配 IP规则：</strong>
+      ┃
+      ┗┳━ 如果匹配IP规则 <strong>返回结果为直连</strong>，那么就直连不走代理。
+        ┃
+        ┣━ 如果匹配IP规则 <strong>返回结果为走代理</strong>，那么就直接走代理。
+        ┃
+        ┗━ 如果匹配IP规则 <strong>没有返回规则（没有找到相应规则）</strong>，那么就直接走代理。所以，<strong>空的 user.rule 文件等于全局模式（所有域名/IP走代理）。
+</strong></pre>
+<hr />
+<p>全网也只有 SSR的WIKI才有这个教程，所以我参考WIKI的内容，因为原版WIKI就很详细了，所以我只是在原版内容的基础上做了一点补充。</p>
+<p>因为SSR项目已删除，所以我就引用了SSRR fork的WIKI：<a href="https://github.com/shadowsocksrr/shadowsocks-rss/wiki/C%23-Proxy-Rule" target="_blank" rel="noopener">https://github.com/shadowsocksrr/shadowsocks-rss/wiki/C%23-Proxy-Rule</a></p>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="3we1qxzj-7.html">ShadowsocksR PC客户端中的 [代理规则 &#8211; 用户自定义] 功能使用教程</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="2497" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">130</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="msy3kxx5.html" rel="tag">PAC</a><a href="g6hfu0lq.html" rel="tag">ShadowsocksR</a><a href="qrgtg9ct.html" rel="tag">代理规则</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="es5fj9se-3.html" rel="prev">在 主流代理软件 被针对的现在，推荐一个小众好用的代理软件 — Brook</a></span>
+			<span class="article-nav-next"><a href="6jfbj938-2.html" rel="next">『原创』应逗比要求 单独写了个 libsodium 一键安装脚本 (Chacha20 / Chacha20-ietf 等)</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="hi10k-7p-3.html" title="给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)" target="_blank">
+<img src="iceink9-.png?src=https://doub.io/wp-content/uploads/shadowsocksR-1.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)" />	<br><span class="r_title">给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="a6551xds.html" title="『视频』ShadowsocksR 服务端一键脚本安装 新手小白视频教程" target="_blank">
+<img src="-b0b-ldi.png?src=https://doub.io/wp-content/uploads/qita-03.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『视频』ShadowsocksR 服务端一键脚本安装 新手小白视频教程" />	<br><span class="r_title">『视频』ShadowsocksR 服务端一键脚本安装 新手小白视频教程</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="yv4cp61c.html" title="『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本" target="_blank">
+<img src="kk4ik0cm.png?src=https://doub.io/wp-content/uploads/brook1.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本" />	<br><span class="r_title">『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="9n7kdq_k-2.html" title="『原创』Shadowsocks tinyPortMapper 中继(中转/端口转发) 便捷管理脚本" target="_blank">
+<img src="4yr4ftqy.png?src=https://doub.io/wp-content/uploads/qita-04-16.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Shadowsocks tinyPortMapper 中继(中转/端口转发) 便捷管理脚本" />	<br><span class="r_title">『原创』Shadowsocks tinyPortMapper 中继(中转/端口转发) 便捷管理脚本</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="hi10k-7p-3.html">给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)</a></li><li><i class="fa fa-minus"></i><a href="a6551xds.html">『视频』ShadowsocksR 服务端一键脚本安装 新手小白视频教程</a></li><li><i class="fa fa-minus"></i><a href="yv4cp61c.html">『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本</a></li><li><i class="fa fa-minus"></i><a href="9n7kdq_k-2.html">『原创』Shadowsocks tinyPortMapper 中继(中转/端口转发) 便捷管理脚本</a></li><li><i class="fa fa-minus"></i><a href="6r9z6_wi-3.html">Shadowsocks利用 tinyPortMapper 实现中继(中转/端口转发)加速</a></li><li><i class="fa fa-minus"></i><a href="6jfbj938-2.html">『原创』应逗比要求 单独写了个 libsodium 一键安装脚本 (Chacha20 / Chacha20-ietf 等)</a></li><li><i class="fa fa-minus"></i><a href="es5fj9se-3.html">在 主流代理软件 被针对的现在，推荐一个小众好用的代理软件 — Brook</a></li><li><i class="fa fa-minus"></i><a href="apf3f05x.html">ShadowsocksR 转为类VPN的真 · 全局代理神器 (软件/游戏走代理) — SSTAP</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='2497' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (85)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-45519"><div class="c-avatar"><div class="c-main" id="div-comment-45519">感谢教程，还有一个问题，是长期使用ssr客户端遇到的。<br />
+一直在使用pac模式，以前在别的网站也见到说这种模式其实已经挺落后了，完全可以用全局模式加上浏览器安装扩展的方式实现自动代理切换。<br />
+可是这类代理扩展我看到判断依据也是gfwlist那个文件啊……那么就跟我的pac gfwlist是一回事了吧。<br />
+既然都说PAC比较落后 效率比较低，那么我也考虑尝用全局代理+代理规则来上网，但是我的代理规则已经选择绕过局域网+大陆了，那么大陆的IP肯定会直连不走代理了吧？怎么我打开好多网内网站就会无法打开呢……这样的话我还是用回PAC模式比较舒服呢，毕竟可以做到准确判断啊，被墙的都走代理，国内网站全部是直连。<div class="c-meta"><span class="c-author">Anaheim</span>2018-11-04 16:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=45519#respond' onclick='return addComment.moveForm( "div-comment-45519", "45519", "respond", "2497" )' aria-label='回复给Anaheim'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-45526"><div class="c-avatar"><div class="c-main" id="div-comment-45526">落后？效率低？醉了。适合自己是最好的，不要乱听别人的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-11-04 18:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=45526#respond' onclick='return addComment.moveForm( "div-comment-45526", "45526", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-45535"><div class="c-avatar"><div class="c-main" id="div-comment-45535">OK，那我继续用PAC模式啦。
+下面那个问题不知能否解答一下？我选择了全局，代理规则选择绕过局域网和大陆，为何许多国内网站就无法打开了呢……按说应该是不走代理直连国内网站才对吧？<div class="c-meta"><span class="c-author">Anaheim</span>2018-11-04 21:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=45535#respond' onclick='return addComment.moveForm( "div-comment-45535", "45535", "respond", "2497" )' aria-label='回复给Anaheim'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-45538"><div class="c-avatar"><div class="c-main" id="div-comment-45538">可能是 chn_ip.txt (SSR客户端目录下) 文件不准确，或者软件自身问题，不过SSR停更一年了，也说不来了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-11-04 23:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=45538#respond' onclick='return addComment.moveForm( "div-comment-45538", "45538", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-5" id="comment-45546"><div class="c-avatar"><div class="c-main" id="div-comment-45546">那请问大大有其他替代的方案么，或者是索性换v2ray之类的其他东西？
+主要我看v2ray的相关东西都还在更新哈……<div class="c-meta"><span class="c-author">Anaheim</span>2018-11-05 10:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=45546#respond' onclick='return addComment.moveForm( "div-comment-45546", "45546", "respond", "2497" )' aria-label='回复给Anaheim'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-44266"><div class="c-avatar"><div class="c-main" id="div-comment-44266"><pre class="prettyprint linenums" >其实讲明两点就好了。
+
+一、PAC模式控制的是系统层面的代理，会影响系统上所有网络连接，除非另外设置了其他代理方式，否则都是用这个判断是否需要用到SSR客户端来代理。
+
+二、代理规则控制的是SSR客户端内部层面的代理，因为有些人会在个别软件中直接设置用SSR代理，这个时候会跳过系统代理把所有数据发给SSR客户端，也就等于跳过了PAC判断，这种情况下就需要另外一套判断机制，这就是代理规则的存在意义。比如浏览器上面用了SwitchyOmega插件，把所有链接指向SSR客户端，那么就只能靠代理规则判断下是否需要代理。（当然，其实SwitchyOmega插件本身也可以PAC规则……）
+
+个人觉得PAC规则确实略显多余了，其实全部用转发到SSR客户端，然后由代理规则判断即可，不知道这样是否增加SSR的性能压力。另外现在有些客户端是没有代理规则功能的，所以还是需要依赖下PAC判断。比如我在Linux上面用的electron-ssr客户端，没有代理规则功能。
+</pre><div class="c-meta"><span class="c-author">X</span>2018-10-12 11:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=44266#respond' onclick='return addComment.moveForm( "div-comment-44266", "44266", "respond", "2497" )' aria-label='回复给X'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-44063"><div class="c-avatar"><div class="c-main" id="div-comment-44063">全局模式+绕过局域网+chrome 访问淘宝，页面上显示“检测到您当前处于非安全网络环境”
+1.是否说明阿里检测到挂了ssr？为什么已经绕过大陆了为什么还会被盯上？
+2.怎样配置规则能不留案底、优雅无痕地访问大陆实名制的网站（如淘宝，京东等）？<div class="c-meta"><span class="c-author">ligansss</span>2018-10-07 01:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=44063#respond' onclick='return addComment.moveForm( "div-comment-44063", "44063", "respond", "2497" )' aria-label='回复给ligansss'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-44072"><div class="c-avatar"><div class="c-main" id="div-comment-44072">你这是那里提示的？我测试了下没见到这个提示。<br />
+而且提示 检测到您当前处于非安全网络环境 不代表淘宝知道你在用 SSR，毕竟如果淘宝都能精准检测到你是SSR代理，那么GFW是在划水？<br />
+SSR 属于匿名代理，不会爆露你的IP地址。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-10-07 10:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=44072#respond' onclick='return addComment.moveForm( "div-comment-44072", "44072", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-44077"><div class="c-avatar"><div class="c-main" id="div-comment-44077">在”加入购物车“的按钮和商品详情之间有一行灰色小字：“检测到您当前处于非安全网络环境，部分商品信息可能不准确，请在交易支付页面再次确认商品价格信息。”我的访问环境是全局模式+绕过局域网和大陆+chrome+大陆版淘宝。退出ssr打开相同链接小字消失。<div class="c-meta"><span class="c-author">ligansss</span>2018-10-07 11:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=44077#respond' onclick='return addComment.moveForm( "div-comment-44077", "44077", "respond", "2497" )' aria-label='回复给ligansss'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-44079"><div class="c-avatar"><div class="c-main" id="div-comment-44079">这句话的意思应该是把你当成外国人了，毕竟淘宝看到你是海外IP，而你访问的是大陆版淘宝。<br />
+可能会因为汇率什么导致价格差异，或者说邮费什么的。<br />
+反正淘宝是无法分辨你是否用了SSR代理，因为你走代理和不走代理 对于淘宝来说的唯一区别就是IP不一样。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-10-07 11:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=44079#respond' onclick='return addComment.moveForm( "div-comment-44079", "44079", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-43922"><div class="c-avatar"><div class="c-main" id="div-comment-43922">博主，关于PAC和代理规则的一点理解，我可不可以理解为：<br />
+pac是系统代理判断是否走shadowsocks，是第一层判断；<br />
+而代理规则是shadowsocks判断是否走ss服务器，是第二层判断？<br />
+---<br />
+而这样又会产生一个问题，那就是shadowsocks如何判断域名是国外还是国内，如果paclist里某个网址被墙，但是却是非国外网站，那么这时候，shadowsocks就不会让它走代理服务器（如果选了“绕过局域网和大陆”）。<br />
+所以我想问的是，既然pac列表应该比后者更准确，那么代理规则无脑选全局，应该没问题，那么其它选项存在的意义在哪里呢？<div class="c-meta"><span class="c-author">astro1boy</span>2018-10-04 04:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=43922#respond' onclick='return addComment.moveForm( "div-comment-43922", "43922", "respond", "2497" )' aria-label='回复给astro1boy'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-43932"><div class="c-avatar"><div class="c-main" id="div-comment-43932">存在即合理。<br /><br />
+先说第一个问题：<br />
+你的判断正确。<br /><br />
+第二个问题：<br />
+SSR代理规则中的 绕过局域网和大陆、绕过局域网和非大陆 均是依靠 SSR客户端目录下的 chn_ip.txt 文件内的中国IP段。<br />
+我测试了下，当我选择 PAC模式+绕过局域网和非大陆 访问谷歌时，SSR客户端的服务器链接统计窗口出现了短暂的数据波动，这意味着判断步骤为：
+<pre class="prettyprint linenums" >浏览器访问谷歌网站 -->>
+浏览器根据系统代理设置中的PAC(或者代理管理扩展设置)判断谷歌域名要走代理 -->>
+浏览器将网站连接信息发送给 127.0.0.1 1080 SSR的本地监听地址 -->>
+SSR 收到信息后，开始代理规则判断(绕过局域网和非大陆) -->>
+SSR 先通过代理服务器的DNS获取域名的无污染解析IP -->>
+然后再判断IP是否为大陆IP，不是，所以最后结果为：直连。
+</pre><br />
+第三个问题：
+首先是，PAC列表也是他人维护的，只有别人提交才会增加被墙的域名，效率比较低，所以一些有特殊需求的人会选择用 绕过大陆或者绕过非大陆。<br />
+另外，当你将某个软件的代理设置设置为走 SSR 代理(SOCKS5 127.0.0.1 1080)，那么你可以通过代理规则来控制哪些IP走代理，哪些不走。<br />
+举个例子：<br />
+你将 IDM(多线程下载软件) 设置走了 SSR 的代理，而代理规则选择 绕过局域网和大陆，那么当你下载国内文件时将不会走代理，当你下载国外文件时，将自动走代理。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-10-04 11:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=43932#respond' onclick='return addComment.moveForm( "div-comment-43932", "43932", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-43688"><div class="c-avatar"><div class="c-main" id="div-comment-43688">可以在服务器的ssr上设置代理规则吗，这样是不是能让所有连接这一个服务器账号的ssr客户端都有相同的代理规则？<div class="c-meta"><span class="c-author">Will</span>2018-09-27 12:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=43688#respond' onclick='return addComment.moveForm( "div-comment-43688", "43688", "respond", "2497" )' aria-label='回复给Will'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-43691"><div class="c-avatar"><div class="c-main" id="div-comment-43691">不能。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-09-27 13:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=43691#respond' onclick='return addComment.moveForm( "div-comment-43691", "43691", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-43695"><div class="c-avatar"><div class="c-main" id="div-comment-43695">服务器端的ssr有什么教程吗？<div class="c-meta"><span class="c-author">Will</span>2018-09-27 13:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=43695#respond' onclick='return addComment.moveForm( "div-comment-43695", "43695", "respond", "2497" )' aria-label='回复给Will'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-37777"><div class="c-avatar"><div class="c-main" id="div-comment-37777">楼主、有一个问题困扰我很久了。我的网络环境是教育网，支持原生ipv6。所以我希望Google和YouTube直连不走代理，这样节省服务器流量，速度也更快。user.rule写的是<code>.google.com direct</code>，但是改了之后反而无法访问谷歌，原因是google网站被解析为ipv6地址（日志：由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 172.217.160.68:443）。所以不知道该怎么办啊@<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="8dd2cd">[email&#160;protected]</a>，本机其它地方都优先解析ipv6地址的。<div class="c-meta"><span class="c-author">sakamoto</span>2018-05-14 00:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=37777#respond' onclick='return addComment.moveForm( "div-comment-37777", "37777", "respond", "2497" )' aria-label='回复给sakamoto'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-37787"><div class="c-avatar"><div class="c-main" id="div-comment-37787">我没有 IPv6 不过我记得谷歌的 IPv6 网址是：ipv6.google.com ，你尝试单独写这个域名过吗？另外你的规则文件里是否已经写过其他的 google.com 规则了？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-05-14 13:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=37787#respond' onclick='return addComment.moveForm( "div-comment-37787", "37787", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-36820"><div class="c-avatar"><div class="c-main" id="div-comment-36820">汇总一下，有大大介绍的，还有回贴中有xxx自己做的，还有其他有在维护的么？acl4ssr那个user.rule以经没更新了，说是没精力，acl是更得很勤的。
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/gfwlist-user.rule
+https://gist.githubusercontent.com/AppSo/a1a6e79be512242225b20255d43c29d1/raw/4251b950607d6bc4abc31257cac30833687b09df/user.rule<div class="c-meta"><span class="c-author">dddog</span>2018-04-22 13:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=36820#respond' onclick='return addComment.moveForm( "div-comment-36820", "36820", "respond", "2497" )' aria-label='回复给dddog'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-36812"><div class="c-avatar"><div class="c-main" id="div-comment-36812">你好，请问是不是选pac模式，替换pac文件后，代理规则就可以随便选，全局和绕开什么什么都不影响<div class="c-meta"><span class="c-author">av941</span>2018-04-22 09:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=36812#respond' onclick='return addComment.moveForm( "div-comment-36812", "36812", "respond", "2497" )' aria-label='回复给av941'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-36824"><div class="c-avatar"><div class="c-main" id="div-comment-36824">PAC 用于控制什么流量数据进入SSR客户端，而代理规则用于控制进入SSR客户端的流量数据是走代理还是直连。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-22 15:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=36824#respond' onclick='return addComment.moveForm( "div-comment-36824", "36824", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-36805"><div class="c-avatar"><div class="c-main" id="div-comment-36805">你好，我反复阅读了相关的几篇文章，也下载替换了pac文件。请问是不是选择pac模式后，访问网站就根据pac文件决定数据是否进ssr客户端，那么是否可以说进ssr的肯定都是需要走代理的，都是非局域网非大陆的ip？那么下面的代理规则选项只需选全局就可以了，选绕过什么什么也完全没意义？(因为能进ssr的数据肯定都是根据PAC.txt确定是需要代理的)
+   不知道我的理解对不对，那我在使用中是否只需要把代理模式选pac，然后配置PAC.txt,代理规则选全局？<div class="c-meta"><span class="c-author">av941</span>2018-04-22 01:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=36805#respond' onclick='return addComment.moveForm( "div-comment-36805", "36805", "respond", "2497" )' aria-label='回复给av941'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-36830"><div class="c-avatar"><div class="c-main" id="div-comment-36830">只能说一开始的 系统代理模式和代理规则 的区别你根本没看或者没看懂。<br />
+PAC 用于控制什么流量数据进入SSR客户端，而代理规则用于控制进入SSR客户端的流量数据是走代理还是直连，代理规则选择全局代表所有进入SSR客户端的流量数据都走代理。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-22 15:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=36830#respond' onclick='return addComment.moveForm( "div-comment-36830", "36830", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-36851"><div class="c-avatar"><div class="c-main" id="div-comment-36851">你说的我都看了，也许是我理解有问题，我也不纠结了，能用就好<div class="c-meta"><span class="c-author">av941</span>2018-04-23 00:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=36851#respond' onclick='return addComment.moveForm( "div-comment-36851", "36851", "respond", "2497" )' aria-label='回复给av941'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-3" id="comment-36852"><div class="c-avatar"><div class="c-main" id="div-comment-36852">谢谢大佬教程 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_lol.gif" alt=":lol:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">av941</span>2018-04-23 01:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=36852#respond' onclick='return addComment.moveForm( "div-comment-36852", "36852", "respond", "2497" )' aria-label='回复给av941'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-3" id="comment-37984"><div class="c-avatar"><div class="c-main" id="div-comment-37984">SSR原理：网站IP通过系统代理PAC，是否进入SSR客户端，如果符合就进入SSR客户端，数据通过代理规则出去
+而SS原理： 网站IP通过系统代理PAC，数据是否能过代理出去，SS没有了中间环节代理规则。我这样理解对吗？<div class="c-meta"><span class="c-author">dengchen</span>2018-05-18 14:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=37984#respond' onclick='return addComment.moveForm( "div-comment-37984", "37984", "respond", "2497" )' aria-label='回复给dengchen'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-37994"><div class="c-avatar"><div class="c-main" id="div-comment-37994">系统代理设置 用来判断流量是否进入SSR客户端，而 代理规则 用来判断进入SSR客户端的流量是否走代理。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-05-18 16:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=37994#respond' onclick='return addComment.moveForm( "div-comment-37994", "37994", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-36453"><div class="c-avatar"><div class="c-main" id="div-comment-36453">你好，站长。教程说：以后完全可以抛弃 PAC，而改用 用户自定义 代理规则（系统代理模式选择全局，浏览器扩展也设置 127.0.0.1 1080(默认端口)）。意思是选择全局模式，自定义代理规则，对？但是只想浏览器翻墙走代理，其余直连，同时电脑內软件不走代理，上面的设罝能实现吗？<div class="c-meta"><span class="c-author">wangdachui</span>2018-04-15 16:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=36453#respond' onclick='return addComment.moveForm( "div-comment-36453", "36453", "respond", "2497" )' aria-label='回复给wangdachui'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-36497"><div class="c-avatar"><div class="c-main" id="div-comment-36497">如果你的浏览器使用了扩展，那么SSR客户端就无需选择全局模式了，使用直连模式即可。<br />
+浏览器没有用代理管理扩展时，他会去读取系统代理设置来获取代理信息，而SSR客户端的全局模式就是设置系统代理设置而已，如果你用了代理管理扩展，那么扩展就直接跳过读取系统代理设置的步骤直接访问SSR客户端了，所以再选择 全局模式  只是多此一举。<br />
+当你设置设置系统代理模式为 全局模式时，电脑内其他软件凡是Web应用（软件内内嵌网页，就像 QQ的验证消息窗口 LOL的客户端首页 steam的内置浏览器），都会读取系统代理设置并走代理。<br />
+你只要设置系统代理模式为 直连模式，那么除非你设置软件走代理（SOCKS5 127.0.0.1 1080）否则他们就不会走代理，而浏览器扩展指向了 127.0.0.1 1080 ，浏览器就会直接走代理。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-16 15:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=36497#respond' onclick='return addComment.moveForm( "div-comment-36497", "36497", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-36501"><div class="c-avatar"><div class="c-main" id="div-comment-36501">感谢及时回复。
+
+我想实现只浏览器翻墙走代理（国内网站、软件均不走代理）。通过阅读本站，我归纳了以下几种方法：
+1、直连+扩展SwitchyOmega（代理规则不起作用）；
+2、PAC+代理规则（不需要扩展）；
+3、全局+用户自定义代理规则（不需要扩展，由 "[代理规则 – 用户自定义] 功能使用教程" 得出）。
+
+请教一下：1、总结的是否正确，（特别是第三种）能否真正实现 "只浏览器翻墙走代理（国内网站、软件均不走代
+             理）"的目的？  
+          2、站长你更推荐哪一种？
+          3、有时经常忘退SSR就直接关机，第二天就只能手动修复（好象只有第一种例外）。我是个懒人，为避免
+             繁琐和重复，就设了开机自启。这样合适？有无更好的办法（我甚至想学着写个开机检测的批处理）？           
+
+个人目前使用第二种，感觉国内网站有时会有些卡顿；另一方面，追求浏览器干净、快速，也不太喜欢额外添加扩展。<div class="c-meta"><span class="c-author">wangdachui</span>2018-04-16 16:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=36501#respond' onclick='return addComment.moveForm( "div-comment-36501", "36501", "respond", "2497" )' aria-label='回复给wangdachui'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-36510"><div class="c-avatar"><div class="c-main" id="div-comment-36510">系统代理模式无论是用 PAC模式 还是 全局模式，都会有软件走代理的（例如 steam 的社区地址被墙，你无论用哪个模式，steam 内置浏览器的访问社区都会走代理，只有直连模式时才不会走代理）。<br />
+直连+扩展SwitchyOmega 时，代理规则是起作用的，但是要取决于你扩展怎么配置，如果你扩展配置了GFWList，那么扩展会通过 GFWList 判断网站是否走代理，如果是谷歌网站，那么走代理进入SSR客户端，然后借着由 代理规则 判断是否走代理。<br />
+无论通过什么方式让软件或者浏览器走SSR代理，代理规则都会起作用的，无非是看你的代理规则配置是什么（如果是用了扩展，那么扩展配置也会影响结果，例如扩展里判断谷歌直连，那么就没代理规则的事情了）。<br />
+我平时都是 直连模式+扩展，由扩展判断是否走代理，SSR客户端的代理规则则是全局（不做判断，进入SSR客户端的数据全部都走代理）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-16 17:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=36510#respond' onclick='return addComment.moveForm( "div-comment-36510", "36510", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-5" id="comment-36555"><div class="c-avatar"><div class="c-main" id="div-comment-36555">明白了，我也开始使用扩展了。
+顺便问一句，有临时小号网站吗？想加入本站的电报群，但是申谢帐号时卡在了手机短信验证环节（不想用真实的手机号）<div class="c-meta"><span class="c-author">wangdachui</span>2018-04-17 17:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=36555#respond' onclick='return addComment.moveForm( "div-comment-36555", "36555", "respond", "2497" )' aria-label='回复给wangdachui'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-33194"><div class="c-avatar"><div class="c-main" id="div-comment-33194">我发现，如果用PAC模式，代理规则选：绕过局域网和大陆，会导致youtube打不开。。。似乎youtube被判定为大陆IP了？我如果改成绕过局域网，youtube就开了<div class="c-meta"><span class="c-author">feng</span>2018-03-15 18:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=33194#respond' onclick='return addComment.moveForm( "div-comment-33194", "33194", "respond", "2497" )' aria-label='回复给feng'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-32987"><div class="c-avatar"><div class="c-main" id="div-comment-32987">请问大佬，电脑端ssr文件夹里的chn_ip.txt是菜单里的“代理规则-绕过局域网和大陆”使用的规则么？<div class="c-meta"><span class="c-author">dddog</span>2018-03-11 22:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=32987#respond' onclick='return addComment.moveForm( "div-comment-32987", "32987", "respond", "2497" )' aria-label='回复给dddog'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-33008"><div class="c-avatar"><div class="c-main" id="div-comment-33008">里面记录的是国内的IP段。<br />
+你如果选择 [绕过大陆]，那么SSR客户端判断目标IP 符合国内IP规则，那么就会 直连<br />
+如果你选择 [绕过非大陆]，那么SSR客户端判断目标IP 不符合国内IP规则，那么就会 走代理。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-12 14:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=33008#respond' onclick='return addComment.moveForm( "div-comment-33008", "33008", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-32902"><div class="c-avatar"><div class="c-main" id="div-comment-32902">发现一个问题，将代理规则切换为自定义再将系统代理模式改为全局后国内网站还是会走代理（百度ip地址为ssr服务器地址），当改为pac模式后恢复正常，请问是怎么回事<div class="c-meta"><span class="c-author">coldwave</span>2018-03-09 22:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=32902#respond' onclick='return addComment.moveForm( "div-comment-32902", "32902", "respond", "2497" )' aria-label='回复给coldwave'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-32916"><div class="c-avatar"><div class="c-main" id="div-comment-32916">你配置自定义的用户规则了吗？配置国内网站不走代理了吗？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-10 15:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=32916#respond' onclick='return addComment.moveForm( "div-comment-32916", "32916", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-32956"><div class="c-avatar"><div class="c-main" id="div-comment-32956">从github里找了一个黑名单规则文件放到ssr文件夹了，文件规则默认直连，但出现了上面的问题<div class="c-meta"><span class="c-author">coldwave</span>2018-03-11 01:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=32956#respond' onclick='return addComment.moveForm( "div-comment-32956", "32956", "respond", "2497" )' aria-label='回复给coldwave'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-31357"><div class="c-avatar"><div class="c-main" id="div-comment-31357">我现在用的是全局模式，然后绕过局域网和国内ip，www.incnjp.com/forum.php网址需要走代理才能访问，所以我就设置了用户规则，但是没有效果。。。125.39.174.78 remoteproxy或者.incnjp.com remoteproxy，难道不对吗。。。还有就是那个规则文件不能修改，必须删除之后重新建立一个？？<div class="c-meta"><span class="c-author">yuyi</span>2018-02-12 09:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=31357#respond' onclick='return addComment.moveForm( "div-comment-31357", "31357", "respond", "2497" )' aria-label='回复给yuyi'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-31372"><div class="c-avatar"><div class="c-main" id="div-comment-31372">一、user.rule 文件默认是空的。<br />
+二、我不知道你 user.rule 文件里到底是怎么写的规则。<br />
+三、你要使用自己定义的用户规则，那么需要选择 代理规则 - 用户自定义 。<br />
+另外修改规则后，需要重启SSR客户端生效。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-12 14:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=31372#respond' onclick='return addComment.moveForm( "div-comment-31372", "31372", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-29187"><div class="c-avatar"><div class="c-main" id="div-comment-29187">你好，我想问一下，我现在使用SSR客户端，一般我会使用PAC模式，PAC里面有将“PAC更新为...”我应该选择哪一个呢？？<div class="c-meta"><span class="c-author">NIKO233333</span>2018-01-03 16:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=29187#respond' onclick='return addComment.moveForm( "div-comment-29187", "29187", "respond", "2497" )' aria-label='回复给NIKO233333'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-29226"><div class="c-avatar"><div class="c-main" id="div-comment-29226">不需要选择，也无法选择，因为SSR停止更新删除项目后，更新PAC为XXX 的所有选项都已失效。如果你需要更新PAC为GFWList，那么可以去看看这个文章：<a href="n9y66y0n.html" target="_blank">https://doub.io/ss-jc59/</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-04 15:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=29226#respond' onclick='return addComment.moveForm( "div-comment-29226", "29226", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-32767"><div class="c-avatar"><div class="c-main" id="div-comment-32767">是不是在user-rule里面添加白名单都无法使用了呢，之前用旧版本的SS是直接在PAC里添加网址马上生效的，现在用4.7.0的SSR里面的PAC太凌乱了，想在user-rule添加白名单，请问有什么办法吗？<div class="c-meta"><span class="c-author">Lemon</span>2018-03-07 01:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=32767#respond' onclick='return addComment.moveForm( "div-comment-32767", "32767", "respond", "2497" )' aria-label='回复给Lemon'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-32778"><div class="c-avatar"><div class="c-main" id="div-comment-32778">user-rule 中添加配置后，因为需要点击一下更新PAC为GFWList后才会生效，所以在SSR停更后，该功能就失效了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-07 11:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=32778#respond' onclick='return addComment.moveForm( "div-comment-32778", "32778", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-23962"><div class="c-avatar"><div class="c-main" id="div-comment-23962">问下，前提以翻墙为目的的话，既然可以直接选择绕过局域网和大陆，为什么要自定义规则？自定义规则就是在全面也有很多冷门网站需要自己添加，不是麻烦了很多么？还是说绕过局域网和大陆不全面？<div class="c-meta"><span class="c-author">ergou</span>2017-12-07 00:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=23962#respond' onclick='return addComment.moveForm( "div-comment-23962", "23962", "respond", "2497" )' aria-label='回复给ergou'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-23988"><div class="c-avatar"><div class="c-main" id="div-comment-23988">你都说了 以翻墙为目的，那么很多人就只想 被墙的网站翻墙，没有被墙的就直连。那么这种情况就是和 自定义规则，同时自定义规则也能屏蔽广告（广告域名指向0.0.0.0）。<br />
+绕过局域网和大陆虽然能保证低维护成本和高准确率，但是会导致一些没必要或者不能走代理的海外网站也走代理，比如 你去海外IDC购买VPS，如果你挂代理很有可能被判断为 欺诈，然后付钱了IDC拒绝开通VPS，然后撕逼半天巴拉巴拉的。<br />
+每个人都有每个人的需求，所以破娃才会添加 自定义规则 的选项，让每个人可以按照自己的想法去 定制适合自己使用的代理规则。<br />
+判断问题不能用你的主观意向思考其他人的想法，每个人都有每个人的想法。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-07 14:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=23988#respond' onclick='return addComment.moveForm( "div-comment-23988", "23988", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-23718"><div class="c-avatar"><div class="c-main" id="div-comment-23718">屌炸天的大佬，有个问题请教： 玩PT站，有个站tracker和网站是同一个网址，都是比如xxx.org，这种的是不是没法做到看网站走代理，挂种子不走代理？<div class="c-meta"><span class="c-author">LC</span>2017-12-02 11:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=23718#respond' onclick='return addComment.moveForm( "div-comment-23718", "23718", "respond", "2497" )' aria-label='回复给LC'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-23719"><div class="c-avatar"><div class="c-main" id="div-comment-23719">我没玩过PT，这种问题我也不清楚，PT也不是要PT/BT软件去下载的么，如果你不设置该软件走代理，他就不会走代理，你可以测试一下。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-02 12:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=23719#respond' onclick='return addComment.moveForm( "div-comment-23719", "23719", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-23729"><div class="c-avatar"><div class="c-main" id="div-comment-23729">哇大佬回这么快，敬业啊！我用的是SSR，用的软件就是图标小飞机的那个。。这个怎么排除程序不走代理啊，看遍了本站教程也没找到、求教<div class="c-meta"><span class="c-author">LC</span>2017-12-02 13:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=23729#respond' onclick='return addComment.moveForm( "div-comment-23729", "23729", "respond", "2497" )' aria-label='回复给LC'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-23730"><div class="c-avatar"><div class="c-main" id="div-comment-23730">当SSR客户端设置系统代理模式 PAC或者全局 时，只有默认读取系统代理设置的软件才会去走代理，比如浏览器，而其他的软件绝大部分都不会走代理，都需要额外的设置代理 [SOCKS5 127.0.0.1 1080] 。<br />
+你自己看一下你的BT/PT下载软件中是否有 代理相关设置，只要不是选择的 [使用系统代理设置] 选项就行。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-02 13:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=23730#respond' onclick='return addComment.moveForm( "div-comment-23730", "23730", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-5" id="comment-23738"><div class="c-avatar"><div class="c-main" id="div-comment-23738">嗯懂了大佬，但是。。我之前看过软件的连接设置，代理那里本来选择的就是无。。 
+
+我开着SSR并开始了一个种子，结果PT网站那边显示我的ip是翻墙后的 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_smile.gif" alt=":smile:" class="wp-smiley" style="height: 1em; max-height: 1em;" />  
+
+我现在通过使用这个 用户自定义 规则，手动输入域名，总算是达到需求了。。
+
+就是比较奇怪怎么没让走代理，软件还走了。。<div class="c-meta"><span class="c-author">LC</span>2017-12-02 16:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=23738#respond' onclick='return addComment.moveForm( "div-comment-23738", "23738", "respond", "2497" )' aria-label='回复给LC'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-23384"><div class="c-avatar"><div class="c-main" id="div-comment-23384">老大，文中给出的ALC文件是个黑名单，也就是大部分未被墙的域名都要解析IP后继续判断，请问这个解析是在本地还是在VPS处进行的呢？本地的hosts文件在这当中处于什么地位？<div class="c-meta"><span class="c-author">bydx</span>2017-11-26 12:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=23384#respond' onclick='return addComment.moveForm( "div-comment-23384", "23384", "respond", "2497" )' aria-label='回复给bydx'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-23461"><div class="c-avatar"><div class="c-main" id="div-comment-23461">规则文件都是在本地，当然是在本地匹配判断是否走代理啊，如果是服务器判断的话，那还判断什么？都已经走代理了。<br />
+本地hosts的优先级我没测试过，应该是优于本地hosts文件的，具体自行测试。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-27 16:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=23461#respond' onclick='return addComment.moveForm( "div-comment-23461", "23461", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-23364"><div class="c-avatar"><div class="c-main" id="div-comment-23364">我想问下SSR文件夹下有个user-rule.txt的文本文件，跟文中说的user.rule这个文件是同样的吗，我点开来看前面那个文件是编辑GWFlist的用户规则的文本文件，后面那个是你说的代理规则里面的用户自定义里面的文件，不过我这边并没有user.rule，要自建创建，不懂这两个文件里的规则效果是不是一样，还是有什么区别。顺便能给出安卓端SSR的一个ACL文件链接吗，我自己在github上找了一个，但好像不太理想。<div class="c-meta"><span class="c-author">阿尔卑斯山的小屋</span>2017-11-26 00:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=23364#respond' onclick='return addComment.moveForm( "div-comment-23364", "23364", "respond", "2497" )' aria-label='回复给阿尔卑斯山的小屋'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-23374"><div class="c-avatar"><div class="c-main" id="div-comment-23374">关于 user-rule.txt，你可以看这个教程：<a href="3we1qxzj-6.html" target="_blank">https://doub.io/ss-jc43/</a> ，不过因为SSR项目删除，教程已经失效了。本文章就提供了一个 ACL 链接。不过安卓SSR我并不怎么用。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-26 09:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=23374#respond' onclick='return addComment.moveForm( "div-comment-23374", "23374", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-38418"><div class="c-avatar"><div class="c-main" id="div-comment-38418">有点搞混了，用户自定义的设置现在是否有用？<div class="c-meta"><span class="c-author"><a href='http://xn--rgv/' rel='external nofollow' class='url'>bing</a></span>2018-05-26 15:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=38418#respond' onclick='return addComment.moveForm( "div-comment-38418", "38418", "respond", "2497" )' aria-label='回复给bing'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-38460"><div class="c-avatar"><div class="c-main" id="div-comment-38460"><a href="3we1qxzj-7.html" target="_blank">ShadowsocksR PC客户端中的 [代理规则 – 用户自定义] 功能使用教程</a>，该方法依然有效。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-05-27 12:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=38460#respond' onclick='return addComment.moveForm( "div-comment-38460", "38460", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-22969"><div class="c-avatar"><div class="c-main" id="div-comment-22969">麻烦研究实现自动切换服务器，方便选择某个网站用某个服务器代理访问。<div class="c-meta"><span class="c-author"><a href='http://www.fanxianren.cn/' rel='external nofollow' class='url'>qq251</a></span>2017-11-17 22:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22969#respond' onclick='return addComment.moveForm( "div-comment-22969", "22969", "respond", "2497" )' aria-label='回复给qq251'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-22971"><div class="c-avatar"><div class="c-main" id="div-comment-22971">这可能需要多开ShadowsocksR服务端，或者设置ShadowsocksR服务端中的 端口设置... 选项（这个没教程我也不知道怎么玩）。<br />
+同时浏览器还需要安装扩展(SwitchyOmega)辅助，才能实现不同网站使用不同代理服务器。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-17 23:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22971#respond' onclick='return addComment.moveForm( "div-comment-22971", "22971", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-22942"><div class="c-avatar"><div class="c-main" id="div-comment-22942">请问一下 这个“浏览器扩展也设置 127.0.0.1 1080”是什么意思 要怎么弄 提前谢过逗比大大了<div class="c-meta"><span class="c-author">Salo</span>2017-11-17 13:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22942#respond' onclick='return addComment.moveForm( "div-comment-22942", "22942", "respond", "2497" )' aria-label='回复给Salo'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-22967"><div class="c-avatar"><div class="c-main" id="div-comment-22967">参考这个教程中全局的设置方法：<a href="a6551xds-2.html#Chrome浏览器" target="_blank">https://doub.io/ss-jc28/#Chrome浏览器</a>。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-17 21:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22967#respond' onclick='return addComment.moveForm( "div-comment-22967", "22967", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-22921"><div class="c-avatar"><div class="c-main" id="div-comment-22921">方便多了，本地服务器可以很方便的连接。自定义的规则感觉比pac的文本有效（之前编写pac规则无效不知道为毛）
+感谢doub。<div class="c-meta"><span class="c-author">rrr</span>2017-11-17 10:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22921#respond' onclick='return addComment.moveForm( "div-comment-22921", "22921", "respond", "2497" )' aria-label='回复给rrr'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-22818"><div class="c-avatar"><div class="c-main" id="div-comment-22818">使用的逗比云下载的4.7.0版本，一直想用这个功能来屏蔽广告，但测试总是无效。后来才发现，localproxy和reject之间似乎并不是后一条覆盖前一条的规则。比如.baidu.com localproxy在前，.hm.baidu.com reject在后，并不能屏蔽掉hm.baidu.com，把前面一条删掉后，后一条屏蔽规则才有效。 不知道是软件bug还是我哪里设置不当。<div class="c-meta"><span class="c-author">douA</span>2017-11-15 15:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22818#respond' onclick='return addComment.moveForm( "div-comment-22818", "22818", "respond", "2497" )' aria-label='回复给douA'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-22695"><div class="c-avatar"><div class="c-main" id="div-comment-22695">问一个问题：用户自定义规则对网络速度的影响是怎么样的？我的规则里加了黑名单、白名单、广告屏蔽，有25000条左右，规则的解析会降低网络速度吗？<div class="c-meta"><span class="c-author">Yico ters</span>2017-11-13 23:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22695#respond' onclick='return addComment.moveForm( "div-comment-22695", "22695", "respond", "2497" )' aria-label='回复给Yico ters'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-22707"><div class="c-avatar"><div class="c-main" id="div-comment-22707">规则的数量不会影响网络速度，但是会影响匹配速度，在访问一个网站的时候，SSR客户端就会去规则文件内一行行匹配，如果规则过多肯定会增加匹配规则的时间，在访问的网站打开前的等待时间就会增加。<br />
+当然如果几千条规则数量，则没什么影响，但是如果几万条，可能会有轻微的延迟感（就是会多等一会），当然具体的影响程度取决于设备性能。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-14 10:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22707#respond' onclick='return addComment.moveForm( "div-comment-22707", "22707", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-22865"><div class="c-avatar"><div class="c-main" id="div-comment-22865">问了问破娃(SSR作者)，她告诉我 匹配速度和规则数量没什么关系，所以应该关系不大。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-16 14:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22865#respond' onclick='return addComment.moveForm( "div-comment-22865", "22865", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-22989"><div class="c-avatar"><div class="c-main" id="div-comment-22989">谢谢大大解答<div class="c-meta"><span class="c-author">Yico ters</span>2017-11-18 13:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22989#respond' onclick='return addComment.moveForm( "div-comment-22989", "22989", "respond", "2497" )' aria-label='回复给Yico ters'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-22654"><div class="c-avatar"><div class="c-main" id="div-comment-22654">文中的黑名单规则局限太多，写了个白名单规则，带有简单的去广告。
+ https://gist.githubusercontent.com/AppSo/a1a6e79be512242225b20255d43c29d1/raw/4251b950607d6bc4abc31257cac30833687b09df/user.rule<div class="c-meta"><span class="c-author">xxx</span>2017-11-13 17:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22654#respond' onclick='return addComment.moveForm( "div-comment-22654", "22654", "respond", "2497" )' aria-label='回复给xxx'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-22697"><div class="c-avatar"><div class="c-main" id="div-comment-22697">反向思维，简单多了，直接我方的地址本地路由通过，剩下的就是外国的这个很简单了<div class="c-meta"><span class="c-author">ghosthero</span>2017-11-14 01:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22697#respond' onclick='return addComment.moveForm( "div-comment-22697", "22697", "respond", "2497" )' aria-label='回复给ghosthero'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-22716"><div class="c-avatar"><div class="c-main" id="div-comment-22716">Github地址给一下吧？想star<div class="c-meta"><span class="c-author">111</span>2017-11-14 11:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22716#respond' onclick='return addComment.moveForm( "div-comment-22716", "22716", "respond", "2497" )' aria-label='回复给111'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-22810"><div class="c-avatar"><div class="c-main" id="div-comment-22810">地址 https://gist.github.com/AppSo/a1a6e79be512242225b20255d43c29d1<div class="c-meta"><span class="c-author">xxx</span>2017-11-15 12:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22810#respond' onclick='return addComment.moveForm( "div-comment-22810", "22810", "respond", "2497" )' aria-label='回复给xxx'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-22650"><div class="c-avatar"><div class="c-main" id="div-comment-22650">系统代理模式需要换成全局模式,用这个模式我重启电脑后在不自启SSR的前提下,网页会无法打开,必须IE代理设置恢复默认才行,没有PAC方便<div class="c-meta"><span class="c-author">BiuTone</span>2017-11-13 17:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22650#respond' onclick='return addComment.moveForm( "div-comment-22650", "22650", "respond", "2497" )' aria-label='回复给BiuTone'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-22652"><div class="c-avatar"><div class="c-main" id="div-comment-22652">不是全局和PAC模式的问题，根据你说的这种情况，应该是 SSR客户端未正常关闭，或者关闭的时候未正常初始化 系统代理设置(IE代理设置)。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-13 17:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22652#respond' onclick='return addComment.moveForm( "div-comment-22652", "22652", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-22610"><div class="c-avatar"><div class="c-main" id="div-comment-22610">逗比云下载的ssr客户端里面有带一个user.rule 有什么区别吗<div class="c-meta"><span class="c-author">Dshyu</span>2017-11-13 10:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22610#respond' onclick='return addComment.moveForm( "div-comment-22610", "22610", "respond", "2497" )' aria-label='回复给Dshyu'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-22636"><div class="c-avatar"><div class="c-main" id="div-comment-22636">这是SSR客户端自带的规则文件，具体自己看规则内容。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-13 14:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22636#respond' onclick='return addComment.moveForm( "div-comment-22636", "22636", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-22601"><div class="c-avatar"><div class="c-main" id="div-comment-22601">按照我的理解是，SSR选择pac（gfwlist）模式，GFWLIST里没有的网址，但是那个网址又被墙了，然后代理规则选自定义的话，我自己把该网址加入规则中，应该是可以访问该网址的，对不？可是我实践中，打不开，这就神奇了，测试网址：http://www.osair.cn<div class="c-meta"><span class="c-author">LYCX2015</span>2017-11-13 09:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22601#respond' onclick='return addComment.moveForm( "div-comment-22601", "22601", "respond", "2497" )' aria-label='回复给LYCX2015'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-22605"><div class="c-avatar"><div class="c-main" id="div-comment-22605">PAC（GFWList）中，如果没有你说的 www.osair.cn 域名，那么浏览器会直接直连访问，而不会走代理（流量请求不进入SSR客户端，也就不会进行  代理规则 判断了）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-13 09:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22605#respond' onclick='return addComment.moveForm( "div-comment-22605", "22605", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-22789"><div class="c-avatar"><div class="c-main" id="div-comment-22789">所以说，还是要先经过pac或者全局了，如果全局的话，代理规则的判断还起作用吗？不是所有网站都走代理了？<div class="c-meta"><span class="c-author">LYCX2015</span>2017-11-15 09:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22789#respond' onclick='return addComment.moveForm( "div-comment-22789", "22789", "respond", "2497" )' aria-label='回复给LYCX2015'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-22803"><div class="c-avatar"><div class="c-main" id="div-comment-22803">怕是你没仔细看本文章。<br />
+当你系统代理规则为 <strong>全局模式</strong> 的时候，所有网站流量请求都会进入SSR客户端，然后SSR客户端通过你设置的 <strong>代理规则</strong> 来判断进入SSR客户端的数据是 <strong>走代理 还是直连</strong>。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-15 10:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22803#respond' onclick='return addComment.moveForm( "div-comment-22803", "22803", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-5" id="comment-22911"><div class="c-avatar"><div class="c-main" id="div-comment-22911">如果规则没有该网址，默认走代理了？像是百度没有，全局模式下，规则没有百度的网址，默认走代理了？<div class="c-meta"><span class="c-author">LYCX2015</span>2017-11-16 23:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22911#respond' onclick='return addComment.moveForm( "div-comment-22911", "22911", "respond", "2497" )' aria-label='回复给LYCX2015'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-6" id="comment-22929"><div class="c-avatar"><div class="c-main" id="div-comment-22929">是的，当规则文件内没有匹配到 baidu.com 的任何规则，就会走代理，当规则文件为空，则代表全局（所有流量都走代理）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-17 12:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22929#respond' onclick='return addComment.moveForm( "div-comment-22929", "22929", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-22546"><div class="c-avatar"><div class="c-main" id="div-comment-22546">我想问下，设置PAC模式(GFWlist)，代理规则选全局，访问baidu.com 会走代理吗？<div class="c-meta"><span class="c-author">小BAI一个</span>2017-11-12 16:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22546#respond' onclick='return addComment.moveForm( "div-comment-22546", "22546", "respond", "2497" )' aria-label='回复给小BAI一个'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-22550"><div class="c-avatar"><div class="c-main" id="div-comment-22550">不会，因为GFWList里面的规则规定 baidu.com 直连。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-12 17:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22550#respond' onclick='return addComment.moveForm( "div-comment-22550", "22550", "respond", "2497" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-22520"><div class="c-avatar"><div class="c-main" id="div-comment-22520">希望逗比出个<div class="c-meta"><span class="c-author">Mars_Sea</span>2017-11-12 10:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22520#respond' onclick='return addComment.moveForm( "div-comment-22520", "22520", "respond", "2497" )' aria-label='回复给Mars_Sea'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-22519"><div class="c-avatar"><div class="c-main" id="div-comment-22519">逗比666<div class="c-meta"><span class="c-author">winD</span>2017-11-12 10:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22519#respond' onclick='return addComment.moveForm( "div-comment-22519", "22519", "respond", "2497" )' aria-label='回复给winD'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-22512"><div class="c-avatar"><div class="c-main" id="div-comment-22512">谢谢逗逼。<div class="c-meta"><span class="c-author"><a href='http://www.adapa.online/' rel='external nofollow' class='url'>Adapa</a></span>2017-11-12 09:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc61/?replytocom=22512#respond' onclick='return addComment.moveForm( "div-comment-22512", "22512", "respond", "2497" )' aria-label='回复给Adapa'>回复</a></div></div></div></li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+			</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://kanfanba.com/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script data-cfasync="false" src="hnpipwj_.js"></script><script type="text/javascript">
+var image_url=new Array()
+image_url=["https://www.vultr.com/","vh8576m0.html","https://virmach.com/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="ak90305-container ak90305-1 ak90305-hide">
+    <div class="ak90305-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="ak90305"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

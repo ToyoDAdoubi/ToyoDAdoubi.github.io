@@ -1,0 +1,1090 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>一个由Go语言编写的轻量化 HTTP Tunnel 代理工具 —— GoFlyway | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1960] -->
+<meta name="description"  content="前几天突然看到很多人在讨论这个HTTP代理工具，一开始我以为是单纯的HTTP代理，在 Github 了解后，看起来是针对header关键信息加密(如域名)等等简单的加密方式来骗过GFW的明文嗅探，同时因为HTTP的轻量化也保证了高效的传输数据，虽然现在这个项目才刚刚开始，但是在GFW未注意到之前（根据特征封锁），效果应" />
+
+<meta name="keywords"  content="goflyway,http" />
+
+<link rel="canonical" href="fz5z7h5j.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='ShadowsocksR 转为类VPN的真 · 全局代理神器 (软件/游戏走代理) — SSTAP' href='apf3f05x.html' />
+<link rel='next' title='『原创』Go语言轻量化 HTTP Tunnel 代理工具 —— GoFlyway 一键安装管理脚本' href='juxwmu1i.html' />
+<link rel='shortlink' href='https://doub.io/?p=2384' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fgoflyway-jc1%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fgoflyway-jc1%2F&amp;format=xml" />
+<style>
+.ok0a621{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.ok0a621-hide{
+    display: none;
+}
+.ok0a621-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.ok0a621-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.ok0a621-2 .ok0a621-body,.ok0a621-3 .ok0a621-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.ok0a621-2 .close-btn,.ok0a621-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.ok0a621-3 .ok0a621-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.ok0a621').html(kill_adBlock_message);
+            jQuery('.ok0a621-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.ok0a621-container').fadeOut('ok0a621-hide');
+        });
+    });
+    var kill_adBlock_status = 1;
+    var kill_adBlock_message = '逗比很伤心😥，您的<strong>广告拦截扩展</strong>屏蔽了我们的小广告，网站的发展离不开大家的支持，请先看过<a target=\"_blank\" style=\"color: #ffe500;\" href=\"3--didfb.html\">这个文章</a>后，再确定是否要将我们的域名添加到<strong>拦截白名单</strong>中，谢谢！😘👌';
+    var kill_adBlock_message_delay = 0;
+    var kill_adBlock_close_btn = 1;
+    var kill_adBlock_close_automatically = 0;
+    var kill_adBlock_close_automatically_delay = 0;
+    var kill_adBlock_message_type = 1;
+    function adBlockDetected() {
+      show_message();
+    }
+    
+    if(typeof killAdBlock === 'undefined') {
+        adBlockDetected();
+    } else {
+        killAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+    }
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="GoFlyway, HTTP, 网络资源">
+<meta name="description" content="前几天突然看到很多人在讨论这个HTTP代理工具，一开始我以为是单纯的HTTP代理，在 Github 了解后，看起来是针对header关键信息加密(如域名)等等简单的加密方式来骗过GFW的明文嗅探，同时因为HTTP的轻量化也保证了高效的传输数据，虽然现在这个项目才刚刚开始，但是在GFW未注意到之前（根据特征封锁），效果应该不错。  Github 项目地址：https://github.com/coyove/goflyway  服务端一键脚">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-2384 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li class="current-post-ancestor"><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="./softs.wtf/"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Atoyodadoubi.github.io'; return false;" action="https://toyodadoubi.github.io/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 逗比云还是逃不过被墙的命运，既然如此那以后逗比云也就一直用被墙的旧域名 <strong><a target="_blank" href="./softs.wtf/">[softs.wtf]</a></strong> 算了。
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://www.gigsgigscloud.com/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="fz5z7h5j.html">一个由Go语言编写的轻量化 HTTP Tunnel 代理工具 —— GoFlyway</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="c8ljt6o8.html"> 网络资源</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 1年前 (2017-09-14)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 18580℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="fz5z7h5j.html#comments">78评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="fz5z7h5j.html#服务端配置" title="服务端配置"><span>服务端配置</span></a><ul class="children"><li class="content-index-level-2"><a href="fz5z7h5j.html#下载安装" title="下载安装"><span>下载安装</span></a></li><li class="content-index-level-2"><a href="fz5z7h5j.html#服务端使用方法" title="服务端使用方法"><span>服务端使用方法</span></a><ul class="children"><li class="content-index-level-3"><a href="fz5z7h5j.html#启动" title="启动"><span>启动</span></a></li><li class="content-index-level-3"><a href="fz5z7h5j.html#停止" title="停止"><span>停止</span></a></li><li class="content-index-level-3"><a href="fz5z7h5j.html#查看日志" title="查看日志"><span>查看日志</span></a></li></ul></li></ul></li><li class="content-index-level-1"><a href="fz5z7h5j.html#客户端配置" title="客户端配置"><span>客户端配置</span></a><ul class="children"><li class="content-index-level-2"><a href="fz5z7h5j.html#下载安装" title="下载安装"><span>下载安装</span></a></li><li class="content-index-level-2"><a href="fz5z7h5j.html#客户端使用方法" title="客户端使用方法"><span>客户端使用方法</span></a><ul class="children"><li class="content-index-level-3"><a href="fz5z7h5j.html#制作启动脚本" title="制作启动脚本"><span>制作启动脚本</span></a></li></ul></li><li class="content-index-level-2"><a href="fz5z7h5j.html#使用步骤" title="使用步骤"><span>使用步骤</span></a></li><li class="content-index-level-2"><a href="fz5z7h5j.html#客户端Web控制面板" title="客户端Web控制面板"><span>客户端Web控制面板</span></a></li></ul></li><li class="content-index-level-1"><a href="fz5z7h5j.html#速度对比" title="速度对比"><span>速度对比</span></a><ul class="children"><li class="content-index-level-2"><a href="fz5z7h5j.html#ShadowsocksR" title="ShadowsocksR"><span>ShadowsocksR</span></a></li><li class="content-index-level-2"><a href="fz5z7h5j.html#GoFlyway" title="GoFlyway"><span>GoFlyway</span></a></li></ul></li><li class="content-index-level-1"><a href="fz5z7h5j.html#最后总结" title="最后总结"><span>最后总结</span></a></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年11月3日 22:04</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>前几天突然看到很多人在讨论这个HTTP代理工具，一开始我以为是单纯的HTTP代理，在 <a href="https://github.com/coyove/goflyway/issues/1" target="_blank" rel="noopener">Github</a> 了解后，看起来是针对header关键信息加密(如域名)等等简单的加密方式来骗过GFW的明文嗅探，同时因为HTTP的轻量化也保证了高效的传输数据，虽然现在这个项目才刚刚开始，但是在GFW未注意到之前（根据特征封锁），效果应该不错。</p>
+<p><strong>Github 项目地址：</strong><a href="https://github.com/coyove/goflyway" target="_blank" rel="noopener">https://github.com/coyove/goflyway</a></p>
+<p><strong>服务端一键脚本：<a title="Go语言轻量化 HTTP Tunnel 代理工具 —— GoFlyway 一键安装管理脚本" href="juxwmu1i.html" target="_blank" rel="noopener">『原创』Go语言轻量化 HTTP Tunnel 代理工具 —— GoFlyway 一键安装管理脚本</a></strong></p>
+<p><strong>客户端辅助工具：<a title="『原创』更方便的Windows系统 Goflyway 客户端 —— Goflyway Tools" href="7btobhno.html" target="_blank" rel="noopener">『原创』更方便的Windows系统 Goflyway 客户端 —— Goflyway Tools</a></strong></p>
+<p>与单纯的HTTP代理不同的是，因为这个工具会对一些内容加密和交换密匙，<strong>所以需要特定的客户端。</strong></p>
+<hr />
+<p><strong>其他 Goflyway 教程请看：<a href="yx4tsq_0.html" target="_blank" rel="noopener">https://doub.io/tag/goflyway/</a></strong></p>
+<h2 id="服务端配置">服务端配置</h2>
+<p>这里以 Linux系统为例。</p>
+<pre>注意：GoFlyway 的客户端和服务端都是一个文件，也就是本文章的服务端配置和客户端配置都是可以互相转换的，只是取决于运行GoFlyway的参数有没有 <strong>-up=xxx:xxx</strong> ，如果有就是客户端模式，如果没有就是服务端模式。</pre>
+<h3 id="下载安装">下载安装</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>首先建立并进入文件夹（假设你当前目录是<code> /root </code>，那么 Goflyway的目录就是<code> /root/goflyway </code>）：</p>
+<pre class="prettyprint linenums">mkdir goflyway &amp;&amp; cd goflyway
+</pre>
+<p>然后获取最新的版本号：</p>
+<pre class="prettyprint linenums">goflyway_ver=$(wget --no-check-certificate -qO- -t1 -T3 https://api.github.com/repos/coyove/goflyway/releases| grep "tag_name"| head -n 1| awk -F ":" '{print $2}'| sed 's/\"//g;s/,//g;s/ //g') &amp;&amp; echo ${goflyway_ver}
+</pre>
+<p>执行完后会显示获取的最新版本号，比如 <strong>1.3.0a</strong> 这样的格式，如果返回是空或者其他错误的内容，那么就代表获取失败。如果获取失败，请去 <a href="https://github.com/coyove/goflyway/releases/latest" target="_blank" rel="noopener">Github</a> 获取最新的版本号，例如 <strong>1.3.0a</strong> ，然后执行<code> goflyway_ver=1.3.0a </code>（自己替换版本号）即可继续下面的步骤。</p>
+<pre class="prettyprint linenums">if [[ $(uname -m) == "x86_64" ]]; then bit='amd64';else bit='386';fi &amp;&amp; [[ ! -z ${bit} ]] &amp;&amp; wget -N --no-check-certificate "https://github.com/coyove/goflyway/releases/download/${goflyway_ver}/goflyway_linux_${bit}.tar.gz"
+# 自动判断系统位数并下载
+
+tar -xzf "goflyway_linux_${bit}.tar.gz" &amp;&amp; rm -rf "goflyway_linux_${bit}.tar.gz"
+# 解压压缩包并删除无用的压缩包
+
+chmod +x goflyway
+# 赋予软件执行权限
+</pre>
+<p></p></div>
+<h3 id="服务端使用方法">服务端使用方法</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<h4 id="启动">启动</h4>
+<blockquote><p><strong>注意：</strong>每次启动前，都需要进入GoFlyway的目录，以上面的 <strong>/root/goflyway</strong> 为例，那么就是 <code>cd  /root/goflyway</code></p></blockquote>
+<p>假设密码为：<strong>doubi233</strong>，监听端口为：<strong>80</strong>，日志输出位置为：<strong>/tmp/goflyway.log</strong>，那么执行：</p>
+<pre class="prettyprint linenums">nohup ./goflyway -k="doubi233" -l=":80" &gt; /tmp/goflyway.log 2&gt;&amp;1 &amp;
+</pre>
+<p>如果没有报错说明启动成功，如果不确定可以查看日志。</p>
+<h4 id="停止">停止</h4>
+<pre class="prettyprint linenums">kill -9 $(ps -ef|grep "goflyway"|grep -v grep|awk '{print $2}')
+</pre>
+<h4 id="查看日志">查看日志</h4>
+<pre class="prettyprint linenums"># 实时查看日志
+tail -f /tmp/goflyway.log
+# 查看完整日志
+cat /tmp/goflyway.log
+</pre>
+<p></p></div>
+<h2 id="客户端配置">客户端配置</h2>
+<p>这里以 Windows系统为例。</p>
+<p><strong>客户端辅助工具：<a title="『原创』更方便的Windows系统 Goflyway 客户端 —— Goflyway Tools" href="7btobhno.html" target="_blank" rel="noopener">『原创』更方便的Windows系统 Goflyway 客户端 —— Goflyway Tools</a></strong></p>
+<pre><strong>注意：</strong>GoFlyway 的客户端和服务端都是一个文件，也就是本文章的服务端配置和客户端配置都是可以互相转换的，只是取决于运行GoFlyway的参数有没有 <strong>-up=xxx:xxx</strong> ，如果有就是客户端模式，如果没有就是服务端模式。</pre>
+<h3 id="下载安装">下载安装</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>首先去 <a href="https://github.com/coyove/goflyway/releases/latest" target="_blank" rel="noopener">Github</a> 下载客户端。</p>
+<p><strong>Github中 Windows 32位下载：</strong>goflyway_windows_386.zip</p>
+<p><strong>Github中 Windows 64位下载：</strong>goflyway_windows_amd64.zip</p>
+<p>下载并解压后，我们会得到两个文件：<strong>goflyway.exe</strong>（主程序）、<strong>chinalist.txt</strong>（国内常见域名，用于跳过国内网站）</p>
+<pre>注意：这时候并不能直接运行 <strong>goflyway.exe</strong> 程序，因为这样没有指定任何参数不说，还会识别为服务端模式。</pre>
+<p></p></div>
+<h3 id="客户端使用方法">客户端使用方法</h3>
+<h4 id="制作启动脚本">制作启动脚本</h4>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>假设你的 <strong>goflyway.exe</strong> 解压后位于 <strong>D:\goflyway\goflyway.exe</strong> ，那么在 <strong>D:\goflyway</strong> 目录下我们新建一个文本文件，写入以下内容：</p>
+<pre class="prettyprint linenums">goflyway.exe -up="1.1.1.1:80" -k="doubi233" -l=":8100"
+pause&gt;nul
+# 将上面两行内容写入到新建文本文件中
+# 注意：-k="doubi233"和-up="1.1.1.1:8100" 是你服务端的配置，自己替换，不要傻傻的跟着教程写
+# -l=":8100" 指的是客户端监听本地端口 8100，默认就行
+# 第二行代码的作用是，当你某个地方/代码配置错误，CMD批处理不会运行后直接关闭，免得看不到报错信息</pre>
+<p>然后重命名新建的文本文件为：<strong>run.bat</strong>，并运行BAT脚本（或者以管理员身份运行），提示内容大概如下：</p>
+<pre class="prettyprint linenums"><strong># 下面是运行启动脚本后的内容示例（注意下面的不需要你写入）：</strong>
+D:\goflyway\&gt;goflyway.exe -k="doubi233" -up="1.1.1.1:80" -l=":8100"
+[  0914 10:03:59.572] listening on :8100, upstream is 1.1.1.1:80</pre>
+<p></p></div>
+<h3 id="使用步骤">使用步骤</h3>
+<pre>注意：下面以客户端本地监听端口 8100 为例，如果你设置了其他的，那么自己替换。</pre>
+<p>要使流量走GoFlyway，只需要在需要的软件中设置 HTTP代理 <strong>127.0.0.1 8100</strong>即可。</p>
+<p>比如，如果浏览器要走GoFlyway代理，那么打开<strong>系统代理设置</strong>（或者浏览器内相关代理设置），设置代理服务器 <strong>地址：127.0.0.1</strong>，<strong>端口：8100</strong>，并一路确定即可。</p>
+<hr />
+<p>如果你是Chrome浏览器并且使用了 <strong>SwitchyOmega （<a href="b2pv8ugx.html" target="_blank" rel="noopener">点击查看新手使用教程</a>）</strong>代理管理扩展，那么进入扩展选项页面：</p>
+<p><strong>新建情景模式...</strong> -&gt; <strong>情景模式名称：GoFlyway</strong> -&gt; <strong>情景模式类型：代理服务器</strong> -&gt; 然后设置 <strong>代理协议：HTTP</strong>，<strong>代理服务器：127.0.0.1</strong>，<strong>代理端口：8100</strong>，然后点击左下角的 <strong>应用选项 </strong>按钮即可。</p>
+<p>接着打开谷歌试试：<a href="https://www.google.com/" target="_blank" rel="noopener">https://www.google.com</a></p>
+<h3 id="客户端Web控制面板">客户端Web控制面板</h3>
+<p>客户端运行后可以通过访问<code> http://127.0.0.1:8100 </code>（<strong>8100</strong>是客户端本地监听端口，就是客户端参数 <strong>-l=":8100"</strong>，自己对应的改）来查看和设置一些GoFlyway选项。</p>
+<p><strong>右侧的几个选项分别是：</strong></p>
+<ol>
+<li>更改密码: doubi233（doubi233 文字可以点击修改的）</li>
+<li>代理所有流量（包括国内网站）</li>
+<li>在RNG中使用高分辨率计数器（不懂）</li>
+<li>使用 China-list 识别中文网站（就是 <strong>chinalist.txt</strong> 文件）</li>
+<li>禁用 shoco 压缩算法（不懂）</li>
+</ol>
+<p>设置选项下方的两个按钮分别是：<strong>更新设置</strong>、<strong>清除DNS缓存</strong>。</p>
+<p><strong>注意：</strong>在修改完上面的几个设置选项后（包括密码），都需要点击一下<strong> Update Settings (更新设置)按钮</strong>才会生效！</p>
+<p><img class="size-medium aligncenter" src="i9q71adg.png" width="860" height="410" /></p>
+<p>[/toggle]</p>
+<p><strong>更多使用姿势请看Github WIKI：<a href="https://github.com/coyove/goflyway/wiki/使用教程" target="_blank" rel="noopener">https://github.com/coyove/goflyway/wiki/使用教程/</a></strong></p>
+<h2 id="速度对比">速度对比</h2>
+<p>我在一台美国小鸡上面 同时安装了 <strong>ShadowsocksR </strong>和 <strong>GoFlyway</strong> ，测试速度如下。</p>
+<pre><strong>注意：以下测速仅供参考，</strong>一些地区可能HTTP代理会限制严格，情况不一而论。</pre>
+<h3 id="ShadowsocksR">ShadowsocksR</h3>
+<p><strong>加密方式：</strong>aes-128-ctr、<strong>协议插件：</strong>auth_aes128_md5、<strong>混淆插件：</strong>tls1.2_ticket_auth</p>
+<p><strong>YouTube速度测试（单线程）：</strong></p>
+<pre><strong>注意：</strong>因为我这边联通对海外的服务器单线程限速 <strong>8Mbps+-</strong>，所以YouTube这类单线程都因为<strong>很容易跑到QOS上限</strong>而看不到什么大概区别。</pre>
+<p><img class="size-medium aligncenter" src="l4uegmae.png" width="542" height="206" /></p>
+<p><strong>IDM全速下载（多线程）：</strong></p>
+<p>速度大概在 <strong>5MB/s ~ 7MB/s</strong> 之间波动，有时候也会跑到 <strong>8、9MB/s</strong>，不过基本平均速度在 <strong>6+MB/s</strong> 。</p>
+<p><img class="size-medium aligncenter" src="oynckz8d.png" width="591" height="295" /></p>
+<h3 id="GoFlyway">GoFlyway</h3>
+<p><strong>YouTube速度测试（单线程）：</strong></p>
+<pre><strong>注意：</strong>因为我这边联通对海外的服务器单线程限速 <strong>8Mbps+-</strong>，所以YouTube这类单线程都因为<strong>很容易跑到QOS上限</strong>而看不到什么大概区别。</pre>
+<p><img class="size-medium aligncenter" src="rhr-1a5c.png" width="520" height="174" /></p>
+<p><strong>IDM全速下载（多线程）：</strong></p>
+<p>测试速度很快就突破到 <strong>9MB/s</strong>了，多次测试发现基本稳定到 <strong>8.5MB/s ~ 9.5MB/s</strong> 之间。</p>
+<p><img class="size-medium aligncenter" src="vbj8gb1a-3.png" width="591" height="295" /></p>
+<p>从上面的测速对比看，因为我这边被联通单线程限速，所以单线程很容易跑到QOS上限，速度上面没什么差别，而在多线程下载上，因为突破了联通的单线程QOS限速，所以可以明显看出速度差距，GoFlyway因为HTTP轻量化和加密较SSR相比简单很多，并且没有混淆等损耗速度，所以在速度上面占据了优势。</p>
+<h2 id="最后总结">最后总结</h2>
+<p>在墙没有注意到这个HTTP工具（根据特征封锁）或者运营商真的HTTP协议QOS的前提下，这个软件在速度方面还是很有优势的，不过毕竟还是太年轻，以后会更好。</p>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="fz5z7h5j.html">一个由Go语言编写的轻量化 HTTP Tunnel 代理工具 —— GoFlyway</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="2384" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">78</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="yx4tsq_0.html" rel="tag">GoFlyway</a><a href="nna7rrqj-2.html" rel="tag">HTTP</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="apf3f05x.html" rel="prev">ShadowsocksR 转为类VPN的真 · 全局代理神器 (软件/游戏走代理) — SSTAP</a></span>
+			<span class="article-nav-next"><a href="juxwmu1i.html" rel="next">『原创』Go语言轻量化 HTTP Tunnel 代理工具 —— GoFlyway 一键安装管理脚本</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="wlqx27bd.html" title="GoFlyway 基础教程：Android 客户端使用方法" target="_blank">
+<img src="o_y8vr92.png?src=https://doub.io/wp-content/uploads/goflyway.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="GoFlyway 基础教程：Android 客户端使用方法" />	<br><span class="r_title">GoFlyway 基础教程：Android 客户端使用方法</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="s3y0lufe.html" title="GoFlyway 进阶教程：<strong>KCP 协议复活被墙IP</strong>" target="_blank">
+<img src="o_y8vr92.png?src=https://doub.io/wp-content/uploads/goflyway.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="GoFlyway 进阶教程：<strong>KCP 协议复活被墙IP</strong>" />	<br><span class="r_title">GoFlyway 进阶教程：<strong>KCP 协议复活被墙IP</strong></span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="p9u37iuf.html" title="GoFlyway 进阶教程：代理服务器自定义搭建HTTP伪装网站，降低被墙几率" target="_blank">
+<img src="o_y8vr92.png?src=https://doub.io/wp-content/uploads/goflyway.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="GoFlyway 进阶教程：代理服务器自定义搭建HTTP伪装网站，降低被墙几率" />	<br><span class="r_title">GoFlyway 进阶教程：代理服务器自定义搭建HTTP伪装网站，降低被墙几率</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="mc1t27yh.html" title="GoFlyway 进阶教程：免费域名+免费CDN+HTTP伪装=被墙的IP继续做代理" target="_blank">
+<img src="pp7hdx2n.png?src=https://img.doub.pw/thumbs/goflyway-05.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="GoFlyway 进阶教程：免费域名+免费CDN+HTTP伪装=被墙的IP继续做代理" />	<br><span class="r_title">GoFlyway 进阶教程：免费域名+免费CDN+HTTP伪装=被墙的IP继续做代理</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="wlqx27bd.html">GoFlyway 基础教程：Android 客户端使用方法</a></li><li><i class="fa fa-minus"></i><a href="s3y0lufe.html">GoFlyway 进阶教程：<strong>KCP 协议复活被墙IP</strong></a></li><li><i class="fa fa-minus"></i><a href="p9u37iuf.html">GoFlyway 进阶教程：代理服务器自定义搭建HTTP伪装网站，降低被墙几率</a></li><li><i class="fa fa-minus"></i><a href="mc1t27yh.html">GoFlyway 进阶教程：免费域名+免费CDN+HTTP伪装=被墙的IP继续做代理</a></li><li><i class="fa fa-minus"></i><a href="7btobhno.html">『原创』更方便的Windows系统 Goflyway 客户端 —— GoFlyway Tools</a></li><li><i class="fa fa-minus"></i><a href="juxwmu1i.html">『原创』Go语言轻量化 HTTP Tunnel 代理工具 —— GoFlyway 一键安装管理脚本</a></li><li><i class="fa fa-minus"></i><a href="5mvl2z-3.html">Linux通过HTTP服务下载文件到本地以测试<strong>VPS回程速度</strong></a></li><li><i class="fa fa-minus"></i><a href="wkcjzpyd-3.html">一个免费且快速的HTTP/SOCKS5代理软件 —— GoGotunnel</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='2384' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (78)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-45488"><div class="c-avatar"><div class="c-main" id="div-comment-45488">"客户端Web控制面板" 这里烦请改一下，"http://127.0.0.1:8100/?goflyway-console"
+现在改成这个了，我找了半天，在 "https://github.com/coyove/goflyway/issues/80", 才找到, 
+要用这个了, "http://127.0.0.1:8101/"<div class="c-meta"><span class="c-author">zhuatw</span>2018-11-03 21:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=45488#respond' onclick='return addComment.moveForm( "div-comment-45488", "45488", "respond", "2384" )' aria-label='回复给zhuatw'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-45493"><div class="c-avatar"><div class="c-main" id="div-comment-45493">嗯，修改了，这个功能我基本没怎么用过。。。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-11-03 22:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=45493#respond' onclick='return addComment.moveForm( "div-comment-45493", "45493", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-43377"><div class="c-avatar"><div class="c-main" id="div-comment-43377">[信息] GoFlyway 服务管理脚本下载完成 !
+[信息] 开始写入 配置文件...
+[信息] 开始设置 iptables防火墙...
+[信息] 开始添加 iptables防火墙规则...
+[信息] 开始保存 iptables防火墙规则...
+[信息] 所有步骤 安装完毕，开始启动...
+[信息] GoFlyway 启动中...
+[错误] GoFlyway 启动失败 !
+
+以前在一台VPS上OK的，现在新买一个VPS老是启动失败<div class="c-meta"><span class="c-author"><a href='http://666.cn/' rel='external nofollow' class='url'>666</a></span>2018-09-19 17:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=43377#respond' onclick='return addComment.moveForm( "div-comment-43377", "43377", "respond", "2384" )' aria-label='回复给666'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-43384"><div class="c-avatar"><div class="c-main" id="div-comment-43384">启动失败请贴出错误日志。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-09-19 21:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=43384#respond' onclick='return addComment.moveForm( "div-comment-43384", "43384", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-43394"><div class="c-avatar"><div class="c-main" id="div-comment-43394"><pre class="prettyprint linenums" >刚安装后日志
+~# cat /usr/local/goflyway/goflyway.log
+* goflyway (build 180404051442) 
+* launched as server (aka upstream) 
+* upstream C76976 started at [ :9997 ] 
+
+重启
+~#/etc/init.d/goflyway restart
+[信息] GoFlyway 未运行
+[信息] GoFlyway 启动中...
+[错误] GoFlyway 启动失败 !
+
+重启后日志：
+~# cat /usr/local/goflyway/goflyway.log
+* goflyway (build 180404051442) 
+* launched as server (aka upstream) 
+* upstream C76976 started at [ :9997 ] 
+* goflyway (build 180404051442) 
+* launched as server (aka upstream) 
+* upstream C76976 started at [ :9997 ] 
+[X0920/115146.440:main.go(348)] listen :9997, C98, bind: address already in use
+</pre><div class="c-meta"><span class="c-author">666</span>2018-09-20 11:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=43394#respond' onclick='return addComment.moveForm( "div-comment-43394", "43394", "respond", "2384" )' aria-label='回复给666'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-43397"><div class="c-avatar"><div class="c-main" id="div-comment-43397">bind: address already in use<br />
+端口被占用，使用 netstat -lntp 命令查看是哪个进程占用了端口。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-09-20 12:43 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=43397#respond' onclick='return addComment.moveForm( "div-comment-43397", "43397", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even depth-3" id="comment-43399"><div class="c-avatar"><div class="c-main" id="div-comment-43399">~#service goflyway status
+● goflyway.service - LSB: Lightweight HTTP proxy tool
+   Loaded: loaded (/etc/init.d/goflyway; bad; vendor preset: enabled)
+   Active: active (exited) since Thu 2018-09-20 12:33:15 CST; 10s ago
+     Docs: man:systemd-sysv-generator(8)
+  Process: 1524 ExecStop=/etc/init.d/goflyway stop (code=exited, status=1/FAILURE)
+  Process: 1535 ExecStart=/etc/init.d/goflyway start (code=exited, status=0/SUCCESS)
+
+Sep 20 12:33:13 DescriptiveLighthearted-VM systemd[1]: Starting LSB: Lightweight HTTP proxy tool...
+Sep 20 12:33:13 DescriptiveLighthearted-VM goflyway[1535]: [信息] GoFlyway 启动中...
+Sep 20 12:33:15 DescriptiveLighthearted-VM goflyway[1535]: [错误] GoFlyway 启动失败 !
+Sep 20 12:33:15 DescriptiveLighthearted-VM systemd[1]: Started LSB: Lightweight HTTP proxy tool.
+Sep 20 12:33:18 DescriptiveLighthearted-VM systemd[1]: Started LSB: Lightweight HTTP proxy tool.<div class="c-meta"><span class="c-author">666</span>2018-09-20 13:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=43399#respond' onclick='return addComment.moveForm( "div-comment-43399", "43399", "respond", "2384" )' aria-label='回复给666'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-43404"><div class="c-avatar"><div class="c-main" id="div-comment-43404">请提供日志内容。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-09-20 18:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=43404#respond' onclick='return addComment.moveForm( "div-comment-43404", "43404", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-42870"><div class="c-avatar"><div class="c-main" id="div-comment-42870"><pre class="prettyprint linenums" >站长大大好！我用的是manjaro Linux，已安装go语言版的goflyway，我执行的命令：
+goflyway -up="demo.goflyway.pw:80" -k=密码  -l="0.0.0.0:8118" -g
+
+终端输出：
+* goflyway (build 180404051442) 
+* launched as client 
+* failed to read ACL config (but it's fine, you can ignore this message) 
+*   err: open chinalist.txt: no such file or directory      //我不需要gfwlist，删了
+* proxy 3DC313 started at [ 0.0.0.0:8118 ], upstream: [ demo.goflyway.pw:80 ] 
+* access client web console at [ 127.0.0.1:8128 ] 
+
+但我http代理设置localhost，8118端口，还是连不上Google，-l参数使用127.0.0.1也是这样。。
+
+站点分享的信息我都加入参数中了，唯有CDN模式没有特别设定，是否因为这个？如果可能是的话，请问如何设定？
+
+谢谢站长大大！
+</pre><div class="c-meta"><span class="c-author">Andrea</span>2018-09-07 10:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=42870#respond' onclick='return addComment.moveForm( "div-comment-42870", "42870", "respond", "2384" )' aria-label='回复给Andrea'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-42883"><div class="c-avatar"><div class="c-main" id="div-comment-42883">可以参考这个教程：<a href="mc1t27yh.html#如果是手动教程客户端的请看：" target="_blank">https://doub.io/goflyway-jc3/#如果是手动教程客户端的请看：</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-09-07 11:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=42883#respond' onclick='return addComment.moveForm( "div-comment-42883", "42883", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-40308"><div class="c-avatar"><div class="c-main" id="div-comment-40308">弹出更新提示时能不能复制更新网址。。懒得一个字一个字打<div class="c-meta"><span class="c-author"><a href='http://peppapig.com/' rel='external nofollow' class='url'>哇哦</a></span>2018-07-18 19:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=40308#respond' onclick='return addComment.moveForm( "div-comment-40308", "40308", "respond", "2384" )' aria-label='回复给哇哦'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-40317"><div class="c-avatar"><div class="c-main" id="div-comment-40317">哪里的更新提示？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-07-18 22:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=40317#respond' onclick='return addComment.moveForm( "div-comment-40317", "40317", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-38933"><div class="c-avatar"><div class="c-main" id="div-comment-38933">linux版GoFlyway无法扫描二维码<div class="c-meta"><span class="c-author">4e</span>2018-06-09 23:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=38933#respond' onclick='return addComment.moveForm( "div-comment-38933", "38933", "respond", "2384" )' aria-label='回复给4e'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-38947"><div class="c-avatar"><div class="c-main" id="div-comment-38947">二维码仅适用于 我的 Goflyway 一键脚本和 Goflyway Tools 客户端，其他的都需要手动输入账号信息。<br />
+我网站分享的免费 Goflyway 账号的密码暂时都是 doub.io ，服务器IP和端口都写了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-06-10 09:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=38947#respond' onclick='return addComment.moveForm( "div-comment-38947", "38947", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-38068"><div class="c-avatar"><div class="c-main" id="div-comment-38068">手机怎么使用<div class="c-meta"><span class="c-author">Taipei</span>2018-05-19 14:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=38068#respond' onclick='return addComment.moveForm( "div-comment-38068", "38068", "respond", "2384" )' aria-label='回复给Taipei'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-36474"><div class="c-avatar"><div class="c-main" id="div-comment-36474">解压后提示病毒 TrojanDropper:Win32/Woozlist.B<div class="c-meta"><span class="c-author">xx</span>2018-04-16 13:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=36474#respond' onclick='return addComment.moveForm( "div-comment-36474", "36474", "respond", "2384" )' aria-label='回复给xx'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-36483"><div class="c-avatar"><div class="c-main" id="div-comment-36483">这是个超级病毒，用了会地球爆炸。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-16 15:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=36483#respond' onclick='return addComment.moveForm( "div-comment-36483", "36483", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-35878"><div class="c-avatar"><div class="c-main" id="div-comment-35878">站长你的获取版本号应该改为 goflyway_ver=$(wget -qO- "https://github.com/coyove/goflyway/tags"|grep "/goflyway/releases/tag/"|grep -v '\-apk'|head -n 1|awk -F "/tag/" '{print $2}'|sed 's/\"&gt;//')&amp;&amp; echo ${goflyway_ver}<div class="c-meta"><span class="c-author">孤帆</span>2018-04-07 14:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=35878#respond' onclick='return addComment.moveForm( "div-comment-35878", "35878", "respond", "2384" )' aria-label='回复给孤帆'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-35886"><div class="c-avatar"><div class="c-main" id="div-comment-35886">已更新。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-07 16:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=35886#respond' onclick='return addComment.moveForm( "div-comment-35886", "35886", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-33847"><div class="c-avatar"><div class="c-main" id="div-comment-33847">请问可否添加自动更换随机端口号的功能？比如自动每24个小时生成一个随机的端口号，然后读取conf，用正则替换值，然后重启服务。这样可以一定程度上避免某端口流量过大ip被墙，每天打开客户端前先连上服务器手动查看端口号就是了 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_mrgreen.gif" alt=":mrgreen:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">ruae</span>2018-03-19 16:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=33847#respond' onclick='return addComment.moveForm( "div-comment-33847", "33847", "respond", "2384" )' aria-label='回复给ruae'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-34003"><div class="c-avatar"><div class="c-main" id="div-comment-34003">但是，这样同样也会造成特征，一个HTTP代理，天天换端口，太不正常。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-20 10:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=34003#respond' onclick='return addComment.moveForm( "div-comment-34003", "34003", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-34029"><div class="c-avatar"><div class="c-main" id="div-comment-34029">确实会造成特征，但就我的情况来说，我的流量特别大，基本一个月左右速度下降，一个多月就会被墙ip，但是通过手动三天一次换端口，现在快三个月也没有被干扰或者被墙<div class="c-meta"><span class="c-author">ruae</span>2018-03-20 14:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=34029#respond' onclick='return addComment.moveForm( "div-comment-34029", "34029", "respond", "2384" )' aria-label='回复给ruae'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-34235"><div class="c-avatar"><div class="c-main" id="div-comment-34235">你真想要这个功能的话，请 <a href="https://t.me/doubi/" target="_blank" rel="nofollow">Telegram群组</a>(<a href="ma7f_p6p.html" target="_blank">TG使用教程</a>)私聊联系我私人定制脚本（免费）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-21 14:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=34235#respond' onclick='return addComment.moveForm( "div-comment-34235", "34235", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-33241"><div class="c-avatar"><div class="c-main" id="div-comment-33241">大佬，用恩山的H大改的华硕固件里的goflyway设置好了参数，然后手机连上之后用小火箭设置了 路由：8100 的socks或者http代理，想当然的以为能通，但实际是通不了的。有没有什么方法可以解决这个问题呢？<div class="c-meta"><span class="c-author">woody</span>2018-03-16 14:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=33241#respond' onclick='return addComment.moveForm( "div-comment-33241", "33241", "respond", "2384" )' aria-label='回复给woody'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-33261"><div class="c-avatar"><div class="c-main" id="div-comment-33261">智能路由器和IOS我都没有，不清楚这种玩法。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-16 19:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=33261#respond' onclick='return addComment.moveForm( "div-comment-33261", "33261", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-33183"><div class="c-avatar"><div class="c-main" id="div-comment-33183">可惜不能再路由器上使用。<div class="c-meta"><span class="c-author">九五二七</span>2018-03-15 13:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=33183#respond' onclick='return addComment.moveForm( "div-comment-33183", "33183", "respond", "2384" )' aria-label='回复给九五二七'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-32866"><div class="c-avatar"><div class="c-main" id="div-comment-32866">proxyconnect, dial tcp 195.**.**.***:8080: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+[E0308/221344.582:client.go(233)] dial 195.**.**.***:8080, i/o timeout
+                                  ... 1 similar message(s)
+                                  ... 1 similar message(s)
+                                  ... 9 similar message(s)
+                                  ... 1 similar message(s)
+                                  ... 1 similar message(s)
+                                  ... 1 similar message(s)
+                                  ... 2 similar message(s)
+服务器IP已经改成域名了，不知道什么原因<div class="c-meta"><span class="c-author">simon</span>2018-03-08 22:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=32866#respond' onclick='return addComment.moveForm( "div-comment-32866", "32866", "respond", "2384" )' aria-label='回复给simon'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-32931"><div class="c-avatar"><div class="c-main" id="div-comment-32931">尝试重启一下Goflyway 服务端，有可能是服务端进程假死了。<br />
+然后使用<a href="dkj0kb1w.html" target="_blank">TCPing</a>测试一下域名+端口是否通顺正常。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-10 15:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=32931#respond' onclick='return addComment.moveForm( "div-comment-32931", "32931", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-32661"><div class="c-avatar"><div class="c-main" id="div-comment-32661">谢谢大神的分享，但是我win10的电脑不能打开那个Tool的exe，说是权限不能访问，但是我在虚拟机上的XP系统上却可以运行，不知道是什么问题。<div class="c-meta"><span class="c-author">DaSangBing</span>2018-03-04 22:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=32661#respond' onclick='return addComment.moveForm( "div-comment-32661", "32661", "respond", "2384" )' aria-label='回复给DaSangBing'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-32680"><div class="c-avatar"><div class="c-main" id="div-comment-32680">右键 - 以管理员方式运行试试。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-05 11:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=32680#respond' onclick='return addComment.moveForm( "div-comment-32680", "32680", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-32651"><div class="c-avatar"><div class="c-main" id="div-comment-32651">类似SSR客户端开启local proxy的功能 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_redface.gif" alt=":oops:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">Vince</span>2018-03-04 18:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=32651#respond' onclick='return addComment.moveForm( "div-comment-32651", "32651", "respond", "2384" )' aria-label='回复给Vince'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-32650"><div class="c-avatar"><div class="c-main" id="div-comment-32650">如果想用电脑做局域网代理服务器该怎么设置呢？（PC上开这个goflyaway，同一局域网的ipad通过pc科学上网）。谢谢博主~<div class="c-meta"><span class="c-author">Vince</span>2018-03-04 18:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=32650#respond' onclick='return addComment.moveForm( "div-comment-32650", "32650", "respond", "2384" )' aria-label='回复给Vince'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-32684"><div class="c-avatar"><div class="c-main" id="div-comment-32684">木有测试过，作者也没说。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-05 12:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=32684#respond' onclick='return addComment.moveForm( "div-comment-32684", "32684", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-32568"><div class="c-avatar"><div class="c-main" id="div-comment-32568">获取版本的链接怎么改成获取最新的版本<div class="c-meta"><span class="c-author">sol</span>2018-03-03 20:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=32568#respond' onclick='return addComment.moveForm( "div-comment-32568", "32568", "respond", "2384" )' aria-label='回复给sol'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-32625"><div class="c-avatar"><div class="c-main" id="div-comment-32625">默认就是获取最新版本号。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-04 14:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=32625#respond' onclick='return addComment.moveForm( "div-comment-32625", "32625", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-32565"><div class="c-avatar"><div class="c-main" id="div-comment-32565">debian系统，用一键安装，安装完显示 安装成功，但是未启动，重启也不行  是什么原因？<div class="c-meta"><span class="c-author">sol</span>2018-03-03 20:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=32565#respond' onclick='return addComment.moveForm( "div-comment-32565", "32565", "respond", "2384" )' aria-label='回复给sol'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-32627"><div class="c-avatar"><div class="c-main" id="div-comment-32627">提供日志信息。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-04 14:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=32627#respond' onclick='return addComment.moveForm( "div-comment-32627", "32627", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-32284"><div class="c-avatar"><div class="c-main" id="div-comment-32284">用本站提供的免费帐号进行客户端的测试，连接谷歌不成功，在Goflyway Tools的日志中看到如下信息。
+run.bat
+goflyway (build 180124041953)
+* launched as client
+* global proxy: goflyway will proxy everything except private IPs
+* proxy Edilri started at [ 127.0.0.1:8100 ], upstream: [ 159.65.92.113:80 ]
+* access client web console at [ 127.0.0.1:8101 ]
+[E0228/112456.894:httpmux.go(40)] prefetch err: read 127.0.0.1:51295, i/o timeout
+[E0228/112620.204:client.go(213)] www.google.com:443: read 159.65.92.113:80, Software caused connection abort<div class="c-meta"><span class="c-author"><a href='http://none/' rel='external nofollow' class='url'>testman</a></span>2018-02-28 11:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=32284#respond' onclick='return addComment.moveForm( "div-comment-32284", "32284", "respond", "2384" )' aria-label='回复给testman'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-32334"><div class="c-avatar"><div class="c-main" id="div-comment-32334">看了下，Goflyway 的负载能力有限，用的人多了，出现了假死情况，我重启服务端后正常了，目前暂时只能定时重启来缓解了，好在对个人使用影响不大。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-28 21:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=32334#respond' onclick='return addComment.moveForm( "div-comment-32334", "32334", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-32350"><div class="c-avatar"><div class="c-main" id="div-comment-32350">果然如此，但是和Goflyway一样由GO语言开发的Brook，没有发现这个问题。<div class="c-meta"><span class="c-author"><a href='http://none/' rel='external nofollow' class='url'>testman</a></span>2018-02-28 23:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=32350#respond' onclick='return addComment.moveForm( "div-comment-32350", "32350", "respond", "2384" )' aria-label='回复给testman'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-32407"><div class="c-avatar"><div class="c-main" id="div-comment-32407">这要看作者写的代码如何了，这我就不懂了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-01 20:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=32407#respond' onclick='return addComment.moveForm( "div-comment-32407", "32407", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-31910"><div class="c-avatar"><div class="c-main" id="div-comment-31910">不会Go语言怎么使用Gofly? 脚本啥的都看不懂<div class="c-meta"><span class="c-author">Eve</span>2018-02-22 16:41 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=31910#respond' onclick='return addComment.moveForm( "div-comment-31910", "31910", "respond", "2384" )' aria-label='回复给Eve'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-31697"><div class="c-avatar"><div class="c-main" id="div-comment-31697">怎么设置多用户？需要和别人一起用<div class="c-meta"><span class="c-author">fiy</span>2018-02-18 23:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=31697#respond' onclick='return addComment.moveForm( "div-comment-31697", "31697", "respond", "2384" )' aria-label='回复给fiy'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-31719"><div class="c-avatar"><div class="c-main" id="div-comment-31719">目前只支持一个用户。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-19 12:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=31719#respond' onclick='return addComment.moveForm( "div-comment-31719", "31719", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-30614"><div class="c-avatar"><div class="c-main" id="div-comment-30614">博主，已经可以科学上网了，但是http://127.0.0.1:8100/?goflyway-console访问不了是什么情况，报request URI must be absolute<div class="c-meta"><span class="c-author">imyzone</span>2018-01-29 22:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=30614#respond' onclick='return addComment.moveForm( "div-comment-30614", "30614", "respond", "2384" )' aria-label='回复给imyzone'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-30649"><div class="c-avatar"><div class="c-main" id="div-comment-30649">也就是启动后能用，但是控制面板打不开？<br />
+是否 8100 端口被占用了？检查一下。如果正常，那么你只能去 Github 联系客服解决了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-30 15:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=30649#respond' onclick='return addComment.moveForm( "div-comment-30649", "30649", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-30685"><div class="c-avatar"><div class="c-main" id="div-comment-30685">是的，好的，非常感谢<div class="c-meta"><span class="c-author">imyzone</span>2018-01-30 21:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=30685#respond' onclick='return addComment.moveForm( "div-comment-30685", "30685", "respond", "2384" )' aria-label='回复给imyzone'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29797"><div class="c-avatar"><div class="c-main" id="div-comment-29797">一直没成功过，安装服务端和设置客户端都正常，唯独代理不能用，比如说访问t66y.com,下载回来一个index.php,google 和youtube根本就打不开<div class="c-meta"><span class="c-author">libilb2</span>2018-01-19 16:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=29797#respond' onclick='return addComment.moveForm( "div-comment-29797", "29797", "respond", "2384" )' aria-label='回复给libilb2'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-29824"><div class="c-avatar"><div class="c-main" id="div-comment-29824">看到你这个问题后，我去找了个空闲服务器装了下，试了下很正常，没什么问题。<br />
+如果有必要，请 <a href="https://t.me/doubi/" target="_blank" rel="nofollow">Telegram群组</a>(<a href="ma7f_p6p.html" target="_blank">TG使用教程</a>)私聊联系我讨论解决。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-20 01:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=29824#respond' onclick='return addComment.moveForm( "div-comment-29824", "29824", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-2" id="comment-32127"><div class="c-avatar"><div class="c-main" id="div-comment-32127">你这t66y.com很强啊 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_smile.gif" alt=":smile:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">卷翼</span>2018-02-26 12:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=32127#respond' onclick='return addComment.moveForm( "div-comment-32127", "32127", "respond", "2384" )' aria-label='回复给卷翼'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-23786"><div class="c-avatar"><div class="c-main" id="div-comment-23786">现在可以直接连接逗比了？？？<div class="c-meta"><span class="c-author">lex</span>2017-12-03 16:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=23786#respond' onclick='return addComment.moveForm( "div-comment-23786", "23786", "respond", "2384" )' aria-label='回复给lex'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-23457"><div class="c-avatar"><div class="c-main" id="div-comment-23457">新工具不停的冒冒冒，好事儿好事儿，，<div class="c-meta"><span class="c-author"><a href='http://ians.cc/' rel='external nofollow' class='url'>在烀</a></span>2017-11-27 16:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=23457#respond' onclick='return addComment.moveForm( "div-comment-23457", "23457", "respond", "2384" )' aria-label='回复给在烀'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-19559"><div class="c-avatar"><div class="c-main" id="div-comment-19559">hi.
+你能用它访问youtube吗？我试了试，不行。<div class="c-meta"><span class="c-author">fish</span>2017-10-07 18:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=19559#respond' onclick='return addComment.moveForm( "div-comment-19559", "19559", "respond", "2384" )' aria-label='回复给fish'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-19266"><div class="c-avatar"><div class="c-main" id="div-comment-19266">为何图片都看不见，显示的都只是这个一大块灰色而已呢，https://doub.io/wp-content/plugins/wp-images-lazy-loading/images/grey.gif？<div class="c-meta"><span class="c-author">ces</span>2017-10-02 05:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=19266#respond' onclick='return addComment.moveForm( "div-comment-19266", "19266", "respond", "2384" )' aria-label='回复给ces'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-19269"><div class="c-avatar"><div class="c-main" id="div-comment-19269">请把 img.doub.pw 加入到你的PAC或者扩展内，让其域名走代理（图床）。可能是图床速度慢加载慢，加载成功前都是显示灰色的图片在增加网页加载速度。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-02 11:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=19269#respond' onclick='return addComment.moveForm( "div-comment-19269", "19269", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-19399"><div class="c-avatar"><div class="c-main" id="div-comment-19399">我试了几次，将img.doub.pw直接输入浏览器，它显示我要回答一个安全问题选择图片上的一些小方框，以证明我不是robo。每次在回答正确后，都直接跑到“403 Forbidden”。可能是我这的IP被禁止了？记得最近逗比关闭前没这情况哦。<div class="c-meta"><span class="c-author">ces</span>2017-10-05 06:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=19399#respond' onclick='return addComment.moveForm( "div-comment-19399", "19399", "respond", "2384" )' aria-label='回复给ces'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-19424"><div class="c-avatar"><div class="c-main" id="div-comment-19424">img.doub.pw 是我的图床，前段时间关站后做的（以前用的付费CDN七牛，太贵），关站前可没有这个图床域名，和我本站在一个服务器上面，也加了CF的CDN，CF可能会针对可疑IP进行人机验证避免攻击之类的。<br />
+403正常，必须直接访问图片才能显示。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-05 19:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=19424#respond' onclick='return addComment.moveForm( "div-comment-19424", "19424", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-5" id="comment-19451"><div class="c-avatar"><div class="c-main" id="div-comment-19451">弄好了。img.doub.pw大概对我这的IP段有检查。要我通过robo验证，然后它会存入浏览器cookie吧。这之后重刷下这个帖子，图就出现了。 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_cool.gif" alt=":cool:" class="wp-smiley" style="height: 1em; max-height: 1em;" /> 
+
+所以将帖子中的一个图片网址，比如https://img.doub.pw/goflyway-jc1/goflyway-jc1-02.png，将其输入浏览器，就可以通过robo验证了。
+
+另外，图片的网址可以用浏览器开发者工具（Chrome上用F12打开，找到）：
+<div class="c-meta"><span class="c-author">ces</span>2017-10-06 09:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=19451#respond' onclick='return addComment.moveForm( "div-comment-19451", "19451", "respond", "2384" )' aria-label='回复给ces'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-19181"><div class="c-avatar"><div class="c-main" id="div-comment-19181">以后会更好。。。就怕被关注到，而又没加密混淆 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_smile.gif" alt=":smile:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author"><a href='https://blog.vircloud.net/' rel='external nofollow' class='url'>owen</a></span>2017-09-29 20:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=19181#respond' onclick='return addComment.moveForm( "div-comment-19181", "19181", "respond", "2384" )' aria-label='回复给owen'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18712"><div class="c-avatar"><div class="c-main" id="div-comment-18712">部署成功，现在就是用goflyway，发的贴～～<div class="c-meta"><span class="c-author">willis</span>2017-09-20 03:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=18712#respond' onclick='return addComment.moveForm( "div-comment-18712", "18712", "respond", "2384" )' aria-label='回复给willis'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-18636"><div class="c-avatar"><div class="c-main" id="div-comment-18636">想问下，为什么自己搭建的ss，看youtube能满速，4M-6M之间，但是下载永远都只有几十K呢<div class="c-meta"><span class="c-author">feng</span>2017-09-18 21:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=18636#respond' onclick='return addComment.moveForm( "div-comment-18636", "18636", "respond", "2384" )' aria-label='回复给feng'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18572"><div class="c-avatar"><div class="c-main" id="div-comment-18572">刚刚试了一下这个工具，非常好。希望博主以后能一直更新goflyway脚本<div class="c-meta"><span class="c-author">oneplus</span>2017-09-17 15:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=18572#respond' onclick='return addComment.moveForm( "div-comment-18572", "18572", "respond", "2384" )' aria-label='回复给oneplus'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-18581"><div class="c-avatar"><div class="c-main" id="div-comment-18581">什么鬼，我还没写GoFlyway脚本呢。。。因为这个软件刚刚出正式版本，还有很多问题，我还在观望，差不多的时候，我就会出一键脚本的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-17 17:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=18581#respond' onclick='return addComment.moveForm( "div-comment-18581", "18581", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-18594"><div class="c-avatar"><div class="c-main" id="div-comment-18594">博主，goflyway未来能代替shadowsocks吗？除了shadowsocks外，还有哪些好的工具可以用？<div class="c-meta"><span class="c-author">oneplus</span>2017-09-17 21:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=18594#respond' onclick='return addComment.moveForm( "div-comment-18594", "18594", "respond", "2384" )' aria-label='回复给oneplus'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-18610"><div class="c-avatar"><div class="c-main" id="div-comment-18610">没有什么替代不替代的，首先两个软件的原理就完全不一样，SS/SSR是在SOCKS5的基础上做了加密、协议、混淆等。而Goflyway是在HTTP的基础上对头部文件加密（比如访问的域名），然后每次客户端访问服务端都交换密匙来保证墙不会发现，但是相比SS/SSR，还是更容易被墙破解。<br />
+还有哪些好的工具可以用？我不知道，我目前依然使用ShadowsocksR。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-18 12:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=18610#respond' onclick='return addComment.moveForm( "div-comment-18610", "18610", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-5" id="comment-19122"><div class="c-avatar"><div class="c-main" id="div-comment-19122">goflyway与ssr相比，在特征上哪个更明显？？<div class="c-meta"><span class="c-author">sdf</span>2017-09-28 10:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=19122#respond' onclick='return addComment.moveForm( "div-comment-19122", "19122", "respond", "2384" )' aria-label='回复给sdf'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-6" id="comment-19127"><div class="c-avatar"><div class="c-main" id="div-comment-19127">特征我不清楚，但是GoFlyway相比SSR加密简单很多，更容易被封锁。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-28 12:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=19127#respond' onclick='return addComment.moveForm( "div-comment-19127", "19127", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-18559"><div class="c-avatar"><div class="c-main" id="div-comment-18559">真高兴，逗比站又开啦<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Xxxxxx</a></span>2017-09-17 11:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=18559#respond' onclick='return addComment.moveForm( "div-comment-18559", "18559", "respond", "2384" )' aria-label='回复给Xxxxxx'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-18431"><div class="c-avatar"><div class="c-main" id="div-comment-18431">简单问问安卓手机怎么设置使用 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_neutral.gif" alt=":neutral:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">微笑着向前</span>2017-09-15 10:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=18431#respond' onclick='return addComment.moveForm( "div-comment-18431", "18431", "respond", "2384" )' aria-label='回复给微笑着向前'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-18417"><div class="c-avatar"><div class="c-main" id="div-comment-18417">还以为你被DDOS挂了<div class="c-meta"><span class="c-author">sky125</span>2017-09-15 01:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=18417#respond' onclick='return addComment.moveForm( "div-comment-18417", "18417", "respond", "2384" )' aria-label='回复给sky125'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-18395"><div class="c-avatar"><div class="c-main" id="div-comment-18395">欢迎逗比回来！ <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_wink.gif" alt=":wink:" class="wp-smiley" style="height: 1em; max-height: 1em;" /> 
+顺便问一个问题：
+如果SSR混淆和参数设置得当，能避免单线程限速吗？<div class="c-meta"><span class="c-author">NuUuuUuUuasdd</span>2017-09-14 17:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=18395#respond' onclick='return addComment.moveForm( "div-comment-18395", "18395", "respond", "2384" )' aria-label='回复给NuUuuUuUuasdd'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-18402"><div class="c-avatar"><div class="c-main" id="div-comment-18402">这要看运营商是根据什么条件来单线程限速的了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-14 19:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=18402#respond' onclick='return addComment.moveForm( "div-comment-18402", "18402", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-18390"><div class="c-avatar"><div class="c-main" id="div-comment-18390">chinalist很不准确，还是喜欢SSR的chn_ip模式。<div class="c-meta"><span class="c-author">ray</span>2017-09-14 16:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=18390#respond' onclick='return addComment.moveForm( "div-comment-18390", "18390", "respond", "2384" )' aria-label='回复给ray'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-18401"><div class="c-avatar"><div class="c-main" id="div-comment-18401">已向作者提建议<a href="https://github.com/coyove/goflyway/issues/18" target="_blank" rel="nofollow">Github Issues</a>。域名白名单的确没有IP白名单省力和准确，毕竟国内IP大体不会变太多（国内IP广播国外，国外IP广播国内），而域名则就费事了，需要经常维护，目前这个也只能算国内常见域名白名单。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-14 19:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=18401#respond' onclick='return addComment.moveForm( "div-comment-18401", "18401", "respond", "2384" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-18388"><div class="c-avatar"><div class="c-main" id="div-comment-18388">站又开了，支持！<div class="c-meta"><span class="c-author">nuke</span>2017-09-14 16:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=18388#respond' onclick='return addComment.moveForm( "div-comment-18388", "18388", "respond", "2384" )' aria-label='回复给nuke'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-18385"><div class="c-avatar"><div class="c-main" id="div-comment-18385">欢迎逗比回来 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_mrgreen.gif" alt=":mrgreen:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">小小超818</span>2017-09-14 14:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=18385#respond' onclick='return addComment.moveForm( "div-comment-18385", "18385", "respond", "2384" )' aria-label='回复给小小超818'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-18382"><div class="c-avatar"><div class="c-main" id="div-comment-18382">安装没有这么麻烦吧？服务端直接git clone下来就能用了。
+庆祝重新开站！<div class="c-meta"><span class="c-author">k</span>2017-09-14 14:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=18382#respond' onclick='return addComment.moveForm( "div-comment-18382", "18382", "respond", "2384" )' aria-label='回复给k'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-18378"><div class="c-avatar"><div class="c-main" id="div-comment-18378">重新开站了！加油！<div class="c-meta"><span class="c-author"><a href='https://lighti.me/' rel='external nofollow' class='url'>hao</a></span>2017-09-14 12:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/goflyway-jc1/?replytocom=18378#respond' onclick='return addComment.moveForm( "div-comment-18378", "18378", "respond", "2384" )' aria-label='回复给hao'>回复</a></div></div></div></li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+			</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://kanfanba.com/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script type="text/javascript">
+var image_url=new Array()
+image_url=["https://www.vultr.com/","vh8576m0.html","https://virmach.com/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="ok0a621-container ok0a621-1 ok0a621-hide">
+    <div class="ok0a621-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="ok0a621"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

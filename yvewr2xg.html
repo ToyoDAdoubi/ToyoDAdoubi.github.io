@@ -1,0 +1,1195 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>Shadowsocks无法使用后的简单排除方法 | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1941] -->
+<meta name="description"  content="每一个使用过Shadowsocks的人，几乎都会出现过Shadowsocks突然无法使用的情况，然而很多人并不知道怎么办，网上的问题解决方法都是一个个的，不利于新手解决问题，所以我就写一个Shadowsocks无法使用后的简单排除方法。 本教程不一定能 100%" />
+
+<meta name="keywords"  content="shadowsocks,教程" />
+
+<link rel="canonical" href="hi10k-7p-2.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='KCPTun  安卓 Shadowsocks客户端 使用教程' href='e0926y-q-4.html' />
+<link rel='next' title='『优惠』低价屠夫！virmach优惠又来了，openvz 年付低至2.55美元！' href='ugyb4--z.html' />
+<link rel='shortlink' href='https://doub.io/?p=1417' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fss-jc39%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fss-jc39%2F&amp;format=xml" />
+<style>
+.ck46cd7{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.ck46cd7-hide{
+    display: none;
+}
+.ck46cd7-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.ck46cd7-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.ck46cd7-2 .ck46cd7-body,.ck46cd7-3 .ck46cd7-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.ck46cd7-2 .close-btn,.ck46cd7-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.ck46cd7-3 .ck46cd7-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.ck46cd7').html(kill_adBlock_message);
+            jQuery('.ck46cd7-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.ck46cd7-container').fadeOut('ck46cd7-hide');
+        });
+    });
+    var kill_adBlock_status = 1;
+    var kill_adBlock_message = '逗比很伤心😥，您的<strong>广告拦截扩展</strong>屏蔽了我们的小广告，网站的发展离不开大家的支持，请先看过<a target=\"_blank\" style=\"color: #ffe500;\" href=\"3--didfb.html\">这个文章</a>后，再确定是否要将我们的域名添加到<strong>拦截白名单</strong>中，谢谢！😘👌';
+    var kill_adBlock_message_delay = 0;
+    var kill_adBlock_close_btn = 1;
+    var kill_adBlock_close_automatically = 0;
+    var kill_adBlock_close_automatically_delay = 0;
+    var kill_adBlock_message_type = 1;
+    function adBlockDetected() {
+      show_message();
+    }
+    
+    if(typeof killAdBlock === 'undefined') {
+        adBlockDetected();
+    } else {
+        killAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+    }
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="Shadowsocks, 教程, Shadowsocks, 逗比科普">
+<meta name="description" content="每一个使用过Shadowsocks的人，几乎都会出现过Shadowsocks突然无法使用的情况，然而很多人并不知道怎么办，网上的问题解决方法都是一个个的，不利于新手解决问题，所以我就写一个Shadowsocks无法使用后的简单排除方法。  本教程不一定能 100% 帮你解决Shadowsocks无法使用的问题，但是肯定会有帮助的。 如果你看了本文章 还是无法使用，那么请 Telegram (TG使用教程) 联系我解决或者远程协助。  注">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-1417 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li class="current-post-ancestor"><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li class="current-menu-ancestor current-menu-parent"><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li class="current-menu-item"><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="./softs.wtf/"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Atoyodadoubi.github.io'; return false;" action="https://toyodadoubi.github.io/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 逗比云还是逃不过被墙的命运，既然如此那以后逗比云也就一直用被墙的旧域名 <strong><a target="_blank" href="./softs.wtf/">[softs.wtf]</a></strong> 算了。
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://www.gigsgigscloud.com/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="hi10k-7p-2.html">Shadowsocks无法使用后的简单排除方法</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="qha-5xcm.html"> Shadowsocks</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 2年前 (2016-08-09)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 80743℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="hi10k-7p-2.html#comments">334评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="hi10k-7p-2.html#1、确认Shadowsocks账号可用" title="1、确认Shadowsocks账号可用"><span>1、确认Shadowsocks账号可用</span></a></li><li class="content-index-level-1"><a href="hi10k-7p-2.html#2、本地问题" title="2、本地问题"><span>2、本地问题</span></a><ul class="children"><li class="content-index-level-2"><a href="hi10k-7p-2.html#2.1、Shadowsocks客户端问题" title="2.1、Shadowsocks客户端问题"><span>2.1、Shadowsocks客户端问题</span></a></li><li class="content-index-level-2"><a href="hi10k-7p-2.html#2.2、本地电脑设置问题" title="2.2、本地电脑设置问题"><span>2.2、本地电脑设置问题</span></a><ul class="children"><li class="content-index-level-3"><a href="hi10k-7p-2.html#2.2.1、Shadowsocks 软件权限问题" title="2.2.1、Shadowsocks 软件权限问题"><span>2.2.1、Shadowsocks 软件权限问题</span></a></li><li class="content-index-level-3"><a href="hi10k-7p-2.html#2.2.2、系统代理设置问题" title="2.2.2、系统代理设置问题"><span>2.2.2、系统代理设置问题</span></a></li><li class="content-index-level-3"><a href="hi10k-7p-2.html#2.2.3、无法保存 PAC/全局 代理设置" title="2.2.3、无法保存 PAC/全局 代理设置"><span>2.2.3、无法保存 PAC/全局 代理设置</span></a></li><li class="content-index-level-3"><a href="hi10k-7p-2.html#2.2.4、Internet 保护模式" title="2.2.4、Internet 保护模式"><span>2.2.4、Internet 保护模式</span></a></li><li class="content-index-level-3"><a href="hi10k-7p-2.html#2.2.5、浏览器问题" title="2.2.5、浏览器问题"><span>2.2.5、浏览器问题</span></a></li></ul></li><li class="content-index-level-2"><a href="hi10k-7p-2.html#2.3、本地电脑时间与服务器差距太大" title="2.3、本地电脑时间与服务器差距太大"><span>2.3、本地电脑时间与服务器差距太大</span></a></li></ul></li><li class="content-index-level-1"><a href="hi10k-7p-2.html#3、服务器问题" title="3、服务器问题"><span>3、服务器问题</span></a><ul class="children"><li class="content-index-level-2"><a href="hi10k-7p-2.html#3.1、检查 IP 是否被墙" title="3.1、检查 IP 是否被墙"><span>3.1、检查 IP 是否被墙</span></a></li><li class="content-index-level-2"><a href="hi10k-7p-2.html#3.2、检查 Shadowsocks服务端 日志" title="3.2、检查 Shadowsocks服务端 日志"><span>3.2、检查 Shadowsocks服务端 日志</span></a></li><li class="content-index-level-2"><a href="hi10k-7p-2.html#3.3、检查 Shadowsocks服务端是否运行正常" title="3.3、检查 Shadowsocks服务端是否运行正常"><span>3.3、检查 Shadowsocks服务端是否运行正常</span></a></li><li class="content-index-level-2"><a href="hi10k-7p-2.html#3.4、检查 VPS iptables 内部防火墙规则是否开放端口" title="3.4、检查 VPS iptables 内部防火墙规则是否开放端口"><span>3.4、检查 VPS iptables 内部防火墙规则是否开放端口</span></a></li><li class="content-index-level-2"><a href="hi10k-7p-2.html#3.4、检查 VPS 外部防火墙规则是否开放端口" title="3.4、检查 VPS 外部防火墙规则是否开放端口"><span>3.4、检查 VPS 外部防火墙规则是否开放端口</span></a></li><li class="content-index-level-2"><a href="hi10k-7p-2.html#3.5、看一看作者写的服务器常见问退排除" title="3.5、看一看作者写的服务器常见问退排除"><span>3.5、看一看作者写的服务器常见问退排除</span></a></li><li class="content-index-level-2"><a href="hi10k-7p-2.html#3.6、重装Shadowsocks服务端" title="3.6、重装Shadowsocks服务端"><span>3.6、重装Shadowsocks服务端</span></a></li></ul></li><li class="content-index-level-1"><a href="hi10k-7p-2.html#其他情况" title="其他情况"><span>其他情况</span></a><ul class="children"><li class="content-index-level-2"><a href="hi10k-7p-2.html#Shadowsocks启动代理后提示“无法修改注册表”" title="Shadowsocks启动代理后提示“无法修改注册表”"><span>Shadowsocks启动代理后提示“无法修改注册表”</span></a></li></ul></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年11月7日 18:53</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>每一个使用过Shadowsocks的人，几乎都会出现过Shadowsocks突然无法使用的情况，然而很多人并不知道怎么办，网上的问题解决方法都是一个个的，不利于新手解决问题，所以我就写一个Shadowsocks无法使用后的简单排除方法。</p>
+<p>本教程不一定能 100% 帮你解决Shadowsocks无法使用的问题，但是肯定会有帮助的。</p>
+<blockquote><p>如果你看了本文章 还是无法使用，那么请 <a href="https://t.me/doubi" target="_blank" rel="noopener">Telegram</a> (<a href="ma7f_p6p.html" target="_blank" rel="noopener">TG使用教程</a>) 联系我解决或者远程协助。</p>
+<p>注意远程协助的前提是：<strong>确定SSR账号在当前网络中能使用（同一网络其他设备链接正常）、确定SSR客户端中的SSR账号填写正确、而且仅限 Windows 系统远程。</strong></p></blockquote>
+<hr />
+<h2 id="1、确认Shadowsocks账号可用">1、确认Shadowsocks账号可用</h2>
+<p>在开始阅读本教程之前，你的第一步就是先<span style="color: #ff6464;"><strong>确认你的Shadowsocks账号是否可用</strong></span><strong>（这步很重要！）</strong>，建议让其他人链接试试，或者其他设备链接试试。</p>
+<p><strong>如果别人能用，你却不能用。</strong>那就很明显是 <span style="color: #ff6464;"><strong>你本地电脑设置问题</strong></span> 或者 <span style="color: #ff6464;"><strong>Shadowsocks客户端</strong></span> 问题。请看 <a href="https://doub.io/?p=1417#2、本地问题" target="_blank" rel="noopener">2、本地问题</a></p>
+<p><strong>如果别人都不能使用。</strong>那就说明是 <strong><span style="color: #ff6464;">Shadowsocks服务端 </span></strong>或者<strong><span style="color: #ff6464;"> VPS</span></strong> 问题。请看 <a href="https://doub.io/?p=1417#3、服务器问题" target="_blank" rel="noopener">3、服务器问题</a></p>
+<p><strong>如果你的ShadowsocksR账号是自建的，同时没有其他设备或者不想让其他人使用，那么可以看这个文章：</strong></p>
+<ul>
+<li><a title="使用ShadowsocksR Python客户端 快速验证SSR账号是否可用" href="a6551xds-3.html" target="_blank" rel="noopener">使用ShadowsocksR Python客户端 快速验证SSR账号是否可用</a></li>
+<li><a title="『原创』ShadowsocksR 批量 快速验证账号可用性 一键脚本" href="e0926y-q-2.html" target="_blank" rel="noopener">『原创』ShadowsocksR 批量 快速验证账号可用性 一键脚本</a></li>
+</ul>
+<hr />
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>还有，可以打开ShadowsocksR的<strong>服务器连接统计</strong> 窗口，然后查看当前服务器信息的 <strong>实下载/错误/超时/空连</strong> 等数据来简单判断问题大概在哪里。</p>
+<ul>
+<li><strong>实下载：</strong>浏览器收到的实际下载流量大小；</li>
+</ul>
+<p>- 如果当前SSR服务器<strong>配置了SSR协议（非原版origin）</strong>，有数据显示则表示配置是正确的，如果一直为零 0 ，则表示一定有错误。</p>
+<ul>
+<li><strong>错误：</strong>错误包括网络错误 和 协议错误；</li>
+</ul>
+<p>- <strong>网络错误：</strong>连接被拒绝，一般是当前（账号）服务器配置的 <strong>端口不正确、防火墙没有开放端口</strong> 等导致的。</p>
+<p>- <strong>协议错误：</strong>返回数据校检错误，当前（账号）服务器配置的 <strong>SSR协议/混淆插件 不正确</strong>导致的。</p>
+<ul>
+<li><strong>超时：</strong>一般是当前（账号）<strong>服务器未开机、没有网络</strong>等导致链接服务器超时。</li>
+<li><strong>空连：</strong>空连表示链接后无返回数据，一般是当前（账号）服务器配置的 <strong>密码或加密方式 不正确</strong>导致的。</li>
+</ul>
+<p>如果浏览器打开谷歌网站 什么数据都没显示，那说明浏览器根本就没有走代理。</p>
+<p></p></div>
+<h2 id="2、本地问题">2、本地问题</h2>
+<p>再确认别人可以使用你的Shadowsocks账号后，那问题就是 <span style="color: #ff6464;"><strong>你本地电脑设置问题</strong></span> 或者 <span style="color: #ff6464;"><strong>Shadowsocks客户端</strong></span> 问题。那么我们就一个个排除。</p>
+<h3 id="2.1、Shadowsocks客户端问题">2.1、Shadowsocks客户端问题</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>首先，请尽量使用<strong>最新</strong>的Shadowsocks客户端，鉴于目前 Shadowsocks v3.0原版 因为作者喝茶已经停止更新很长时间了，推荐使用 目前在持续更新的 <span style="color: #ff6464;"><strong>ShadowsocksR 客户端</strong></span>（很多人换了ShadowsocksR后就可以使用了）。</p>
+<p><strong>下载地址：</strong><a href="./softs.wtf/?dir=%e7%a7%91%e5%ad%a6%e4%b8%8a%e7%bd%91/PC/Shadowsocks" target="_blank" rel="noopener">逗比 · 云</a></p>
+<p>对了，还有一点。<strong>Shadowsocks账号信息</strong> 记得检查一下，说不定<strong>多了个空格或者符号</strong>，这都会导致无法连接Shadowsocks。</p>
+<p>同时，ShadowsocksR 只做了很多 其他的辅助功能，这些功能如果你不需要的话，请不要修改。<strong>否则一些设置不正确也会导致无法连接。</strong></p>
+<blockquote><p>如果你用的是 ShadowsocksR 客户端，那么记得检查下 SSR客户端服务器链接统计窗口中的 <strong>[开关列]</strong> 是不是<strong>红色</strong>的，<strong>红色代表禁用该账号</strong>，双击红色即可变成白色启用该账号。</p></blockquote>
+<p></p></div>
+<h3 id="2.2、本地电脑设置问题">2.2、本地电脑设置问题</h3>
+<p>很多人，都不会去使用过时的 IE 浏览器。那么，先使用一下 <span style="color: #ff6464;"><strong>IE 浏览器</strong></span> 访问 <a href="https://www.google.com/" target="_blank" rel="noopener">Google.com</a> ，如果可以访问，那么就直接看 <a href="hi10k-7p-2.html#2.2.5、浏览器问题" target="_blank" rel="noopener">2.2.5、浏览器问题</a></p>
+<h4 id="2.2.1、Shadowsocks 软件权限问题">2.2.1、Shadowsocks 软件权限问题</h4>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>Shadowsocks <strong>启动系统代理</strong>后，就会去<strong>修改注册表</strong>来设置 <span style="color: #ff6464;"><strong>系统代理设置</strong></span>。</p>
+<p>而一些<strong>电脑系统或者非管理员用户</strong>（比如网吧），可能因为没有相应的权限 <strong>导致 Shadowsocks 启动系统代理 后无法修改注册表。</strong></p>
+<p>这时候就需要用 <strong><span style="color: #ff6464;">管理员权限</span> </strong>启动 Shadowsocks 客户端。</p>
+<p>如果是网吧的话，是限制不能修改注册表的，而且也没有相应的权限，所以建议使用<strong> SSCap客户端</strong>：<a href="./softs.wtf/?dir=%e7%a7%91%e5%ad%a6%e4%b8%8a%e7%bd%91/PC/Shadowsocks" target="_blank" rel="noopener">逗比 · 云</a></p>
+<p>如果确定不是 软件权限问题导致的，那么请继续看下面。</p>
+<p></p></div>
+<h4 id="2.2.2、系统代理设置问题">2.2.2、系统代理设置问题</h4>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>2.2.1 说了，Shadowsocks <strong>启动系统代理</strong>后，就会去<strong>修改注册表</strong>来设置 <span style="color: #ff6464;"><strong>系统代理设置</strong></span>。</p>
+<p>那么，在启动后，请打开 <span style="color: #ff6464;"><strong>系统代理设置</strong></span> 看一下是否正确设置代理。</p>
+<p><strong>右键桌面上的网络 &gt;=&gt; 属性 &gt;=&gt; Internet 选项 &gt;=&gt; 连接 选项卡 &gt;=&gt; 选择你使用的拨号链接 &gt;=&gt; 设置</strong></p>
+<p><img class=" aligncenter" src="_w2iet9x.png" alt="" width="692" height="596" /></p>
+<p>然后你是 <span style="color: #ff6464;"><strong>直接电脑连接 猫 拨号上网</strong></span>的用户，就如上图所示打开下图的窗口。</p>
+<p>如果你是 <span style="color: #ff6464;"><strong>路由器连接 猫 上网</strong></span>的用户，就点击上图所示中 下面的 <span style="color: #ff6464;"><strong>局域网设置</strong></span> 打开下图的窗口。</p>
+<p>下图中 <span style="color: #ff6464;"><strong>上面 红框圈中</strong></span> 的选项是，Shadowsocks客户端的<span style="color: #ff6464;"><strong>PAC模式</strong></span></p>
+<p>一般正确的格式是(xxxx为示例)：<strong>http://127.0.0.1:1080/pac?t=xxxx</strong></p>
+<p>下图中 <strong><span style="color: #ff6464;">下面 红框圈中</span></strong> 的选项是，Shadowsocks客户端的<span style="color: #ff6464;"><strong>全局模式</strong></span></p>
+<p>一般正确的格式是：<strong>地址：127.0.0.1，端口：1080。</strong></p>
+<p>如果，你的下图设置是 空的或者是不正确的<strong>（127.0.0.1 是不能变的，端口是可以变的）</strong>，请修改为正确的IP和端口，并检查Shadowsocks客户端的<span style="color: #ff6464;"><strong>本地端口设置</strong></span>。</p>
+<pre>注意：这里的端口既是 Shadowsocks中的 <span style="color: #ff6464;"><strong>本地端口</strong></span>，是可以改的，不过<span style="color: #ff6464;"><strong>默认是 1080</strong></span>。</pre>
+<p><img class=" aligncenter" src="uxjniu_o.png" alt="" width="424" height="425" /><br />
+</p></div>
+<h4 id="2.2.3、无法保存 PAC/全局 代理设置">2.2.3、无法保存 PAC/全局 代理设置</h4>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>当你在上个步骤中发现 设置完 PAC/全局 代理后，再打开设置就发现刚才设置的代理内容不见了(恐怖)，那么可能是因为 IE的站点保护模式问题。</p>
+<p>打开IE浏览器，在<strong>顶部菜单栏 — 工具 — Internet 选项 — 安全选项卡 — 受信任的站点 </strong> 中 <strong>安全级别调至[低]</strong> 并 <strong>取消 启用保护模式的勾选</strong>，然后点击 <strong>[站点]</strong> 按钮，如下图所示添加 <strong>http://127.0.0.1</strong> 到受信任的站点列表中并点击 <strong>[关闭]</strong> 按钮。最后重启 IE浏览器返回上个步骤设置代理查看是否正常保存。</p>
+<p><img class="size-medium aligncenter" src="oingz7rq.png" width="624" height="681" /></p>
+<p></p></div>
+<h4 id="2.2.4、Internet 保护模式">2.2.4、Internet 保护模式</h4>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>当你系统代理设置正确(就是上个步骤)，但是使用IE浏览器依然无法链接SS，那么可能是因为 IE的保护模式问题。</p>
+<p>打开IE浏览器，在<strong>顶部菜单栏 — 工具 — Internet 选项 — 安全选项卡</strong> 中<strong>取消 启用保护模式的勾选</strong>，然后重启 IE浏览器尝试是否正常。</p>
+<p><img class=" aligncenter" src="lnvjiuus.png" alt="" width="409" height="492" /><br />
+</p></div>
+<p>&nbsp;</p>
+<h4 id="2.2.5、浏览器问题">2.2.5、浏览器问题</h4>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>如果上面的情况都解决了，依然无法使用Shadowsocks的话，估计是浏览器问题了。</p>
+<p>大多数浏览器都是<span style="color: #ff6464;"><strong>默认使用系统代理</strong></span>的，比如：Chrome、Opera等浏览器。</p>
+<p>同样，也有一些浏览器是有<strong><span style="color: #ff6464;">单独的代理设置 选项</span></strong>，比如：Firefox和国内的几个浏览器。</p>
+<p>请自己检查浏览器的 <span style="color: #ff6464;"><strong>代理设置</strong></span> 是否为 <span style="color: #ff6464;"><strong>使用系统代理设置</strong></span>，如果不是就改为 <span style="color: #ff6464;"><strong>使用系统代理设置</strong></span>。</p>
+<p>如果没有这个 代理设置选项 或者已经改好了，那么就检查 <span style="color: #ff6464;"><strong>浏览器扩展</strong></span>。</p>
+<p>比较常见的以 Chromium为内核的浏览器，比如：Chrome、Opera、国内的一些所谓的双核/极速浏览器。</p>
+<p>都经常会使用以下两个插件来管理代理设置，<a title="" href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif?utm_source=chrome-app-launcher-info-dialog" target="_blank" rel="noopener" data-original-title="">Proxy SwitchyOmega</a>、<a title="" href="https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm?utm_source=chrome-app-launcher-info-dialog" target="_blank" rel="noopener" data-original-title="">Proxy SwitchySharp</a>，因为这两个插件会 <span style="color: #ff6464;"><strong>接管 浏览器的代理设置</strong></span>，如果设置错误或者不会使用的话，也会导致 Shadowsocks 无法使用，所以可以<span style="color: #ff6464;"><strong>暂时禁用这两种插件</strong></span>。</p>
+<p><img class=" aligncenter" src="e-zoz72u.png" alt="" width="675" height="240" /></p>
+<p></p></div>
+<h3 id="2.3、本地电脑时间与服务器差距太大">2.3、本地电脑时间与服务器差距太大</h3>
+<p>如果你使用的是ShadowsocksR账号，并且你本地电脑设备的时间错误，可能会导致无法连接账号，表现特征为：<strong>账号确定可用，但是ShadowsocksR客户端的服务器链接统计窗口[报错]列会显示数字，不会提示[超时]和[空连]。</strong></p>
+<p>这种情况只需要根据北京时间校准一下本地电脑设备的时间即可（不需要在意时区，只要客户端和服务端的系统时间都是<strong>各自时区的标准时间</strong>，那么就行了，因为<strong>各个时区的标准时间实际是都是同一时间</strong>，只是因为时区不同而显示的时间不一样，并不是美国活在我们的昨天），各个协议对时间的误差要求不一样，所以建议与北京时间（如果你不是国内那么请对照你的时区来修改为<strong>时区标准时间</strong>）一致。</p>
+<p>如果在确认Shadowsocks账号可用的情况下，以上的几种方法依然无法解决问题，请联系我 <a href="https://t.me/doubi" target="_blank" rel="noopener">Telegram</a>。</p>
+<h2 id="3、服务器问题">3、服务器问题</h2>
+<p>服务器引起的问题就比较麻烦，通过教程很难说清，首先检查一下 <strong>VPS IP 是否被墙</strong>，接着查看 Shadowsocks服务端 <strong>日志是否出错</strong>，然后检查 Shadowsocks<strong>是否运行正常</strong>，同时看一下防火墙<strong>是否允许了 Shadowsocks的端口</strong>，最后还是不行就 <strong>重装Shadowsocks服务端</strong> 试试，条件允许情况下，最好直接重装VPS系统，避免是其他软件影响了Shadowsocks的运行。我们一条一条解决。</p>
+<h3 id="3.1、检查 IP 是否被墙">3.1、检查 IP 是否被墙</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>检查 IP 是否被墙很简单，只要用一下 <a href="http://ping.chinaz.com/" target="_blank" rel="noopener">站长工具-超级Ping</a> 功能检测一下，如果发现<span style="color: #ff6464;"><strong>国内全部 Ping超时</strong></span> ，<span style="color: #ff6464;"><strong>其他国家 Ping正常</strong></span>，那就<strong>说明 IP 被墙</strong>了，反之没有被墙。</p>
+<p></p></div>
+<h3 id="3.2、检查 Shadowsocks服务端 日志">3.2、检查 Shadowsocks服务端 日志</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>各个 Shadowsocks服务端 版本的日志文件略有不同，如果你是使用我网站提供的 Shadowsocks 服务端安装教程，那请去对应的教程里查看 <strong>日志文件</strong> 位置。</p>
+<p>然后通过 对应的命令代码 打开Shadowsocks日志信息，然后查看是否有异常，比如<span style="color: #ff6464;"><strong> [Error]</strong> </span>开头的日志，因为这类问题 繁多并且复杂，出现问题请留言，当然我也只能解决常见的问题，复杂一些的建议去 <a href="https://github.com/breakwa11/shadowsocks/tree/manyuser" target="_blank" rel="noopener">Github（ShadowsocksR）</a> 问Shadowsocks服务端作者。</p>
+<ul>
+<li><a title="" href="z2a4lk3l.html" target="_blank" rel="noopener" data-original-title="ShadowsocksR一键安装脚本（单用户版）">ShadowsocksR一键安装脚本</a></li>
+</ul>
+<p></p></div>
+<h3 id="3.3、检查 Shadowsocks服务端是否运行正常">3.3、检查 Shadowsocks服务端是否运行正常</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>通过你安装的Shadowsocks版本，在上面找到对应的 <span style="color: #ff6464;"><strong>查看Shadowsocks服务 运行状态</strong></span>的命令。</p>
+<p>然后，通过<code> netstat -lntp </code>查看端口使用情况，看一下 <strong>Shadowsocks的端口</strong>是否 <strong>正常被 Shadowsocks自身 占用</strong>。</p>
+<p>如果被其他程序占用，可以尝试<strong>修改 Shadowsocks 端口</strong> 或者 <strong>关闭占用 Shadowsocks端口的 程序</strong>。</p>
+<p></p></div>
+<h3 id="3.4、检查 VPS iptables 内部防火墙规则是否开放端口">3.4、检查 VPS iptables 内部防火墙规则是否开放端口</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>首先查看一下<strong>iptables防火墙规则</strong>，看看是不是把 <strong>Shadowsocks的端口堵住</strong>了，如果你的VPS并没有什么重要的防火墙规则，那就可以直接 <strong>关闭防火墙 </strong>或者 <strong>清空防火墙规则</strong>。</p>
+<p>当然，如果你的VPS上面放的有<strong>网站（一般lnmp安装完都会把非必要端口外的端口全部封掉）</strong>或者其他的程序，你就需要 <span style="color: #ff6464;"><strong>添加开放端口规则</strong></span>。</p>
+<pre class="prettyprint linenums"># 查看iptables防火墙规则
+iptables -L
+
+# 清空iptables防火墙规则，注意，一些VPS使用后会导致无法连接VPS！！
+iptables -F
+
+# 添加iptables防火墙开放 TCP/UDP 端口规则
+iptables -I INPUT -p tcp --dport 端口 -j ACCEPT
+iptables -I INPUT -p udp --dport 端口 -j ACCEPT
+
+# 关闭防火墙
+service iptables stop
+
+# 以上四个命令不是按顺序执行，而是根据需求执行！</pre>
+<p></p></div>
+<h3 id="3.4、检查 VPS 外部防火墙规则是否开放端口">3.4、检查 VPS 外部防火墙规则是否开放端口</h3>
+<p>在一些IDC中，例如：阿里云、腾讯云、微软云、谷歌云、亚马逊云等都有外部防火墙（名字一般叫 安全组 规则组），也就是可以在他们的管理面板中有个独立于VPS内部防火墙的外部防火墙，你可能开放了VPS内部防火墙，但是没开放对应的外部防火墙，这也会导致无法连接Shadowsocks端口。</p>
+<h3 id="3.5、看一看作者写的服务器常见问退排除">3.5、看一看作者写的服务器常见问退排除</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p><strong>Github Wiki：<a href="https://github.com/breakwa11/shadowsocks-rss/wiki/服务端常见问题排查" target="_blank" rel="noopener">传送门</a></strong></p>
+<p></p></div>
+<h3 id="3.6、重装Shadowsocks服务端">3.6、重装Shadowsocks服务端</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>到这一步基本就是死马当活马医了，一些问题实在找不到，那就干脆重装 Shadowsocks服务端。</p>
+<p>条件允许情况下，最好直接重装VPS系统，避免是其他软件影响了Shadowsocks的运行。</p>
+<p></p></div>
+<hr />
+<p><strong>如果以上方法都无法解决，那么更多的请查看Wiki：<a href="https://github.com/breakwa11/shadowsocks-rss/wiki/服务端常见问题排查" target="_blank" rel="noopener">https://github.com/breakwa11/shadowsocks-rss/wiki/服务端常见问题排查</a></strong></p>
+<h2 id="其他情况">其他情况</h2>
+<h3 id="Shadowsocks启动代理后提示“无法修改注册表”">Shadowsocks启动代理后提示“无法修改注册表”</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>一些人会出现Shadowsocks启动代理后提示<span style="color: #ff6464;"><strong>“无法修改注册表”</strong></span>的问题，大多数情况下是发生在<strong>网吧等特殊环境下</strong>，有一些软件限制了注册表修改功能。</p>
+<p>上面说了，Shadowsocks启动代理后，先是占用1080（默认）端口，然后把Shadowsocks流量映射到<strong>127.0.0.1:1080</strong>上面，然后在去设置 <strong>系统代理设置</strong>。而设置 <strong>系统代理设置</strong>需要修改注册表，所以就会出现上面这个问题。</p>
+<p>真个问题有两种解决办法，<strong>一种是</strong>找到限制注册表修改功能的软件并关掉；</p>
+<p><strong>一种是</strong> 避开这个问题，<strong>通过浏览器扩展去管理代理设置</strong>，我们这里就讲这个方法。</p>
+<p>当然你也可以试一试 <strong>SSCap客户端</strong>：<a href="./softs.wtf/?dir=%e7%a7%91%e5%ad%a6%e4%b8%8a%e7%bd%91/PC/Shadowsocks" target="_blank" rel="noopener">逗比 · 云</a> ，这个客户端启动不需要修改注册表来设置系统代理。</p>
+<hr />
+<p>比较常见的以 <strong>Chromium为内核</strong>的浏览器，<strong>比如：Chrome、Opera、国内的一些所谓的双核/极速浏览器。</strong></p>
+<p>都经常会使用以下两个插件来管理代理设置，<a title="" href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif?utm_source=chrome-app-launcher-info-dialog" target="_blank" rel="noopener" data-original-title="">Proxy SwitchyOmega</a>、<a title="" href="https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm?utm_source=chrome-app-launcher-info-dialog" target="_blank" rel="noopener" data-original-title="">Proxy SwitchySharp</a>。我推荐前面那个。</p>
+<p><img class=" aligncenter" src="e-zoz72u.png" alt="" width="675" height="240" /></p>
+<p>进入扩展的选项页面，然后点<span style="color: #ff6464;"><strong>新建情景模式&gt;=&gt;输入情景模式名称&gt;=&gt;选择代理服务器&gt;=&gt;点击创建</strong></span>（这个是SS全局的，需要SS PAC模式的请选择PAC情景模式）</p>
+<p><img class=" aligncenter" src="h5rldhyt.png" alt="" width="1003" height="641" /></p>
+<p>然后SS全局和SS PAC的设置如下：</p>
+<p><strong>全局：</strong>代理服务器：<strong>127.0.0.1</strong>，端口：<strong>1080</strong></p>
+<p><strong>PAC：</strong>PAC网址：<strong>http://127.0.0.1:1080/pac</strong></p>
+<p>当然，这里以默认的1080端口为例，如果不是就自己改。设置完点<span style="color: #ff6464;"><strong>应用选项</strong></span>，就可以使用了。</p>
+<p><img class=" aligncenter" src="lnvjiuus-2.png" alt="" width="1105" height="573" /></p>
+<p><img class=" aligncenter" src="oingz7rq-2.png" alt="" width="1068" height="545" /></p>
+<p>在浏览器的右上角点击Proxy SwitchyOmega扩展图标，选择你需要的全局还是PAC<strong>（这时候Shadowsocks客户端不需要去设置对应的全局/PAC）</strong>，就可以正常使用了。</p>
+<p><img class=" aligncenter" src="rcrpdinp.png" alt="" width="204" height="315" /><br />
+</p></div>
+<hr />
+<p>好了，大概我就想到这么多了，有什么建议或者需要补充的 请在下面评论里留言！</p>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="hi10k-7p-2.html">Shadowsocks无法使用后的简单排除方法</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="1417" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">269</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="oyjpgxqd.html" rel="tag">Shadowsocks</a><a href="4y92q0ka.html" rel="tag">教程</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="e0926y-q-4.html" rel="prev">KCPTun  安卓 Shadowsocks客户端 使用教程</a></span>
+			<span class="article-nav-next"><a href="ugyb4--z.html" rel="next">『优惠』低价屠夫！virmach优惠又来了，openvz 年付低至2.55美元！</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="kd691l4o.html" title="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" target="_blank">
+<img src="sp6xrfo1.png?src=https://doub.io/wp-content/uploads/shadowsocks3.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" />	<br><span class="r_title">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="hi10k-7p-3.html" title="给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)" target="_blank">
+<img src="iceink9-.png?src=https://doub.io/wp-content/uploads/shadowsocksR-1.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)" />	<br><span class="r_title">给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="wkcjzpyd.html" title="没教程写我要死了（滑稽），有想要让我写的教程请在这里告诉我！" target="_blank">
+<img src="xpz5exhd.jpg?src=https://doub.io/wp-content/uploads/3.jpg&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="没教程写我要死了（滑稽），有想要让我写的教程请在这里告诉我！" />	<br><span class="r_title">没教程写我要死了（滑稽），有想要让我写的教程请在这里告诉我！</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="yv4cp61c.html" title="『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本" target="_blank">
+<img src="kk4ik0cm.png?src=https://doub.io/wp-content/uploads/brook1.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本" />	<br><span class="r_title">『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="kd691l4o.html">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</a></li><li><i class="fa fa-minus"></i><a href="hi10k-7p-3.html">给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)</a></li><li><i class="fa fa-minus"></i><a href="wkcjzpyd.html">没教程写我要死了（滑稽），有想要让我写的教程请在这里告诉我！</a></li><li><i class="fa fa-minus"></i><a href="yv4cp61c.html">『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本</a></li><li><i class="fa fa-minus"></i><a href="9n7kdq_k-2.html">『原创』Shadowsocks tinyPortMapper 中继(中转/端口转发) 便捷管理脚本</a></li><li><i class="fa fa-minus"></i><a href="6r9z6_wi-3.html">Shadowsocks利用 tinyPortMapper 实现中继(中转/端口转发)加速</a></li><li><i class="fa fa-minus"></i><a href="6jfbj938-2.html">『原创』应逗比要求 单独写了个 libsodium 一键安装脚本 (Chacha20 / Chacha20-ietf 等)</a></li><li><i class="fa fa-minus"></i><a href="es5fj9se-3.html">在 主流代理软件 被针对的现在，推荐一个小众好用的代理软件 — Brook</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='1417' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (334)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-36998"><div class="c-avatar"><div class="c-main" id="div-comment-36998">您好，请教一下，我是参照这个教程（http://www.qzkyl.cn/post-193.html）在群晖docker中安装了shadowsocks-libev，也配置好了，用SSCap客户端测试也都连接成功，但就是无法翻墙。是因为我是在国内自建的SS服务吗？是不是自建SS服务必须是国外的服务器上才能正常翻墙？我是小白，请不要笑话啊。<div class="c-meta"><span class="c-author">drw</span>2018-04-26 11:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=36998#respond' onclick='return addComment.moveForm( "div-comment-36998", "36998", "respond", "1417" )' aria-label='回复给drw'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-37022"><div class="c-avatar"><div class="c-main" id="div-comment-37022">这不是废话么。。。<br />
+你想要翻墙，结果你搞了个和你一样在墙内的服务器，你们两个都在墙内怎么翻出去？翻墙出国必须有个海外服务器。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-26 14:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=37022#respond' onclick='return addComment.moveForm( "div-comment-37022", "37022", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-36664"><div class="c-avatar"><div class="c-main" id="div-comment-36664">您好！按教程重新安装的ssr,windows系统，重装以后可以访问google,但是每隔一段就时间就不能访问了，必须xshell连接下服务器以后才能正常访问，不知道是什么问题!<div class="c-meta"><span class="c-author">得意</span>2018-04-19 12:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=36664#respond' onclick='return addComment.moveForm( "div-comment-36664", "36664", "respond", "1417" )' aria-label='回复给得意'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-36523"><div class="c-avatar"><div class="c-main" id="div-comment-36523">3.6、重装Shadowsocks服务端https://github.com/breakwa11/shadowsocks-rss/wiki/服务端常见问题排查
+这个链接已挂<div class="c-meta"><span class="c-author"><a href='http://0x48.tk/' rel='external nofollow' class='url'>Jdsenos</a></span>2018-04-17 01:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=36523#respond' onclick='return addComment.moveForm( "div-comment-36523", "36523", "respond", "1417" )' aria-label='回复给Jdsenos'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-36539"><div class="c-avatar"><div class="c-main" id="div-comment-36539">改成了SSRR备份的WIKI地址了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-17 14:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=36539#respond' onclick='return addComment.moveForm( "div-comment-36539", "36539", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-36509"><div class="c-avatar"><div class="c-main" id="div-comment-36509">大佬您好，我用单位WiFi使不了ss，但是回家就能用，估计是单位封了1080端口？（我不懂计算机。。瞎猜的），请问这种情况能写一个修复教程吗，多谢<div class="c-meta"><span class="c-author">陆澄矞</span>2018-04-16 17:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=36509#respond' onclick='return addComment.moveForm( "div-comment-36509", "36509", "respond", "1417" )' aria-label='回复给陆澄矞'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-36543"><div class="c-avatar"><div class="c-main" id="div-comment-36543">1080 是本地端口，封个鬼，很有可能是上层路由封锁了 非80 443端口，或者封锁了 SOCKS 协议什么的。尝试更换为 80 或 443 端口看看，SS的好像有个插件是伪装 http 的，你可以搭配 80 端口试试。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-17 14:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=36543#respond' onclick='return addComment.moveForm( "div-comment-36543", "36543", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-36463"><div class="c-avatar"><div class="c-main" id="div-comment-36463">小白 跪求中  。。问题是这样的  ，已经连接了VPN而且 谷歌youtobe都可以打开，whatsapp可以登录发信息，但是不能通过whatsapp打电话，每次拨通后显示连接中，试过无数的设备了都是同样的问题，但是更改了VPN后就可以通话了，比如我更改TORBO VPN就立马可以通话了，跪求解决这个问题的办法谢谢<div class="c-meta"><span class="c-author">小马</span>2018-04-15 22:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=36463#respond' onclick='return addComment.moveForm( "div-comment-36463", "36463", "respond", "1417" )' aria-label='回复给小马'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-36944"><div class="c-avatar"><div class="c-main" id="div-comment-36944">你是不是没有开全局代理？<div class="c-meta"><span class="c-author">暴打维尼</span>2018-04-24 22:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=36944#respond' onclick='return addComment.moveForm( "div-comment-36944", "36944", "respond", "1417" )' aria-label='回复给暴打维尼'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-36072"><div class="c-avatar"><div class="c-main" id="div-comment-36072">科学上午一直都有一个问题就是间歇性不能使用，必须切换其他服务器再切换回来才能使用，这是什么原因，SS/SSR/V2RAY/SSTAP都是这个情况，PS电脑使用的是wifi。<div class="c-meta"><span class="c-author">tsui</span>2018-04-08 16:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=36072#respond' onclick='return addComment.moveForm( "div-comment-36072", "36072", "respond", "1417" )' aria-label='回复给tsui'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-36099"><div class="c-avatar"><div class="c-main" id="div-comment-36099">信息太少无法判断，不过可以尝试一下其他的代理软件，例如 Brook Goflyway 等小众代理。至少我这边用 SSR 是经常抽风，我已经转战 Brook 了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-08 20:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=36099#respond' onclick='return addComment.moveForm( "div-comment-36099", "36099", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-36666"><div class="c-avatar"><div class="c-main" id="div-comment-36666">看来我们几个都是同样问题，我每次必须xshell连一下服务器，ssr还好使<div class="c-meta"><span class="c-author">得意</span>2018-04-19 12:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=36666#respond' onclick='return addComment.moveForm( "div-comment-36666", "36666", "respond", "1417" )' aria-label='回复给得意'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-36034"><div class="c-avatar"><div class="c-main" id="div-comment-36034">在vultr服务器上自己搭建的ssr服务。ssr服务器端能连上，但是上不了google等网站
+并且不是总连不上，而是每天总有一些时间连上ssr服务器端，但上不了google等网站
+1.ping可以ping通，而且ssh也可以连接上，应该说明ip没有被屏蔽
+2.iptable端口打开的，而且是偶尔连不上，所以应该也不是端口的问题
+3.查看ssr的连接信息，是有连接的。mac和android都可以
+4.vultr服务器ping www.google.com也可以ping通
+5.ssserver.log里面也没什么error
+
+所以想问一下楼主，遇到过相关的问题，有什么排查思路么？多谢啦<div class="c-meta"><span class="c-author">后会无期</span>2018-04-08 12:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=36034#respond' onclick='return addComment.moveForm( "div-comment-36034", "36034", "respond", "1417" )' aria-label='回复给后会无期'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-36044"><div class="c-avatar"><div class="c-main" id="div-comment-36044">是间歇性所有网站都上不去吗？还是个别网站？如果是间歇性所有网站上不去，那么可能是被干扰，看一下 SSR PC客户端的服务器连接统计窗口，间歇性上不去时提示的什么？[错误/超时/空连]<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-08 14:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=36044#respond' onclick='return addComment.moveForm( "div-comment-36044", "36044", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-35585"><div class="c-avatar"><div class="c-main" id="div-comment-35585">Vultr的VPS 假设好了SSR 服务也启动了 但是就是翻不了墙 ping通
+任务日志显示
+2018-04-03 12:16:27 INFO     server.py:142 starting server at 0.0.0.0:22
+2018-04-03 12:16:27 ERROR    shell.py:50 [Errno 98] Address already in use<div class="c-meta"><span class="c-author">Jucci</span>2018-04-03 12:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=35585#respond' onclick='return addComment.moveForm( "div-comment-35585", "35585", "respond", "1417" )' aria-label='回复给Jucci'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-35588"><div class="c-avatar"><div class="c-main" id="div-comment-35588">端口被占用，SSR没有启动成功。
+<pre class="prettyprint linenums" >netstat -lntp
+# 看看是哪个程序占用了SSR的端口，结束掉那个程序，或者更换SSR端口。
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-03 14:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=35588#respond' onclick='return addComment.moveForm( "div-comment-35588", "35588", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-34729"><div class="c-avatar"><div class="c-main" id="div-comment-34729">求助！同一个账号、同样的梅林固件版本、同样的节点、运行状态也显示国内国外都是对号、但是web测试一直是falied。所有浏览器都不能翻…<div class="c-meta"><span class="c-author">南郊</span>2018-03-23 22:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=34729#respond' onclick='return addComment.moveForm( "div-comment-34729", "34729", "respond", "1417" )' aria-label='回复给南郊'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-34744"><div class="c-avatar"><div class="c-main" id="div-comment-34744">路由器固件不清楚，无法回答。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-24 12:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=34744#respond' onclick='return addComment.moveForm( "div-comment-34744", "34744", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-34672"><div class="c-avatar"><div class="c-main" id="div-comment-34672">版主，我的SSR，客户端可以上，路由器shadowsocks插件不能上。梅林系统，网件6300v2。<div class="c-meta"><span class="c-author">DanLovely</span>2018-03-22 20:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=34672#respond' onclick='return addComment.moveForm( "div-comment-34672", "34672", "respond", "1417" )' aria-label='回复给DanLovely'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-34410"><div class="c-avatar"><div class="c-main" id="div-comment-34410">请教版主，翻美国，其他需要科学上网的都可以登上，就一个打不开www.macys.com，是什么问题导致的呢？怎么解决？谢谢。<div class="c-meta"><span class="c-author">sherry</span>2018-03-22 09:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=34410#respond' onclick='return addComment.moveForm( "div-comment-34410", "34410", "respond", "1417" )' aria-label='回复给sherry'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-34463"><div class="c-avatar"><div class="c-main" id="div-comment-34463">我试了试这个网址，挂代理不挂代理都能访问（不挂代理就是中国版），你尝试别人的代理账号试试，或者让被人用你的代理账号访问这个网址试试。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-22 14:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=34463#respond' onclick='return addComment.moveForm( "div-comment-34463", "34463", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-34352"><div class="c-avatar"><div class="c-main" id="div-comment-34352">连wifi上不了ssr 用数据却可以 手机热点也可以  朋友可以用wifi连 自己不行<div class="c-meta"><span class="c-author">Cat</span>2018-03-22 01:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=34352#respond' onclick='return addComment.moveForm( "div-comment-34352", "34352", "respond", "1417" )' aria-label='回复给Cat'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-34468"><div class="c-avatar"><div class="c-main" id="div-comment-34468">同一个WiFi你连不上SSR账号，别人的设备就能连上？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-22 14:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=34468#respond' onclick='return addComment.moveForm( "div-comment-34468", "34468", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-34044"><div class="c-avatar"><div class="c-main" id="div-comment-34044">版主，有个问题，我建了一个想用sstap来和校友一起用来吃鸡，我可不可以禁止，使这个只能用来玩游戏，而不能在电脑上浏览网页看视频呢，怕分享了网速不稳定。<div class="c-meta"><span class="c-author">Nico</span>2018-03-20 15:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=34044#respond' onclick='return addComment.moveForm( "div-comment-34044", "34044", "respond", "1417" )' aria-label='回复给Nico'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-33914"><div class="c-avatar"><div class="c-main" id="div-comment-33914">版主，问一下我的电脑过年的时候一直用ssr，都没有问题。最近打开，用了你的分享的账号还是不行。看了你的找问题教程还是不可以。电脑也没有重装，这一版是什么的问题呢，莫名其妙的。<div class="c-meta"><span class="c-author">huangsf1112</span>2018-03-19 23:41 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=33914#respond' onclick='return addComment.moveForm( "div-comment-33914", "33914", "respond", "1417" )' aria-label='回复给huangsf1112'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-34004"><div class="c-avatar"><div class="c-main" id="div-comment-34004">光这些信息我看不出什么，评论不适合讨论复杂问题，请 <a href="https://t.me/doubi/" target="_blank" rel="nofollow">Telegram群组</a>(<a href="ma7f_p6p.html" target="_blank">TG使用教程</a>)私聊联系我讨论解决。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-20 10:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=34004#respond' onclick='return addComment.moveForm( "div-comment-34004", "34004", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-33698"><div class="c-avatar"><div class="c-main" id="div-comment-33698">我把自己的账号给朋友用了一下，然后chrome还是没效果，ie取消保护模式之后能登录了，方法都看过了还是解决不了<div class="c-meta"><span class="c-author">Asite</span>2018-03-19 01:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=33698#respond' onclick='return addComment.moveForm( "div-comment-33698", "33698", "respond", "1417" )' aria-label='回复给Asite'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-33201"><div class="c-avatar"><div class="c-main" id="div-comment-33201">朋友校园网深澜拨号，ss用256-gcm加密，ss日志没报错，ssTap，SocksCap64都测试能通，就是不能代理成功，sstap安装后添加了一个虚拟网络适配器，失灵时不灵的可以上个google，youtube就不行了，怀疑是那个客户端拨号软件的问题？<div class="c-meta"><span class="c-author">暴打维尼</span>2018-03-15 21:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=33201#respond' onclick='return addComment.moveForm( "div-comment-33201", "33201", "respond", "1417" )' aria-label='回复给暴打维尼'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-33248"><div class="c-avatar"><div class="c-main" id="div-comment-33248">尝试关闭IE保护模式和防火墙之后IE可以翻出去，但是其他程序都翻不了<div class="c-meta"><span class="c-author">暴打维尼</span>2018-03-16 15:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=33248#respond' onclick='return addComment.moveForm( "div-comment-33248", "33248", "respond", "1417" )' aria-label='回复给暴打维尼'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-33106"><div class="c-avatar"><div class="c-main" id="div-comment-33106">感谢 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_lol.gif" alt=":lol:" class="wp-smiley" style="height: 1em; max-height: 1em;" /> ，电脑维修回来怎么也上不去，一看左下角8月16<div class="c-meta"><span class="c-author">122qiu</span>2018-03-14 09:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=33106#respond' onclick='return addComment.moveForm( "div-comment-33106", "33106", "respond", "1417" )' aria-label='回复给122qiu'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-33091"><div class="c-avatar"><div class="c-main" id="div-comment-33091">想问下，ssr正常连不上，除非再添加一个服务器，原有的服务器才能连上。SS没有这个问题，其他的翻墙软件也没问题<div class="c-meta"><span class="c-author">daxuehan</span>2018-03-13 21:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=33091#respond' onclick='return addComment.moveForm( "div-comment-33091", "33091", "respond", "1417" )' aria-label='回复给daxuehan'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-33121"><div class="c-avatar"><div class="c-main" id="div-comment-33121">重启无效？是不是防火墙的问题？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-14 13:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=33121#respond' onclick='return addComment.moveForm( "div-comment-33121", "33121", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-33026"><div class="c-avatar"><div class="c-main" id="div-comment-33026">还有一种方法，就是更换混淆之类的。。<div class="c-meta"><span class="c-author">Nemo</span>2018-03-12 19:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=33026#respond' onclick='return addComment.moveForm( "div-comment-33026", "33026", "respond", "1417" )' aria-label='回复给Nemo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-32897"><div class="c-avatar"><div class="c-main" id="div-comment-32897">Shadowsocks服务端和obfs-server同时崩溃的问题已经查出来了。这儿是通过日志观察到的，可见日志的重要性。我个人是部署了SSLibev，系统是CentOS7，VPS架构是KVM，排除日志过程如下：
+
+<pre class="prettyprint linenums" >1、从系统日志中导出ss-server的日志到当前目录：cat /var/log/messages  | grep -i "ss-server" &gt;&gt; ss-server.log；
+2、查看日志：vim ss-server.log
+3、发现一个明显的提示：fast open is not enabled in this build（fast open在这个系统中不支持）；
+4、查看SSLibev配置文件(vim /etc/shadowsocks-libev/config.json)，发现了开启fast_open。我猜测可能是与强行开启了fast open有关；
+5、修改config.json，将fast_open关闭，由true改为false；
+6、查看SSLibev进程号：ps aux | grep server；干掉SSLibev进程和obfs：kill-9 489 490；
+7、重新启动SSLibev：/etc/init.d/shadowsocks start；
+8、再次启动客户端连接，访问Google，OK，问题排除。
+</pre>
+
+大家安装了SSLibev却无法正常使用的，可以自己导出日志查看，是哪些问题。逐个排除即可。<div class="c-meta"><span class="c-author">argiops</span>2018-03-09 18:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=32897#respond' onclick='return addComment.moveForm( "div-comment-32897", "32897", "respond", "1417" )' aria-label='回复给argiops'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-32579"><div class="c-avatar"><div class="c-main" id="div-comment-32579">求助，手机能连，电脑一直连不上怎么解决，日志里只有一个bug，DNS query failed  wer.microsoft.com
+其他的网站也能ping上
+服务器连接统计也有数据交换
+用别人的电脑登陆也可以连接<div class="c-meta"><span class="c-author">JOCHEN</span>2018-03-03 23:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=32579#respond' onclick='return addComment.moveForm( "div-comment-32579", "32579", "respond", "1417" )' aria-label='回复给JOCHEN'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-32633"><div class="c-avatar"><div class="c-main" id="div-comment-32633">按照你所说，基本上可以确定是 你这个电脑内的问题了。<br />
+不过评论里说不清，请 <a href="https://t.me/doubi/" target="_blank" rel="nofollow">Telegram群组</a>(<a href="ma7f_p6p.html" target="_blank">TG使用教程</a>)私聊联系我讨论解决。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-04 14:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=32633#respond' onclick='return addComment.moveForm( "div-comment-32633", "32633", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-33202"><div class="c-avatar"><div class="c-main" id="div-comment-33202">你也太好了吧<div class="c-meta"><span class="c-author">暴打维尼</span>2018-03-15 21:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=33202#respond' onclick='return addComment.moveForm( "div-comment-33202", "33202", "respond", "1417" )' aria-label='回复给暴打维尼'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-32503"><div class="c-avatar"><div class="c-main" id="div-comment-32503">求助！有个ss的节点我在手机上一直能用，用二维码添加到mac上之后，服务器测速也有速度，但就是打不开网页，电脑上其他节点都能用，所以应该也不是shadowsocks设置的问题。。请问该怎么办？<div class="c-meta"><span class="c-author">us_1999</span>2018-03-03 12:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=32503#respond' onclick='return addComment.moveForm( "div-comment-32503", "32503", "respond", "1417" )' aria-label='回复给us_1999'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-32543"><div class="c-avatar"><div class="c-main" id="div-comment-32543">抱歉，MAC设备问题我不清楚。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-03 15:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=32543#respond' onclick='return addComment.moveForm( "div-comment-32543", "32543", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-33044"><div class="c-avatar"><div class="c-main" id="div-comment-33044">Toyo您好，我最近开始自建vps服务器，遇到一个问题单位电信的无线网络正常使用，家里联通的手机网络也可以连接，但是家里的铁通无线网络就无法使用，但是使用铁通无线网还可以ssh登陆vps，请问有遇到过这样的情况吗？<div class="c-meta"><span class="c-author">daji</span>2018-03-13 08:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=33044#respond' onclick='return addComment.moveForm( "div-comment-33044", "33044", "respond", "1417" )' aria-label='回复给daji'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-32220"><div class="c-avatar"><div class="c-main" id="div-comment-32220">2018-02-27 15:52:22 WARNING  common.py:238 unsupported addrtype 69, maybe wrong password or encryption method
+2018-02-27 15:52:22 WARNING  tcprelay.py:521 Protocol ERROR, TCP ogn data 8afc454f8128bdbbc8f272a8806e40fe9ceb8cd4ceea762250e8ed8ee9f8441ef8daa8 from ::ffff:112.97.225.140:44252 via port 2344 by UID 2344
+2018-02-27 15:52:22 ERROR    tcprelay.py:1097 can not parse header when handling connection from ::ffff:112.97.225.140:44252
+
+上面是报错信息，请问是什么问题？<div class="c-meta"><span class="c-author">monkey</span>2018-02-27 16:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=32220#respond' onclick='return addComment.moveForm( "div-comment-32220", "32220", "respond", "1417" )' aria-label='回复给monkey'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-32228"><div class="c-avatar"><div class="c-main" id="div-comment-32228"><pre class="prettyprint linenums" >2018-02-27 15:52:22 WARNING common.py:238 unsupported addrtype 69, maybe wrong password or encryption method
+# 密码或者加密方式有误
+2018-02-27 15:52:22 WARNING tcprelay.py:521 Protocol ERROR, TCP ogn data 8afc454f8128bdbbc8f272a8806e40fe9ceb8cd4ceea762250e8ed8ee9f8441ef8daa8 from ::ffff:112.97.225.140:44252 via port 2344 by UID 2344
+# 协议错误：TCP头部信息有误
+2018-02-27 15:52:22 ERROR tcprelay.py:1097 can not parse header when handling connection from ::ffff:112.97.225.140:44252
+# 无法解析TCP头部信息
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-27 17:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=32228#respond' onclick='return addComment.moveForm( "div-comment-32228", "32228", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-31899"><div class="c-avatar"><div class="c-main" id="div-comment-31899">ssr的订阅一直是处理中，请稍后<div class="c-meta"><span class="c-author">鹿屋233</span>2018-02-22 11:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=31899#respond' onclick='return addComment.moveForm( "div-comment-31899", "31899", "respond", "1417" )' aria-label='回复给鹿屋233'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-31481"><div class="c-avatar"><div class="c-main" id="div-comment-31481">请问如何避免服务器ip被禁？<div class="c-meta"><span class="c-author">网友</span>2018-02-15 20:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=31481#respond' onclick='return addComment.moveForm( "div-comment-31481", "31481", "respond", "1417" )' aria-label='回复给网友'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-31491"><div class="c-avatar"><div class="c-main" id="div-comment-31491">不做代理。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-15 21:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=31491#respond' onclick='return addComment.moveForm( "div-comment-31491", "31491", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-2" id="comment-31868"><div class="c-avatar"><div class="c-main" id="div-comment-31868">释放IP<div class="c-meta"><span class="c-author"><a href='https://zankyo.cc/' rel='external nofollow' class='url'>kot4ri</a></span>2018-02-21 20:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=31868#respond' onclick='return addComment.moveForm( "div-comment-31868", "31868", "respond", "1417" )' aria-label='回复给kot4ri'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-31025"><div class="c-avatar"><div class="c-main" id="div-comment-31025">您好
+我使用的开启命令是
+
+ss-redir -o tls1.2_ticket_auth -O auth_aes128_md5 -g removed -s removed -p removed -l 1080 -b 127.0.0.1 -k removed -m aes-256-ctr
+但是执行完以后错误为：Protocol not available
+
+我的版本为2.5.6
+
+用python版本开启却没有问题
+
+sudo python3 ./shadowsocksr/shadowsocks/local.py -o tls1.2_ticket_auth -O auth_aes128_md5 -g removed -s removed -p removed -l 1080 -b 127.0.0.1 -k removed -m aes-256-ctr -d start<div class="c-meta"><span class="c-author">redapple0204</span>2018-02-05 07:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=31025#respond' onclick='return addComment.moveForm( "div-comment-31025", "31025", "respond", "1417" )' aria-label='回复给redapple0204'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-30906"><div class="c-avatar"><div class="c-main" id="div-comment-30906">你好，我的ssr最近无法连接，总是超时。
+用vps的终端ping国内的网站超时，超级ping只有一个国内的能用，完了？
+用的是bandwagon，可以和他们联系解决吗？谢谢。<div class="c-meta"><span class="c-author">12121</span>2018-02-02 14:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=30906#respond' onclick='return addComment.moveForm( "div-comment-30906", "30906", "respond", "1417" )' aria-label='回复给12121'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-30909"><div class="c-avatar"><div class="c-main" id="div-comment-30909">站长工具 超级Ping 的第一个检测节点有BUG，无视。<br />
+如果国内超时国外通，说明IP被墙。<br />
+搬瓦工目前的规定是，如果你的IP被墙，那么无法更换机房，如果要更换机房或者更换IP，需要一次性付费8美元（保证分给你正常IP）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-02 15:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=30909#respond' onclick='return addComment.moveForm( "div-comment-30909", "30909", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-30770"><div class="c-avatar"><div class="c-main" id="div-comment-30770">2018-01-31 18:49:39 INFO     util.py:85 loading libcrypto from libcrypto.so.10
+2018-01-31 18:49:39 INFO     shell.py:72 ShadowsocksR 3.4.0 2017-07-27
+2018-01-31 18:49:39 INFO     server.py:46 current process RLIMIT_NOFILE resource: soft 512000 hard 512000
+2018-01-31 18:49:39 INFO     asyncdns.py:324 dns server: [('8.8.8.8', 53), ('213.59.0.3', 53)]
+2018-01-31 18:49:39 INFO     server.py:106 server start with protocol[origin] password [zxcvbnm123] method [aes-256-cfb] obfs [plain] obfs_param []
+2018-01-31 18:49:39 INFO     server.py:122 starting server at [::]:666
+2018-01-31 18:49:39 INFO     server.py:142 starting server at 0.0.0.0:666
+2018-01-31 18:50:11 ERROR    tcprelay.py:1097 unable to parse hostname www.google.com.hk when handling connection from ::ffff:123.157.129.60:38131
+2018-01-31 18:50:13 ERROR    tcprelay.py:1097 unable to parse hostname clients4.google.com when handling connection from ::ffff:123.157.129.60:17361
+2018-01-31 18:50:14 ERROR    tcprelay.py:1097 unable to parse hostname www.google.com when handling connection from ::ffff:123.157.129.60:45711
+服务器SSR显示错误日志，这个怎么办？<div class="c-meta"><span class="c-author">wry524</span>2018-01-31 18:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=30770#respond' onclick='return addComment.moveForm( "div-comment-30770", "30770", "respond", "1417" )' aria-label='回复给wry524'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-30783"><div class="c-avatar"><div class="c-main" id="div-comment-30783">unable to parse hostname ，无法解析主机名，可能是DNS的问题，尝试更换DNS。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-31 22:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=30783#respond' onclick='return addComment.moveForm( "div-comment-30783", "30783", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-30324"><div class="c-avatar"><div class="c-main" id="div-comment-30324">自己做了GCP服务器SSR用WIFI电信宽带很快20ms左右没问题，但是用移动4G信号的时候很慢要2xx ms相应时间，正常访问国内网络也都很快的。电信4G,100ms多的速度。是不是4G对翻墙有速度限制了。 其他人有没有这个问题还是我这里问题？<div class="c-meta"><span class="c-author">Feeler</span>2018-01-27 00:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=30324#respond' onclick='return addComment.moveForm( "div-comment-30324", "30324", "respond", "1417" )' aria-label='回复给Feeler'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-30345"><div class="c-avatar"><div class="c-main" id="div-comment-30345">我只知道 3G4G数据流量 与 家庭宽带 是分开管理的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-27 13:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=30345#respond' onclick='return addComment.moveForm( "div-comment-30345", "30345", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-30289"><div class="c-avatar"><div class="c-main" id="div-comment-30289">现在的情况是，一会儿连得上一会儿连不上。用户名，密码应该是可以用的,电脑应该也没问题。像是服务器问题但更可能是连接bei阻断了.<div class="c-meta"><span class="c-author">6y4</span>2018-01-26 16:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=30289#respond' onclick='return addComment.moveForm( "div-comment-30289", "30289", "respond", "1417" )' aria-label='回复给6y4'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-30107"><div class="c-avatar"><div class="c-main" id="div-comment-30107">dalao，vultr的Miami机房，一开始是发现xshell连不上自己的服务器，后来查了下估计是IP被qiang了，由于在学校里，试了下用ipv6，通过xshell是可以连上的，说明服务器在正常运行。然后试了下纸飞机的全局模式，发现竟然还能用（IP里填了服务器的ipv4和ipv6都可以），再试一下手机却连不上，这什么情况啊？略懵逼现在<div class="c-meta"><span class="c-author">lgsen</span>2018-01-24 17:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=30107#respond' onclick='return addComment.moveForm( "div-comment-30107", "30107", "respond", "1417" )' aria-label='回复给lgsen'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-30062"><div class="c-avatar"><div class="c-main" id="div-comment-30062">超级ping没问题啊 就是怎么都连不上ssr, 之前可以的, 突然就不行了, 然后用脚本查看连接数是0, 也重装了ssr了 是什么问题呢 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_sad.gif" alt=":sad:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">markyeahjr</span>2018-01-24 11:43 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=30062#respond' onclick='return addComment.moveForm( "div-comment-30062", "30062", "respond", "1417" )' aria-label='回复给markyeahjr'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-30079"><div class="c-avatar"><div class="c-main" id="div-comment-30079">SSR PC客户端 服务器链接统计提示什么？[错误/超时/空连]<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-24 13:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=30079#respond' onclick='return addComment.moveForm( "div-comment-30079", "30079", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-30154"><div class="c-avatar"><div class="c-main" id="div-comment-30154">用SSR PC客户端查看服务器的是 超时, 服务器的链接统计是:当前模式:单端口, 链接IP总数0, 当前链接IP是空<div class="c-meta"><span class="c-author">markyeahjr</span>2018-01-25 09:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=30154#respond' onclick='return addComment.moveForm( "div-comment-30154", "30154", "respond", "1417" )' aria-label='回复给markyeahjr'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-30193"><div class="c-avatar"><div class="c-main" id="div-comment-30193">超时说明客户端发送信息给服务端，服务端在超时时间内没有回复，一般为：SSR服务端未运行（或者运行中假死）、SSR服务端所在服务器的防火墙配置有误（如果是阿里云 腾讯云 微软云之类还有外部防火墙）、本机无法链接SSR服务器。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-25 14:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=30193#respond' onclick='return addComment.moveForm( "div-comment-30193", "30193", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-30015"><div class="c-avatar"><div class="c-main" id="div-comment-30015">你好，今天遇到的神奇的问题。搞了好久
+本来电脑使用路由器上网 SSR 可以用 。今天路由出问题 我直连 拨号上网 SSR 就不能用了 什么都没改 SSR服务器也没问题
+弄了好久也没搞好 又从连上路由器 秒上。。<div class="c-meta"><span class="c-author">sd527</span>2018-01-23 21:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=30015#respond' onclick='return addComment.moveForm( "div-comment-30015", "30015", "respond", "1417" )' aria-label='回复给sd527'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-30023"><div class="c-avatar"><div class="c-main" id="div-comment-30023">这种问题，在拨号上网的用户中，较为常见，这是因为各种各样的原因导致 SSR 客户端设置系统代理失败，而浏览器是通过读取系统代理设置的。本文章里的系统代理设置相关排除问题都可以参考。<br />
+当然最方便的是直接使用 浏览器扩展来管理代理设置，这样无需再去管 系统代理设置是否正常了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-23 22:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=30023#respond' onclick='return addComment.moveForm( "div-comment-30023", "30023", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29977"><div class="c-avatar"><div class="c-main" id="div-comment-29977">您好，想问个问题，ssr一运行就上不了任何网站了，日志里反复报告为[Error] System.Net.Sockets.SocketException (0x80004005): 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8085
+   在 System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   在 Shadowsocks.Controller.Socks5Forwarder.Handler.ConnectCallback(IAsyncResult ar)
+想请教一下有没有解决的方法<div class="c-meta"><span class="c-author">hiawei</span>2018-01-23 14:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=29977#respond' onclick='return addComment.moveForm( "div-comment-29977", "29977", "respond", "1417" )' aria-label='回复给hiawei'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-29994"><div class="c-avatar"><div class="c-main" id="div-comment-29994">所有SSR账号都是这样报错？让别人或者其他设备使用你的SSR账号测试过吗？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-23 17:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=29994#respond' onclick='return addComment.moveForm( "div-comment-29994", "29994", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-29899"><div class="c-avatar"><div class="c-main" id="div-comment-29899">你好，我有个问题想请教下，我现在电脑用的校园网宽带在开启ssr后只有IE能上网，其他浏览器如edge和chrome都不行，都提示说代理设置问题，可是我电脑连接到手机热点然后开启ssr他竟然都能上网了，我就很奇怪，这是我宽带的问题吗？<div class="c-meta"><span class="c-author">violetletter</span>2018-01-21 17:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=29899#respond' onclick='return addComment.moveForm( "div-comment-29899", "29899", "respond", "1417" )' aria-label='回复给violetletter'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-29902"><div class="c-avatar"><div class="c-main" id="div-comment-29902">电脑上运行SSR客户端，浏览器上网 与 手机上运行SSR客户端，电脑连接手机，浏览器上网 这两者是又区别的。<br />
+这种电脑配置方面的问题评论里说不清，请 <a href="https://t.me/doubi/" target="_blank" rel="nofollow">Telegram群组</a>(<a href="ma7f_p6p.html" target="_blank">TG使用教程</a>)私聊联系我讨论解决，有必要时可远程协助。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-21 17:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=29902#respond' onclick='return addComment.moveForm( "div-comment-29902", "29902", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29773"><div class="c-avatar"><div class="c-main" id="div-comment-29773">您好，昨天使用您的一键脚本安装成功了，先表示下感谢。现在出现的问题就是，我和一个小伙伴用的同一个端口，他在家wifi 情况下，电脑和手机都可用，但是我在家里wifi下电脑手机都不行，速度极慢，但手机切换为4G可用。wifi直连状况下，ping 200ms，linode节点测试下载速度也在1MB/s左右。查看服务端日志也没有error,客户端日志显示，[Error] System.Net.Sockets.SocketException (0x80004005): 由于目标计算机积极拒绝，无法连接。 121.59.17.7:443
+   在 System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   在 Shadowsocks.Controller.Socks5Forwarder.Handler.ConnectCallback(IAsyncResult ar)。想问下看能否解决。<div class="c-meta"><span class="c-author">van</span>2018-01-19 11:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=29773#respond' onclick='return addComment.moveForm( "div-comment-29773", "29773", "respond", "1417" )' aria-label='回复给van'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-29792"><div class="c-avatar"><div class="c-main" id="div-comment-29792">你的WIFI的运营商是什么？你朋友的是什么？<br />
+你WIFI情况下，SSR账号可以使用，但是速度慢？<br />
+如果只是速度慢，可能是运营商干扰或者运营商QOS限速导致的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-19 15:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=29792#respond' onclick='return addComment.moveForm( "div-comment-29792", "29792", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-29765"><div class="c-avatar"><div class="c-main" id="div-comment-29765">doubi的一键脚本搭的ssr。。用了两天，总流量跑了10g。疑似ip被墙。。。_(:3」∠)_用站长工具绝大多数地方都ping不通了这是已经废了吗<div class="c-meta"><span class="c-author">123</span>2018-01-19 09:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=29765#respond' onclick='return addComment.moveForm( "div-comment-29765", "29765", "respond", "1417" )' aria-label='回复给123'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-29789"><div class="c-avatar"><div class="c-main" id="div-comment-29789">如果IP被墙，那么就是[站长工具 - 超级Ping]结果肯定为：国内所有地区超时，国外所有地区ping正常（允许几个超时的，因为可能是ping检测节点的问题）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-19 15:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=29789#respond' onclick='return addComment.moveForm( "div-comment-29789", "29789", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29717"><div class="c-avatar"><div class="c-main" id="div-comment-29717">从豆比云下载的4.7.0.7，能用，但是有一个问题，就是程序会崩溃，然后强制退出，表现在不能编辑服务器，也就是说，扫描二维码能用，但是你一点删除就会弹出：应用程序中发生了未经处理的异常。如果单击继续，应用程序将忽略此错误并尝试继续，如果单击退出，应用程序将立即关闭。 39340656的值对于Value无效，Value应介于Minimum和Maximum之间。   不管点那个都会强制退出。 然后把整个文件夹都删除了，重新解压，扫描二维码或右键复制SSR链接，能上网，就是失效的服务器一删除或编辑就崩溃了，好尴尬。<div class="c-meta"><span class="c-author">tenda</span>2018-01-18 13:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=29717#respond' onclick='return addComment.moveForm( "div-comment-29717", "29717", "respond", "1417" )' aria-label='回复给tenda'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-29720"><div class="c-avatar"><div class="c-main" id="div-comment-29720">我的逗比云的是 4.7.0 版本，后面的是 .7z 压缩格式，我一直用着这个版本没这个问题，我是 Windows10 64位 系统，尝试重装 Microsoft .NET Framework 4.0 依赖，然后打开 SSR文件夹里的 donet4.0 的那个程序。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-18 14:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=29720#respond' onclick='return addComment.moveForm( "div-comment-29720", "29720", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-29304"><div class="c-avatar"><div class="c-main" id="div-comment-29304">请教下 日志显示Error 104 connection reset by peer，396 exception from:后面是我的IP地址，这是什么故障？<div class="c-meta"><span class="c-author">leokalas</span>2018-01-06 17:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=29304#respond' onclick='return addComment.moveForm( "div-comment-29304", "29304", "respond", "1417" )' aria-label='回复给leokalas'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-29280"><div class="c-avatar"><div class="c-main" id="div-comment-29280">请教一下：
+我的win10系统笔记本，使用SSR，同一个服务器，连接无线路由时，可以翻，把网线直接插电脑上，就连不上了。这种情况是什么原因造成了？<div class="c-meta"><span class="c-author">翻山越岭</span>2018-01-06 07:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=29280#respond' onclick='return addComment.moveForm( "div-comment-29280", "29280", "respond", "1417" )' aria-label='回复给翻山越岭'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29288"><div class="c-avatar"><div class="c-main" id="div-comment-29288">只能说可以确定是电脑内一些设置的问题，但是具体什么设置问题，我也不清楚。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-06 14:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=29288#respond' onclick='return addComment.moveForm( "div-comment-29288", "29288", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-28972"><div class="c-avatar"><div class="c-main" id="div-comment-28972">求救大佬：电脑上的ssr能连上并正常上网，安卓上的ssr死活就是提示无互联网连接 和 No route to host，连接的是同一个网络同一个服务器，不管是自己搭的vps还是逗比自建的都是这样，ssr客户端也是逗比云上的，大概是哪方面出了问题？
+顺便一提，手机是MIUI的<div class="c-meta"><span class="c-author">snapheilo</span>2017-12-28 14:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=28972#respond' onclick='return addComment.moveForm( "div-comment-28972", "28972", "respond", "1417" )' aria-label='回复给snapheilo'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29034"><div class="c-avatar"><div class="c-main" id="div-comment-29034">安卓的问题我无法解决，我以前也偶尔出现过，但是我也没办法，只能瞎等，有时候自己就好了，也不知道是什么鬼，这个问题很常见，很多人都遇到过这种BUG，目前无有效解决办法。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-30 17:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=29034#respond' onclick='return addComment.moveForm( "div-comment-29034", "29034", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-29283"><div class="c-avatar"><div class="c-main" id="div-comment-29283">和我一模一样的问题，哇求问<div class="c-meta"><span class="c-author">zcp</span>2018-01-06 08:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=29283#respond' onclick='return addComment.moveForm( "div-comment-29283", "29283", "respond", "1417" )' aria-label='回复给zcp'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-28876"><div class="c-avatar"><div class="c-main" id="div-comment-28876">我自己在linode上搭了一个ssr，现在用起来有一个问题是，ssr时不时的会出现无法连接的情况，出现的时间不定，此时ping不通，但是我切换一下别的服务器，再切回去，又可以继续用了，而且一切正常，但是如果不切一下，就一直不能用。关闭ssr客户端再开也无效，只能切服务器解决。看ssr客户端的日志经常出现“[Error] System.Net.Sockets.SocketException (0x80004005): 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 183.60.72.225:80
+   在 System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   在 Shadowsocks.Controller.Socks5Forwarder.Handler.ConnectCallback(IAsyncResult ar)”和“[Error] System.Net.Sockets.SocketException (0x80004005): 由于目标计算机积极拒绝，无法连接。 127.0.0.1:4813
+   在 System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   在 Shadowsocks.Controller.Socks5Forwarder.Handler.ConnectCallback(IAsyncResult ar)”这两种提示。。。请问下我这个怎么解决呢。。。<div class="c-meta"><span class="c-author">Kelburn</span>2017-12-25 15:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=28876#respond' onclick='return addComment.moveForm( "div-comment-28876", "28876", "respond", "1417" )' aria-label='回复给Kelburn'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-36074"><div class="c-avatar"><div class="c-main" id="div-comment-36074">遇到同样的问题=。=<div class="c-meta"><span class="c-author">tsui</span>2018-04-08 16:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=36074#respond' onclick='return addComment.moveForm( "div-comment-36074", "36074", "respond", "1417" )' aria-label='回复给tsui'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-28700"><div class="c-avatar"><div class="c-main" id="div-comment-28700">自己鼓捣半天, 实在解决不了了. 求救大佬. 现在服务器会
+2017-12-20 14:28:52 ERROR    tcprelay.py:1039 [Errno 110] Connection timed out
+2017-12-20 14:28:52 ERROR    tcprelay.py:1041 remote error, when connect to 140.205.122.66:53
+之前还有会提示另一个
+2017-12-20 13:52:32 ERROR    shell.py:50 [Errno 101] Network is unreachable
+2017-12-20 13:52:32 ERROR    tcprelay.py:812 exception from ::ffff:58.23.237.222:16507
+2017-12-20 13:52:32 ERROR    shell.py:50 29
+2017-12-20 13:52:32 ERROR    tcprelay.py:1039 [Errno 111] Connection refused
+2017-12-20 13:52:32 ERROR    tcprelay.py:1041 remote error, when connect to 91.108.56.198:443
+2017-12-20 13:53:36 ERROR    shell.py:50 [Errno 101] Network is unreachable
+2017-12-20 13:53:36 ERROR    tcprelay.py:812 exception from ::ffff:58.23.237.222:13494
+2017-12-20 13:53:36 ERROR    shell.py:50 17
+自己搞半天 不知道怎么解决了.感谢.<div class="c-meta"><span class="c-author">贪狼</span>2017-12-20 14:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=28700#respond' onclick='return addComment.moveForm( "div-comment-28700", "28700", "respond", "1417" )' aria-label='回复给贪狼'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-23851"><div class="c-avatar"><div class="c-main" id="div-comment-23851">两个问题请教Mr.偷油，①Vultr月付$2.5的日本节点，本地可以ping通，超级ping国内少部分可以ping通，远程SSH失效，持续了一个月左右，中间间歇性恢复正常，是不是必须换IP了？②现在开不到月付$2.5的日本节点了，有什么在保留原有套餐前提下更换IP?<div class="c-meta"><span class="c-author">Zero</span>2017-12-04 20:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=23851#respond' onclick='return addComment.moveForm( "div-comment-23851", "23851", "respond", "1417" )' aria-label='回复给Zero'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-23888"><div class="c-avatar"><div class="c-main" id="div-comment-23888">1、你出现的情况根据我的经验初步判断为 部分地区运营商封锁你的IP，导致部分地区会无法链接该IP，前段时间十九大我的好几个IP就经历过这种情况，这种情况既然持续了一个月了，那么说明恢复的希望不大，还是换IP吧。<br />
+2、想要保留套餐的情况下更换IP是不行的，但是可以添加IP，但是你需要付额外的IP费用(按小时计算)，具体价格是每月2美元或每小时0.003美元。<br />
+添加IP步骤：进入控制面板：<a href="https://my.vultr.com/" target="_blank" rel="nofollow">https://my.vultr.com/</a> 、点击你要添加IP的服务器、点击 Setting、IPv4、点击 Add Another IPv4 Address 按钮。<br />
+
+<pre class="prettyprint linenums" >Vultr 上写的添加规则：
+
+IPv4地址的费用为每月2美元或每小时0.003美元。
+地址在被移除之前必须保持活动60分钟。
+您将需要在VPS上手动配置其他IP。
+每个VPS最多限制2个额外的IPv4 IP。
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-05 12:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=23888#respond' onclick='return addComment.moveForm( "div-comment-23888", "23888", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-23802"><div class="c-avatar"><div class="c-main" id="div-comment-23802">服务器禁ping怎么排查是不是被封ip？
+之前在梯子还可用的情况下试了用超级ping，全球各地都是超时的。今天下午服务器突然连不上了，有什么其他方法可以检验IP是否被墙？（SS是朋友的服务器上搭的<div class="c-meta"><span class="c-author">ox</span>2017-12-04 00:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=23802#respond' onclick='return addComment.moveForm( "div-comment-23802", "23802", "respond", "1417" )' aria-label='回复给ox'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-23835"><div class="c-avatar"><div class="c-main" id="div-comment-23835">自行搜索 TCPing，也就是用TCP去Ping，需要知道一个开放 能连接的端口。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-04 18:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=23835#respond' onclick='return addComment.moveForm( "div-comment-23835", "23835", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-23732"><div class="c-avatar"><div class="c-main" id="div-comment-23732">你好，我现在用搬瓦工搭建的ss，怎么pac模式下可以访问fb、tw，但是无法访问google，但是全局可以，请问什么原因，非常感谢！<div class="c-meta"><span class="c-author">糖糖</span>2017-12-02 14:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=23732#respond' onclick='return addComment.moveForm( "div-comment-23732", "23732", "respond", "1417" )' aria-label='回复给糖糖'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-23768"><div class="c-avatar"><div class="c-main" id="div-comment-23768">访问谷歌提示什么？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-03 10:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=23768#respond' onclick='return addComment.moveForm( "div-comment-23768", "23768", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-23555"><div class="c-avatar"><div class="c-main" id="div-comment-23555">2017-11-29 01:04:25 ERROR    tcprelay.py:1097 can not parse header when handling connection from ::ffff:223.74.152.231:38059
+2017-11-29 01:04:25 WARNING  common.py:238 unsupported addrtype 69, maybe wrong password or encryption method
+2017-11-29 01:04:25 WARNING  tcprelay.py:521 Protocol ERROR, TCP ogn data 2d9f9f94d6912a993b0e42faccd80b4ce542d62016addc76ff543745793d82d7d3ce07772e82e35764922905c50d0229fdc99c05aabd8706f4f3330fade306137ba7f71d78771017eb5c9bf70736aaa212dc5a892301155c88b235898bb284ef4171196918efa814b1a82dc1cfccd26f26b5a0b04371d8dfc6cb7e4311727fe64b7b2d627564ffbc21f3a4d1e59fa5264b462a21f4b4e39678690de3318216417f48c2ab7f2556502d980cd72b7956c276ed25745a984be1ca65ebcc5e8f9c06851d30b6d5abcda9156e2ceeba1bd8a86463d0539ffa0b660fe48ba2ab14fb0835d3cfd7d4ad759125abfe4879ec405f0858f442576e982eea8b95ff9bf4d12c32b5270d5b9da082b2e72d8f2b43a8bf4b9dc4f4ef7d3a0e848e67b6f7ab5ab675d5acdf7990efc8b24164296a5f3cbae072be3b from ::ffff:223.74.152.231:38060 via port 56666 by UID 56666
+2017-11-29 01:04:25 ERROR    tcprelay.py:1097 can not parse header when handling connection from ::ffff:223.74.152.231:38060
+2017-11-29 01:04:25 WARNING  common.py:238 unsupported addrtype 69, maybe wrong password or encryption method
+2017-11-29 01:04:25 WARNING  tcprelay.py:521 Protocol ERROR, TCP ogn data 14030300010116030300201afee35577b9f12831d46402b6d996168baeb9a35300d7a0d18a69088faf21a91703030431e0b8b14d9feae8c980d35a252622492ba65e9e53f8d12daa17519cd9a9518e31f1872d64d1f6ce4a4d22a0e1401d70863c5ed4fe4a9de8ff4eba57ee82bdffb60117a8244575db7fd8db35501745e51c1840791939af6de85e8f18aee10639cb666bbef79a734ffc363a8a803ee547227cf696959105df71f1d5bf39b0c79c07f9ff3a121ec28b34c0a80f26f5e3927411aec81bfd1e1c4ab3ddcca74e8789b1aba3a853b06179f6227729b2519b96f73003386b6105ac07c8eecef62877b651e0ec9739027c0013e7598fa9b18f59e8a10599e4e309ee0e45573fea5a47659e1c676b7d4cc36dcf7d8d47258cc32bc6b46384362ddd87257f74d3aace7da3127a6ded47589c21a50cfaba6658b8aeba3cff6cc3c69bed15eee42c8a4029f6baf18dc1f69f25de8dd441ad7234b1a0143fc776a0faeaea418da4c6c7d1673cef77afec29e715e6e2fac7b4c50fee420a4b1fed003d3c7731421e42f19039c3c78ac77fac19e066d2ba97f2fd35a7abb5675c1ab5f2e1d33a88ff3d8f5d368a31c096942dc96eca13e85126e1a007ba91689b5af0f32cd4f12f605b3f4925daa422d412d6fdfda3845676ea8fe49c0172b247dc5272b9157466342c5ebf8ad459c85135722b94465144f10e6f810ebfca521eb38660b0866be017242c70feedb50e2780ffec04c21682e294c0cbcc3a7d0657c578f2068a1ada055f902be4a207e64d5e3487fe78002b4b02e3b88f652ebf591eff62f0da5fa632c9cf904caa416ff2838706761dcb159db2a08d1d46803e006f92b15b3c74b05834354d832adcee187be664b622e342741a7e216d3a0dd5493b93b40172364e5a6b458119f5a25dcc26f59a5810bf4f479767f9dc10af5ad2196484a3854267f5302445a3f650a9f8502d0b78f3449ecdfce935f6007f385fa099ca45f5c5579b20814937609bf6713dbdf96c42f6a6723849a528460f41742ed69ab1b0be69539d0d4e4f2c1ae5cd702e3c1a51cccfeb6a10db7aaa80cf87254f1668de4a9bbf998c740ef97cbc916879c079439ff4d57136ffa79fb6cdb5f29800b5b6029105a6703015acf8be9a6b5881b927b1b4e3e0ec5710c6b9d3efb9a47b45a12cc3a31b77debbfdc5555b68e2cd713c5d790ae33adf05b336e4cddb0f1125dab679e1d1ba4a7706f411044541bba50849dddb6b9b39e975976f6722e59bc0a31daca28ed07af430b568141cfac7a5f6fd5df6c4775802b36a6c24a66ea64b3166ae5af39be0d1359994bd245fe185ec7aa6b3e6b2e47eaa01ffffcf0f0357ff3a1a55438a42de16455f51161f9d8979a42db1e244a416d083ad8611c85f9af8028f999bb5fee2484a942d5fcb99780476bb4c1317affd21a9f6bd3716da1e11fc9569dfb0e12ba6312061cf13174bc1c2cbed63d0072b16ed1caeb975fa288a2d8e907ada4130edf7b3be311b96ad9f2a794f46fbc8aa4b8aff2ece4c83ede56fcf6a14b49f9f71eac2d2650a81e8ae4cd5186f8ac243d3532a from ::ffff:223.74.152.231:38061 via port 56666 by UID 56666
+
+
+这种问题我每天都会遇到 我唯一的解决办法就是换服务器....   这是被人攻击还是我软件设置的漏洞?<div class="c-meta"><span class="c-author"><a href='http://xn--rgv/' rel='external nofollow' class='url'>larus</a></span>2017-11-29 01:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=23555#respond' onclick='return addComment.moveForm( "div-comment-23555", "23555", "respond", "1417" )' aria-label='回复给larus'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-23541"><div class="c-avatar"><div class="c-main" id="div-comment-23541">校园网用不了ssr的怎么办？其他网络环境都能用<div class="c-meta"><span class="c-author">Jun</span>2017-11-28 21:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=23541#respond' onclick='return addComment.moveForm( "div-comment-23541", "23541", "respond", "1417" )' aria-label='回复给Jun'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-23686"><div class="c-avatar"><div class="c-main" id="div-comment-23686">多半是校园网做了限制，这要看他是做了什么限制，才能想一想是否能绕开。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-01 15:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=23686#respond' onclick='return addComment.moveForm( "div-comment-23686", "23686", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-23224"><div class="c-avatar"><div class="c-main" id="div-comment-23224">我面临的问题是：使用校园网的wifi可以用ssr，使用自己拉的电信宽带ssr不成功，只能使用sstap全局才能出去<div class="c-meta"><span class="c-author">少小宇</span>2017-11-23 23:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=23224#respond' onclick='return addComment.moveForm( "div-comment-23224", "23224", "respond", "1417" )' aria-label='回复给少小宇'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-23232"><div class="c-avatar"><div class="c-main" id="div-comment-23232">电信宽带SSR无法链接，用SSTAP就能连接了？这怕是设备的本地设置相关问题导致的吧。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-24 01:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=23232#respond' onclick='return addComment.moveForm( "div-comment-23232", "23232", "respond", "1417" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-23199"><div class="c-avatar"><div class="c-main" id="div-comment-23199">[2017-11-23 15:52:00] System.Net.Sockets.SocketException (0x80004005): 由于目标计算机积极拒绝，无法连接。
+   在 Shadowsocks.Util.Sockets.WrappedSocket.EndConnect(IAsyncResult asyncResult)
+   在 Shadowsocks.Proxy.DirectConnect.EndConnectDest(IAsyncResult asyncResult)
+   在 Shadowsocks.Controller.TCPHandler.ConnectCallback(IAsyncResult ar)
+博主这是为什么？？？<div class="c-meta"><span class="c-author">amosgole</span>2017-11-23 15:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc39/?replytocom=23199#respond' onclick='return addComment.moveForm( "div-comment-23199", "23199", "respond", "1417" )' aria-label='回复给amosgole'>回复</a></div></div></div></li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+		<a class="prev page-numbers" href="u1mzmpah.html#comments">«</a>
+<a class='page-numbers' href='u1mzmpah.html#comments'>1</a>
+<span class='page-numbers current'>2</span>
+<a class='page-numbers' href='1pi57cte.html#comments'>3</a>
+<a class='page-numbers' href='4_a3mppd-2.html#comments'>4</a>
+<a class="next page-numbers" href="1pi57cte.html#comments">»</a>	</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://kanfanba.com/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script type="text/javascript">
+var image_url=new Array()
+image_url=["https://www.vultr.com/","vh8576m0.html","https://virmach.com/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="ck46cd7-container ck46cd7-1 ck46cd7-hide">
+    <div class="ck46cd7-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="ck46cd7"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

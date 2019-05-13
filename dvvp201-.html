@@ -1,0 +1,2222 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>『持续更新』Linux 常用命令简单介绍 —— 基础篇 | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1945] -->
+<meta name="description"  content="很多新手在接触Linux的初期，都会因为习惯了 Windows的可视化操作而不适应 Linux纯命令行的操作，一些基础的 Linux命令都要去百度谷歌查询，这样很浪费时间，所以我就简单整理一些" />
+
+<meta name="keywords"  content="linux" />
+
+<link rel="canonical" href="dvvp201-.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='Linux 自建DNS 并使用SNI Proxy实现科学上网 —— DNSmasq配置教程' href='wkcjzpyd-5.html' />
+<link rel='next' title='使用ShadowsocksR服务端来中转ShadowsocksR' href='3we1qxzj-4.html' />
+<link rel='shortlink' href='https://doub.io/?p=2070' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Flinux-jc8%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Flinux-jc8%2F&amp;format=xml" />
+<style>
+.wk3ff1b{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.wk3ff1b-hide{
+    display: none;
+}
+.wk3ff1b-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.wk3ff1b-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.wk3ff1b-2 .wk3ff1b-body,.wk3ff1b-3 .wk3ff1b-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.wk3ff1b-2 .close-btn,.wk3ff1b-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.wk3ff1b-3 .wk3ff1b-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.wk3ff1b').html(kill_adBlock_message);
+            jQuery('.wk3ff1b-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.wk3ff1b-container').fadeOut('wk3ff1b-hide');
+        });
+    });
+    var kill_adBlock_status = 1;
+    var kill_adBlock_message = '逗比很伤心😥，您的<strong>广告拦截扩展</strong>屏蔽了我们的小广告，网站的发展离不开大家的支持，请先看过<a target=\"_blank\" style=\"color: #ffe500;\" href=\"3--didfb.html\">这个文章</a>后，再确定是否要将我们的域名添加到<strong>拦截白名单</strong>中，谢谢！😘👌';
+    var kill_adBlock_message_delay = 0;
+    var kill_adBlock_close_btn = 1;
+    var kill_adBlock_close_automatically = 0;
+    var kill_adBlock_close_automatically_delay = 0;
+    var kill_adBlock_message_type = 1;
+    function adBlockDetected() {
+      show_message();
+    }
+    
+    if(typeof killAdBlock === 'undefined') {
+        adBlockDetected();
+    } else {
+        killAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+    }
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="Linux, Linux教程">
+<meta name="description" content="很多新手在接触Linux的初期，都会因为习惯了 Windows的可视化操作而不适应 Linux纯命令行的操作，一些基础的 Linux命令都要去百度谷歌查询，这样很浪费时间，所以我就简单整理一些 Linux基础命令提供给新手理解，以后或许还会有进阶篇、高级篇（或许  这篇文章，不仅仅是写给新手学习的，也是写给我学习Linux的，我在写这篇文章的时候，也是在学习和了解这些基础命令，同时留着以后备忘。   包管理器 apt-get Debia">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-2070 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="./softs.wtf/"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Atoyodadoubi.github.io'; return false;" action="https://toyodadoubi.github.io/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 逗比云还是逃不过被墙的命运，既然如此那以后逗比云也就一直用被墙的旧域名 <strong><a target="_blank" href="./softs.wtf/">[softs.wtf]</a></strong> 算了。
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://www.gigsgigscloud.com/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="dvvp201-.html">『持续更新』Linux 常用命令简单介绍 —— 基础篇</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="3tpr86rp.html"> Linux教程</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 2年前 (2017-04-02)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 16809℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="dvvp201-.html#comments">50评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="dvvp201-.html#包管理器" title="包管理器"><span>包管理器</span></a><ul class="children"><li class="content-index-level-2"><a href="dvvp201-.html#apt-get Debian/Ubuntu系统包管理器" title="apt-get Debian/Ubuntu系统包管理器"><span>apt-get Debian/Ubuntu系统包管理器</span></a></li><li class="content-index-level-2"><a href="dvvp201-.html#yum CentOS系统包管理器" title="yum CentOS系统包管理器"><span>yum CentOS系统包管理器</span></a></li></ul></li><li class="content-index-level-1"><a href="dvvp201-.html#文件/文件夹 操作" title="文件/文件夹 操作"><span>文件/文件夹 操作</span></a><ul class="children"><li class="content-index-level-2"><a href="dvvp201-.html#mkdir 新建 文件夹" title="mkdir 新建 文件夹"><span>mkdir 新建 文件夹</span></a></li><li class="content-index-level-2"><a href="dvvp201-.html#cd 进入 文件夹" title="cd 进入 文件夹"><span>cd 进入 文件夹</span></a></li><li class="content-index-level-2"><a href="dvvp201-.html#cp 复制或重命名 文件/文件夹" title="cp 复制或重命名 文件/文件夹"><span>cp 复制或重命名 文件/文件夹</span></a></li><li class="content-index-level-2"><a href="dvvp201-.html#mv 移动或重命名 文件/文件夹" title="mv 移动或重命名 文件/文件夹"><span>mv 移动或重命名 文件/文件夹</span></a></li><li class="content-index-level-2"><a href="dvvp201-.html#rm 删除 文件/文件夹" title="rm 删除 文件/文件夹"><span>rm 删除 文件/文件夹</span></a></li></ul></li><li class="content-index-level-1"><a href="dvvp201-.html#查看/编辑文件 操作" title="查看/编辑文件 操作"><span>查看/编辑文件 操作</span></a><ul class="children"><li class="content-index-level-2"><a href="dvvp201-.html#ls 显示目录中文件" title="ls 显示目录中文件"><span>ls 显示目录中文件</span></a></li><li class="content-index-level-2"><a href="dvvp201-.html#du 查看 文件/文件夹 占用磁盘空间的大小" title="du 查看 文件/文件夹 占用磁盘空间的大小"><span>du 查看 文件/文件夹 占用磁盘空间的大小</span></a></li><li class="content-index-level-2"><a href="dvvp201-.html#cat 查看文件内容" title="cat 查看文件内容"><span>cat 查看文件内容</span></a></li><li class="content-index-level-2"><a href="dvvp201-.html#head 查看文件内容（主要用于正查）" title="head 查看文件内容（主要用于正查）"><span>head 查看文件内容（主要用于正查）</span></a></li><li class="content-index-level-2"><a href="dvvp201-.html#tail 查看文件内容（主要用于倒查）" title="tail 查看文件内容（主要用于倒查）"><span>tail 查看文件内容（主要用于倒查）</span></a></li><li class="content-index-level-2"><a href="dvvp201-.html#sed 查看/编辑文件内容" title="sed 查看/编辑文件内容"><span>sed 查看/编辑文件内容</span></a></li><li class="content-index-level-2"><a href="dvvp201-.html#VI、VIM、Nano 编辑文件内容" title="VI、VIM、Nano 编辑文件内容"><span>VI、VIM、Nano 编辑文件内容</span></a><ul class="children"><li class="content-index-level-3"><a href="dvvp201-.html#VI 介绍" title="VI 介绍"><span>VI 介绍</span></a></li><li class="content-index-level-3"><a href="dvvp201-.html#VIM 介绍" title="VIM 介绍"><span>VIM 介绍</span></a></li><li class="content-index-level-3"><a href="dvvp201-.html#Nano 介绍" title="Nano 介绍"><span>Nano 介绍</span></a></li></ul></li></ul></li><li class="content-index-level-1"><a href="dvvp201-.html#解压缩 操作" title="解压缩 操作"><span>解压缩 操作</span></a><ul class="children"><li class="content-index-level-2"><a href="dvvp201-.html#tar gz zip等 解压 压缩包 示例" title="tar gz zip等 解压 压缩包 示例"><span>tar gz zip等 解压 压缩包 示例</span></a></li><li class="content-index-level-2"><a href="dvvp201-.html#压缩 文件/文件夹 示例" title="压缩 文件/文件夹 示例"><span>压缩 文件/文件夹 示例</span></a></li></ul></li><li class="content-index-level-1"><a href="dvvp201-.html#网络工具" title="网络工具"><span>网络工具</span></a><ul class="children"><li class="content-index-level-2"><a href="dvvp201-.html#wget 下载工具" title="wget 下载工具"><span>wget 下载工具</span></a></li><li class="content-index-level-2"><a href="dvvp201-.html#curl 下载工具" title="curl 下载工具"><span>curl 下载工具</span></a></li><li class="content-index-level-2"><a href="dvvp201-.html#netstat 查看链接和端口监听等信息" title="netstat 查看链接和端口监听等信息"><span>netstat 查看链接和端口监听等信息</span></a></li></ul></li><li class="content-index-level-1"><a href="dvvp201-.html#系统命令" title="系统命令"><span>系统命令</span></a><ul class="children"><li class="content-index-level-2"><a href="dvvp201-.html#ps 查看进程信息" title="ps 查看进程信息"><span>ps 查看进程信息</span></a></li><li class="content-index-level-2"><a href="dvvp201-.html#kill 结束进程" title="kill 结束进程"><span>kill 结束进程</span></a></li><li class="content-index-level-2"><a href="dvvp201-.html#free 查看内存使用信息" title="free 查看内存使用信息"><span>free 查看内存使用信息</span></a></li><li class="content-index-level-2"><a href="dvvp201-.html#date 查看/设置 系统时间" title="date 查看/设置 系统时间"><span>date 查看/设置 系统时间</span></a></li><li class="content-index-level-2"><a href="dvvp201-.html#chmod 修改 文件/文件夹 权限" title="chmod 修改 文件/文件夹 权限"><span>chmod 修改 文件/文件夹 权限</span></a></li><li class="content-index-level-2"><a href="dvvp201-.html#uname 获取操作系统信息" title="uname 获取操作系统信息"><span>uname 获取操作系统信息</span></a></li></ul></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年10月5日 14:59</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>很多新手在接触Linux的初期，都会因为习惯了 Windows的可视化操作而不适应 Linux纯命令行的操作，一些基础的 Linux命令都要去百度谷歌查询，这样很浪费时间，所以我就简单整理一些 Linux基础命令提供给新手理解，以后或许还会有进阶篇、高级篇（或许</p>
+<p>这篇文章，不仅仅是写给新手学习的，也是写给我学习Linux的，我在写这篇文章的时候，也是在学习和了解这些基础命令，同时留着以后备忘。</p>
+<p><img class=" aligncenter" src="-x0-7nkl.png" alt="" width="716" height="297" /></p>
+<h2 id="包管理器">包管理器</h2>
+<h3 id="apt-get Debian/Ubuntu系统包管理器">apt-get Debian/Ubuntu系统包管理器</h3>
+<p>apt-get 是Debian/Ubuntu系统中 一个用于快速下载/安装的简单命令行管理工具！</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 apt-get命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p><strong>参数介绍：</strong></p>
+<pre class="prettyprint linenums"># 命令:
+update - 检索 新的包列表
+upgrade - 升级 可更新的所有软件包
+install - 安装 新软件包（pkg是libc6不是libc6.deb）
+remove - 删除 软件包
+autoremove - 自动删除 所有未使用的软件包
+purge - 删除 软件包和配置文件
+clean - 清除 已下载的归档文件
+autoclean - 清除 旧的下载的档案文件
+check - 验证 是否有损坏的依赖
+download - 下载 二进制包到当前目录
+
+# 选项：
+-q ：不输出任何信息
+-qq ：除了错误之外，没有输出
+-d ：仅下载，不要安装或解压缩存档
+-y ：对所有确定询问都选择 Yes，并且不提示
+-f ：尝试纠正 被破坏依赖关系的系统
+-m ：如果存档是可定位的，则尝试继续
+-u ：显示升级包的列表
+-b ：在获取源代码包后构建源包
+
+# 更多的命令可以用 apt-get --help 查看。
+</pre>
+<p><strong>使用示例：</strong></p>
+<pre class="prettyprint linenums"># 检索 新的包列表
+apt-get update
+
+# 升级 可更新的所有软件包（注意这个命令会升级所有的软件包，所以会升级很长时间）
+apt-get upgrade
+
+# 安装 Nginx 软件包
+apt-get install nginx
+
+# 卸载 Nginx 软件包
+apt-get remove nginx
+
+# 卸载 Nginx 软件包 并删除所有相关配置文件
+apt-get remove --purge nginx
+
+# 在安装软件和卸载的时候，为了避免误操作，都会询问是否继续，每次都要输入 y 来确定会很麻烦，可以加上 -y 参数
+# 安装 Nginx 软件包 并不显示确定提示
+apt-get install nginx -y
+
+# 卸载 Nginx 软件包，删除所有相关配置文件 并不显示提示
+apt-get remove --purge nginx -y
+
+# 清除 旧的/无用 的软件包
+apt-get clean &amp;&amp; apt-get autoclean
+
+# 下载 Nginx 二进制软件包到当前目录，但不解压和安装
+apt-get download nginx -d
+
+# 更多的命令可以用 apt-get --help 查看。</pre>
+<p></p></div>
+<h3 id="yum CentOS系统包管理器">yum CentOS系统包管理器</h3>
+<p>yum 是CentOS系统中 一个用于快速下载/安装的简单命令行管理工具！</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 yum命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p><strong>参数介绍：</strong></p>
+<pre class="prettyprint linenums"># 命令：
+
+update - 检索 新的包列表
+upgrade - 升级 软件包
+search - 搜索 软件包
+install - 安装 软件包
+list - 列出 软件包或者软件包组
+info - 显示软件包或者软件包组的详细信息
+erase - 删除 软件包（这两个命令一样）
+remove - 删除 软件包（这两个命令一样）
+groupinfo - 显示 有关包组的详细信息
+groupinstall - 安装 软件包组（就像一种软件合集）
+grouplist - 列出 可用的软件包组
+groupremove - 删除 软件包组
+check - 检查 软件包
+check-update - 检查 可更新的软件包
+clean - 清除 缓存目录内的软件包
+deplist - 列出 一个包的依赖关系
+distribution-synchronization - 同步 已安装的软件包到最新的版本
+downgrad - 降级 一个软件包
+reinstall - 重新安装 软件包（自动删除重装）
+repolist - 显示 配置的软件包仓库
+resolvedep - 确定 软件包需要的依赖关系
+
+# 选项：
+-t ：容忍错误
+-C ：完全从系统缓存运行，不要更新缓存
+-R 分钟 ：最大命令等待时间
+-q ：安静的操作
+-y ：对于所有问题回答是
+--nogpgcheck ：禁用gpg签名检查
+
+# 更多的命令可以用 yum --help 查看。
+</pre>
+<p><strong>使用示例：</strong></p>
+<pre class="prettyprint linenums"># 检索 新的包列表
+yum update
+
+# 安装 Nginx 软件包
+yum install nginx
+
+# 安装 Development Tools 软件包组（这个软件包组中包含了编译所需的软件）
+# 注意：当软件包或者软件包组的名字中包含空格的时候，请把 软件包或软件包组 加上双引号！
+yum groupinstall "Development Tools"
+
+# 卸载 Nginx 软件包
+yum erase nginx / yum remove nginx
+
+# 卸载 Development Tools 软件包组
+yum groupremove "Development Tools"
+
+# 升级 所有可更新的软件包
+yum upgrade
+
+# 升级 Nginx 可更新的软件包
+yum upgrade nginx
+
+# 在安装软件和卸载的时候，为了避免误操作，都会询问是否继续，每次都要输入 y 来确定会很麻烦，可以加上 -y 参数
+# 安装 Nginx 软件包 并不显示确定提示
+yum install nginx -y
+
+# 卸载 Nginx 软件包 并不显示确定提示
+yum erase nginx -y / yum remove nginx -y
+
+# 搜索 Nginx 软件包是否存着
+yum search nginx
+
+# 列出 可用的软件包
+yum list
+
+# 列出 可用的软件包组
+yum grouplist
+
+# 清除 缓存目录中的所有软件包
+yum clean
+
+# 清除 缓存目录中的 Nginx 软件包
+yum clean nginx
+
+# 重装 Nginx 软件包
+yum reinstall nginx
+
+# 更多的命令可以用 yum --help 查看。</pre>
+<p></p></div>
+<h2 id="文件/文件夹 操作">文件/文件夹 操作</h2>
+<p>以下除特殊说明，都以当前目录为<code> /root </code>示例。</p>
+<h3 id="mkdir 新建 文件夹">mkdir 新建 文件夹</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 mkdir命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"># 在当前文件夹新建一个 bash 文件夹，完整的绝对路径就是 /root/bash
+mkdir bash
+
+# 更多的命令可以用 mkdir --help 查看。</pre>
+<p></p></div>
+<h3 id="cd 进入 文件夹">cd 进入 文件夹</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 cd命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"># 你当前在 /root目录中，使用这个命令会进入 /root/bash目录，这是相对路径
+cd bash
+# 如果你不在 /root目录中的话，就不能用上面的相对路径了，就需要绝对路径
+cd /root/bash
+—————————————————————————————————————
+# 假设你当前在 /root/bash目录中，使用相对路径，你可以用这个命令进入上一级 /root目录， .. 代表相对路径 上级目录
+cd ..
+# 当然你也可以用绝对路径来进入上一级 /root目录
+cd /root</pre>
+<p></p></div>
+<h3 id="cp 复制或重命名 文件/文件夹">cp 复制或重命名 文件/文件夹</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 cp命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"># 复制当前目录内的 log.txt文件到 /var目录
+cp log.txt /var/log.txt
+
+# 复制当前目录内的 bash文件夹到 /home目录
+cp -R bash /home/bash
+—————————————————————————————————————
+# 复制当前目录内的所有.txt后缀的文件到 /var/log目录
+cp *.txt /var/log
+
+# 复制当前目录内的所有以 doubi开头的文件到 /var/log目录
+cp doubi* /var/log
+
+# 复制当前目录内的所有以 doubi开头 以.txt后缀结尾的文件到 /var/log目录
+cp doubi*.txt /var/log
+—————————————————————————————————————
+# 假设当前目录是 /root/doubi/log，要把这个目录中的所有.txt后缀的文件复制到上一级目录 /root/doubi，那么这样做
+cp *.txt ..
+
+# .. 就是相对路径，代表上一级目录，当然你也可以用绝对路径，这样更不容易出错
+cp *.txt /root/doubi
+—————————————————————————————————————
+# 重命名当前目录内的 log.txt文件为 log2.txt
+cp log.txt log2.txt
+
+# 复制当前目录内的 log.txt文件到 /var目录并重命名为 log1.txt
+cp log.txt /var/log1.txt
+
+# 复制当前目录内的 bash文件夹到 /home目录并重命名为 bash2
+cp -R bash /home/bash2
+—————————————————————————————————————
+# 复制当前目录内的 log.txt文件到 /var目录，但是 /var 目录中已经存着 log.txt，那么会提示 <strong>cp: overwrite `/var/log.txt'?</strong> 可以用 -f 强制覆盖
+cp -f log /var/log.txt
+
+# 大家可能会发现，当你使用 cp -f 强制覆盖的时候，依然会询问你是否覆盖，这是因为 CP 为了避免你手误，默认加上了 -i 参数（该参数代表每次覆盖必须询问）。
+# 所以想要避免 CP 默认的 -i 参数，<strong>只需要在 CP 命令前面加上斜杠即可 “/”</strong>
+/cp -f log /var/log.txt
+
+# 复制当前目录内的 log.txt log1.txt log2.txt文件和 log233目录到 /home/log目录中
+cp -R log.txt log1.txt log2.txt log233 /home/log
+
+# 更多的命令可以用 cp --help 查看。</pre>
+<p></p></div>
+<h3 id="mv 移动或重命名 文件/文件夹">mv 移动或重命名 文件/文件夹</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 mv命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"><strong># 关于 mv 命令，可以参考上面 cp 的使用方法，没什么区别，只是一个是复制，一个是移动，把上面 cp 命令改成 mv 就能套用了。</strong>
+
+# 移动当前目录内的 log.txt文件到 /var目录
+mv log.txt /var/log.txt
+
+# 移动当前目录内的 bash文件夹到 /home目录
+mv bash /home/bash
+—————————————————————————————————————
+# 重命名当前目录内的 log.txt文件为 log2.txt
+mv log.txt log2.txt
+
+# 复制当前目录内的 log.txt文件到 /var目录并重命名为 log1.txt
+mv log.txt /var/log1.txt
+
+# 复制当前目录内的 bash文件夹到 /home目录并重命名为 bash2
+mv bash /home/bash2
+
+# 更多的命令可以用 mv --help 查看。
+</pre>
+<p></p></div>
+<h3 id="rm 删除 文件/文件夹">rm 删除 文件/文件夹</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 rm命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"># 删除当前目录下的 log.txt文件
+rm log.txt
+
+# 删除当前目录下所有.txt后缀的文件
+rm *.txt
+
+<strong># 使用 rm 命令删除时，会提示你是否确定删除，输入 y 即删除，输入 n 则取消
+# rm: remove regular file `log.txt'? y</strong>
+—————————————————————————————————————
+# 删除当前目录下所有.txt后缀的文件
+rm *.txt
+
+# 删除当前目录下所有以 doubi开头的文件
+rm doubi*
+
+# 删除当前目录下所有以 doubi开头 以.txt后缀结尾的文件
+rm doubi*.txt
+—————————————————————————————————————
+# 当你用 rm 删除目录的时候会发现提示这不是一个文件
+# rm bash
+# <strong>rm: cannot remove `bash': Is a directory</strong>
+# 可以加上 -r 来归递删除目录及其目录下的内容
+rm -r bash
+—————————————————————————————————————
+# 因为为了避免手误删除错误，所以 rm默认是加上了 -i 的参数，也就是每一次删除文件/目录都会提示，如果觉得烦可以用 -rf 参数
+rm -rf bash
+
+<strong># rm -rf 这个命令请慎重使用，而且千万不要使用 rm -rf / 或者 rm -rf /* 之类的命令(系统自杀)，可能会让你系统爆炸，所以使用请慎重！</strong>
+
+# 更多的命令可以用 rm --help 查看。</pre>
+<p></p></div>
+<h2 id="查看/编辑文件 操作">查看/编辑文件 操作</h2>
+<h3 id="ls 显示目录中文件">ls 显示目录中文件</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 ls命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"># 显示当前目录下的所有文件
+ls -a
+—————————————————————————————————————
+# 命令后面加上 绝对路径/相对路径 就会显示指定文件夹内的所有文件
+ls -a bash/log
+
+# 相对路径，当前目录是 /root ，欲查看的目录是 /root/bash/log
+ls -a /root/bash/log
+
+# 绝对路径， 当前目录是 /root ，欲查看的目录是 /root/bash/log
+
+# 更多的命令可以用 ls --help 来查看。
+</pre>
+<p></p></div>
+<h3 id="du 查看 文件/文件夹 占用磁盘空间的大小">du 查看 文件/文件夹 占用磁盘空间的大小</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 du命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p><strong>参数介绍：</strong></p>
+<pre class="prettyprint linenums">-h ：以人类易读的方式显示
+-a ：显示 目录占用的磁盘空间大小，并显示其下目录和文件占用磁盘空间的大小
+-s ：显示 目录占用的磁盘空间大小，但不显示其下子目录和文件占用的磁盘空间大小
+-c ：显示几个目录或文件占用的磁盘空间大小，还要统计它们的总和
+--apparent-size：显示目录或文件自身的大小
+-l ：统计硬链接占用磁盘空间的大小
+-L ：统计符号链接所指向的文件占用的磁盘空间大小
+# 待写...
+
+# 更多的命令可以用 du --help 来查看。
+</pre>
+<p><strong>使用示例：</strong></p>
+<pre class="prettyprint linenums"># 假设当前位于 /root 目录下，则显示 /root 文件夹的大小，但不显示其子目录和文件的大小
+du -sh
+
+# 假设当前位于 /root 目录下，则显示 /root 文件夹的大小，并显示其子目录和文件的大小
+du -ah
+
+# 假设当前位于 /root 目录下，则显示 /root 文件夹下的所有文件夹的大小及其总和
+du -lh --max-depth=1
+
+# 更多的命令可以用 du --help 来查看。
+</pre>
+<p></p></div>
+<h3 id="cat 查看文件内容">cat 查看文件内容</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 cat命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p><strong>假设 log.txt文件的内容为：</strong></p>
+<pre class="prettyprint linenums">doubi233
+doubi
+
+
+doubi666
+
+doubi2366
+doubi8888
+</pre>
+<p><strong>查看文件：</strong></p>
+<pre class="prettyprint linenums"># 查看 log.txt文件的所有内容
+cat log.txt
+# 输出示例如下
+doubi233
+doubi
+
+
+doubi666
+
+doubi2366
+doubi8888
+
+# 查看 log.txt文件的所有内容，并对所有行编号
+cat -n log.txt
+# 输出示例如下：
+     1	doubi233
+     2	doubi
+     3	
+     4	
+     5	doubi666
+     6	
+     7	doubi2366
+     8	doubi8888
+
+# 查看 log.txt文件的所有内容，并对非空行编号
+cat -b log.txt
+# 输出示例如下：
+     1	doubi233
+     2	doubi
+
+
+     3	doubi666
+
+     4	doubi2366
+     5	doubi8888
+
+# 查看 log.txt文件的所有内容，并对非空行编号，且不输出多行空行
+cat -bs log.txt
+# 输出示例如下：
+     1	doubi233
+     2	doubi
+
+     3	doubi666
+
+     4	doubi2366
+     5	doubi8888
+</pre>
+<p><strong>清空文件：</strong></p>
+<pre class="prettyprint linenums"># 清空当前目录中的 log.txt 文件
+cat /dev/null &gt; log.txt
+
+# 清空 /var目录中的 log.txt 文件
+cat /dev/null &gt; /var/log.txt
+</pre>
+<p><strong>写入文件：</strong></p>
+<pre class="prettyprint linenums"># 写入文本到当前目录中的 log.txt文件中(加入文本到文件内容最后)
+cat &gt;&gt; log.txt &lt;&lt;-EOF
+doubi
+doubi233
+doubi666
+EOF
+
+# 清空文件并写入文本到 /var目录中的 log.txt文件中(先清空后写入)
+cat &gt; /var/log.txt &lt;&lt;-EOF
+doubi
+doubi233
+doubi666
+EOF
+
+# 更多的命令可以用 cat --help 来查看。
+</pre>
+<p></p></div>
+<h3 id="head 查看文件内容（主要用于正查）">head 查看文件内容（主要用于正查）</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 head命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>参数介绍：</p>
+<pre class="prettyprint linenums">-c 数字：显示指定文件的前 xx 字节的内容（bytes）
+-n 数字：显示指定文件的前 xx 行的内容
+-q ：不显示包含指定文件名的文件头（当使用 head打开多个文件的时候，会去在每个文件输出结果的顶部添加一个包含文件名的文件头用于区分）
+
+# 更多的命令可以用 head --help 来查看。
+</pre>
+<p><strong>使用示例：</strong></p>
+<p>假设 log.txt 文件内容为：</p>
+<pre class="prettyprint linenums">doubi1
+doubi2
+doubi3
+doubi4
+doubi5
+</pre>
+<pre class="prettyprint linenums"># 查看 log.txt文件的全部内容
+head log.txt
+
+# 查看 log.txt文件的前 3字节的内容
+head -c 3 log.txt
+
+# 输出示例
+dou
+
+# 查看 log.txt文件的前 2行的内容
+head -n 2 log.txt
+
+# 输出示例
+doubi1
+doubi2
+
+# 查看 log.txt文件的从倒数第2行到行首的内容
+head -n -2 log.txt
+
+# 输出示例
+doubi1
+doubi2
+doubi3
+
+# 查看 log.txt log1.txt log2.txt文件的前 3行内容
+head -n 3 log.txt log1.txt log2.txt
+
+# 更多的命令可以用 head --help 来查看。
+</pre>
+<p></p></div>
+<h3 id="tail 查看文件内容（主要用于倒查）">tail 查看文件内容（主要用于倒查）</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 tail命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums">-c 数字：如果数字为正数(例如 -c +5)，显示指定文件从行首第 xx 字节到最后的内容；如果数字为负数(例如 -c -5)，显示指定文件从行尾第 xx 字节到最后内容。
+-n 数字：如果数字为正数(例如 -c +3)，显示指定文件从行首第 xx 行到最后的内容；如果数字为负数(例如 -c -3)，显示指定文件从行尾第 xx 行到最后的内容。
+-f ：即时输出文件变化后增加的内容，也就是监视一个文件的内容变化（常用于监视日志输出），使用 Ctrl＋C 终止
+
+# 更多的命令可以用 tail --help 来查看。
+</pre>
+<p><strong>使用示例：</strong></p>
+<p>假设 log.txt 文件内容为：</p>
+<pre class="prettyprint linenums">doubi1
+doubi2
+doubi3
+doubi4
+doubi5
+</pre>
+<pre class="prettyprint linenums"># 查看 log.txt文件的全部内容
+tail log.txt
+
+# 查看 log.txt文件从行首 第25字节到最后的内容
+tail -c +25 log.txt
+
+# 输出示例
+bi4
+doubi5
+
+# 查看 log.txt文件从行尾 第4字节到最前面的内容
+tail -c -4 log.txt
+
+# 输出示例
+bi5
+
+# 查看 log.txt文件的从第2行到最后一行的内容
+tail -n +2 log.txt
+
+# 输出示例
+doubi2
+doubi3
+doubi4
+doubi5
+
+# 查看 log.txt文件的后 2行的内容
+tail -n -2 log.txt
+
+# 输出示例
+doubi4
+doubi5
+
+# 持续查看（监视） log.txt文件的变化内容（新增加的内容），使用 Ctrl＋C 终止
+tail -f log.txt
+
+# 查看 log.txt log1.txt log2.txt文件的前 3行内容
+tail -n 3 log.txt log1.txt log2.txt
+
+# 更多的命令可以用 tail --help 来查看。
+</pre>
+<p></p></div>
+<h3 id="sed 查看/编辑文件内容">sed 查看/编辑文件内容</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 sed命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>参数介绍：</p>
+<pre class="prettyprint linenums">-i ：操作后应用保存到原文件（如果不加这个参数，那么任何修改都不会影响原文件里的内容，只会把结果输出）
+-e ：仅显示处理后的结果
+# 待写...
+
+# 更多的命令可以用 sed --help 来查看。</pre>
+<p>使用示例：</p>
+<pre class="prettyprint linenums"># 查看 log.txt 第3行的内容
+sed -n '3p' log.txt
+
+# 查看 log.txt 第2-8行的内容
+sed -n '2,8p' log.txt
+
+# 删除 log.txt 第1行（首行）
+sed -i '1d' log.txt
+
+# 删除 log.txt 第3-7行
+sed -i '3,7d' log.txt
+
+# 删除 log.txt 最后1行（尾行）
+sed -i '$d' log.txt
+
+# 删除 log.txt 中所有空白行
+sed -i '/^$/d' log.txt
+
+# 删除 log.txt 开头是 doubi 的行
+sed -i '/^doubi/'d log.txt
+
+# 删除 log.txt 结尾是 doubi 的行
+sed -i '/doubi$/'d log.txt
+
+# 删除 log.txt 文件中所有包含 233内容的行
+sed -i '/233/d' log.txt
+
+# 删除 log.txt 文件中第一个 233文本
+sed -i 's/233//' log.txt
+
+# 删除 log.txt 文件中所有 233文本(g 代表操作所有匹配规则的文本)
+sed -i 's/233//g' log.txt
+
+# 删除 log.txt 文件中所有 第5个233文本(5g 代表第五个匹配规则的文本)
+sed -i 's/233//5g' log.txt
+
+# 替换 log.txt 文件中第一个 233为666
+sed -i 's/233/666/' log.txt
+
+# 替换 log.txt 文件中所有 233为666(g 代表操作所有匹配规则的文本)
+sed -i 's/233/666/g' log.txt
+
+# 替换 log.txt 文件中所有 /ver 为 doubi/，因为有斜杠，所以需要使用 \ 转义，但是单引号会导致无法转义，所以要改成双引号。
+sed -i "s/\/ver/doubi\//" log.txt
+
+# 显示 log.txt 文件中的奇数行或偶数行
+sed -n 'p;n' log.txt #奇数行
+sed -n 'n;p' log.txt #偶数行
+
+# 更多的命令可以用 sed --help 来查看。
+</pre>
+<p></p></div>
+<h3 id="VI、VIM、Nano 编辑文件内容">VI、VIM、Nano 编辑文件内容</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 vi vim none命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<h4 id="VI 介绍">VI 介绍</h4>
+<p>VI 是Linux很棒的一个文本编辑器，不过也存在一些缺点，比如操作麻烦。而 vim就相当于 VI 的加强版，主要介绍 VIM。</p>
+<h4 id="VIM 介绍">VIM 介绍</h4>
+<p><strong>使用教程：<a title="Linux 文本编辑器 VIM 真 · 简单使用教程" href="sj2kyyo8.html" target="_blank" rel="noopener">Linux 文本编辑器 VIM 真 · 简单使用教程</a></strong></p>
+<pre class="prettyprint linenums"># 打开当前目录下的 log.txt文件，如果没有那么会新建 log.txt文件（安装vim后，使用 vi和 vim打开文件没区别）
+vi log.txt
+vim log.txt
+
+# 在命令行模式下，直接输入以下 符号和字母(区分大小写)
+<strong>## 进入编辑模式（插入模式，按 Esc键 即可返回命令行模式）
+i</strong>
+## 删除光标当前所在的一行
+dd
+## 删除文件内所有内容
+dddG
+## 复制光标当前所在的一行
+yy
+## 粘贴刚才复制的一行内容
+p
+## 撤销上个操作（误操作可以用这个恢复）
+u
+## 保存当前文件（ : 是英文的冒号）
+:w
+## 另存当前文件内容为 log2.txt
+:w log2.txt
+## 退出当前文件
+:q
+## 不保存 并强制退出当前文件
+:q!
+## 保存并退出当前文件
+:wq
+
+# 更多的命令可以用 vi --help / vim --help 来查看。
+
+</pre>
+<h4 id="Nano 介绍">Nano 介绍</h4>
+<p><strong>使用教程：<a title="Linux 更适合新手的文本编辑器 Nano 真 · 简单使用教程" href="6z5d56n3.html" target="_blank" rel="noopener">Linux 更适合新手的文本编辑器 Nano 真 · 简单使用教程</a></strong></p>
+<p>Nano 相对 VIM 更适合新手使用。</p>
+<pre class="prettyprint linenums"># 打开当前目录下的 log.txt文件，如果没有那么会新建 log.txt文件
+nano log.txt
+
+# 进入后直接就可以输入修改文本内容了，修改后我们可以使用这个 按键保存内容
+Ctrl+O
+
+# 如果不需要编辑了，那么可以用这个 按键退出当前文件
+Ctrl+X
+
+# 如果你在退出前已经修改但没有保存，那么会提醒你是否保存，如果保存就输入 y ，不保存输入 n
+# 然后就会让你输入要保存的文件名（默认原文件名，所以直接按 Enter回车即可，除非你要另存为其他文件名）
+Enter
+
+# 更多的命令可以在 nano 编辑界面中按 F1键 查看。
+</pre>
+<p></p></div>
+<h2 id="解压缩 操作">解压缩 操作</h2>
+<p>在Linux中经常会下载到压缩文件，而压缩文件的格式有很多，比如 zip、rar、gz、xz、tar.gz、tar.xz等。</p>
+<p>比较常见的就是各种 .tar、.tar.xz、.tar.gz、.tar.bz、.tar.bz2、.tar.Z 后缀压缩包，这几个的解压缩命令基本一样，说明一下参数的意义。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看参数意义</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>tar 本身只是一个打包的作用，而 .tar 后面的 .zx / .gz / .bz 等等才是压缩格式，也就是比如 log.tar.gz 压缩包，就是先用 .tar 把指定文件/文件夹打包到一起，然后再用 gz 来压缩打包后的 .tar 为 .tar.gz 。</p>
+<pre class="prettyprint linenums">-x 是从压缩文件提取(解压)文件出来，所以在解压命令中都有这个参数。
+-c ：创建一个新的压缩包文件，所以在压缩命令中都有这个参数。
+-f ：指定要解压的压缩包文件或要压缩的文件/文件夹，所以这个参数必须放在 解压缩命令参数的最后，然后后面跟着 要解压到压缩包文件或要压缩的文件/文件夹。
+-j ：解压缩 bz / bz2 格式的参数
+-J ：解压缩 xz / lzip 格式的参数
+-z ：解压缩 gz / tgz 格式的参数
+-Z ：解压缩 Z 格式的参数
+-v ：详细列出解压缩过程中处理的文件
+
+# 更多的命令可以用 tar --help 来查看。</pre>
+<p></p></div>
+<h3 id="tar gz zip等 解压 压缩包 示例">tar gz zip等 解压 压缩包 示例</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 解压压缩包说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"># 解压后缀为 .tar 的压缩包
+tar -xf log.tar
+—————————————————————————————————————
+# 解压后缀为 .tar.xz 的压缩包
+tar -xJf log.tar.xz
+—————————————————————————————————————
+# 解压后缀为 .tar.gz 的压缩包，有两个方法
+tar -xzf log.tar.gz
+—————————————————————————————————————
+# 解压后缀为 .gz 的压缩包，有两个方法，如提示命令不存在，请安装 yum install gzip -y / apt-get install gzip -y
+gzip -d log.gz
+gunzip log.gz
+—————————————————————————————————————
+# 解压后缀为 .bz / .bz2 / tar.bz2 的压缩包，有两个方法
+bzip2 -d log.bz
+bunzip2 log.bz
+tar -jxf log.tar.bz
+
+bzip2 -d log.bz2
+bunzip2 log.bz2
+tar -jxf log.tar.bz2
+—————————————————————————————————————
+# 解压后缀为 .Z / tar.Z 的压缩包，有两个方法
+uncompress log.Z log.txt
+uncompress log.Z log
+—————————————————————————————————————
+tar xZf log.tar.Z log.txt
+tar xZf log.tar.Z log
+—————————————————————————————————————
+# 解压后缀为 .rar 的压缩包，如提示命令不存在，请安装 yum install unrar -y / apt-get install unrar -y ，注意 rar 和 unrar 是分开的
+unrar x log.rar
+—————————————————————————————————————
+# 解压后缀为 .zip 的压缩包，如提示命令不存在，请安装 yum install unzip -y / apt-get install unzip -y，注意 zip 和 unzip 是分开的
+unzip log.zip
+
+# 更多的命令可以用 tar --help / gzip --help / unrar --help / unzip --help 来查看。
+</pre>
+<p></p></div>
+<h3 id="压缩 文件/文件夹 示例">压缩 文件/文件夹 示例</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 压缩文件/文件夹说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"># 分别压缩当前目录下的 log.txt文件 / log文件夹为 log.tar 压缩包
+tar -cf log.tar log.txt
+tar -cf log.tar log
+—————————————————————————————————————
+<strong># 如果要压缩多个文件和文件夹，那么只需要在后面一直加下去即可
+tar -cf log.tar log.txt doub.txt log bash</strong>
+—————————————————————————————————————
+# 分别压缩当前目录下的 log.txt文件 / log文件夹为 log.tar.xz 压缩包，以下的其他后缀压缩命令都是一样
+tar -cJf log.tar.xz log.txt
+tar -cJf log.tar.xz log
+—————————————————————————————————————
+# 分别压缩当前目录下的 log.txt文件 / log文件夹为 log.tar.gz 压缩包
+tar -czf log.tar.gz log.txt
+tar -czf log.tar.gz log
+—————————————————————————————————————
+# 分别压缩当前目录下的 log.txt文件 / log文件夹为 log.gz 压缩包
+gzip log.gz log.txt
+gzip log.gz log
+—————————————————————————————————————
+# 分别压缩当前目录下的 log.txt文件 / log文件夹为 log.tar.bz 压缩包
+暂时没查到
+—————————————————————————————————————
+# 分别压缩当前目录下的 log.txt文件 / log文件夹为 log.bz / log.tar.bz / log.bz2 / log.tar.bz2压缩包
+bzip2 -z log.txt
+bzip2 -z log
+
+tar cjf log.tar.bz2 log.txt
+tar cjf log.tar.bz2 log
+—————————————————————————————————————
+# 分别压缩当前目录下的 log.txt文件 / log文件夹为 log.Z / log.tar.Z 压缩包
+compress log.txt
+compress log
+
+tar cZf log.tar.Z log.txt
+tar cZf log.tar.Z log
+—————————————————————————————————————
+# 分别压缩当前目录下的 log.txt文件 / log文件夹为 log.rar 压缩包，如提示命令不存在，请安装 yum install rar -y / apt-get install rar -y ，注意 rar 和 unrar 是分开的
+unrar a log.rar log.txt
+unrar a log.rar log
+—————————————————————————————————————
+# 分别压缩当前目录下的 log.txt文件 / log文件夹为 log.zip 压缩包，如提示命令不存在，请安装 yum install zip -y / apt-get install zip -y ，注意 zip 和 unzip 是分开的
+zip log.zip log.txt
+zip log.zip log
+
+# 更多的命令可以用 tar --help / gzip --help / rar --help / zip --help 来查看。
+</pre>
+<p></p></div>
+<h2 id="网络工具">网络工具</h2>
+<h3 id="wget 下载工具">wget 下载工具</h3>
+<p>wget 是Linux系统最常用的工具之一，命令行方式的多功能下载工具，支持HTTP，HTTPS和FTP协议。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 wget命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p><strong>参数介绍：</strong></p>
+<pre class="prettyprint linenums"># 只介绍最常用的参数
+# 如果提示命令不存在，那么使用 yum install wget -y / apt-get install wget -y 来安装（有一些非常精简的系统可能会没装）
+
+-b ：启动后，后台下载
+-q ：安静模式（不输出任何信息）
+-c ：断点续传下载文件
+-O ：指定下载后的文件名（可使用绝对路径目录+文件名）
+-P ：指定下载后的文件目录（-P只能指定下载目录，并不能指定文件名）
+-t ：设置重试次数（0代表无限）
+-T ：设置超时时间（单位：秒）
+-N ：只获取比本地新的文件（新的覆盖旧的）
+-4 ：仅连接至 IPv4地址
+-6 ：仅连接至 IPv6地址
+--limit-rate=xxxk :限制下载速度（k代表KB/S）
+--post-data ：通过POST方式发送数据
+--no-check-certificate ：不验证服务器的SSL证书
+
+# 更多的命令可以用 wget --help 来查看。</pre>
+<p><strong>使用示例：</strong></p>
+<pre class="prettyprint linenums"># 下载一个文件到当前目录
+wget ./softs.wtf/100MB.bin
+
+# 下载文件到当前目录并重命名为 200MB.bin
+wget -O "200MB.bin" ./softs.wtf/100MB.bin
+
+# 下载文件到 /root目录（-P只能指定下载目录，并不能指定文件名）
+wget -P "/root" ./softs.wtf/100MB.bin
+
+# 下载文件到 /root/doubi目录并重命名为 200MB.bin
+wget -O "/root/doubi/200MB.bin" ./softs.wtf/100MB.bin
+
+# 下载文件完成之前 wget进程结束了，那么可以使用断点续传重新下载中断的文件（前提是下载服务器支持断点续传）
+wget -c ./softs.wtf/100MB.bin
+
+# 通过后台下载文件到 /root/doubi目录并重命名为 200MB.bin
+wget -b -O "/root/doubi/200MB.bin" ./softs.wtf/100MB.bin
+# Continuing in background, pid 2333.
+# Output will be written to `wget-log'.
+# 后台下后，你可以使用以下命令来查看下载进度：
+tail -f wget-log
+
+# 有时候一些Linux系统中的SSL证书不完整，会导致下载一些 HTTPS网站文件的时候会验证SSL证书失败，可以这样做
+# 不验证服务器SSL证书，下载文件到当前目录并重命名为 200MB.bin
+wget --no-check-certificate -O "200MB.bin" ./softs.wtf/100MB.bin
+
+# 使用wget发送POST请求数据
+wget --post-data "user=doubi&amp;passwd=23333" https://xxx.xx/
+
+# 下载文件到当前目录 并仅通过IPv4连接 只获取比本地新的文件，限速 200KB/S
+wget --limit-rate=200k -N -4 ./softs.wtf/100MB.bin
+
+# 下载文件到当前目录 并重试次数为 1，超时时间为 2秒
+wget -t1 -T2 ./softs.wtf/100MB.bin
+
+# 通过 wget来获取服务器的外网IP（-qO- 代表运行完会输出下载的信息，并不会保存到本地文件）
+wget -qO- ipinfo.io/ip
+
+# 更多的命令可以用 wget --help 来查看。</pre>
+<p></p></div>
+<h3 id="curl 下载工具">curl 下载工具</h3>
+<p>curl是Linux系统一个利用URL规则在命令行下工作的文件传输工具，是一款很强大的HTTP命令行工具。它支持文件的上传和下载，是综合传输工具，但习惯称curl为下载工具。<br />
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 curl命令说明</a></p><div class="toggle-box" style="display: none;"><p><br />
+<strong>参数介绍：</strong></p>
+<pre class="prettyprint linenums"># 只介绍最常用的参数
+# 如果提示命令不存在，那么使用 yum install curl -y / apt-get install curl -y 来安装（有一些非常精简的系统可能会没装）
+
+-s ：安静模式（不会输出任何信息）
+-C ：断点续传下载文件
+-o ：输出写入到文件中
+-O ：输出写入到文件，文件名为 远程文件的名称
+-k ：不验证服务器SSL证书
+-T ：上传文件
+-4 ：仅连接至 IPv4地址
+-6 ：仅连接至 IPv6地址
+-m ：设置传输总时间（单位：秒）
+--retry ：设置重试次数
+--data ：通过POST方式发送数据
+--limit-rate xxxK ：限制下载速度（K代表KB/S）
+
+# 更多的命令可以用 curl --help 来查看。
+</pre>
+<p><strong>使用示例：</strong></p>
+<pre class="prettyprint linenums"># 获取当前服务器的外网IP
+curl ipinfo.io/ip
+
+# 获取一个文件保存到当前目录中
+wget -O ./softs.wtf/Bash/ssr.sh
+
+# 获取一个文件保存到 /root/doubi目录中 并修改文件名为 233.sh
+curl -o "/root/doubi/233.sh" ./softs.wtf/Bash/ssr.sh
+
+# 下载文件完成之前 curl进程结束了，那么可以使用断点续传重新下载中断的文件（前提是下载服务器支持断点续传）
+curl -C -O ./softs.wtf/100MB.bin
+
+# 有时候一些Linux系统中的SSL证书不完整，会导致访问/下载一些 HTTPS网站/文件的时候会验证SSL证书失败，可以这样做
+# 不验证服务器SSL证书，下载文件到当前目录并重命名为 233.sh
+curl -k -o "233.sh" ./softs.wtf/Bash/ssr.sh
+
+# 使用curl发送GET请求数据
+curl https://xxx.xx/?user=doubi
+
+# 使用curl发送POST请求数据
+curl --data "user=doubi&amp;passwd=23333" https://xxx.xx/
+
+# 下载文件到当前目录 并仅通过IPv4连接，限速 200KB/S
+curl --limit-rate 200K -4 ./softs.wtf/100MB.bin
+
+# 下载文件到当前目录 并重试次数为 1，超时时间为 2秒
+curl --retry 1 -m 10 ./softs.wtf/100MB.bin
+
+# 更多的命令可以用 curl --help 来查看。
+</pre>
+<p></p></div></p>
+<h3 id="netstat 查看链接和端口监听等信息">netstat 查看链接和端口监听等信息</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 netstat命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p><strong>参数介绍：</strong></p>
+<pre class="prettyprint linenums">-n ：不显示别名（主机名/域名以 数字或IP显示）
+-e ：显示其他/更多信息
+-p ：显示进程PID/进程名
+-c ：持续输出（设置后会每隔 1秒输出一次，Ctrl+C 终止）
+-l ：显示正在监听的套接字
+-a ：显示全部信息
+
+# 下面这些就不很常用了。
+-r ：显示路由表
+-i ：显示网络接口（网卡）
+-g ：显示多播组信息
+-s ：显示网络统计
+-M ：显示伪装连接
+-v ：显示正在进行的工作
+
+# 更多的命令可以用 netstat --help 来查看。
+</pre>
+<p><strong>使用示例：</strong></p>
+<pre class="prettyprint linenums"># 显示当前服务器的所有连接信息
+netstat -a
+
+# 显示当前服务器的所有 TCP连接信息
+netstat -at
+
+# 显示当前服务器的所有 UDP连接信息
+netstat -au
+
+# 显示当前服务器的所有 端口监听信息
+netstat -lnp
+
+# 显示当前服务器的所有 TDP端口监听信息
+netstat -lntp
+</pre>
+<p>一般来说经常使用这个命令：</p>
+<pre class="prettyprint linenums"><strong># 显示当前服务器的所有正在监听 TCP端口的信息，并且 显示进程PID和进程名，但不显示别名（域名以IP显示），这个命令算是最常用的了。
+netstat -lntp
+</strong>
+# 输出示例
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      14233/nginx.conf
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      1555/sshd       
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN      14233/nginx.conf
+tcp6       0      0 :::22                   :::*                    LISTEN      1555/sshd<strong>
+—————————————————————————————————————
+# 显示监听 80端口的进程PID和进程名，grep是匹配并显示 符合关键词的行。
+netstat -lntp|grep ":80"
+</strong>
+# 输出示例
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      14233/nginx.conf
+—————————————————————————————————————
+<strong># 显示 ssh的监听情况，grep是匹配并显示 符合关键词的行。
+netstat -lntp|grep "ssh"
+</strong>
+# 输出示例
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      1555/sshd
+</pre>
+<p>表头解释：</p>
+<pre class="prettyprint linenums">Proto ：连接协议（tcp/udp是IPv4，tcp6/udp6是IPv6）
+Recv-Q ： 接收队列（基本都是0，如果不是代表堆积）
+Send-Q ：发送队列（基本都是0，如果不是代表堆积）
+Local Address ：本地地址和端口
+Foreign Address ：对外地址和端口
+State ：连接状态
+PID/Program name ：进程PID/进程名
+</pre>
+<pre class="prettyprint linenums"># 每隔 1秒显示一次当前服务器的所有连接信息
+netstat -c
+
+# 每隔 1秒显示一次当前服务器的所有 TCP连接信息
+netstat -ct
+
+# 每隔 1秒显示一次当前服务器的所有 UDP连接信息
+netstat -cu
+
+# 显示当前服务器的路由表
+netstat -r
+
+# 显示当前服务器的网络接口信息（网卡）
+netstat -i
+
+# 显示当前服务器的网络统计信息
+netstat -s
+
+# 更多的命令可以用 netstat --help 来查看。</pre>
+<p>在使用 netstat命令中，会显示一些连接状态，下面是各状态的意思：</p>
+<pre class="prettyprint linenums">LISTEN
+# 监听来自远程连接的 TCP端口连接请求
+
+SYN-SENT
+# 在发送连接请求后，等待匹配的连接请求
+
+SYN-RECEIVED
+# 在收到和发送一个连接请求后，等待对方对连接请求的确认
+
+ESTABLISHED
+# 代表一个打开的连接
+
+FIN-WAIT-1
+# 等待远程 TCP连接中断请求，或先前的连接中断请求的确认
+
+FIN-WAIT-2
+# 从远程 TCP等待连接中断请求 
+
+CLOSE-WAIT
+# 等待从本地用户发来的连接中断请求 
+
+CLOSING
+# 等待远程TCP对连接中断的确认 
+
+LAST-ACK
+# 等待原来的发向远程TCP的连接中断请求的确认 
+
+TIME-WAIT
+# 等待足够的时间，以确保远程TCP接收到连接中断请求的确认 
+
+CLOSED
+# 没有任何连接状态（或者关闭了连接）
+</pre>
+<p></p></div>
+<h2 id="系统命令">系统命令</h2>
+<h3 id="ps 查看进程信息">ps 查看进程信息</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 ps命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p><strong>参数介绍：</strong></p>
+<pre class="prettyprint linenums">待写...
+
+# 更多的命令可以用 man ps 来查看。
+</pre>
+<p><strong>使用示例：</strong></p>
+<pre class="prettyprint linenums"># 显示当前进程信息
+ps -ef
+
+# 显示 ssh 进程（ grep -v grep 表示排除关键词grep，因为使用 grep匹配ssh，也会把grep自己的进程匹配进去的）
+ps -ef|grep -v grep|grep 'ssh'
+# 输出示例
+UID        PID  PPID  C STIME TTY          TIME CMD #注意使用上面命令的话是不会显示表头这一行的，我只是为了更好理解加上的
+root      1738     1  0 01/27   ?       00:08:56 /usr/sbin/sshd
+
+# 待写...</pre>
+<p>表头解释：</p>
+<pre class="prettyprint linenums">UID ：启动进程的用户
+PID ：进程标识符（进程 1代表init 是整个系统的父进程）
+PPID ：父进程标识符（进程 1代表init 是整个系统的父进程）
+C ：CPU占用率 %
+STIME ：启动进程的日期
+TTY ：终端号
+TIME ：进程运行时间（非休眠状态）
+CMD ：启动进程的命令（或进程名/进程程序所在目录）
+</pre>
+<p></p></div>
+<h3 id="kill 结束进程">kill 结束进程</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 kill命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"># 当我们想要结束一个进程的时候，我们可以用 kill 命令
+# PID是每个进程的一个唯一标识符，可以使用上面的 ps 命令来查看你要结束进程的PID。
+
+# 假设我们要结束 Nginx的进程，那么这样做（ grep -v grep 表示排除关键词grep，因为使用 grep匹配ssh，也会把grep自己的进程匹配进去的）：
+ps -ef|grep -v grep|grep "nginx"
+
+# 输出示例
+UID PID PPID C STIME TTY TIME CMD #注意使用上面命令的话是不会显示表头这一行的，我只是为了更好理解加上的
+root 2356 1 0 04/03 ? 00:03:12 nginx
+
+# 然后我们可以看到第二列的 PID 进程标识符，然后我们 kill 即可。
+kill -9 2356
+
+# 中断进程 -2 相当于 程序运行在前台，然后输入 Ctrl+C 的效果，但是进程有权利忽略，所以不一定能结束进程
+kill -2 PID
+# 强制结束进程 -9 ，注意：强制结束某个进程后，可能会造成进程数据丢失等问题！
+kill -9 PID
+</pre>
+<p></p></div>
+<h3 id="free 查看内存使用信息">free 查看内存使用信息</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 free命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p><strong>参数介绍：</strong></p>
+<pre class="prettyprint linenums">-b ：以 字节(bytes/B) 为单位显示
+-k ：以 KB 为单位显示
+-m ：以 MB 为单位显示
+-g ：以 GB 为单位显示
+--tera ：以 TB 为单位显示
+-h ：以 人类易读的方式输出
+--si ：以 1000为单位转换，而不是 1024（1MB=1*1024KB改成 1MB=1*1000KB）
+-t ：显示 内存总数 行
+-s 时间 ：每隔 X秒输出一次（重复输出监视内存，使用 Ctrl+C 终止）
+-c 次数 ：每隔 1秒输出 X次
+
+# 更多的命令可以用 free --help 来查看。</pre>
+<p><strong>使用示例：</strong></p>
+<pre class="prettyprint linenums"># 显示当前系统内存（默认 free = free -k，单位为 KB）
+free
+
+# 输出示例
+             total       used       free     shared    buffers     cached
+Mem:        250872     237752      13120          0      34620      70520
+-/+ buffers/cache:     132612     118260
+Swap:       643064       1744     641320
+—————————————————————————————————————
+# 以单位 B/KB/MB/GB/TG 显示当前系统内存
+free -b / free -k / free -m / free -g / free --tera
+—————————————————————————————————————
+# 以人类易读的方式 显示当前系统内存
+free -h
+
+# 输出示例
+             total       used       free     shared    buffers     cached
+Mem:          244M       232M        12M         0B        33M        68M
+-/+ buffers/cache:       129M       115M
+Swap:         627M       1.7M       626M
+—————————————————————————————————————
+# 以 1000为单位转换并使用 MB为单位 显示当前系统内存（1MB=1*1024KB改成 1MB=1*1000KB）
+free -m --si
+
+# 每隔 3秒并使用 MB为单位 显示一次当前系统内存
+free -ms 3
+
+# 每隔 1秒并使用 MB为单位 显示 5次当前系统内存
+free -mc 5
+
+# 每隔 2秒并使用 MB为单位 总共显示 6次当前系统内存
+free -m -c 6 -s 2
+
+# 更多的命令可以用 free --help 来查看。</pre>
+<p><strong>表头解释：</strong></p>
+<pre class="prettyprint linenums"># 说明示例
+             total       used       free     shared    buffers     cached
+Mem:          244M       232M        12M         0B        33M        69M
+-/+ buffers/cache:       129M       115M
+Swap:         627M       1.7M       626M
+</pre>
+<pre class="prettyprint linenums"># Mem 行，表示物理内存统计
+total :系统 总物理内存
+used :系统 已分配物理内存（但非全部都在使用，包含buffers好cached）
+free :系统 未分配物理内存
+shared :系统 共享内存，一般都是 0
+buffers :系统 分配但未使用的 buffers数量
+cached :系统 分配但未使用的 cached数量
+
+<strong># -/+ buffers/cache 行，表示物理内存的缓存统计
+used :系统 实际使用的内存</strong>
+<strong># user= Mem行 used-buffers-cached（232-33-69=130，因单位转换问题 所以会有一点差距）
+free :系统 实际可用的内存</strong>
+<strong># free= Mem行 free+buffers+cached（12+33+69=114，因单位转换问题 所以会有一点差距）</strong>
+
+<strong># 所以我们看系统的真实 使用/剩余内存 只需要看这一行即可！</strong>
+
+# Swap 行，表示硬盘的交换分区（虚拟内存）统计
+total :系统 总虚拟内存
+used :系统 已分配虚拟内存
+free :系统 未分配虚拟内存
+
+# KVM虚拟化的VPS，可以用这个教程手动添加 SWAP虚拟内存：https://doub.io/linux-jc7/</pre>
+<p></p></div>
+<h3 id="date 查看/设置 系统时间">date 查看/设置 系统时间</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 date命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p><strong>参数介绍：</strong></p>
+<pre class="prettyprint linenums"> -d ：以指定的时间格式 显示时间
+ -f ：显示 DATE FILE文件中的每行时间（我也不懂）
+ -r ：显示 文件/文件夹 最后修改时间
+ -s ：设置 系统时间
+ -u ：显示 UTC时间
+
+# 时间格式
+
+%% - 显示字符%
+%a - 星期几的缩写(Sun..Sat)
+%A - 星期几的完整名称（Sunday...Saturday）
+%b - 月份的缩写(Jan..Dec)
+%B - 月份的完整名称(January..December)
+%c - 日期与时间。只输入date指令也会显示同样的结果
+%C - 世纪(年份除100后去整) [00-99]
+%d - 日期(以01-31来表示)。
+%D - 日期(含年月日)。
+%e - 一个月的第几天 ( 1..31)
+%F - 日期，同%Y-%m-%d
+%g - 年份(yy)
+%G - 年份(yyyy)
+%h - 同%b
+%H - 小时(00..23)
+%I - 小时(01..12)
+%j - 一年的第几天(001..366)
+%k - 小时( 0..23)
+%l - 小时( 1..12)
+%m - 月份(01..12)
+%M - 分钟(00..59)
+%n - 换行
+%N - 纳秒(000000000..999999999)
+%p - AM or PM
+%P - am or pm
+%r - 12小时制时间(hh:mm:ss [AP]M)
+%R - 24小时制时间(hh:mm)
+%s - 从00:00:00 1970-01-01 UTC开始的秒数
+%S - 秒(00..60)
+%t - 制表符
+%T - 24小时制时间(hh:mm:ss)
+%u - 一周的第几天(1..7); 1 表示星期一
+%U - 一年的第几周，周日为每周的第一天(00..53)
+%V - 一年的第几周，周一为每周的第一天 (01..53)
+%w - 一周的第几天 (0..6); 0 代表周日
+%W - 一年的第几周，周一为每周的第一天(00..53)
+%x - 日期(mm/dd/yy)
+%X - 时间(%H:%M:%S)
+%y - 年份(00..99)
+%Y - 年份 (1970…)
+%z - RFC-2822 风格数字格式时区(-0500)
+%Z - 时区(e.g., EDT), 无法确定时区则为空
+
+# 更多的命令可以用 date --help 来查看。</pre>
+<p><strong>使用示例：</strong></p>
+<pre class="prettyprint linenums"># 显示 当前系统时间
+date
+# 输出：Wed Apr 5 12:38:44 CST 2017
+
+# 显示当前系统的 UTC时间
+date -u
+# 输出：Wed Apr 5 04:30:06 UTC 2017
+
+# 显示 log.txt 文件的最后修改时间
+date -r log.txt
+
+# 显示 当前日期的年份
+date +%Y
+# 输出：2017
+
+# 显示 当前日期的月份
+date +%m
+# 输出：4
+
+# 显示 各种格式类型的日期
+date +%D
+# 输出：04/05/17
+
+date +%Y-%m-%d
+# 输出：2017-04-05
+
+date +%m/%d/%y
+# 输出：04/05/17
+
+date +%m/%d/%Y
+# 输出：04/05/2017
+
+# 显示 Unix时间戳
+date +%s
+# 输出：1491367399
+
+# 显示一个完整的时间（年、月、日、小时、分钟、秒钟、周几 时区）
+date "+%Y-%m-%d %H:%M:%S %u %Z"
+# 输出：2017-04-05 12:12:15 3 CST
+
+# 设置 系统时间（年、月、日）
+date -s "2017-04-05"
+
+# 设置 系统时间（小时、分钟、秒钟）
+date -s "10:29:05"
+
+# 设置 系统时间（年、月、日、小时、分钟、秒钟）
+date -s "2017-04-05 10:29:05"
+
+# 更多的命令可以用 date --help 来查看。
+</pre>
+<p><strong>再教你们一个修改时区为上海（北京）时区的方法：</strong></p>
+<pre class="prettyprint linenums">/cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</pre>
+<p>然后再用<code> date </code>查看时间，就会发现时区变为 CST 了。</p>
+<p></p></div>
+<h3 id="chmod 修改 文件/文件夹 权限">chmod 修改 文件/文件夹 权限</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 chmod命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p><strong>参数介绍：</strong></p>
+<pre class="prettyprint linenums">-c :只输出被改变权限的文件信息
+-f :当chmod不能改变文件模式时，不通知文件的用户
+-R :可递归遍历子目录，把修改应到目录下所有文件和子目录
+-v :无论修改是否成功，输出每个文件的信息
+
+# 操作符号：
+
++ :添加某个权限。
+- :取消某个权限。
+= :赋予给定权限并取消其他所有权限（如果有的话）。
+
+# 权限设置字母：
+
+r :可读
+w :可写
+x :可执行
+X :只有目标文件对某些用户是可执行的或该目标文件是目录时才追加x 属性
+s :在文件执行时把进程的属主或组ID置为该文件的文件属主。方式“u＋s”设置文件的用户ID位，“g＋s”设置组ID位
+t :保存程序的文本到交换设备上
+u :当前用户的权限
+g :当前用户同组的权限
+o :其他用户的权限
+
+# 权限设定数字：
+
+# 数字表示的属性含义：
+0 ：表示没有权限
+1 ：表示可执行权限
+2 ：表示可写权限
+4 ：表示可读权限
+
+# 然后将其相加，所以数字属性的格式应为3个从0到7的八进制数，其顺序是（u）（g）（o）。
+# 如果想让某个文件的属主有“读/写”二种权限，需要把4（可读）+2（可写）＝6（读/写）。
+
+# 更多的命令可以用 chmod --help 来查看。
+</pre>
+<p><strong>使用示例：</strong></p>
+<pre class="prettyprint linenums"># 当需要运行 可执行的脚本或者程序（比如 Go语言编写的软件）的时候，需要赋予执行权限
+chmod +x ssr.sh
+
+# 赋予 log.txt 文件可读权限
+chmod 444 log.txt
+
+# 赋予 /ver/log 文件夹 可读、可写权限
+chmod 666 log.txt
+
+# 赋予 /home/www 文件夹 可读、可写、可执行权限
+chmod 777 log.txt
+
+# 赋予 /home/www 文件夹极其所有子目录和文件 可读、可写、可执行权限
+chmod -R 777 log.txt
+# 更多的命令可以用 chmod --help 来查看。
+</pre>
+<p></p></div>
+<h3 id="uname 获取操作系统信息">uname 获取操作系统信息</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看 uname命令说明</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p><strong>参数介绍：</strong></p>
+<pre class="prettyprint linenums">-a：显示 全部信息
+-m：显示 系统位数
+-n：显示 主机名称
+-r：显示 操作系统的发行编号
+-s：显示 操作系统的名称
+-v：显示 操作系统的版本
+-p：输出 处理器类型 或"unknown"
+-i：输出 硬件平台 或"unknown"
+-o：输出 操作系统名称
+
+# 更多的命令可以用 uname --help 来查看。</pre>
+<p><strong>使用示例：</strong></p>
+<pre class="prettyprint linenums"><a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="c2b0adadb682a6adb7a0ecabad">[email&#160;protected]</a>:~# <strong>uname       #在使用 uname 的时候，相当于是使用 uname -s</strong>
+Linux
+
+<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="94e6fbfbe0d4f0fbe1f6bafdfb">[email&#160;protected]</a>:~# <strong>uname -a</strong>
+Linux doub.io 4.9.75-040975-generic #1 SMP Thu Oct 27 16:59:03 MSK 2016 x86_64 GNU/Linux
+
+<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="483a27273c082c273d2a662127">[email&#160;protected]</a>:~# <strong>uname -m       #输出一般是64位: x86_64 / 32位: i386 或分支 i686 </strong>
+x86_64 # 系统位数
+
+<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="e5978a8a91a5818a9087cb8c8a">[email&#160;protected]</a>:~# <strong>uname -n</strong>
+doub.io # 服务器名（往往购买服务器时会让你填写）
+
+<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="1f6d70706b5f7b706a7d317670">[email&#160;protected]</a>:~# <strong>uname -r</strong>
+4.9.75-040975-generic # 系统当前内核（主）
+
+<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="9eecf1f1eadefaf1ebfcb0f7f1">[email&#160;protected]</a>:~# <strong>uname -s</strong>
+Linux
+
+<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="c6b4a9a9b286a2a9b3a4e8afa9">[email&#160;protected]</a>:~# <strong>uname -v</strong>
+#1 SMP Thu Oct 27 16:59:03 MSK 2016
+
+<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="91e3fefee5d1f5fee4f3bff8fe">[email&#160;protected]</a>:~# <strong>uname -p</strong>
+unknown
+
+<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="f0829f9f84b0949f8592de999f">[email&#160;protected]</a>:~# <strong>uname -i</strong>
+unknown
+
+<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="fe8c91918abe9a918b9cd09791">[email&#160;protected]</a>:~# <strong>uname -o</strong>
+GNU/Linux
+</pre>
+<p></p></div>
+<p>我只是暂时把我想到的写出来了，我还会继续慢慢添加的，有什么建议可以在下面留言评论。</p>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="dvvp201-.html">『持续更新』Linux 常用命令简单介绍 —— 基础篇</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="2070" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">295</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="-hbe9vty.html" rel="tag">Linux</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="wkcjzpyd-5.html" rel="prev">Linux 自建DNS 并使用SNI Proxy实现科学上网 —— DNSmasq配置教程</a></span>
+			<span class="article-nav-next"><a href="3we1qxzj-4.html" rel="next">使用ShadowsocksR服务端来中转ShadowsocksR</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="6z5d56n3.html" title="Linux 更适合新手的文本编辑器 <strong>nano</strong> 真 · 简单使用教程" target="_blank">
+<img src="_809qw-a.png?src=https://doub.io/wp-content/uploads/linux-3.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="Linux 更适合新手的文本编辑器 <strong>nano</strong> 真 · 简单使用教程" />	<br><span class="r_title">Linux 更适合新手的文本编辑器 <strong>nano</strong> 真 · 简单使用教程</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="350fptqs.html" title="Linux 无需服务器配置 使用 SFTP(FileZilla) 方便的上传/下载文件小白教程" target="_blank">
+<img src="duklxk1n.png?src=https://doub.io/wp-content/uploads/vpn2.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="Linux 无需服务器配置 使用 SFTP(FileZilla) 方便的上传/下载文件小白教程" />	<br><span class="r_title">Linux 无需服务器配置 使用 SFTP(FileZilla) 方便的上传/下载文件小白教程</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="xq4-65xu.html" title="Linux 修改默认SSH端口 22，避免被暴力破解密码" target="_blank">
+<img src="upr0f5bp.png?src=https://doub.io/wp-content/uploads/qita-05-03.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="Linux 修改默认SSH端口 22，避免被暴力破解密码" />	<br><span class="r_title">Linux 修改默认SSH端口 22，避免被暴力破解密码</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="gqnmhax9-2.html" title="Linux 更换密码登陆方式 为使用 Key密匙安全登陆，避免被暴力破解密码" target="_blank">
+<img src="a0gosj5p.png?src=https://doub.io/wp-content/uploads/vpn1.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="Linux 更换密码登陆方式 为使用 Key密匙安全登陆，避免被暴力破解密码" />	<br><span class="r_title">Linux 更换密码登陆方式 为使用 Key密匙安全登陆，避免被暴力破解密码</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="6z5d56n3.html">Linux 更适合新手的文本编辑器 <strong>nano</strong> 真 · 简单使用教程</a></li><li><i class="fa fa-minus"></i><a href="350fptqs.html">Linux 无需服务器配置 使用 SFTP(FileZilla) 方便的上传/下载文件小白教程</a></li><li><i class="fa fa-minus"></i><a href="xq4-65xu.html">Linux 修改默认SSH端口 22，避免被暴力破解密码</a></li><li><i class="fa fa-minus"></i><a href="gqnmhax9-2.html">Linux 更换密码登陆方式 为使用 Key密匙安全登陆，避免被暴力破解密码</a></li><li><i class="fa fa-minus"></i><a href="wae9j8oa.html">『原创』多服务器 云探针、云监控 —— ServerStatus 一键管理脚本</a></li><li><i class="fa fa-minus"></i><a href="tfma58rb.html">『原创』iptables 封禁 BT/PT/SPAM(垃圾邮件)和自定义端口/关键词 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="wga96uww.html">Linux 搭建 Resilio Sync Web UI 同步客户端教程</a></li><li><i class="fa fa-minus"></i><a href="-1rsyn4a-2.html">Linux 添加 SWAP 交换内存/虚拟内存 的简单方法</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='2070' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (50)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-42144"><div class="c-avatar"><div class="c-main" id="div-comment-42144">逗比，你的文章中显示行号的边栏效果是怎么实现的呀？<div class="c-meta"><span class="c-author">eliot</span>2018-08-24 15:43 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=42144#respond' onclick='return addComment.moveForm( "div-comment-42144", "42144", "respond", "2070" )' aria-label='回复给eliot'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-42149"><div class="c-avatar"><div class="c-main" id="div-comment-42149">啥玩意？不知道你说的是什么。。。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-08-24 16:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=42149#respond' onclick='return addComment.moveForm( "div-comment-42149", "42149", "respond", "2070" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-42295"><div class="c-avatar"><div class="c-main" id="div-comment-42295"><img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_cry.gif" alt=":cry:" class="wp-smiley" style="height: 1em; max-height: 1em;" /> 尴尬了，想截个图，但是不能放照片。就是，文章正文的“点击展开 查看 uname命令说明”点开以后，
+参数介绍：
+“。。。。。。”
+使用示例：
+“。。。。。。”
+“参数介绍：”和“使用示例：”的内容左边显示行号，12345678。。。。。我想问的是，这个行号效果是怎么实现的。<div class="c-meta"><span class="c-author">eliot</span>2018-08-27 13:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=42295#respond' onclick='return addComment.moveForm( "div-comment-42295", "42295", "respond", "2070" )' aria-label='回复给eliot'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-42297"><div class="c-avatar"><div class="c-main" id="div-comment-42297">评论里说不清，请 <a href="https://t.me/doubi/" target="_blank" rel="nofollow">Telegram群组</a>(<a href="ma7f_p6p.html" target="_blank">TG使用教程</a>)私聊联系我讨论解决。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-08-27 13:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=42297#respond' onclick='return addComment.moveForm( "div-comment-42297", "42297", "respond", "2070" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-39905"><div class="c-avatar"><div class="c-main" id="div-comment-39905">非常感谢，入门了Linux<div class="c-meta"><span class="c-author">king</span>2018-07-05 13:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=39905#respond' onclick='return addComment.moveForm( "div-comment-39905", "39905", "respond", "2070" )' aria-label='回复给king'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-39553"><div class="c-avatar"><div class="c-main" id="div-comment-39553">谢谢Toyo!<div class="c-meta"><span class="c-author"><a href='https://www.357global.com/' rel='external nofollow' class='url'>John</a></span>2018-06-26 20:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=39553#respond' onclick='return addComment.moveForm( "div-comment-39553", "39553", "respond", "2070" )' aria-label='回复给John'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-37686"><div class="c-avatar"><div class="c-main" id="div-comment-37686">辛苦了，写这么多，用起来很方便<div class="c-meta"><span class="c-author"><a href='https://xtxs.in/' rel='external nofollow' class='url'>小唐先生</a></span>2018-05-12 12:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=37686#respond' onclick='return addComment.moveForm( "div-comment-37686", "37686", "respond", "2070" )' aria-label='回复给小唐先生'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-37279"><div class="c-avatar"><div class="c-main" id="div-comment-37279">用apt-get install git安装出现：系统是Debian9
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+You might want to run 'apt --fix-broken install' to correct these.
+The following packages have unmet dependencies:
+ git : Depends: libcurl3-gnutls (&gt;= 7.16.2) but it is not going to be installed
+       Depends: liberror-perl but it is not going to be installed
+       Depends: git-man (&gt; 1:2.11.0) but it is not going to be installed
+       Depends: git-man (&lt; 1:2.11.0-.) but it is not going to be installed
+       Recommends: less but it is not going to be installed
+       Recommends: rsync but it is not going to be installed
+ linux-image-unsigned-4.16.5-041605-generic : Depends: linux-modules-4.16.5-041605-generic but it is not installable
+E: Unmet dependencies. Try &#039;apt --fix-broken install&#039; with no packages (or specify a solution).<div class="c-meta"><span class="c-author">hf97542</span>2018-05-03 14:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=37279#respond' onclick='return addComment.moveForm( "div-comment-37279", "37279", "respond", "2070" )' aria-label='回复给hf97542'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-37309"><div class="c-avatar"><div class="c-main" id="div-comment-37309">请尝试更换低版本内核。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-05-04 13:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=37309#respond' onclick='return addComment.moveForm( "div-comment-37309", "37309", "respond", "2070" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-37278"><div class="c-avatar"><div class="c-main" id="div-comment-37278">请问出现这个-bash: git: command not found，怎么办，git怎么安装<div class="c-meta"><span class="c-author">hf97542</span>2018-05-03 14:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=37278#respond' onclick='return addComment.moveForm( "div-comment-37278", "37278", "respond", "2070" )' aria-label='回复给hf97542'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-29000"><div class="c-avatar"><div class="c-main" id="div-comment-29000"># 复制当前目录内的 bash文件夹到 /home目录
+cp -R bash /home/bash
+博主这个对吗？<div class="c-meta"><span class="c-author">快乐的小三</span>2017-12-29 17:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=29000#respond' onclick='return addComment.moveForm( "div-comment-29000", "29000", "respond", "2070" )' aria-label='回复给快乐的小三'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-19923"><div class="c-avatar"><div class="c-main" id="div-comment-19923">楼主好赞~~~<div class="c-meta"><span class="c-author">emilyxu</span>2017-10-11 12:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=19923#respond' onclick='return addComment.moveForm( "div-comment-19923", "19923", "respond", "2070" )' aria-label='回复给emilyxu'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-18694"><div class="c-avatar"><div class="c-main" id="div-comment-18694">请问Toyo想开始学习linux，有什么网站或书籍推荐吗？<div class="c-meta"><span class="c-author">Shadowlyin</span>2017-09-19 20:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=18694#respond' onclick='return addComment.moveForm( "div-comment-18694", "18694", "respond", "2070" )' aria-label='回复给Shadowlyin'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-31773"><div class="c-avatar"><div class="c-main" id="div-comment-31773">书籍: 鸟哥的Linux私房菜 网站: linux.vbird.org <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_neutral.gif" alt=":neutral:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">MLinucier</span>2018-02-20 11:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=31773#respond' onclick='return addComment.moveForm( "div-comment-31773", "31773", "respond", "2070" )' aria-label='回复给MLinucier'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-32951"><div class="c-avatar"><div class="c-main" id="div-comment-32951">可以看看《Linux就该这学》一书<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>459</a></span>2018-03-10 23:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=32951#respond' onclick='return addComment.moveForm( "div-comment-32951", "32951", "respond", "2070" )' aria-label='回复给459'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-4" id="comment-44363"><div class="c-avatar"><div class="c-main" id="div-comment-44363">感谢推荐。也许这个会更好。<div class="c-meta"><span class="c-author">lsh2jl</span>2018-10-13 22:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=44363#respond' onclick='return addComment.moveForm( "div-comment-44363", "44363", "respond", "2070" )' aria-label='回复给lsh2jl'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even depth-3" id="comment-44370"><div class="c-avatar"><div class="c-main" id="div-comment-44370">Linux开发入门需要具备哪些条件？ - Han的回答 - 知乎<br />
+https://www.zhihu.com/question/22377953/answer/33382471<br />
+这个回答中说的书好像比鸟哥的书更好更全<div class="c-meta"><span class="c-author">lsh2jl</span>2018-10-13 23:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=44370#respond' onclick='return addComment.moveForm( "div-comment-44370", "44370", "respond", "2070" )' aria-label='回复给lsh2jl'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-16116"><div class="c-avatar"><div class="c-main" id="div-comment-16116">V2Ray自动化安装脚本bash &lt;(curl -L -s https://install.direct/go.sh)，官网说“这个脚本会自动检测有没有安装过 V2Ray，如果没有，则进行完整的安装和配置；如果之前安装过 V2Ray，则只更新 V2Ray 二进制程序而不更新配置。”定时更新的话，个人理解是下载脚本保存到本地，然后定时执行go.sh，缺点是脚本可能会有更新。能不能定时执行上面这个指令，怎么写？系统是Debian8.<div class="c-meta"><span class="c-author">ionervghuah</span>2017-07-30 09:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=16116#respond' onclick='return addComment.moveForm( "div-comment-16116", "16116", "respond", "2070" )' aria-label='回复给ionervghuah'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-14400"><div class="c-avatar"><div class="c-main" id="div-comment-14400">写的太好了，赞一个，早日出进阶篇！！<div class="c-meta"><span class="c-author">hellokitty</span>2017-06-02 10:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=14400#respond' onclick='return addComment.moveForm( "div-comment-14400", "14400", "respond", "2070" )' aria-label='回复给hellokitty'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-14352"><div class="c-avatar"><div class="c-main" id="div-comment-14352">怎么修改文件夹权限啊<div class="c-meta"><span class="c-author">脏山</span>2017-06-01 06:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=14352#respond' onclick='return addComment.moveForm( "div-comment-14352", "14352", "respond", "2070" )' aria-label='回复给脏山'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-16394"><div class="c-avatar"><div class="c-main" id="div-comment-16394">chmod 744 file
+表示改权限为-rwxr--r--  r为4；w为2；x为1<div class="c-meta"><span class="c-author">感谢分享</span>2017-08-03 12:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=16394#respond' onclick='return addComment.moveForm( "div-comment-16394", "16394", "respond", "2070" )' aria-label='回复给感谢分享'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-13577"><div class="c-avatar"><div class="c-main" id="div-comment-13577">下载安装包后如何比较散列值，用眼看费时费力啊！<div class="c-meta"><span class="c-author">ionervghuah</span>2017-05-08 18:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=13577#respond' onclick='return addComment.moveForm( "div-comment-13577", "13577", "respond", "2070" )' aria-label='回复给ionervghuah'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-13579"><div class="c-avatar"><div class="c-main" id="div-comment-13579">你的意思是，你有这个文件的 SHA1值，你想对比你下载的文件的 SHA1值是否和你知道的一样？那么可以这样：
+<pre class="prettyprint linenums" ># 假设你下载的文件是 233.txt ，而你知道的 SHA1值是 XXXXX
+sha1sum 233.txt|grep -w "XXXXX"
+</pre>
+如果返回是空，代表不一致，如果返回是 233.txt 的 SHA1值，那么说明SHA1值完全一致。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-08 18:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=13579#respond' onclick='return addComment.moveForm( "div-comment-13579", "13579", "respond", "2070" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-13588"><div class="c-avatar"><div class="c-main" id="div-comment-13588">以前都是复制两行用眼看。按你的指点使用，成功了，很高兴。网上搜到一篇：
+# $是终端提示符，非输入.
+# #号是注释
+# 没有提示符的是输出
+#直接输出MD5 Hash
+$ md5sum your-downloaded-file-name
+fd4a1b802373c57c10c926eb7ac823d8  your-downloaded-file-name
+ 
+#将MD5 Hash值保存到md5-hash.txt文件中.
+$ md5sum your-downloaded-file-name &gt; md5-hash.txt
+# 显示输出的md5-hast.txt内容
+$ cat md5-hash.txt
+fd4a1b802373c57c10c926eb7ac823d8  your-downloaded-file-name
+ 
+# 通过md5-hash.txt来校验你下载的文件是否正确
+$ md5sum -c md5-hash.txt
+your-downloaded-file-name: OK
+有个疑问，这不是自己和自己比吗？肯定一致吧？<div class="c-meta"><span class="c-author">ionervghuah</span>2017-05-09 00:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=13588#respond' onclick='return addComment.moveForm( "div-comment-13588", "13588", "respond", "2070" )' aria-label='回复给ionervghuah'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-13597"><div class="c-avatar"><div class="c-main" id="div-comment-13597">他这个的意思是：你以前生成了XXX文件的MD5值为一个文本文件，然后你以后需要对比这个XXX文件的MD5值与你以前生成的是否一致，也就是是否改变，就是用上面的方法。<br />
+假设要检测的文件名是 1.txt 那么：
+<pre class="prettyprint linenums" >md5sum 1.txt
+2360752c3368ca4f89169f5ecc06e383  1.txt
+# 查看 1.txt 文件的MD5值
+
+md5sum 1.txt > 2.txt
+# 把 1.txt 文件的MD5值写入 2.txt 文件
+
+echo "23333" >> 1.txt
+# 追加随意文本到 1.txt 文件中，改变 1.txt 文件的 MD5值
+
+md5sum 1.txt
+287d237083a42f09785daa46a5fa3afe  1.txt
+# 查看改变后的 1.txt 的 MD5值
+
+md5sum -c 2.txt
+# 对比前后 MD5值，返回结果如下：
+1.txt: FAILED
+md5sum: WARNING: 1 of 1 computed checksum did NOT match
+</pre>
+就是上面我举例说的这样，用途不一样，你需要的是 已知当前文件的正确MD5值，需要对比你下载后的文件的MD5值是否一致正确，你用我的那个方法就好了。
+<pre class="prettyprint linenums" >md5sum 233.txt|grep -w "XXXXX"
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-09 14:41 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=13597#respond' onclick='return addComment.moveForm( "div-comment-13597", "13597", "respond", "2070" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12883"><div class="c-avatar"><div class="c-main" id="div-comment-12883">还有文件（夹）权限的命令<div class="c-meta"><span class="c-author">路人甲</span>2017-04-16 23:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12883#respond' onclick='return addComment.moveForm( "div-comment-12883", "12883", "respond", "2070" )' aria-label='回复给路人甲'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-12818"><div class="c-avatar"><div class="c-main" id="div-comment-12818">偷油真是666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666<div class="c-meta"><span class="c-author"><a href='http://kingvern.tk/' rel='external nofollow' class='url'>kingvern</a></span>2017-04-15 10:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12818#respond' onclick='return addComment.moveForm( "div-comment-12818", "12818", "respond", "2070" )' aria-label='回复给kingvern'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12546"><div class="c-avatar"><div class="c-main" id="div-comment-12546">应该添加一个"cd ~"的例子<div class="c-meta"><span class="c-author">catdot</span>2017-04-07 17:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12546#respond' onclick='return addComment.moveForm( "div-comment-12546", "12546", "respond", "2070" )' aria-label='回复给catdot'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-12477"><div class="c-avatar"><div class="c-main" id="div-comment-12477">none? 不是nano？<div class="c-meta"><span class="c-author">leg</span>2017-04-05 21:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12477#respond' onclick='return addComment.moveForm( "div-comment-12477", "12477", "respond", "2070" )' aria-label='回复给leg'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12456"><div class="c-avatar"><div class="c-main" id="div-comment-12456">妈蛋，要是早点写出来就好了，我原来用putty想返回root目录都是直接关了重新链接。。。<div class="c-meta"><span class="c-author">大人看的片叫大片</span>2017-04-05 11:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12456#respond' onclick='return addComment.moveForm( "div-comment-12456", "12456", "respond", "2070" )' aria-label='回复给大人看的片叫大片'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-12672"><div class="c-avatar"><div class="c-main" id="div-comment-12672">哈哈，我以前也是这干的，感觉有点傻。<div class="c-meta"><span class="c-author">麻花</span>2017-04-11 09:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12672#respond' onclick='return addComment.moveForm( "div-comment-12672", "12672", "respond", "2070" )' aria-label='回复给麻花'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-12414"><div class="c-avatar"><div class="c-main" id="div-comment-12414">从百度进来的，博客不错哦！<div class="c-meta"><span class="c-author"><a href='http://www.yihuanghou.com/?ic=wen' rel='external nofollow' class='url'>衣皇后</a></span>2017-04-04 10:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12414#respond' onclick='return addComment.moveForm( "div-comment-12414", "12414", "respond", "2070" )' aria-label='回复给衣皇后'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-12411"><div class="c-avatar"><div class="c-main" id="div-comment-12411">ps
+显示进程信息
+kill -KILL 
+杀死进程
+uname -a
+# 系统基本信息 -a: 全部信息
+hostname
+# 主机名字
+ip addr
+# ip信息
+ifconfig -a
+# ifconfig是ip的前身, 目前处于被抛弃的状态.
+#-----------其他信息-------------
+host www.ubuntu.org
+whois linuxmint.com
+ping google.com
+traceroute yahoo.com<div class="c-meta"><span class="c-author">散人</span>2017-04-04 09:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12411#respond' onclick='return addComment.moveForm( "div-comment-12411", "12411", "respond", "2070" )' aria-label='回复给散人'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-12401"><div class="c-avatar"><div class="c-main" id="div-comment-12401">Toyo可以写一个搭建外服网游加速器的教程<div class="c-meta"><span class="c-author">haha</span>2017-04-03 22:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12401#respond' onclick='return addComment.moveForm( "div-comment-12401", "12401", "respond", "2070" )' aria-label='回复给haha'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-12403"><div class="c-avatar"><div class="c-main" id="div-comment-12403">写不出来，一个是 运营商干扰和QOS的问题，另一个是 游戏加速效果主要取决于加速服务器的质量，这不是写个教程就能解决国内外网络问题的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-03 23:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12403#respond' onclick='return addComment.moveForm( "div-comment-12403", "12403", "respond", "2070" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12398"><div class="c-avatar"><div class="c-main" id="div-comment-12398">还有个Linux里面最屌的管道命令，这个得好好介绍下 /滑稽<div class="c-meta"><span class="c-author"><a href='https://blog.ipatrick.cn/' rel='external nofollow' class='url'>雨落无声</a></span>2017-04-03 22:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12398#respond' onclick='return addComment.moveForm( "div-comment-12398", "12398", "respond", "2070" )' aria-label='回复给雨落无声'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-12376"><div class="c-avatar"><div class="c-main" id="div-comment-12376">小白表示很喜欢这样的基础文章<div class="c-meta"><span class="c-author">create</span>2017-04-03 16:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12376#respond' onclick='return addComment.moveForm( "div-comment-12376", "12376", "respond", "2070" )' aria-label='回复给create'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12353"><div class="c-avatar"><div class="c-main" id="div-comment-12353">能做成壁纸最好，之前有见过英文的<div class="c-meta"><span class="c-author">sailtao</span>2017-04-02 22:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12353#respond' onclick='return addComment.moveForm( "div-comment-12353", "12353", "respond", "2070" )' aria-label='回复给sailtao'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-12347"><div class="c-avatar"><div class="c-main" id="div-comment-12347">厉害了我的toyo，我想学习写脚本的技巧 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_lol.gif" alt=":lol:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">Buffer2Disk</span>2017-04-02 22:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12347#respond' onclick='return addComment.moveForm( "div-comment-12347", "12347", "respond", "2070" )' aria-label='回复给Buffer2Disk'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-12348"><div class="c-avatar"><div class="c-main" id="div-comment-12348">然而这不是一两篇文章能写完的，更何况我也是半吊子。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-02 22:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12348#respond' onclick='return addComment.moveForm( "div-comment-12348", "12348", "respond", "2070" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-12368"><div class="c-avatar"><div class="c-main" id="div-comment-12368">发几个我每天在用的命令
+ps 命令很重要啊，我每天都在用  ps -ef | grep tomcat  ； 
+然后杀进程的  kill -9 pid 
+还有tail 命令搜索日志的   tail -n 10 |　grep 'search text'  catalina.out   
+能不能详细讲解下搜索日志的各种技巧<div class="c-meta"><span class="c-author">Buffer2Disk</span>2017-04-03 12:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12368#respond' onclick='return addComment.moveForm( "div-comment-12368", "12368", "respond", "2070" )' aria-label='回复给Buffer2Disk'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-12372"><div class="c-avatar"><div class="c-main" id="div-comment-12372">Linux基础命令非常多，所以我只能慢慢写。<br />
+搜索日志要看是什么日志，日志有什么特征，要日志的什么地方，然后写出来一个匹配文本的代码。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-03 13:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12372#respond' onclick='return addComment.moveForm( "div-comment-12372", "12372", "respond", "2070" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-12345"><div class="c-avatar"><div class="c-main" id="div-comment-12345">touch这个命令。<div class="c-meta"><span class="c-author"><a href='http://ruanun.com/' rel='external nofollow' class='url'>Ruanun</a></span>2017-04-02 20:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12345#respond' onclick='return addComment.moveForm( "div-comment-12345", "12345", "respond", "2070" )' aria-label='回复给Ruanun'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment byuser comment-author-minamisindery odd alt thread-even depth-1" id="comment-12341"><div class="c-avatar"><div class="c-main" id="div-comment-12341">依赖ftp 所以什么mkdir cat这种基本没用过<div class="c-meta"><span class="c-author"><a href='https://www.nanqinlang.com/' rel='external nofollow' class='url'>南琴浪</a></span>2017-04-02 16:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12341#respond' onclick='return addComment.moveForm( "div-comment-12341", "12341", "respond", "2070" )' aria-label='回复给南琴浪'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-12343"><div class="c-avatar"><div class="c-main" id="div-comment-12343">除了修改比较复杂/麻烦的文件，否则我都是直接 SSH里完成所有操作，个人感觉比ftp(基本没用过，我都是sftp)更简单，当然要是不懂这些命令或者不习惯的话会觉得 ftp更好。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-02 16:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12343#respond' onclick='return addComment.moveForm( "div-comment-12343", "12343", "respond", "2070" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12331"><div class="c-avatar"><div class="c-main" id="div-comment-12331">toyo不如补充下vim的快捷键，这个会用到（虽然我很少用，一般干脆能notepad+就上note）
+暂时只能想那么多，先给这文来赞<div class="c-meta"><span class="c-author">kurokitomoko</span>2017-04-02 13:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12331#respond' onclick='return addComment.moveForm( "div-comment-12331", "12331", "respond", "2070" )' aria-label='回复给kurokitomoko'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-12332"><div class="c-avatar"><div class="c-main" id="div-comment-12332">vim已经写了几个常用的，虽然我也很少用那些 命令行代码。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-02 13:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12332#respond' onclick='return addComment.moveForm( "div-comment-12332", "12332", "respond", "2070" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment byuser comment-author-minamisindery odd alt depth-2" id="comment-12340"><div class="c-avatar"><div class="c-main" id="div-comment-12340">然而vim并不如ftp来的方便<div class="c-meta"><span class="c-author"><a href='https://www.nanqinlang.com/' rel='external nofollow' class='url'>南琴浪</a></span>2017-04-02 16:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12340#respond' onclick='return addComment.moveForm( "div-comment-12340", "12340", "respond", "2070" )' aria-label='回复给南琴浪'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-12399"><div class="c-avatar"><div class="c-main" id="div-comment-12399">vim 用顺手之后，你会发现鼠标是一个多余的设计。我个人比较喜欢在vim里面写东西，自己win上也是用vim多一点。<div class="c-meta"><span class="c-author"><a href='https://blog.ipatrick.cn/' rel='external nofollow' class='url'>雨落无声</a></span>2017-04-03 22:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12399#respond' onclick='return addComment.moveForm( "div-comment-12399", "12399", "respond", "2070" )' aria-label='回复给雨落无声'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-12328"><div class="c-avatar"><div class="c-main" id="div-comment-12328">消灭零回复<div class="c-meta"><span class="c-author">oops</span>2017-04-02 12:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/linux-jc8/?replytocom=12328#respond' onclick='return addComment.moveForm( "div-comment-12328", "12328", "respond", "2070" )' aria-label='回复给oops'>回复</a></div></div></div></li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+			</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://kanfanba.com/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script data-cfasync="false" src="hnpipwj_.js"></script><script type="text/javascript">
+var image_url=new Array()
+image_url=["https://www.vultr.com/","vh8576m0.html","https://virmach.com/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="wk3ff1b-container wk3ff1b-1 wk3ff1b-hide">
+    <div class="wk3ff1b-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="wk3ff1b"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

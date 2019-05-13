@@ -1,0 +1,878 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>「让科学上网成为一种艺术」一个新的Socks5代理软件 —— PipeSocks | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1958] -->
+<meta name="description"  content="最近发现了这个新的代理软件 PipeSocks，试了试不错，就写个简单教程介绍一下。 本片文章包含了 Windows客户端使用教程 及 Linux 服务端安装教程。 Linux服务端一键脚本：『原创』CentOS/Debian/Ubuntu PipeSocks服务端 一键安装脚本 目前 PipeSocks" />
+
+<meta name="keywords"  content="pipesocks,科学上网" />
+
+<link rel="canonical" href="m8566vew.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='ShadowsocksR服务端 限制设备连接数 和 限制端口速度 的方法' href='e0926y-q-3.html' />
+<link rel='next' title='『原创』CentOS/Debian/Ubuntu PipeSocks服务端 一键安装脚本' href='pq93k8av.html' />
+<link rel='shortlink' href='https://doub.io/?p=1931' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fpipesocks-jc1%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fpipesocks-jc1%2F&amp;format=xml" />
+<style>
+.yk4aa3b{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.yk4aa3b-hide{
+    display: none;
+}
+.yk4aa3b-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.yk4aa3b-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.yk4aa3b-2 .yk4aa3b-body,.yk4aa3b-3 .yk4aa3b-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.yk4aa3b-2 .close-btn,.yk4aa3b-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.yk4aa3b-3 .yk4aa3b-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.yk4aa3b').html(kill_adBlock_message);
+            jQuery('.yk4aa3b-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.yk4aa3b-container').fadeOut('yk4aa3b-hide');
+        });
+    });
+    var kill_adBlock_status = 1;
+    var kill_adBlock_message = '逗比很伤心😥，您的<strong>广告拦截扩展</strong>屏蔽了我们的小广告，网站的发展离不开大家的支持，请先看过<a target=\"_blank\" style=\"color: #ffe500;\" href=\"3--didfb.html\">这个文章</a>后，再确定是否要将我们的域名添加到<strong>拦截白名单</strong>中，谢谢！😘👌';
+    var kill_adBlock_message_delay = 0;
+    var kill_adBlock_close_btn = 1;
+    var kill_adBlock_close_automatically = 0;
+    var kill_adBlock_close_automatically_delay = 0;
+    var kill_adBlock_message_type = 1;
+    function adBlockDetected() {
+      show_message();
+    }
+    
+    if(typeof killAdBlock === 'undefined') {
+        adBlockDetected();
+    } else {
+        killAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+    }
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="pipesocks, 科学上网, 网络资源">
+<meta name="description" content="最近发现了这个新的代理软件 PipeSocks，试了试不错，就写个简单教程介绍一下。  本片文章包含了 Windows客户端使用教程 及 Linux 服务端安装教程。  Linux服务端一键脚本：『原创』CentOS/Debian/Ubuntu PipeSocks服务端 一键安装脚本 目前 PipeSocks 已经停止维护很长时间了，如非必须，不推荐使用！ 简单介绍 不要看这个软件版本已经 2.x 了，实际上也是最近才正式开始开发的，属">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-1931 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li class="current-post-ancestor"><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="./softs.wtf/"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Atoyodadoubi.github.io'; return false;" action="https://toyodadoubi.github.io/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 逗比云还是逃不过被墙的命运，既然如此那以后逗比云也就一直用被墙的旧域名 <strong><a target="_blank" href="./softs.wtf/">[softs.wtf]</a></strong> 算了。
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://www.gigsgigscloud.com/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="m8566vew.html">「让科学上网成为一种艺术」一个新的Socks5代理软件 —— PipeSocks</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="c8ljt6o8.html"> 网络资源</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 2年前 (2017-02-25)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 13326℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="m8566vew.html#comments">24评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="m8566vew.html#简单介绍" title="简单介绍"><span>简单介绍</span></a></li><li class="content-index-level-1"><a href="m8566vew.html#Pump 服务端使用方法" title="Pump 服务端使用方法"><span>Pump 服务端使用方法</span></a><ul class="children"><li class="content-index-level-2"><a href="m8566vew.html#系统位数：" title="系统位数："><span>系统位数：</span></a></li><li class="content-index-level-2"><a href="m8566vew.html#下载服务端：" title="下载服务端："><span>下载服务端：</span></a></li><li class="content-index-level-2"><a href="m8566vew.html#运行服务端" title="运行服务端"><span>运行服务端</span></a></li><li class="content-index-level-2"><a href="m8566vew.html#设置开放防火墙端口：" title="设置开放防火墙端口："><span>设置开放防火墙端口：</span></a></li><li class="content-index-level-2"><a href="m8566vew.html#升级服务端" title="升级服务端"><span>升级服务端</span></a></li></ul></li><li class="content-index-level-1"><a href="m8566vew.html#其他说明" title="其他说明"><span>其他说明</span></a><ul class="children"><li class="content-index-level-2"><a href="m8566vew.html#提示 wget: command not found 的错误" title="提示 wget: command not found 的错误"><span>提示 wget: command not found 的错误</span></a></li><li class="content-index-level-2"><a href="m8566vew.html#启动PipeSocks提示失败" title="启动PipeSocks提示失败"><span>启动PipeSocks提示失败</span></a></li></ul></li><li class="content-index-level-1"><a href="m8566vew.html#Tap 客户端使用方法" title="Tap 客户端使用方法"><span>Tap 客户端使用方法</span></a><ul class="children"><li class="content-index-level-2"><a href="m8566vew.html#下载客户端" title="下载客户端"><span>下载客户端</span></a></li><li class="content-index-level-2"><a href="m8566vew.html#设置浏览器代理" title="设置浏览器代理"><span>设置浏览器代理</span></a><ul class="children"><li class="content-index-level-3"><a href="m8566vew.html#全局 情景模式：" title="全局 情景模式："><span>全局 情景模式：</span></a></li><li class="content-index-level-3"><a href="m8566vew.html#自动切换(PAC)情景模式：" title="自动切换(PAC)情景模式："><span>自动切换(PAC)情景模式：</span></a></li></ul></li></ul></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年7月19日 12:03</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>最近发现了这个新的代理软件 PipeSocks，试了试不错，就写个简单教程介绍一下。</p>
+<p>本片文章包含了 Windows客户端使用教程 及 Linux 服务端安装教程。</p>
+<p><strong>Linux服务端一键脚本：<a title="『原创』CentOS/Debian/Ubuntu PipeSocks服务端 一键安装脚本" href="pq93k8av.html" target="_blank" rel="noopener">『原创』CentOS/Debian/Ubuntu PipeSocks服务端 一键安装脚本</a></strong></p>
+<blockquote><p>目前 <strong>PipeSocks</strong> 已经停止维护很长时间了，<strong>如非必须，不推荐使用！</strong></p></blockquote>
+<h2 id="简单介绍">简单介绍</h2>
+<p>不要看这个软件版本已经 2.x 了，实际上也是最近才正式开始开发的，属于Socks5协议代理软件。</p>
+<p>把整个科学上网的过程比喻成 <strong>Pump(泵)、Pipe(水管)、Tap(水龙头)</strong>。</p>
+<p>泵安装在海外服务器上面(即 服务端)，水龙头安装在本地设备上(即 客户端)，而水管则是在必要的时候起到加速/匿名等作用。</p>
+<p>PipeScosk实际上各个平台的软件，都是<strong>三合一(Pump/Pipe/Tap)</strong>，<strong>既可以客户端也可以服务端。</strong></p>
+<p>本教程只介绍 Linux服务端和 Windows客户端 的使用方法。</p>
+<p><strong>官方网站：</strong><a href="https://pipesocks.github.io/index-cn.html" target="_blank" rel="noopener">https://pipesocks.github.io/</a></p>
+<p><strong>Github项目：</strong><a href="https://github.com/pipesocks/pipesocks" target="_blank" rel="noopener">https://github.com/pipesocks/pipesocks</a></p>
+<p><strong>Telegram群组：</strong><a href="https://t.me/pipesocks" target="_blank" rel="noopener">https://t.me/pipesocks</a></p>
+<blockquote><p>注意：本软件还处于开发初期，可能会存在诸多BUG，如遇到BUG，请携带 <strong>服务端日志+客户端日志+情况描述</strong> 前往<a href="https://github.com/pipesocks/pipesocks/issues" target="_blank" rel="noopener">Github - issue</a>反馈，或者进入<a href="https://t.me/pipesocks" target="_blank" rel="noopener">Telegram群组</a>反馈。</p></blockquote>
+<h2 id="Pump 服务端使用方法">Pump 服务端使用方法</h2>
+<p>首先你有一台海外服务器，登陆进去后在任意一个目录( /tmp 目录不行)，比如<code> /root </code>目录。</p>
+<h3 id="系统位数：">系统位数：</h3>
+<p>因为PipeSocks Linux只有 <strong>64位</strong>，所以需要 <strong>64位</strong>的系统才能使用，请先检查你的系统位数。</p>
+<pre class="prettyprint linenums">uname -m
+</pre>
+<p>如果返回的是<code> x86_64 </code>那么就可以继续下面的安装步骤了，如果是其他的，那么就请更换系统。</p>
+<h3 id="下载服务端：">下载服务端：</h3>
+<p>下载、解压PipeSocks，以下安装代码会 自动检测并下载、解压 最新版本，如果不是最新的请去<a href="https://github.com/pipesocks/pipesocks/releases/latest" target="_blank" rel="noopener">这里查看最新版本</a>。</p>
+<pre class="prettyprint linenums">Ver=$(wget -qO- https://github.com/pipesocks/pipesocks/releases/latest | grep "&lt;title&gt;" | sed -r 's/.*pipesocks (.+) · pipesocks.*/\1/') &amp;&amp; mkdir pipesocks &amp;&amp; cd pipesocks &amp;&amp; wget "https://github.com/pipesocks/pipesocks/releases/download/${Ver}/pipesocks-${Ver}-linux.tar.xz" &amp;&amp; tar -xJf pipesocks-${Ver}-linux.tar.xz &amp;&amp; rm -rf pipesocks-${Ver}-linux.tar.xz
+</pre>
+<h3 id="运行服务端">运行服务端</h3>
+<pre><strong>注意：</strong>以下控制代码，必须进入<code> pipesocks </code>目录后才可以执行（<code> cd pipesocks </code>）！</pre>
+<p>不带日志运行：</p>
+<pre class="prettyprint linenums">nohup ./pipesocks pump -p 端口 -k 密码 &amp;
+</pre>
+<p>带日志运行：</p>
+<pre class="prettyprint linenums">nohup ./pipesocks pump -p 端口 -k 密码 &amp;&gt;pipesocks.log &amp;
+</pre>
+<p>停止运行：</p>
+<pre class="prettyprint linenums">kill -9 $(ps -ef|grep "pipesocks"|grep -v "grep"|awk '{print $2}'|sed -n "2p")
+</pre>
+<p>查看日志(假设是 带日志运行，需要进入安装目录执行 )：</p>
+<pre class="prettyprint linenums">tail -f pipesocks.log
+</pre>
+<p>如果没有出现什么错误提示，那么就正常运行了。</p>
+<h3 id="设置开放防火墙端口：">设置开放防火墙端口：</h3>
+<pre class="prettyprint linenums">iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 端口 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 端口 -j ACCEPT
+# 如果要删除添加的这两个防火墙端口就把 -I 改成 -D 就好了，比如：
+iptables -D INPUT -m state --state NEW -m tcp -p tcp --dport 端口 -j ACCEPT
+iptables -D INPUT -m state --state NEW -m udp -p udp --dport 端口 -j ACCEPT
+</pre>
+<h3 id="升级服务端">升级服务端</h3>
+<p>如果你需要升级服务端，那么只需要重复上面一开始的下载、解压安装步骤即可。</p>
+<h2 id="其他说明">其他说明</h2>
+<h3 id="提示 wget: command not found 的错误">提示 wget: command not found 的错误</h3>
+<p>这是你的系统精简的太干净了，wget都没有安装，所以需要安装wget。</p>
+<pre class="prettyprint linenums"># CentOS系统:
+yum install -y wget
+
+# Debian/Ubuntu系统:
+apt-get install -y wget
+</pre>
+<h3 id="启动PipeSocks提示失败">启动PipeSocks提示失败</h3>
+<p>启动失败请查看日志，如果看到这个提示：</p>
+<pre class="prettyprint linenums">Failed to bind to port 端口, exiting. . .
+</pre>
+<p>那么说明是因为端口被占用导致的无法绑定端口从而无法启动。</p>
+<p>用这个命令<code> netstat -lntp </code>查看一下那个程序占用了端口并结束它，或者更换PipeSocks账号端口也行。</p>
+<h2 id="Tap 客户端使用方法">Tap 客户端使用方法</h2>
+<h3 id="下载客户端">下载客户端</h3>
+<p>首先前往官网下载<strong> Windows的客户端</strong>：<a href="https://pipesocks.github.io/index-cn.html" target="_blank" rel="noopener">官方网站</a>、<a href="./softs.wtf/?dir=%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/PC/PipeSocks" target="_blank" rel="noopener">逗比云</a></p>
+<p>下载客户端后，是一个 7-Zip 的自解压文件，打开下载后的<code> pipesocks-x.x-win.exe </code>文件，然后如下图选择要解压的目录，然后点击 <strong>Extract 按钮</strong>解压。</p>
+<p><img class=" aligncenter" src="up3uyozf.png" alt="" width="384" height="157" /></p>
+<p>解压后，进入解压的 <strong>pipesocks文件夹</strong>，找到<code> pipesocks.exe </code>文件并双击打开，就会看到如下图的界面。</p>
+<pre><strong>如果你打开客户端报错</strong>，那么可能是缺少支持库，这时候在文件夹内找到<code> vc_redist.x86.exe </code>文件，双击安装支持库后即可。</pre>
+<p>我们是做客户端的，所以选择 <strong>Tap(默认)</strong> 即可。</p>
+<p>下面的几个选项分别是：<strong>服务器 IP、服务器 端口、本地监听端口、服务器 密码</strong></p>
+<p>根据我们上面搭建的服务端配置来分别填写这几个选项，填写完后，点击 <strong>START 按钮</strong>链接服务器。</p>
+<pre>另一个 <strong>DUMP 按钮</strong>是用来输出日志的，点一下会让你生成一个<code> xxx.log </code>文件，然后就会自动把 客户端输出的日志信息 写入日志文件中。</pre>
+<p>这时候，你还不能直接科学上网，你要需要设置浏览器代理。</p>
+<p><img class=" aligncenter" src="xjvsd1ve.png" alt="" width="325" height="428" /></p>
+<h3 id="设置浏览器代理">设置浏览器代理</h3>
+<p>这里建议使用 <strong>Proxy SwitchyOmega扩展</strong>（下载：<a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif?utm_campaign=en&amp;utm_source=en-et-na-us-oc-webstrhm&amp;utm_medium=et" target="_blank" rel="noopener">Chrome 应用商店</a>(需要翻)、<a href="./softs.wtf/科学上网/other/Proxy SwitchyOmega 2.3.21.crx" target="_blank" rel="noopener">逗比云</a>） 来管理代理。</p>
+<p>安装扩展后，打开扩展的选项页面，然后新建情景模式，分别添加一个全局和PAC的情景模式。</p>
+<h4 id="全局 情景模式：">全局 情景模式：</h4>
+<p>新建情景模式，名称随意，类型选择 <strong>代理服务器</strong></p>
+<p>然后设置代理协议为<code> SOCKS5 </code>，代理服务器为<code> 127.0.0.1 </code>，代理端口为<code> 7473 </code></p>
+<p>然后点击页面左下角的 应用选项 即可。</p>
+<h4 id="自动切换(PAC)情景模式：">自动切换(PAC)情景模式：</h4>
+<p>新建情景模式，名称随意，类型选择 <strong>自动切换模式</strong></p>
+<p>然后在规则列表设置中 规则列表格式选择 <strong>AutoProxy</strong>，</p>
+<p>规则列表网址为<a href="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt"><code> https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</code></a></p>
+<p>同时切换规则中，按照规则列表匹配请求的情景模式选择上面设置过的 <strong>pipesocks-全局</strong> 情景模式。</p>
+<p>然后点击 <strong>立即更新情景模式</strong> 按钮，然后点击页面左下角的 <strong>应用选项</strong> 即可。</p>
+<hr />
+<p>这时候在浏览器右上角，点击这个扩展的按钮(圆圈)，根据需求选择 PAC或全局，然后打开谷歌：<a href="https://www.google.com/" target="_blank" rel="noopener">www.google.com</a> 测试一下吧！</p>
+<blockquote><p>注意：本软件还处于开发初期，可能会存在诸多BUG，如遇到BUG，请携带 <strong>服务端日志+客户端日志+情况描述</strong> 前往<a href="https://github.com/pipesocks/pipesocks/issues" target="_blank" rel="noopener">Github - issue</a>反馈，或者进入<a href="https://t.me/pipesocks" target="_blank" rel="noopener">Telegram群组</a>反馈。</p></blockquote>
+<p><img class=" aligncenter" src="13zpucsd.png" alt="" width="586" height="225" /></p>
+<p><img class=" aligncenter" src="_bottch-.png" alt="" width="848" height="228" /></p>
+<p><img class=" aligncenter" src="f1k0cq08.png" alt="" width="578" height="306" /></p>
+<p><img class=" aligncenter" src="c7gqyd4_.png" alt="" width="840" height="546" /></p>
+<p><strong>参考资料：</strong><a href="https://pipesocks.github.io/md/tutorial" target="_blank" rel="noopener">https://pipesocks.github.io/md/tutorial</a></p>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="m8566vew.html">「让科学上网成为一种艺术」一个新的Socks5代理软件 —— PipeSocks</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="1931" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">28</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="5640qrjm.html" rel="tag">pipesocks</a><a href="sgi86h8e.html" rel="tag">科学上网</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="e0926y-q-3.html" rel="prev">ShadowsocksR服务端 限制设备连接数 和 限制端口速度 的方法</a></span>
+			<span class="article-nav-next"><a href="pq93k8av.html" rel="next">『原创』CentOS/Debian/Ubuntu PipeSocks服务端 一键安装脚本</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="xowbtqn5.html" title="Linux 使用 dowsDNS 快速自建DNS服务器以 科学上网+屏蔽广告" target="_blank">
+<img src="t2hu7a0y.png?src=https://doub.io/wp-content/uploads/dns.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="Linux 使用 dowsDNS 快速自建DNS服务器以 科学上网+屏蔽广告" />	<br><span class="r_title">Linux 使用 dowsDNS 快速自建DNS服务器以 科学上网+屏蔽广告</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="pq93k8av.html" title="『原创』CentOS/Debian/Ubuntu PipeSocks服务端 一键安装脚本" target="_blank">
+<img src="uhzdu4id.png?src=https://doub.io/wp-content/uploads/pipesocks.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』CentOS/Debian/Ubuntu PipeSocks服务端 一键安装脚本" />	<br><span class="r_title">『原创』CentOS/Debian/Ubuntu PipeSocks服务端 一键安装脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="5-n-kyc_.html" title="Opera开发版已加入免费内置VPN，正式版或许不远了！" target="_blank">
+<img src="duklxk1n.png?src=https://doub.io/wp-content/uploads/vpn2.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="Opera开发版已加入免费内置VPN，正式版或许不远了！" />	<br><span class="r_title">Opera开发版已加入免费内置VPN，正式版或许不远了！</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="6r9z6_wi.html" title="Shadowsocks指导篇（总结归类）——从无到有，境无止尽！" target="_blank">
+<img src="lcsdp558.png?src=https://img.doub.pw/thumbs/Shadowsocks-Zhidaopian.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="Shadowsocks指导篇（总结归类）——从无到有，境无止尽！" />	<br><span class="r_title">Shadowsocks指导篇（总结归类）——从无到有，境无止尽！</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="pq93k8av.html">『原创』CentOS/Debian/Ubuntu PipeSocks服务端 一键安装脚本</a></li><li><i class="fa fa-minus"></i><a target="_blank" href="k71l4klb.html">网页管理 <strong>Brook、SS、Socks5</strong> 代理账号 —— Brook-Web 使用教程</a></li><li><i class="fa fa-minus"></i><a target="_blank" href="uispwf33.html">DAZE 轻量化代理软件 —— Windows 客户端简单使用教程</a></li><li><i class="fa fa-minus"></i><a target="_blank" href="ro0sse7s.html">一个由Go语言编写的轻量化代理工具 —— DAZE 服务端手动教程</a></li><li><i class="fa fa-minus"></i><a target="_blank" href="wlqx27bd.html">GoFlyway 基础教程：Android 客户端使用方法</a></li><li><i class="fa fa-minus"></i><a target="_blank" href="s3y0lufe.html">GoFlyway 进阶教程：<strong>KCP 协议复活被墙IP</strong></a></li><li><i class="fa fa-minus"></i><a target="_blank" href="m2qf_iyd.html">『视频』Brook 代理 一键脚本及客户端 小白使用教程</a></li><li><i class="fa fa-minus"></i><a target="_blank" href="p9u37iuf.html">GoFlyway 进阶教程：代理服务器自定义搭建HTTP伪装网站，降低被墙几率</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='1931' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (24)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-40024"><div class="c-avatar"><div class="c-main" id="div-comment-40024">不能UDP吧<div class="c-meta"><span class="c-author">疯狂的小8</span>2018-07-08 21:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=40024#respond' onclick='return addComment.moveForm( "div-comment-40024", "40024", "respond", "1931" )' aria-label='回复给疯狂的小8'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-38277"><div class="c-avatar"><div class="c-main" id="div-comment-38277">运行这个命令的时候“nohup ./pipesocks pump -p 端口 -k 密码 &amp;&gt;pipesocks.log &amp;”提示
+-bash: <a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="d2f392">[email&#160;protected]</a>#: event not found 怎么办？？？？<div class="c-meta"><span class="c-author">fans</span>2018-05-23 18:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=38277#respond' onclick='return addComment.moveForm( "div-comment-38277", "38277", "respond", "1931" )' aria-label='回复给fans'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-38322"><div class="c-avatar"><div class="c-main" id="div-comment-38322">密码用双引号括起来。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-05-24 15:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=38322#respond' onclick='return addComment.moveForm( "div-comment-38322", "38322", "respond", "1931" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-18420"><div class="c-avatar"><div class="c-main" id="div-comment-18420">太多了这类的。用来加速游戏不错可是关键在于服务端速度快慢。客户端只是载体。<div class="c-meta"><span class="c-author">去</span>2017-09-15 06:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=18420#respond' onclick='return addComment.moveForm( "div-comment-18420", "18420", "respond", "1931" )' aria-label='回复给去'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-15930"><div class="c-avatar"><div class="c-main" id="div-comment-15930">请教下arukas docker 怎样部署pipesocks<div class="c-meta"><span class="c-author">assassin</span>2017-07-26 13:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=15930#respond' onclick='return addComment.moveForm( "div-comment-15930", "15930", "respond", "1931" )' aria-label='回复给assassin'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-15932"><div class="c-avatar"><div class="c-main" id="div-comment-15932">参考这个教程：<a href="sl2a1i9t.html" target="_blank" rel="nofollow">DaoCloud免费部署 PipeSocks 国内中转Pipe/Pump</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-07-26 13:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=15932#respond' onclick='return addComment.moveForm( "div-comment-15932", "15932", "respond", "1931" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-16007"><div class="c-avatar"><div class="c-main" id="div-comment-16007">不成功 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_cry.gif" alt=":cry:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">assassin</span>2017-07-28 08:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=16007#respond' onclick='return addComment.moveForm( "div-comment-16007", "16007", "respond", "1931" )' aria-label='回复给assassin'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-11069"><div class="c-avatar"><div class="c-main" id="div-comment-11069">三合一的windows软件
+windows服务端超级好用
+linux客户端能用
+对小白不友好
+有一键包就好用多了
+缺少安卓客户端支持
+总之个人观点
+ linux服务端易用度 ss（ssr）&gt;pipe&gt;v2ray
+        windows服务端的易用度pipe&gt;ss(ssr)&gt;v2ray<div class="c-meta"><span class="c-author">逗比二号</span>2017-02-28 13:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=11069#respond' onclick='return addComment.moveForm( "div-comment-11069", "11069", "respond", "1931" )' aria-label='回复给逗比二号'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-11080"><div class="c-avatar"><div class="c-main" id="div-comment-11080">现在 v2ray有了一键 整体和ss 一样方便。只要拷贝一个config就行了 甚至不用输ip 密码。<div class="c-meta"><span class="c-author">JohnYang1997</span>2017-02-28 19:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=11080#respond' onclick='return addComment.moveForm( "div-comment-11080", "11080", "respond", "1931" )' aria-label='回复给JohnYang1997'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-11180"><div class="c-avatar"><div class="c-main" id="div-comment-11180">嘿嘿嘿 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_eek.gif" alt=":shock:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author"><a href='https://blog.ipatrick.cn/' rel='external nofollow' class='url'>雨落无声</a></span>2017-03-03 22:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=11180#respond' onclick='return addComment.moveForm( "div-comment-11180", "11180", "respond", "1931" )' aria-label='回复给雨落无声'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-11062"><div class="c-avatar"><div class="c-main" id="div-comment-11062">要开全局才能进来  <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_eek.gif" alt=":shock:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">微风</span>2017-02-28 11:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=11062#respond' onclick='return addComment.moveForm( "div-comment-11062", "11062", "respond", "1931" )' aria-label='回复给微风'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-11064"><div class="c-avatar"><div class="c-main" id="div-comment-11064">更新PAC为GFWList即可，最新的GFWList PAC已经加入了doub.io<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-02-28 12:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=11064#respond' onclick='return addComment.moveForm( "div-comment-11064", "11064", "respond", "1931" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-11023"><div class="c-avatar"><div class="c-main" id="div-comment-11023">Telegram 是故意拼错的么 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_eek.gif" alt=":shock:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">Num</span>2017-02-27 10:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=11023#respond' onclick='return addComment.moveForm( "div-comment-11023", "11023", "respond", "1931" )' aria-label='回复给Num'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-11025"><div class="c-avatar"><div class="c-main" id="div-comment-11025">不知道不知道不知道<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-02-27 11:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=11025#respond' onclick='return addComment.moveForm( "div-comment-11025", "11025", "respond", "1931" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-11018"><div class="c-avatar"><div class="c-main" id="div-comment-11018">先尝一下鲜喽 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_eek.gif" alt=":shock:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">starksong</span>2017-02-27 09:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=11018#respond' onclick='return addComment.moveForm( "div-comment-11018", "11018", "respond", "1931" )' aria-label='回复给starksong'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-11011"><div class="c-avatar"><div class="c-main" id="div-comment-11011">最近造的翻墙工具有点多啊，百花齐放<div class="c-meta"><span class="c-author">aoby</span>2017-02-26 21:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=11011#respond' onclick='return addComment.moveForm( "div-comment-11011", "11011", "respond", "1931" )' aria-label='回复给aoby'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-10990"><div class="c-avatar"><div class="c-main" id="div-comment-10990">感觉用着比ss麻烦点，但是值得关注<div class="c-meta"><span class="c-author">ft</span>2017-02-26 09:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=10990#respond' onclick='return addComment.moveForm( "div-comment-10990", "10990", "respond", "1931" )' aria-label='回复给ft'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-10999"><div class="c-avatar"><div class="c-main" id="div-comment-10999">谢谢支持haha，我是作者。<div class="c-meta"><span class="c-author">yvbbrjdr</span>2017-02-26 19:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=10999#respond' onclick='return addComment.moveForm( "div-comment-10999", "10999", "respond", "1931" )' aria-label='回复给yvbbrjdr'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-11026"><div class="c-avatar"><div class="c-main" id="div-comment-11026">你这个假作者，分明就是个只会喊：有新大佬进来了。的bot<div class="c-meta"><span class="c-author">sec7et</span>2017-02-27 14:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=11026#respond' onclick='return addComment.moveForm( "div-comment-11026", "11026", "respond", "1931" )' aria-label='回复给sec7et'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-10984"><div class="c-avatar"><div class="c-main" id="div-comment-10984">前排？<div class="c-meta"><span class="c-author">kenshin</span>2017-02-26 00:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=10984#respond' onclick='return addComment.moveForm( "div-comment-10984", "10984", "respond", "1931" )' aria-label='回复给kenshin'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-10978"><div class="c-avatar"><div class="c-main" id="div-comment-10978">这个和ss相比较呢？优势在哪儿？省内存？<div class="c-meta"><span class="c-author">kaikan</span>2017-02-25 17:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=10978#respond' onclick='return addComment.moveForm( "div-comment-10978", "10978", "respond", "1931" )' aria-label='回复给kaikan'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-10979"><div class="c-avatar"><div class="c-main" id="div-comment-10979">优势不清楚，这个软件是刚出来的，问题还有很多，可以当成备用手段关注一下。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-02-25 18:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=10979#respond' onclick='return addComment.moveForm( "div-comment-10979", "10979", "respond", "1931" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-10971"><div class="c-avatar"><div class="c-main" id="div-comment-10971">板凳<div class="c-meta"><span class="c-author">。。。</span>2017-02-25 16:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=10971#respond' onclick='return addComment.moveForm( "div-comment-10971", "10971", "respond", "1931" )' aria-label='回复给。。。'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-10968"><div class="c-avatar"><div class="c-main" id="div-comment-10968">沙发~<div class="c-meta"><span class="c-author">Romain</span>2017-02-25 15:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/pipesocks-jc1/?replytocom=10968#respond' onclick='return addComment.moveForm( "div-comment-10968", "10968", "respond", "1931" )' aria-label='回复给Romain'>回复</a></div></div></div></li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+			</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://kanfanba.com/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script data-cfasync="false" src="hnpipwj_.js"></script><script type="text/javascript">
+var image_url=new Array()
+image_url=["https://www.vultr.com/","vh8576m0.html","https://virmach.com/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="yk4aa3b-container yk4aa3b-1 yk4aa3b-hide">
+    <div class="yk4aa3b-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="yk4aa3b"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>
